@@ -1,5 +1,4 @@
 import json,os,logging
-from datetime import datetime,timezone,timedelta
 from pathlib import Path
 from jinja2 import Environment,FileSystemLoader
 from config import DATA_DIR,OUTPUT_DIR,PROPERTY_CATEGORIES,JOTO_WARDS,BUDGET,RENT_DATA_BY_CATEGORY
@@ -31,22 +30,38 @@ def main():
     pp=os.path.join(OUTPUT_DIR,"latest_analysis.json")
     changes=detect_changes(data,pp)
     log.info(f"差分: +{len(changes['new'])} -{len(changes['removed'])} Δ{len(changes['price_changed'])}")
+
+    # 全物件の座標データをJSON化（地図用）
+    all_markers=[]
+    for ck,rs in data["results"].items():
+        cat_info=PROPERTY_CATEGORIES.get(ck,{})
+        for p in rs:
+            if p.get("lat") and p.get("lng"):
+                all_markers.append({
+                    "lat":p["lat"],"lng":p["lng"],
+                    "title":p.get("title",""),
+                    "price":p.get("price",0),
+                    "yield_pct":p.get("yield_pct"),
+                    "category":ck,
+                    "color":cat_info.get("color","#888"),
+                    "icon":cat_info.get("icon","📍"),
+                    "url":p.get("url",""),
+                    "station":p.get("station",""),
+                    "score":p.get("score",0),
+                })
+
     env=Environment(loader=FileSystemLoader("templates"),autoescape=True)
     tmpl=env.get_template("report.html")
     rd=data.get("analyzed_at","")
     html=tmpl.render(
-        report_date=rd,
-        categories=PROPERTY_CATEGORIES,
-        wards=JOTO_WARDS,
-        results=data["results"],
-        rent_data=data.get("rent_data",{}),
+        report_date=rd,categories=PROPERTY_CATEGORIES,wards=JOTO_WARDS,
+        results=data["results"],rent_data=data.get("rent_data",{}),
         rent_by_category=data.get("rent_by_category",RENT_DATA_BY_CATEGORY),
-        ward_counts=data.get("ward_counts",{}),
-        budget=BUDGET,
-        changes=changes,
+        ward_counts=data.get("ward_counts",{}),budget=BUDGET,changes=changes,
         total_props=sum(len(v) for v in data["results"].values()),
         market_summary=data.get("market_summary",""),
         data_summary=data.get("data_summary",{}),
+        markers_json=json.dumps(all_markers,ensure_ascii=False),
     )
     with open(os.path.join(OUTPUT_DIR,"index.html"),"w",encoding="utf-8") as f:f.write(html)
     with open(os.path.join(OUTPUT_DIR,f"report_{rd}.html"),"w",encoding="utf-8") as f:f.write(html)

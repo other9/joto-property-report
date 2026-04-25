@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>城東エリア不動産投資レポート - {{ report_date }}</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <style>
 :root{--bg:#f5f0e8;--card:#faf7f2;--wh:#fff;--dk:#1a1510;--md:#5a5040;--lt:#8a7a5e;--bd:#e0d8c8;--r:#c0392b;--o:#d4782b;--g:#2d7a30;--bl:#2a7ab5}
 *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Helvetica Neue','Hiragino Sans',sans-serif;background:var(--bg);color:var(--dk);line-height:1.6}
@@ -12,11 +14,13 @@ h2{font-family:Georgia,serif;font-size:16px;font-weight:700;margin:16px 0 8px;pa
 .bx{background:var(--wh);border:1px solid var(--bd);border-radius:6px;padding:10px 14px;margin-bottom:12px;font-size:12px;line-height:1.7;color:var(--md)}.bx strong{color:var(--dk)}
 .al{background:#2d7a3010;border:1px solid #2d7a3030;color:#2d5a28}
 .mkt{background:var(--wh);border:1px solid var(--bd);border-radius:6px;padding:14px;margin-bottom:12px;font-size:12.5px;line-height:1.8;color:var(--md)}
-.data-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:8px 0}
-.data-card{background:var(--card);border:1px solid var(--bd);border-radius:6px;padding:8px 10px;text-align:center}
-.data-card .num{font-family:Georgia,serif;font-size:20px;font-weight:800;color:var(--r)}.data-card .lbl{font-size:10px;color:var(--lt)}
-.data-card .sub-num{font-size:11px;color:var(--g);font-weight:600}
-.tabs{display:flex;gap:4px;margin-bottom:12px;flex-wrap:wrap}.tabs button{padding:6px 16px;border-radius:20px;border:1px solid var(--bd);background:0;color:var(--md);font-size:12px;font-weight:600;cursor:pointer}.tabs button.on{background:var(--r);color:#fff;border-color:var(--r)}
+.data-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin:8px 0}
+.data-card{background:var(--card);border:1px solid var(--bd);border-radius:6px;padding:6px 4px;text-align:center}
+.data-card .num{font-family:Georgia,serif;font-size:18px;font-weight:800;color:var(--r)}.data-card .lbl{font-size:9px;color:var(--lt)}.data-card .sub-num{font-size:10px;color:var(--g);font-weight:600}
+#map{height:400px;border-radius:8px;border:2px solid var(--bd);margin-bottom:12px}
+.map-legend{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;font-size:11px}
+.map-legend span{display:flex;align-items:center;gap:3px}.map-legend .dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+.tabs{display:flex;gap:4px;margin-bottom:12px;flex-wrap:wrap}.tabs button{padding:6px 14px;border-radius:20px;border:1px solid var(--bd);background:0;color:var(--md);font-size:11px;font-weight:600;cursor:pointer}.tabs button.on{background:var(--r);color:#fff;border-color:var(--r)}
 .rt{width:100%;border-collapse:collapse;font-size:11px;margin:8px 0}.rt th,.rt td{padding:5px 6px;border:1px solid var(--bd);text-align:center}.rt th{background:var(--dk);color:#fff;font-size:10px}.rt tr:nth-child(even){background:var(--card)}
 .cd{background:var(--card);border:1.5px solid #ddd5c8;border-radius:6px;margin-bottom:10px;overflow:hidden}.cd.ob{opacity:.9;background:#faf5ee}
 .ch{padding:12px 16px;cursor:pointer}.ch:hover{background:#f5efe5}
@@ -44,37 +48,42 @@ h2{font-family:Georgia,serif;font-size:16px;font-weight:700;margin:16px 0 8px;pa
 <div class="sub">台東区・墨田区・江東区・荒川区・足立区・葛飾区・江戸川区</div>
 <div class="date">🔄 {{ report_date }} 自動更新</div></header>
 
-<!-- ========== データ取得現況 ========== -->
+<!-- データ取得現況 -->
 <div class="bx">
-<strong>📊 データ取得現況（{{ report_date }}）</strong>
+<strong>📊 データ取得現況</strong>（予算{{ budget.total_max // 10000 |default(7000)}}万円以下）
 <div class="data-grid">
 {% for ck, ct in categories.items() %}
 <div class="data-card">
-<div class="lbl">{{ ct.label }}</div>
-<div class="num">{{ data_summary.get(ck, {}).get('total', 0) }}<span style="font-size:12px;font-weight:400">件</span></div>
-<div class="sub-num">予算内 {{ data_summary.get(ck, {}).get('in_budget', 0) }}件</div>
+<div class="lbl">{{ ct.icon }} {{ ct.label }}</div>
+<div class="num">{{ data_summary.get(ck, {}).get('total', 0) }}</div>
+<div class="sub-num">予算内{{ data_summary.get(ck, {}).get('in_budget', 0) }}</div>
 </div>
 {% endfor %}
-</div>
-</div>
+</div></div>
 
-<!-- ========== 市況概説 ========== -->
+<!-- 市況概説 -->
 {% if market_summary %}
-<div class="mkt">
-<strong>📈 城東エリア市況</strong><br>
-{{ market_summary }}
-</div>
+<div class="mkt"><strong>📈 城東エリア市況</strong><br>{{ market_summary }}</div>
 {% endif %}
 
-<!-- ========== 変動アラート ========== -->
+<!-- 変動アラート -->
 {% if changes and (changes.new or changes.removed or changes.price_changed) %}
-<div class="bx al"><strong>📢 前回からの変動</strong><br>
-{% for p in changes.removed %}・<strong style="color:var(--r)">成約</strong>: {{ p.get('title','') }} {{ p.get('price','?') }}万円<br>{% endfor %}
-{% for p in changes.new %}・<strong style="color:var(--g)">新規</strong>: {{ p.get('title','') }} {{ p.get('price','?') }}万円{% if p.get('yield_pct') %}（{{ p.yield_pct }}%）{% endif %}<br>{% endfor %}
-{% for p in changes.price_changed %}・<strong>価格変更</strong>: {{ p.get('title','') }} {{ p.prev_price }}万→{{ p.price }}万<br>{% endfor %}
+<div class="bx al"><strong>📢 変動</strong><br>
+{% for p in changes.removed %}・<strong style="color:var(--r)">成約</strong>: {{ p.get('title','')[:40] }} {{ p.get('price','?') }}万<br>{% endfor %}
+{% for p in changes.new %}・<strong style="color:var(--g)">新規</strong>: {{ p.get('title','')[:40] }} {{ p.get('price','?') }}万{% if p.get('yield_pct') %}（{{ p.yield_pct }}%）{% endif %}<br>{% endfor %}
+{% for p in changes.price_changed %}・<strong>価格変更</strong>: {{ p.get('title','')[:30] }} {{ p.prev_price }}→{{ p.price }}万<br>{% endfor %}
 </div>{% endif %}
 
-<!-- ========== カテゴリ別賃料相場 ========== -->
+<!-- 地図 -->
+<h2>📍 物件マップ</h2>
+<div id="map"></div>
+<div class="map-legend">
+{% for ck, ct in categories.items() %}
+<span><span class="dot" style="background:{{ ct.color }}"></span>{{ ct.icon }} {{ ct.label }}</span>
+{% endfor %}
+</div>
+
+<!-- カテゴリ別賃料相場 -->
 {% for ck, rbc in rent_by_category.items() %}
 <div class="rent-section" id="rent-{{ ck }}" onclick="this.classList.toggle('open')">
 <div class="rent-title">{{ rbc.label }} <span>▼</span></div>
@@ -82,21 +91,19 @@ h2{font-family:Georgia,serif;font-size:16px;font-weight:700;margin:16px 0 8px;pa
 <table class="rt">
 <tr><th>区</th>{% for col in rbc.columns %}<th>{{ col }}</th>{% endfor %}</tr>
 {% for ward, vals in rbc.data.items() %}
-<tr><td><strong>{{ ward }}</strong></td>{% for col in rbc.columns %}<td>{{ vals.get(col, '-') }}{% if col != '坪単価' and vals.get(col, '-') is number %}万{% endif %}</td>{% endfor %}</tr>
+<tr><td><strong>{{ ward }}</strong></td>{% for col in rbc.columns %}<td>{{ vals.get(col, '-') }}{% if vals.get(col) is number and col != '坪単価' and '坪単価' not in col %}万{% endif %}</td>{% endfor %}</tr>
 {% endfor %}
-</table>
-</div>
-</div>
+</table></div></div>
 {% endfor %}
 
-<!-- ========== カテゴリタブ ========== -->
+<!-- カテゴリタブ -->
 <div class="tabs" id="tabs">
 {% for ck,ct in categories.items() %}
-<button onclick="showCat('{{ ck }}')" class="{{ 'on' if loop.first }}" data-c="{{ ck }}">{{ ct.label }}{% if data_summary.get(ck) %} ({{ data_summary[ck].get('in_budget',0) }}){% endif %}</button>
+<button onclick="showCat('{{ ck }}')" class="{{ 'on' if loop.first }}" data-c="{{ ck }}">{{ ct.icon }}{{ ct.label }}{% if data_summary.get(ck) %}({{ data_summary[ck].get('in_budget',0) }}){% endif %}</button>
 {% endfor %}
 </div>
 
-<!-- ========== 物件カード ========== -->
+<!-- 物件カード -->
 {% for ck,rs in results.items() %}
 <div class="cs" data-cat="{{ ck }}" style="{{ '' if loop.first else 'display:none' }}">
 {% if rs|length == 0 %}
@@ -106,52 +113,81 @@ h2{font-family:Georgia,serif;font-size:16px;font-weight:700;margin:16px 0 8px;pa
 <div class="cd {{ 'ob' if p.get('over_budget') }}" id="c-{{ ck }}-{{ loop.index }}">
 <div class="ch" onclick="tog('c-{{ ck }}-{{ loop.index }}')">
 <div class="tr">
-<span class="rk {{ 'rk'~p.rank if p.rank <= 5 else 'rkx' }}">{{ p.rank }}</span>
-<span class="tt">{{ p.get('title','物件名不明') }}</span>
+<span class="rk {{ 'rk'~p.rank if p.rank|default(99) <= 5 else 'rkx' }}">{{ p.rank|default('?') }}</span>
+<span class="tt">{{ p.get('title','物件名不明')[:50] }}</span>
 {% if p.get('is_new') %}<span class="bg bgn">NEW</span>{% endif %}
 {% if p.get('over_budget') %}<span class="bg bgo">予算超</span>{% endif %}
-<span style="font-size:14px;color:var(--lt)">▼</span>
-</div>
+<span style="font-size:14px;color:var(--lt)">▼</span></div>
 <div class="mr">
 <span>📍{{ p.get('address', p.get('ward','')) }}</span>
-<span>🚉{{ p.get('station','不明') }}</span>
+<span>🚉{{ p.get('station','') }}</span>
 {% if p.get('size') %}<span>📐{{ p.size }}㎡</span>{% endif %}
+{% if p.get('land_size') %}<span>🏞️{{ p.land_size }}㎡(土地)</span>{% endif %}
 {% if p.get('built') %}<span>🏗{{ p.built }}</span>{% endif %}
+{% if p.get('total_units') %}<span>🚪{{ p.total_units }}戸</span>{% endif %}
 </div>
 <div class="pr">
 <span class="pv" {% if p.get('over_budget') %}style="color:#b08050"{% endif %}>{{ "{:,}".format(p.price|default(0)|int) }}<span class="u">万円</span></span>
 {% if p.get('yield_pct') %}<span class="yv">利回り{{ p.yield_pct }}%</span>{% endif %}
 {% if p.get('floor') %}<span style="font-size:11px;color:#a09080">{{ p.floor }}</span>{% endif %}
 </div>
-<div class="sb"><div class="st"><div class="sf" style="width:{{ p.score }}%;background:{{ '#c0392b' if p.score>=90 else '#d4782b' if p.score>=80 else '#8a7a5e' }}"></div></div><span class="sn" style="color:{{ '#c0392b' if p.score>=90 else '#d4782b' if p.score>=80 else '#8a7a5e' }}">{{ p.score }}</span></div>
+<div class="sb"><div class="st"><div class="sf" style="width:{{ p.score|default(0) }}%;background:{{ '#c0392b' if p.score|default(0)>=90 else '#d4782b' if p.score|default(0)>=80 else '#8a7a5e' }}"></div></div><span class="sn" style="color:{{ '#c0392b' if p.score|default(0)>=90 else '#d4782b' if p.score|default(0)>=80 else '#8a7a5e' }}">{{ p.score|default('?') }}</span></div>
 </div>
 <div class="dt">
 <div class="dg"><div><div class="dl">想定テナント</div><div class="dv">{{ p.get('tenant_type','') }}</div></div><div><div class="dl">想定賃料</div><div class="er">{{ p.get('estimated_rent','') }}</div></div></div>
 {% if p.get('rent_reference') %}<div style="margin-bottom:10px"><div class="dl">賃料参考データ</div><div class="at">{{ p.rent_reference }}</div></div>{% endif %}
 <div style="margin-bottom:10px"><div class="dl">分析</div><div class="at">{{ p.get('analysis','') }}</div></div>
 <div class="pc"><div><h4 class="p">✓ メリット</h4>{% for i in p.get('pros',[]) %}<div>・{{ i }}</div>{% endfor %}</div><div><h4 class="c2">△ リスク</h4>{% for i in p.get('cons',[]) %}<div>・{{ i }}</div>{% endfor %}</div></div>
-{% if p.get('loan_analysis') %}{% set la=p.loan_analysis %}<div class="lb {{ 'la' if la.feasibility=='A' else 'lbb' if la.feasibility=='B' else 'lc' }}"><strong>融資: {{ la.feasibility|default('?') }}</strong> {{ la.reason|default('') }}{% if la.get('recommended_plan') %}{% set rp=la.recommended_plan %}<br>自己{{ rp.self_fund|default(0) }}万/融資{{ rp.loan|default(0) }}万/月返済{{ rp.monthly_repay|default(0) }}万/DSCR{{ rp.dscr|default(0) }}倍{% endif %}</div>{% endif %}
-<div class="fb">{% if p.get('loan_analysis',{}).get('recommended_plan') %}{% set rp=p.loan_analysis.recommended_plan %}<strong>資金計画:</strong> 自己{{ "{:,}".format(rp.self_fund|default(0)|int) }}万/融資{{ "{:,}".format(rp.loan|default(0)|int) }}万/計{{ "{:,}".format(p.price|default(0)|int) }}万{% if p.get('over_budget') %}<span style="color:#c03030;font-weight:700"> ※融資増額必要</span>{% endif %}{% endif %}</div>
+{% if p.get('loan_analysis') %}{% set la=p.loan_analysis %}<div class="lb {{ 'la' if la.feasibility|default('')=='A' else 'lbb' if la.feasibility|default('')=='B' else 'lc' }}"><strong>融資: {{ la.feasibility|default('?') }}</strong> {{ la.reason|default('') }}{% if la.get('recommended_plan') %}{% set rp=la.recommended_plan %}<br>自己{{ rp.self_fund|default(0) }}万/融資{{ rp.loan|default(0) }}万/月返済{{ rp.monthly_repay|default(0) }}万/DSCR{{ rp.dscr|default(0) }}倍{% endif %}</div>{% endif %}
+<div class="fb">{% if p.get('loan_analysis',{}).get('recommended_plan') %}{% set rp=p.loan_analysis.recommended_plan %}<strong>資金計画:</strong> 自己{{ "{:,}".format(rp.self_fund|default(0)|int) }}万/融資{{ "{:,}".format(rp.loan|default(0)|int) }}万/計{{ "{:,}".format(p.price|default(0)|int) }}万{% if p.get('over_budget') %}<span style="color:#c03030;font-weight:700"> ※予算超</span>{% endif %}{% endif %}</div>
 <a href="{{ p.url }}" target="_blank" class="lnk">{{ p.get('source','') }}で詳細 →</a>
 </div></div>
 {% endfor %}
 </div>{% endfor %}
 
-<!-- ========== 検索リンク ========== -->
+<!-- 検索リンク -->
 <div class="ls"><div class="lsh" onclick="document.getElementById('lb').style.display=document.getElementById('lb').style.display==='none'?'block':'none'"><span>検索リンク集</span><span>▼</span></div>
 <div id="lb" style="display:none;margin-top:8px">
-{% for wk,wn in wards.items() %}<a href="https://www.kenbiya.com/pp6/s/tokyo/{{ wk }}/" target="_blank" class="li" style="color:#c47a3a">健美家 {{ wn }} 店舗</a>{% endfor %}
-{% for wk,wn in wards.items() %}<a href="https://www.kenbiya.com/pp1/s/tokyo/{{ wk }}/" target="_blank" class="li" style="color:#c47a3a">健美家 {{ wn }} マンション</a>{% endfor %}
+{% for wk,wn in wards.items() %}
+{% for ck,ct in categories.items() %}
+<a href="https://www.kenbiya.com/{{ ct.kenbiya_path }}/s/tokyo/{{ wk }}/" target="_blank" class="li" style="color:{{ ct.color }}">{{ ct.icon }} {{ wn }} {{ ct.label }}</a>
+{% endfor %}
+{% endfor %}
 <a href="https://house.goo.ne.jp/toushi/office/area_tokyo.html" target="_blank" class="li" style="color:var(--bl)">goo不動産</a>
 <a href="https://www.athome.co.jp/buy_store/tokyo/" target="_blank" class="li" style="color:#3a7ac4">アットホーム</a>
 <a href="https://www.rakumachi.jp/syuuekibukken/area/prefecture/dim2002/" target="_blank" class="li" style="color:#5a9a3a">楽待</a>
 </div></div>
 
-<div class="dis">⚠ {{ report_date }}時点のWeb公開情報に基づくAI自動分析（GitHub Actions + Claude API）。同一マンション複数戸の大量売出しは1件に集約して表示。融資適格度はAI推定であり実際の融資可否は金融機関審査によります。購入前に現地確認・重説・融資審査を必ず実施してください。</div>
+<div class="dis">⚠ {{ report_date }}時点のWeb公開情報に基づくAI自動分析（GitHub Actions + Claude API）。地図座標は国土地理院API＋AI推定。融資適格度はAI推定。購入前に現地確認・重説・融資審査を必ず実施してください。</div>
 </div>
+
 <script>
 function showCat(c){document.querySelectorAll('.cs').forEach(s=>s.style.display='none');document.querySelector('[data-cat="'+c+'"]').style.display='block';document.querySelectorAll('#tabs button').forEach(b=>b.classList.remove('on'));document.querySelector('#tabs button[data-c="'+c+'"]').classList.add('on')}
 function tog(id){document.getElementById(id).classList.toggle('open')}
-document.addEventListener('DOMContentLoaded',()=>{const f=document.querySelector('.cd');if(f)f.classList.add('open')})
+document.addEventListener('DOMContentLoaded',()=>{
+  const f=document.querySelector('.cd');if(f)f.classList.add('open');
+  // Leaflet地図
+  const map=L.map('map').setView([35.72,139.82],12);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+    attribution:'&copy; OpenStreetMap',maxZoom:18
+  }).addTo(map);
+  const markers={{ markers_json }};
+  markers.forEach(m=>{
+    const icon=L.divIcon({
+      className:'',
+      html:'<div style="background:'+m.color+';color:#fff;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.3)">'+m.icon+'</div>',
+      iconSize:[28,28],iconAnchor:[14,14],popupAnchor:[0,-16]
+    });
+    L.marker([m.lat,m.lng],{icon:icon}).addTo(map).bindPopup(
+      '<div style="font-size:12px;min-width:200px">'+
+      '<strong>'+m.title.substring(0,40)+'</strong><br>'+
+      '<span style="font-size:16px;font-weight:800;color:'+m.color+'">'+m.price.toLocaleString()+'万円</span>'+
+      (m.yield_pct?' <span style="color:#2d7a30;font-weight:700">'+m.yield_pct+'%</span>':'')+
+      '<br>🚉'+m.station+
+      '<br>スコア: <strong>'+m.score+'</strong>/100'+
+      '<br><a href="'+m.url+'" target="_blank" style="color:'+m.color+'">詳細→</a></div>'
+    );
+  });
+});
 </script>
 </body></html>

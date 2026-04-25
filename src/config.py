@@ -1,10 +1,12 @@
 JOTO_WARDS = {"taito-ku":"台東区","sumida-ku":"墨田区","koto-ku":"江東区","arakawa-ku":"荒川区","adachi-ku":"足立区","katsushika-ku":"葛飾区","edogawa-ku":"江戸川区"}
 
-# 表示順: マンション → 戸建て → 店舗
+# 表示順: マンション → 戸建て → 中古アパート → 中古ビル → 店舗
 PROPERTY_CATEGORIES = {
-    "condo":{"label":"区分マンション","kenbiya_path":"pp1","budget_max":50000000},
-    "house":{"label":"戸建て","kenbiya_path":"pp3","budget_max":50000000},
-    "store":{"label":"売り店舗・事務所","kenbiya_path":"pp6","budget_max":50000000},
+    "condo":{"label":"区分マンション","kenbiya_path":"pp1","color":"#2563eb","icon":"🏢"},
+    "house":{"label":"戸建て","kenbiya_path":"pp3","color":"#16a34a","icon":"🏠"},
+    "apart":{"label":"中古アパート（一棟）","kenbiya_path":"pp2","color":"#9333ea","icon":"🏘️"},
+    "building":{"label":"中古ビル（一棟）","kenbiya_path":"pp5","color":"#ea580c","icon":"🏗️"},
+    "store":{"label":"売り店舗・事務所","kenbiya_path":"pp6","color":"#dc2626","icon":"🏪"},
 }
 
 def kenbiya_urls():
@@ -22,7 +24,7 @@ def suumo_rent_urls():
            "足立区":"adachi","葛飾区":"katsushika","江戸川区":"edogawa"}
     return [{"ward":w,"url":f"{base}{c}/"} for w,c in codes.items()]
 
-BUDGET={"self_fund_max":20000000,"loan_max":30000000,"total_max":50000000}
+BUDGET={"self_fund_max":20000000,"loan_max":50000000,"total_max":70000000}
 LOAN_PARAMS={"interest_rate":0.025,"term_years":25,"ltv_max":0.80,"dscr_min":1.20}
 SCORING_WEIGHTS={"location":30,"yield_return":20,"tenant_demand":20,"future_value":15,"capital_eff":15}
 CLAUDE_MODEL="claude-sonnet-4-6"
@@ -30,12 +32,11 @@ CLAUDE_MAX_TOKENS=8000
 OUTPUT_DIR="output"
 DATA_DIR="data"
 
-# カテゴリ別の賃料相場（フォールバック）
 RENT_DATA_BY_CATEGORY = {
     "condo": {
-        "label": "区分マンション賃料相場（万円/月）",
-        "columns": ["1R","1K","1DK","1LDK","2LDK","3LDK"],
-        "data": {
+        "label":"区分マンション賃料相場（万円/月）",
+        "columns":["1R","1K","1DK","1LDK","2LDK","3LDK"],
+        "data":{
             "台東区":{"1R":9.5,"1K":10.2,"1DK":11.5,"1LDK":14.8,"2LDK":19.5,"3LDK":24.0},
             "墨田区":{"1R":8.8,"1K":9.5,"1DK":10.5,"1LDK":13.5,"2LDK":17.0,"3LDK":21.0},
             "江東区":{"1R":9.2,"1K":10.0,"1DK":11.0,"1LDK":14.0,"2LDK":18.5,"3LDK":23.0},
@@ -46,9 +47,9 @@ RENT_DATA_BY_CATEGORY = {
         }
     },
     "house": {
-        "label": "戸建て賃料相場（万円/月）",
-        "columns": ["2LDK","3LDK","4LDK"],
-        "data": {
+        "label":"戸建て賃料相場（万円/月）",
+        "columns":["2LDK","3LDK","4LDK"],
+        "data":{
             "台東区":{"2LDK":22.0,"3LDK":28.0,"4LDK":35.0},
             "墨田区":{"2LDK":18.0,"3LDK":23.0,"4LDK":28.0},
             "江東区":{"2LDK":20.0,"3LDK":25.0,"4LDK":30.0},
@@ -58,10 +59,36 @@ RENT_DATA_BY_CATEGORY = {
             "江戸川区":{"2LDK":12.0,"3LDK":14.5,"4LDK":17.5},
         }
     },
+    "apart": {
+        "label":"一棟アパート賃料相場（万円/戸・月）",
+        "columns":["1R","1K","1DK","2DK"],
+        "data":{
+            "台東区":{"1R":8.5,"1K":9.0,"1DK":10.0,"2DK":12.0},
+            "墨田区":{"1R":7.5,"1K":8.0,"1DK":9.0,"2DK":11.0},
+            "江東区":{"1R":8.0,"1K":8.5,"1DK":9.5,"2DK":11.5},
+            "荒川区":{"1R":7.0,"1K":7.5,"1DK":8.5,"2DK":10.0},
+            "足立区":{"1R":5.5,"1K":6.0,"1DK":7.0,"2DK":8.5},
+            "葛飾区":{"1R":5.3,"1K":5.8,"1DK":6.5,"2DK":8.0},
+            "江戸川区":{"1R":5.5,"1K":6.0,"1DK":6.8,"2DK":8.0},
+        }
+    },
+    "building": {
+        "label":"一棟ビル賃料相場（万円/坪）",
+        "columns":["坪単価（事務所）","坪単価（店舗1F）"],
+        "data":{
+            "台東区":{"坪単価（事務所）":1.5,"坪単価（店舗1F）":2.5},
+            "墨田区":{"坪単価（事務所）":1.2,"坪単価（店舗1F）":2.0},
+            "江東区":{"坪単価（事務所）":1.3,"坪単価（店舗1F）":2.2},
+            "荒川区":{"坪単価（事務所）":1.0,"坪単価（店舗1F）":1.6},
+            "足立区":{"坪単価（事務所）":0.8,"坪単価（店舗1F）":1.3},
+            "葛飾区":{"坪単価（事務所）":0.7,"坪単価（店舗1F）":1.2},
+            "江戸川区":{"坪単価（事務所）":0.7,"坪単価（店舗1F）":1.2},
+        }
+    },
     "store": {
-        "label": "店舗・事務所賃料相場（万円/坪）",
-        "columns": ["坪単価","20㎡","40㎡","60㎡"],
-        "data": {
+        "label":"店舗・事務所賃料相場（万円/坪）",
+        "columns":["坪単価","20㎡","40㎡","60㎡"],
+        "data":{
             "台東区":{"坪単価":2.2,"20㎡":"11〜14","40㎡":"22〜28","60㎡":"33〜42"},
             "墨田区":{"坪単価":1.8,"20㎡":"9〜12","40㎡":"18〜24","60㎡":"27〜36"},
             "江東区":{"坪単価":2.0,"20㎡":"10〜13","40㎡":"20〜26","60㎡":"30〜39"},
