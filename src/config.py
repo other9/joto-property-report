@@ -16,7 +16,7 @@ def suumo_rent_urls():
 BUDGET={"self_fund_max":20000000,"loan_max":30000000,"total_max":50000000}
 LOAN_PARAMS={"interest_rate":0.025,"term_years":25,"ltv_max":0.80,"dscr_min":1.20}
 SCORING_WEIGHTS={"location":30,"yield_return":20,"tenant_demand":20,"future_value":15,"capital_eff":15}
-CLAUDE_MODEL="claude-sonnet-4-20250514"
+CLAUDE_MODEL="claude-sonnet-4-6"
 CLAUDE_MAX_TOKENS=8000
 OUTPUT_DIR="output"
 DATA_DIR="data"
