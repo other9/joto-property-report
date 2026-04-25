@@ -1,7 +1,10 @@
-"""健美家スクレイパー - 詳細ページ個別取得方式
+"""健美家スクレイパー - 詳細ページ個別取得（最適化版）
 
-一覧ページからURLだけ収集し、各物件の詳細ページを個別にフェッチすることで
-URLと物件情報の紐付けを100%正確にする。
+取得量を制限してGitHub Actionsの30分タイムアウト内に収める。
+- 一覧ページ: 21ページ（7区×3カテゴリ）
+- 詳細ページ: 最大5件/区×カテゴリ = 最大105件
+- ディレイ: 1.5秒
+- 概算: 21×1.5 + 105×1.5 + 賃料7×1.5 ≒ 3.3分 + API3分 ≒ 7分
 """
 import json,os,re,time,logging
 from datetime import datetime,timezone,timedelta
@@ -17,186 +20,133 @@ HEADERS={
     "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
     "Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
     "Accept-Language":"ja,en;q=0.9",
-    "Accept-Encoding":"gzip, deflate, br",
 }
-DELAY=3
-MAX_DETAIL_PER_CATEGORY=20  # カテゴリ×区あたりの詳細取得上限
+DELAY=1.5
+MAX_DETAIL_PER_WARD=5  # 区×カテゴリあたり最大5件
 
-# ═══════════════════════════════════════════
-# STEP 1: 一覧ページからURLだけ収集
-# ═══════════════════════════════════════════
 def collect_urls_from_list(url):
-    """一覧ページから /re_ 物件URLだけを収集（テキスト解析しない）"""
+    """一覧ページからURLだけ収集"""
     urls=[]
     try:
-        resp=requests.get(url,headers=HEADERS,timeout=30)
-        log.info(f"  LIST {url} -> {resp.status_code}")
-        resp.raise_for_status()
+        resp=requests.get(url,headers=HEADERS,timeout=20)
+        if resp.status_code!=200:
+            log.warning(f"  LIST {resp.status_code}: {url}");return urls
         soup=BeautifulSoup(resp.text,"lxml")
     except Exception as e:
-        log.error(f"  LIST FAILED {url}: {e}");return urls
+        log.error(f"  LIST FAIL: {e}");return urls
     seen=set()
     for link in soup.select("a[href*='/re_']"):
         href=link.get("href","")
         if "/re_" not in href:continue
-        full_url=href if href.startswith("http") else f"https://www.kenbiya.com{href}"
-        if full_url not in seen:
-            seen.add(full_url);urls.append(full_url)
-    log.info(f"  → {len(urls)} URLs collected")
+        full=href if href.startswith("http") else f"https://www.kenbiya.com{href}"
+        if full not in seen:seen.add(full);urls.append(full)
     return urls
 
-# ═══════════════════════════════════════════
-# STEP 2: 詳細ページから物件情報を取得
-# ═══════════════════════════════════════════
-def fetch_detail_page(url,category,ward):
-    """物件詳細ページをフェッチしてパース"""
+def fetch_detail(url,category,ward):
+    """詳細ページから物件情報を取得"""
     try:
-        resp=requests.get(url,headers=HEADERS,timeout=30)
-        if resp.status_code!=200:
-            log.warning(f"  DETAIL {resp.status_code}: {url}");return None
-        text=resp.text
-    except Exception as e:
-        log.warning(f"  DETAIL FAILED {url}: {e}");return None
+        resp=requests.get(url,headers=HEADERS,timeout=20)
+        if resp.status_code!=200:return None
+        soup=BeautifulSoup(resp.text,"lxml")
+        t=soup.get_text(separator=" · ",strip=True)
+    except:return None
 
-    # 詳細ページのテキストを構造化パース
-    # 健美家詳細ページ: "価格 · XXXX万円 · 満室時利回り · X.XX％ · 交通 · ... · 住所 · ... · 築年月 · ..."
-    soup=BeautifulSoup(text,"lxml")
-    page_text=soup.get_text(separator=" · ",strip=True)
-
-    # 価格
-    pm=re.search(r"価格\s*·?\s*([\d,]+)万円",page_text)
+    pm=re.search(r"価格\s*·?\s*([\d,]+)万円",t)
     if not pm:return None
     price=int(pm.group(1).replace(",",""))
 
-    # 利回り
-    ym=re.search(r"利回り\s*·?\s*([\d.]+)[％%]",page_text)
+    ym=re.search(r"利回り\s*·?\s*([\d.]+)[％%]",t)
     yield_pct=float(ym.group(1)) if ym else None
 
-    # 交通（駅名・徒歩）
-    tm=re.search(r"交通\s*·?\s*(.+?)(?:\s*·\s*満室|$)",page_text)
-    station=None;walk_min=None
-    if tm:
-        transport=tm.group(1)
-        sm=re.search(r"(\S+駅)\s*徒歩(\d+)分",transport)
-        if sm:
-            station=f"{sm.group(1)} 徒歩{sm.group(2)}分"
-            walk_min=int(sm.group(2))
+    sm=re.search(r"(\S+駅)\s*徒歩(\d+)分",t)
+    station=f"{sm.group(1)} 徒歩{sm.group(2)}分" if sm else None
+    walk_min=int(sm.group(2)) if sm else None
 
-    # 住所
-    am=re.search(r"住所\s*·?\s*東京都([\w区][\w\d丁目\-]+)",page_text)
+    am=re.search(r"住所\s*·?\s*東京都([\w区][\w\d丁目\-]*)",t)
     address=f"東京都{am.group(1)}" if am else f"東京都{ward}"
 
-    # 物件名
-    nm=re.search(r"物件名\s*·?\s*(\S+)",page_text)
-    prop_name=nm.group(1) if nm else ""
-
-    # 築年月
-    bm=re.search(r"築年月\s*·?\s*(\d{4})年(\d{1,2})月",page_text)
+    bm=re.search(r"築年月\s*·?\s*(\d{4})年(\d{1,2})月",t)
     built=f"{bm.group(1)}年{bm.group(2)}月" if bm else None
 
-    # 建物構造/階数
-    fm=re.search(r"構造/階数\s*·?\s*(\S+造)(\d+)階/(\d+)階建",page_text)
-    structure=""
-    floor=None
-    if fm:
-        structure=fm.group(1)
-        floor=f"{fm.group(2)}階／{fm.group(3)}階建"
-
-    # 専有面積
-    szm=re.search(r"(?:専有面積|面積)\s*·?\s*([\d.]+)\s*m[²㎡]",page_text)
+    szm=re.search(r"(?:専有面積|面積)\s*·?\s*([\d.]+)\s*m[²㎡]",t)
     size=float(szm.group(1)) if szm else None
 
-    # 間取り
-    lm=re.search(r"間取り\s*·?\s*(\w+)",page_text)
+    fm=re.search(r"(\S+造)(\d+)階[/／](\d+)階建",t)
+    floor=f"{fm.group(2)}階／{fm.group(3)}階建" if fm else None
+    structure=fm.group(1) if fm else ""
+
+    lm=re.search(r"間取り\s*·?\s*(\w+)",t)
     layout=lm.group(1) if lm else ""
 
-    # タイトル
-    # ページタイトルから取得（「台東区 2,900万円 3.80% 区分マンション」形式）
-    title_tag=soup.find("title")
-    if title_tag and title_tag.string:
-        title=title_tag.string.split("｜")[0].strip()
-    else:
-        title=f"{ward} {price}万円 {prop_name}"
+    nm=re.search(r"物件名\s*·?\s*(\S+)",t)
+    prop_name=nm.group(1) if nm else ""
 
-    # 物件名があればタイトルに含める
+    # タイトル: ページtitleから
+    tt=soup.find("title")
+    title=tt.string.split("｜")[0].strip() if tt and tt.string else f"{ward} {price}万円"
     if prop_name and prop_name not in title:
         title=f"{prop_name}（{title}）"
 
-    return {
-        "url":url,"source":"健美家／HOMES","category":category,"ward":ward,
-        "title":title,"price":price,"yield_pct":yield_pct,"size":size,
-        "built":built,"station":station,"walk_min":walk_min,"floor":floor,
-        "structure":structure,"layout":layout,"address":address,
-        "prop_name":prop_name,"scraped_at":TODAY,
-    }
+    return {"url":url,"source":"健美家／HOMES","category":category,"ward":ward,
+            "title":title,"price":price,"yield_pct":yield_pct,"size":size,
+            "built":built,"station":station,"walk_min":walk_min,"floor":floor,
+            "structure":structure,"layout":layout,"address":address,
+            "prop_name":prop_name,"scraped_at":TODAY}
 
-# ═══════════════════════════════════════════
-# STEP 3: goo不動産（従来方式、店舗のみ）
-# ═══════════════════════════════════════════
 def scrape_goo():
     props=[]
-    url="https://house.goo.ne.jp/toushi/office/area_tokyo.html"
     try:
-        r=requests.get(url,headers=HEADERS,timeout=30)
-        log.info(f"  GET goo -> {r.status_code}")
-        r.raise_for_status();soup=BeautifulSoup(r.text,"lxml")
-    except Exception as e:
-        log.error(f"  goo failed: {e}");return props
+        r=requests.get("https://house.goo.ne.jp/toushi/office/area_tokyo.html",headers=HEADERS,timeout=20)
+        if r.status_code!=200:return props
+        soup=BeautifulSoup(r.text,"lxml")
+    except:return props
     seen=set()
     for link in soup.select("a[href*='/toushi/detail/']"):
         href=link.get("href","")
         if href in seen:continue
         seen.add(href)
-        full_url=f"https://house.goo.ne.jp{href}" if href.startswith("/") else href
+        full=f"https://house.goo.ne.jp{href}" if href.startswith("/") else href
         parent=link
         for _ in range(6):
             if parent.parent:parent=parent.parent
         text=parent.get_text(separator="|",strip=True)
         ward=next((w for w in JOTO_WARDS.values() if w in text),None)
         if not ward:continue
-        # gooは一覧からパース（詳細ページ構造が異なるため）
         pm=re.search(r"([\d,]+)万円",text)
         if not pm:continue
         price=int(pm.group(1).replace(",",""))
         ym=re.search(r"([\d.]+)[％%]",text);yield_pct=float(ym.group(1)) if ym else None
         szm=re.search(r"([\d.]+)\s*m[²㎡]",text);size=float(szm.group(1)) if szm else None
         bm=re.search(r"(\d{4})年(\d{1,2})月",text);built=f"{bm.group(1)}年{bm.group(2)}月" if bm else None
-        sm=re.search(r"([\w]+駅)\s*歩?(\d+)分",text);station=f"{sm.group(1)} 徒歩{sm.group(2)}分" if sm else None
-        props.append({"url":full_url,"source":"goo不動産","category":"store","ward":ward,
+        sm=re.search(r"([\w]+駅)\s*歩?(\d+)分",text)
+        station=f"{sm.group(1)} 徒歩{sm.group(2)}分" if sm else None
+        props.append({"url":full,"source":"goo不動産","category":"store","ward":ward,
                       "title":f"{ward} {price}万円","price":price,"yield_pct":yield_pct,
                       "size":size,"built":built,"station":station,
                       "walk_min":int(sm.group(2)) if sm else None,
                       "floor":None,"address":f"東京都{ward}","scraped_at":TODAY})
-    log.info(f"  goo: {len(props)} joto props")
+    log.info(f"  goo: {len(props)} props")
     return props
 
-# ═══════════════════════════════════════════
-# 重複排除
-# ═══════════════════════════════════════════
-def dedup_properties(props):
-    seen_urls=set();stage1=[]
+def dedup(props):
+    seen_urls=set();s1=[]
     for p in props:
-        if p["url"] not in seen_urls:
-            seen_urls.add(p["url"]);stage1.append(p)
-    # 同一物件（価格+面積+築年月+区）集約
+        if p["url"] not in seen_urls:seen_urls.add(p["url"]);s1.append(p)
     groups={}
-    for p in stage1:
+    for p in s1:
         key=f"{p['ward']}_{p['price']}_{p.get('size','')}_{p.get('built','')}"
         if key not in groups:groups[key]=[]
         groups[key].append(p)
-    stage2=[]
-    for key,group in groups.items():
-        first=group[0]
-        if len(group)>1:
-            first["title"]=f"{first['title']}（他{len(group)-1}件同条件あり）"
-            log.info(f"  同一集約: {first['ward']} {first['price']}万 x{len(group)}")
-        stage2.append(first)
-    log.info(f"  dedup: {len(props)} → {len(stage1)} → {len(stage2)}")
-    return stage2
+    s2=[]
+    for key,g in groups.items():
+        first=g[0]
+        if len(g)>1:
+            first["title"]=f"{first['title']}（他{len(g)-1}件同条件あり）"
+            log.info(f"  集約: {first['ward']} {first['price']}万 x{len(g)}")
+        s2.append(first)
+    log.info(f"  dedup: {len(props)}→{len(s1)}→{len(s2)}")
+    return s2
 
-# ═══════════════════════════════════════════
-# 賃料相場
-# ═══════════════════════════════════════════
 def get_fallback_rent(ward):
     condo=RENT_DATA_BY_CATEGORY["condo"]["data"].get(ward,{})
     store=RENT_DATA_BY_CATEGORY["store"]["data"].get(ward,{})
@@ -211,7 +161,7 @@ def scrape_rent():
     for item in suumo_rent_urls():
         w=item["ward"]
         try:
-            r=requests.get(item["url"],headers=HEADERS,timeout=30)
+            r=requests.get(item["url"],headers=HEADERS,timeout=20)
             if r.status_code==200:
                 text=r.text;data=get_fallback_rent(w)
                 for ly,pat in {"1R":r"1R[^0-9]*([\d.]+)万","1K":r"1K[^0-9]*([\d.]+)万",
@@ -225,49 +175,38 @@ def scrape_rent():
         time.sleep(DELAY)
     return rent
 
-# ═══════════════════════════════════════════
-# メイン
-# ═══════════════════════════════════════════
 def main():
     Path(DATA_DIR).mkdir(exist_ok=True)
     all_props=[]
+    total_detail_fetched=0
 
-    log.info("=== STEP1: 一覧ページからURL収集 ===")
-    url_pool={}  # {category: [(url, ward), ...]}
+    log.info("=== 一覧→詳細 取得開始 ===")
     for t in kenbiya_urls():
         cat=t["category"];ward=t["ward"]
-        if cat not in url_pool:url_pool[cat]=[]
         urls=collect_urls_from_list(t["url"])
-        for u in urls:
-            url_pool[cat].append((u,ward))
+        log.info(f"  {ward} {cat}: {len(urls)} URLs")
         time.sleep(DELAY)
 
-    log.info("=== STEP2: 詳細ページを個別取得 ===")
-    for cat,url_list in url_pool.items():
-        # URL重複排除
-        seen=set();unique_urls=[]
-        for u,w in url_list:
-            if u not in seen:seen.add(u);unique_urls.append((u,w))
-        log.info(f"  {cat}: {len(unique_urls)} unique URLs")
-
+        # 区×カテゴリあたり最大5件の詳細を取得
         fetched=0
-        for url,ward in unique_urls:
-            if fetched>=MAX_DETAIL_PER_CATEGORY*len(JOTO_WARDS):
-                log.info(f"  {cat}: 上限到達 ({fetched}件)");break
-            prop=fetch_detail_page(url,cat,ward)
+        for u in urls:
+            if fetched>=MAX_DETAIL_PER_WARD:break
+            prop=fetch_detail(u,cat,ward)
             if prop:
                 all_props.append(prop)
                 fetched+=1
+                total_detail_fetched+=1
             time.sleep(DELAY)
-        log.info(f"  {cat}: {fetched}件取得完了")
 
-    log.info("=== STEP3: goo不動産 ===")
+    log.info(f"  健美家合計: {total_detail_fetched}件の詳細取得完了")
+
+    log.info("=== goo不動産 ===")
     all_props.extend(scrape_goo())
 
-    log.info("=== STEP4: 重複排除 ===")
-    uniq=dedup_properties(all_props)
+    log.info("=== 重複排除 ===")
+    uniq=dedup(all_props)
 
-    log.info("=== STEP5: 賃料相場 ===")
+    log.info("=== 賃料相場 ===")
     rent=scrape_rent()
 
     wc={w:{c:sum(1 for p in uniq if p["ward"]==w and p["category"]==c) for c in PROPERTY_CATEGORIES} for w in JOTO_WARDS.values()}
