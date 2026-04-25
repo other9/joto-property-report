@@ -1,0 +1,114 @@
+{
+  "analyzed_at": "2026-04-25",
+  "results": {
+    "store": [],
+    "condo": [],
+    "house": []
+  },
+  "rent_data": {
+    "台東区": {
+      "1R": 9.5,
+      "1K": 10.2,
+      "1LDK": 14.8,
+      "2LDK": 19.5,
+      "3LDK": 24.0,
+      "store_tsubo": 2.2
+    },
+    "墨田区": {
+      "1R": 8.8,
+      "1K": 9.5,
+      "1LDK": 13.5,
+      "2LDK": 17.0,
+      "3LDK": 21.0,
+      "store_tsubo": 1.8
+    },
+    "江東区": {
+      "1R": 9.2,
+      "1K": 10.0,
+      "1LDK": 14.0,
+      "2LDK": 18.5,
+      "3LDK": 23.0,
+      "store_tsubo": 2.0
+    },
+    "荒川区": {
+      "1R": 7.8,
+      "1K": 8.5,
+      "1LDK": 12.0,
+      "2LDK": 15.0,
+      "3LDK": 19.0,
+      "store_tsubo": 1.5
+    },
+    "足立区": {
+      "1R": 6.5,
+      "1K": 7.2,
+      "1LDK": 10.0,
+      "2LDK": 12.5,
+      "3LDK": 15.0,
+      "store_tsubo": 1.2
+    },
+    "葛飾区": {
+      "1R": 6.3,
+      "1K": 7.0,
+      "1LDK": 9.8,
+      "2LDK": 12.0,
+      "3LDK": 14.5,
+      "store_tsubo": 1.1
+    },
+    "江戸川区": {
+      "1R": 6.5,
+      "1K": 7.0,
+      "1LDK": 10.0,
+      "2LDK": 12.0,
+      "3LDK": 14.5,
+      "store_tsubo": 1.1
+    }
+  },
+  "ward_counts": {
+    "台東区": {
+      "store": 48,
+      "condo": 50,
+      "house": 42
+    },
+    "墨田区": {
+      "store": 9,
+      "condo": 49,
+      "house": 48
+    },
+    "江東区": {
+      "store": 14,
+      "condo": 50,
+      "house": 44
+    },
+    "荒川区": {
+      "store": 6,
+      "condo": 50,
+      "house": 43
+    },
+    "足立区": {
+      "store": 9,
+      "condo": 50,
+      "house": 48
+    },
+    "葛飾区": {
+      "store": 10,
+      "condo": 50,
+      "house": 41
+    },
+    "江戸川区": {
+      "store": 16,
+      "condo": 49,
+      "house": 39
+    }
+  },
+  "budget": {
+    "self_fund_max": 20000000,
+    "loan_max": 30000000,
+    "total_max": 50000000
+  },
+  "loan_params": {
+    "interest_rate": 0.025,
+    "term_years": 25,
+    "ltv_max": 0.8,
+    "dscr_min": 1.2
+  }
+}
