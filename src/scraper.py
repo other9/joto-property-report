@@ -1,33 +1,54 @@
-import json,os,re,time,logging
+import json,os,re,time,logging,sys
 from datetime import datetime,timezone,timedelta
 from pathlib import Path
 import requests
 from bs4 import BeautifulSoup
 from config import JOTO_WARDS,PROPERTY_CATEGORIES,BUDGET,kenbiya_urls,suumo_rent_urls,DATA_DIR
+
 logging.basicConfig(level=logging.INFO,format="%(asctime)s %(levelname)s %(message)s")
 log=logging.getLogger(__name__)
 JST=timezone(timedelta(hours=9));TODAY=datetime.now(JST).strftime("%Y-%m-%d")
-HEADERS={"User-Agent":"JotoPropertyReport/1.0","Accept-Language":"ja,en;q=0.9"};DELAY=2
+HEADERS={
+    "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
+    "Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language":"ja,en;q=0.9",
+    "Accept-Encoding":"gzip, deflate, br",
+}
+DELAY=3
 
 def scrape_kenbiya_page(url,category,ward):
     props=[]
     try:
-        r=requests.get(url,headers=HEADERS,timeout=30);r.raise_for_status();soup=BeautifulSoup(r.text,"lxml")
+        resp=requests.get(url,headers=HEADERS,timeout=30)
+        log.info(f"  GET {url} -> {resp.status_code} ({len(resp.text)} bytes)")
+        resp.raise_for_status()
+        soup=BeautifulSoup(resp.text,"lxml")
     except Exception as e:
-        log.warning(f"Failed: {url}: {e}");return props
+        log.error(f"  FAILED {url}: {e}")
+        return props
+
+    # デバッグ: /re_ リンクの数を表示
+    all_links=soup.select("a[href*='/re_']")
+    log.info(f"  {ward} {category}: Found {len(all_links)} /re_ links in HTML")
+
+    if len(all_links)==0:
+        # HTMLの一部を表示して構造を確認
+        text_preview=soup.get_text()[:500].replace("\n"," ")
+        log.warning(f"  HTML preview: {text_preview}")
+
     seen=set()
-    for link in soup.select("a[href*='/re_']"):
+    for link in all_links:
         href=link.get("href","")
-        if "/re_" not in href or href in seen:continue
+        if href in seen:continue
         seen.add(href)
-        full_url=f"https://www.kenbiya.com{href}" if href.startswith("/") else href
+        full_url=href if href.startswith("http") else f"https://www.kenbiya.com{href}"
         parent=link
         for _ in range(5):
             if parent.parent:parent=parent.parent
         text=parent.get_text(separator="|",strip=True)
         prop=parse_text(text,full_url,category,ward,"健美家／HOMES")
         if prop:props.append(prop)
-    log.info(f"  {ward} {category}: {len(props)} found")
+    log.info(f"  {ward} {category}: {len(props)} properties parsed")
     return props
 
 def parse_text(text,url,category,ward,source):
@@ -45,10 +66,13 @@ def parse_text(text,url,category,ward,source):
 
 def scrape_goo():
     props=[]
+    url="https://house.goo.ne.jp/toushi/office/area_tokyo.html"
     try:
-        r=requests.get("https://house.goo.ne.jp/toushi/office/area_tokyo.html",headers=HEADERS,timeout=30);r.raise_for_status();soup=BeautifulSoup(r.text,"lxml")
+        r=requests.get(url,headers=HEADERS,timeout=30)
+        log.info(f"  GET goo -> {r.status_code} ({len(r.text)} bytes)")
+        r.raise_for_status();soup=BeautifulSoup(r.text,"lxml")
     except Exception as e:
-        log.warning(f"goo failed: {e}");return props
+        log.error(f"  goo failed: {e}");return props
     seen=set()
     for link in soup.select("a[href*='/toushi/detail/']"):
         href=link.get("href","")
@@ -89,21 +113,25 @@ def scrape_rent():
 
 def main():
     Path(DATA_DIR).mkdir(exist_ok=True);all_p=[]
-    log.info("=== 健美家 ===")
+    log.info("=== 健美家 スクレイピング開始 ===")
     for t in kenbiya_urls():
-        all_p.extend(scrape_kenbiya_page(t["url"],t["category"],t["ward"]));time.sleep(DELAY)
-    log.info("=== goo不動産 ===")
+        all_p.extend(scrape_kenbiya_page(t["url"],t["category"],t["ward"]))
+        time.sleep(DELAY)
+    log.info("=== goo不動産 スクレイピング開始 ===")
     all_p.extend(scrape_goo())
     seen=set();uniq=[]
     for p in all_p:
         if p["url"] not in seen:seen.add(p["url"]);uniq.append(p)
-    log.info("=== 賃料相場 ===")
+    log.info("=== 賃料相場 取得 ===")
     rent=scrape_rent()
     wc={w:{c:sum(1 for p in uniq if p["ward"]==w and p["category"]==c) for c in PROPERTY_CATEGORIES} for w in JOTO_WARDS.values()}
     out={"scraped_at":TODAY,"total_properties":len(uniq),"properties":uniq,"rent_data":rent,"ward_counts":wc}
     path=os.path.join(DATA_DIR,"properties.json")
     with open(path,"w",encoding="utf-8") as f:json.dump(out,f,ensure_ascii=False,indent=2)
     log.info(f"=== 完了: {len(uniq)}件 → {path} ===")
+    if len(uniq)==0:
+        log.error("⚠ 物件が0件です。スクレイピングがブロックされている可能性があります。")
+        log.error("  上のログで HTTP ステータスコードと /re_ links の数を確認してください。")
 
 if __name__=="__main__":
     main()
