@@ -1,0 +1,37 @@
+name: 城東エリア不動産レポート自動生成
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+  pages: write
+jobs:
+  generate-report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+      - run: pip install -r requirements.txt
+      - name: Scrape
+        run: python src/scraper.py
+      - name: Analyze
+        run: python src/analyzer.py
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      - name: Generate report
+        run: python src/report_generator.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: report-${{ github.run_number }}
+          path: output/
+          retention-days: 90
+      - uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./output
+          keep_files: true
