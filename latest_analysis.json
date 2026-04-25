@@ -1,7 +1,498 @@
 {
   "analyzed_at": "2026-04-25",
   "results": {
-    "store": [],
+    "store": [
+      {
+        "url": "https://www.kenbiya.com/pp6/s/tokyo/sumida-ku/re_4446494l4c/",
+        "rank": 1,
+        "score": 74,
+        "score_breakdown": {
+          "location": 22,
+          "yield_return": 18,
+          "tenant_demand": 16,
+          "future_value": 11,
+          "capital_eff": 7
+        },
+        "tenant_type": "美容室・エステサロン・学習塾・士業事務所",
+        "estimated_rent": "月額約308,000円（表面利回10%換算）",
+        "rent_reference": "墨田区店舗坪単価1.8万円／坪、46.38㎡≒14.0坪→推定月額25.2万円が相場水準。表示利回10%は月30.8万円に相当し、坪単価換算で約2.2万円／坪となり、相場比約22%割高。実勢賃料との乖離要注意。",
+        "analysis": "八丁堀駅徒歩4分・2階・1989年築（旧耐震境界年）でアクセスは良好。利回10%は帳簿上魅力的だが、墨田区店舗相場坪1.8万円に対し実現賃料は乖離のおそれあり。価格3700万円は自己資金2000万＋融資上限3000万の合計5000万以内に収まるが、2階店舗のため視認性・集客力は限定的。耐震性確認と現況賃料エビデンスが必須。",
+        "loan_analysis": {
+          "feasibility": "B",
+          "reason": "1989年築で旧耐震リスクあり。ただし八丁堀駅4分の立地良好。利回5%超のためBとする。",
+          "recommended_plan": {
+            "self_fund": 740,
+            "loan": 2960,
+            "monthly_repay": 13.2,
+            "dscr": 1.94
+          }
+        },
+        "pros": [
+          "表面利回10%と高水準で収益性の訴求力が高い",
+          "八丁堀駅徒歩4分・都心アクセス良好",
+          "価格3700万円で自己資金700万程度から投資参入可能"
+        ],
+        "cons": [
+          "1989年築で旧耐震基準に該当する可能性があり、融資条件が厳しくなるリスク",
+          "2階店舗のため視認性が低く、実勢賃料が表示利回前提賃料を下回るリスクあり"
+        ],
+        "over_budget": false,
+        "source": "健美家／HOMES",
+        "category": "store",
+        "ward": "墨田区",
+        "title": "東京都墨田区の",
+        "price": 3700,
+        "yield_pct": 10.0,
+        "size": 46.38,
+        "built": "1989年1月",
+        "station": "八丁堀駅 徒歩4分",
+        "walk_min": 4,
+        "floor": "2階／8階建",
+        "address": "東京都墨田区",
+        "scraped_at": "2026-04-25"
+      },
+      {
+        "url": "https://www.kenbiya.com/pp6/s/tokyo/sumida-ku/re_4436996uj2/",
+        "rank": 2,
+        "score": 74,
+        "score_breakdown": {
+          "location": 22,
+          "yield_return": 18,
+          "tenant_demand": 16,
+          "future_value": 11,
+          "capital_eff": 7
+        },
+        "tenant_type": "美容室・エステサロン・学習塾・士業事務所",
+        "estimated_rent": "月額約308,000円（表面利回10%換算）",
+        "rent_reference": "墨田区店舗坪単価1.8万円／坪、46.38㎡≒14.0坪→推定月額25.2万円が相場水準。表示利回10%は月30.8万円に相当し、坪単価換算で約2.2万円／坪となり、相場比約22%割高。実勢賃料との乖離要注意。",
+        "analysis": "Rank1と同一スペック（墨田区・八丁堀駅4分・46.38㎡・1989年築・3700万・利回10%）の重複掲載物件。データ内容は同一であるため評価も同等。購入検討時は同一物件の重複掲載である可能性を必ず現地確認および登記確認で精査すること。収益性・立地評価はRank1と共通。",
+        "loan_analysis": {
+          "feasibility": "B",
+          "reason": "1989年築で旧耐震リスクあり。ただし八丁堀駅4分の立地良好。利回5%超のためBとする。",
+          "recommended_plan": {
+            "self_fund": 740,
+            "loan": 2960,
+            "monthly_repay": 13.2,
+            "dscr": 1.94
+          }
+        },
+        "pros": [
+          "表面利回10%と高水準",
+          "八丁堀駅徒歩4分・都心アクセス良好",
+          "価格3700万円で投資資金効率が高い"
+        ],
+        "cons": [
+          "同一スペック物件が複数掲載されており重複掲載の疑いが強く、実在確認が必須",
+          "1989年築・2階店舗のため耐震性と集客力に懸念"
+        ],
+        "over_budget": false,
+        "source": "健美家／HOMES",
+        "category": "store",
+        "ward": "墨田区",
+        "title": "東京都墨田区の",
+        "price": 3700,
+        "yield_pct": 10.0,
+        "size": 46.38,
+        "built": "1989年1月",
+        "station": "八丁堀駅 徒歩4分",
+        "walk_min": 4,
+        "floor": "2階／8階建",
+        "address": "東京都墨田区",
+        "scraped_at": "2026-04-25"
+      },
+      {
+        "url": "https://www.kenbiya.com/pp6/s/tokyo/sumida-ku/re_44121814at/",
+        "rank": 3,
+        "score": 74,
+        "score_breakdown": {
+          "location": 22,
+          "yield_return": 18,
+          "tenant_demand": 16,
+          "future_value": 11,
+          "capital_eff": 7
+        },
+        "tenant_type": "美容室・エステサロン・学習塾・士業事務所",
+        "estimated_rent": "月額約308,000円（表面利回10%換算）",
+        "rent_reference": "墨田区店舗坪単価1.8万円／坪、46.38㎡≒14.0坪→推定月額25.2万円が相場水準。表示利回10%の前提賃料30.8万円は坪2.2万円に相当し相場を約22%上回る。",
+        "analysis": "墨田区・八丁堀駅4分・3700万・利回10%・1989年築の同一スペック重複掲載群の3件目。個別物件としての差別化要素はデータ上確認できない。複数URL掲載は媒介業者違いまたは複数区画の可能性を示す。投資判断には現況入居状況・賃貸借契約内容・建物耐震診断結果の取得が前提。",
+        "loan_analysis": {
+          "feasibility": "B",
+          "reason": "1989年築で旧耐震リスクあり。立地良好・利回5%超のためBとする。",
+          "recommended_plan": {
+            "self_fund": 740,
+            "loan": 2960,
+            "monthly_repay": 13.2,
+            "dscr": 1.94
+          }
+        },
+        "pros": [
+          "利回10%の高収益訴求",
+          "八丁堀駅4分の都心好立地",
+          "3700万円と比較的コンパクトな投資規模"
+        ],
+        "cons": [
+          "重複掲載が多く物件実態の精査が必要",
+          "旧耐震リスクと2階店舗の集客限界"
+        ],
+        "over_budget": false,
+        "source": "健美家／HOMES",
+        "category": "store",
+        "ward": "墨田区",
+        "title": "東京都墨田区の",
+        "price": 3700,
+        "yield_pct": 10.0,
+        "size": 46.38,
+        "built": "1989年1月",
+        "station": "八丁堀駅 徒歩4分",
+        "walk_min": 4,
+        "floor": "2階／8階建",
+        "address": "東京都墨田区",
+        "scraped_at": "2026-04-25"
+      },
+      {
+        "url": "https://www.kenbiya.com/pp6/s/tokyo/sumida-ku/re_4400703113/",
+        "rank": 4,
+        "score": 74,
+        "score_breakdown": {
+          "location": 22,
+          "yield_return": 18,
+          "tenant_demand": 16,
+          "future_value": 11,
+          "capital_eff": 7
+        },
+        "tenant_type": "美容室・エステサロン・学習塾・士業事務所",
+        "estimated_rent": "月額約308,000円（表面利回10%換算）",
+        "rent_reference": "墨田区店舗坪単価1.8万円／坪、14.0坪換算で相場月額25.2万円。表示賃料30.8万円は相場超過水準につきテナント継続性の確認必須。",
+        "analysis": "墨田区・八丁堀駅4分・46.38㎡・1989年築・3700万・利回10%の重複掲載4件目。データの同一性から同一物件もしくは同一棟複数区画の可能性が高い。実際の購入においては区画の特定と個別賃貸借契約の内容確認が必要。スコアは他の同スペック物件と同等。",
+        "loan_analysis": {
+          "feasibility": "B",
+          "reason": "旧耐震境界年だが八丁堀駅近・利回5%超のためB評価。",
+          "recommended_plan": {
+            "self_fund": 740,
+            "loan": 2960,
+            "monthly_repay": 13.2,
+            "dscr": 1.94
+          }
+        },
+        "pros": [
+          "高利回り10%の訴求力",
+          "都心アクセス良好な八丁堀駅4分",
+          "投資規模がコントロールしやすい3700万円"
+        ],
+        "cons": [
+          "同一条件の重複掲載が多く個別物件精査が困難",
+          "1989年築・2階という条件で融資審査が厳しくなる可能性"
+        ],
+        "over_budget": false,
+        "source": "健美家／HOMES",
+        "category": "store",
+        "ward": "墨田区",
+        "title": "東京都墨田区の",
+        "price": 3700,
+        "yield_pct": 10.0,
+        "size": 46.38,
+        "built": "1989年1月",
+        "station": "八丁堀駅 徒歩4分",
+        "walk_min": 4,
+        "floor": "2階／8階建",
+        "address": "東京都墨田区",
+        "scraped_at": "2026-04-25"
+      },
+      {
+        "url": "https://www.kenbiya.com/pp6/s/tokyo/sumida-ku/re_4396651l4w/",
+        "rank": 5,
+        "score": 74,
+        "score_breakdown": {
+          "location": 22,
+          "yield_return": 18,
+          "tenant_demand": 16,
+          "future_value": 11,
+          "capital_eff": 7
+        },
+        "tenant_type": "美容室・エステサロン・学習塾・士業事務所",
+        "estimated_rent": "月額約308,000円（表面利回10%換算）",
+        "rent_reference": "墨田区店舗坪単価1.8万円／坪。46.38㎡≒14.0坪で相場月額約25.2万円。表示利回前提の30.8万円は相場を22%上回り、テナント入替時の賃料下落リスクあり。",
+        "analysis": "同一スペック重複掲載5件目。墨田区・八丁堀駅4分・1989年築・3700万・利回10%。価格帯は投資条件内に収まり、利回水準は魅力的。ただし表示利回の前提賃料は相場を上回っており、現テナント退去後の賃料維持には注意が必要。2階という立地制約から業種選定が集客依存度の低い事務所・サービス系に限定される。",
+        "loan_analysis": {
+          "feasibility": "B",
+          "reason": "1989年築・旧耐震リスクあり。立地・利回条件からB評価。",
+          "recommended_plan": {
+            "self_fund": 740,
+            "loan": 2960,
+            "monthly_repay": 13.2,
+            "dscr": 1.94
+          }
+        },
+        "pros": [
+          "利回10%・八丁堀駅4分の高収益立地",
+          "3700万円と予算内での取得が可能",
+          "46㎡の小規模区画でテナント層が広い"
+        ],
+        "cons": [
+          "相場賃料との乖離があり空室時の賃料設定見直しリスクあり",
+          "1989年築・旧耐震の可能性で融資条件が絞られる"
+        ],
+        "over_budget": false,
+        "source": "健美家／HOMES",
+        "category": "store",
+        "ward": "墨田区",
+        "title": "東京都墨田区の",
+        "price": 3700,
+        "yield_pct": 10.0,
+        "size": 46.38,
+        "built": "1989年1月",
+        "station": "八丁堀駅 徒歩4分",
+        "walk_min": 4,
+        "floor": "2階／8階建",
+        "address": "東京都墨田区",
+        "scraped_at": "2026-04-25"
+      },
+      {
+        "url": "https://www.kenbiya.com/pp6/s/tokyo/sumida-ku/re_4381747bch/",
+        "rank": 6,
+        "score": 74,
+        "score_breakdown": {
+          "location": 22,
+          "yield_return": 18,
+          "tenant_demand": 16,
+          "future_value": 11,
+          "capital_eff": 7
+        },
+        "tenant_type": "美容室・エステサロン・学習塾・士業事務所",
+        "estimated_rent": "月額約308,000円（表面利回10%換算）",
+        "rent_reference": "墨田区店舗坪単価1.8万円／坪、14.0坪換算で相場月額25.2万円。表示賃料との差額は月約5.6万円で年間約67万円の過大計上リスク。",
+        "analysis": "同一スペック重複掲載6件目。データが完全に一致するため個別の差別化分析は困難。投資検討にあたっては健美家・HOMESの各掲載ページで詳細情報を個別確認し、区画・賃貸借契約・修繕履歴の差異を精査すること。スコアは全て同等のため掲載順での順位付け。",
+        "loan_analysis": {
+          "feasibility": "B",
+          "reason": "旧耐震リスクあり。八丁堀駅近・利回5%超でBとする。",
+          "recommended_plan": {
+            "self_fund": 740,
+            "loan": 2960,
+            "monthly_repay": 13.2,
+            "dscr": 1.94
+          }
+        },
+        "pros": [
+          "表面利回10%・八丁堀駅4分の収益立地",
+          "46㎡の使いやすい区画サイズ",
+          "予算内取得可能"
+        ],
+        "cons": [
+          "旧耐震の可能性と2階立地による集客限界",
+          "重複掲載が多く個別物件実態の確認が難しい"
+        ],
+        "over_budget": false,
+        "source": "健美家／HOMES",
+        "category": "store",
+        "ward": "墨田区",
+        "title": "東京都墨田区の",
+        "price": 3700,
+        "yield_pct": 10.0,
+        "size": 46.38,
+        "built": "1989年1月",
+        "station": "八丁堀駅 徒歩4分",
+        "walk_min": 4,
+        "floor": "2階／8階建",
+        "address": "東京都墨田区",
+        "scraped_at": "2026-04-25"
+      },
+      {
+        "url": "https://www.kenbiya.com/pp6/s/tokyo/sumida-ku/re_4376305zfl/",
+        "rank": 7,
+        "score": 74,
+        "score_breakdown": {
+          "location": 22,
+          "yield_return": 18,
+          "tenant_demand": 16,
+          "future_value": 11,
+          "capital_eff": 7
+        },
+        "tenant_type": "美容室・エステサロン・学習塾・士業事務所",
+        "estimated_rent": "月額約308,000円（表面利回10%換算）",
+        "rent_reference": "墨田区店舗坪単価1.8万円／坪、46.38㎡≒14.0坪の相場月額25.2万円に対し表示前提賃料30.8万円は22%乖離。",
+        "analysis": "同一スペック重複掲載7件目。墨田区・八丁堀駅4分・1989年築・3700万・10%利回・46.38㎡・2階。スコアは同群と同等。多数の重複URLは同一棟での複数区画分譲、または長期にわたる掲載更新の可能性がある。現地視察と登記事項確認で実態把握を最優先とすること。",
+        "loan_analysis": {
+          "feasibility": "B",
+          "reason": "旧耐震リスクあり・立地良好・利回5%超のためB。",
+          "recommended_plan": {
+            "self_fund": 740,
+            "loan": 2960,
+            "monthly_repay": 13.2,
+            "dscr": 1.94
+          }
+        },
+        "pros": [
+          "利回10%の高収益性",
+          "八丁堀駅4分の都心利便性",
+          "3700万円で投資条件内に収まる規模"
+        ],
+        "cons": [
+          "重複掲載9件は実態不明瞭で精査必須",
+          "相場賃料比22%高い前提賃料による収益過大計上リスク"
+        ],
+        "over_budget": false,
+        "source": "健美家／HOMES",
+        "category": "store",
+        "ward": "墨田区",
+        "title": "東京都墨田区の",
+        "price": 3700,
+        "yield_pct": 10.0,
+        "size": 46.38,
+        "built": "1989年1月",
+        "station": "八丁堀駅 徒歩4分",
+        "walk_min": 4,
+        "floor": "2階／8階建",
+        "address": "東京都墨田区",
+        "scraped_at": "2026-04-25"
+      },
+      {
+        "url": "https://www.kenbiya.com/pp6/s/tokyo/adachi-ku/re_4430481lua/",
+        "rank": 8,
+        "score": 52,
+        "score_breakdown": {
+          "location": 12,
+          "yield_return": 10,
+          "tenant_demand": 12,
+          "future_value": 9,
+          "capital_eff": 9
+        },
+        "tenant_type": "調剤薬局・接骨院・学習塾・地域スーパー・飲食店",
+        "estimated_rent": "月額約75,300円（利回5.02%換算）",
+        "rent_reference": "足立区店舗坪単価1.2万円／坪、353.91㎡≒107.1坪→相場月額約128.5万円。表示利回5.02%の前提月額賃料は75.3万円で、相場の約59%に留まり大幅な割安設定。現況空室または賃料大幅減額の可能性あり。",
+        "analysis": "足立区・北綾瀬駅6分・353.91㎡の大型4階建て最上階・1984年築・1800万円。価格は投資条件内だが利回5.02%・旧耐震・4階店舗という三重苦。坪単価1.2万円の地域相場に対し表示利回前提の月額75.3万円は相場107万円を大きく下回り、空室や縮小貸しの懸念。1800万円の安価さが魅力だが実態精査が不可欠。",
+        "loan_analysis": {
+          "feasibility": "C",
+          "reason": "1984年築旧耐震・4階店舗・低利回り・足立区北部エリアで融資評価困難。現金購入推奨。",
+          "recommended_plan": {
+            "self_fund": 1800,
+            "loan": 0,
+            "monthly_repay": 0,
+            "dscr": 0
+          }
+        },
+        "pros": [
+          "1800万円と低価格で全額自己資金取得が可能",
+          "353.91㎡の大型スペースで複数テナント分割貸しも検討可",
+          "北綾瀬駅6分と駅近立地"
+        ],
+        "cons": [
+          "1984年築旧耐震・4階店舗で融資取得が極めて困難",
+          "足立区北部の商圏力が弱く大型店舗の安定テナント確保が難しい"
+        ],
+        "over_budget": false,
+        "source": "健美家／HOMES",
+        "category": "store",
+        "ward": "足立区",
+        "title": "東京都足立区の",
+        "price": 1800,
+        "yield_pct": 5.02,
+        "size": 353.91,
+        "built": "1984年8月",
+        "station": "北綾瀬駅 徒歩6分",
+        "walk_min": 6,
+        "floor": "4階／4階建",
+        "address": "東京都足立区",
+        "scraped_at": "2026-04-25"
+      },
+      {
+        "url": "https://www.kenbiya.com/pp6/s/tokyo/adachi-ku/re_44278848vn/",
+        "rank": 9,
+        "score": 52,
+        "score_breakdown": {
+          "location": 12,
+          "yield_return": 10,
+          "tenant_demand": 12,
+          "future_value": 9,
+          "capital_eff": 9
+        },
+        "tenant_type": "調剤薬局・接骨院・学習塾・地域スーパー・飲食店",
+        "estimated_rent": "月額約75,300円（利回5.02%換算）",
+        "rent_reference": "足立区店舗坪単価1.2万円／坪、353.91㎡≒107.1坪の相場月額128.5万円に対し表示前提75.3万円は著しく低い。相場との乖離幅から空室・部分稼働の可能性を考慮。",
+        "analysis": "足立区・北綾瀬駅6分・353.91㎡・1984年築・1800万・利回5.02%の重複掲載2件目。Rank8と同一スペック。大型物件を低価格で取得できる魅力はあるが、旧耐震・4階・足立区北部という条件で収益の安定性に課題。複数テナント誘致や区画分割活用など付加価値策を講じないと表面利回5%でも実質収益は厳しい。",
+        "loan_analysis": {
+          "feasibility": "C",
+          "reason": "1984年築旧耐震・4階・低利回り・足立区北部で金融機関評価低。現金取得推奨。",
+          "recommended_plan": {
+            "self_fund": 1800,
+            "loan": 0,
+            "monthly_repay": 0,
+            "dscr": 0
+          }
+        },
+        "pros": [
+          "1800万円全額自己資金での取得が可能",
+          "広大な353㎡を活かした複合利用の可能性",
+          "北綾瀬駅6分の立地"
+        ],
+        "cons": [
+          "旧耐震・4階・足立区北部の三重ハンデで融資困難",
+          "相場賃料より大幅低い表示賃料で実態収益が不明確"
+        ],
+        "over_budget": false,
+        "source": "健美家／HOMES",
+        "category": "store",
+        "ward": "足立区",
+        "title": "東京都足立区の",
+        "price": 1800,
+        "yield_pct": 5.02,
+        "size": 353.91,
+        "built": "1984年8月",
+        "station": "北綾瀬駅 徒歩6分",
+        "walk_min": 6,
+        "floor": "4階／4階建",
+        "address": "東京都足立区",
+        "scraped_at": "2026-04-25"
+      },
+      {
+        "url": "https://www.kenbiya.com/pp6/s/tokyo/koto-ku/re_4437602geu/",
+        "rank": 10,
+        "score": 41,
+        "score_breakdown": {
+          "location": 18,
+          "yield_return": 3,
+          "tenant_demand": 10,
+          "future_value": 6,
+          "capital_eff": 4
+        },
+        "tenant_type": "医療クリニック・フィットネス・大型飲食店・金融機関",
+        "estimated_rent": "月額約21,700円（利回3.25%換算）",
+        "rent_reference": "江東区店舗坪単価2.0万円／坪、311.76㎡≒94.3坪→相場月額188.6万円。表示利回3.25%の前提月額賃料21.7万円は相場の約12%に過ぎず、著しく乖離。空室・大幅値引き貸し・用途変更等の特殊事情が強く疑われる。",
+        "analysis": "江東区・木場駅徒歩1分・311.76㎡・1986年築・800万・利回3.25%。価格800万は異常に安く、311㎡で利回3.25%なら月額賃料は約2.2万円にしかならず相場188万円と全く合わない。データ異常（価格単位誤記・空室・権利関係上の問題）の可能性が高い。木場駅1分の立地は非常に優れるが、この価格・利回の組み合わせは要精査。現金購入でも実態確認なしには投資不可。",
+        "loan_analysis": {
+          "feasibility": "C",
+          "reason": "1986年築旧耐震・利回3.25%でDSCR基準1.2を大幅に下回る。データ異常の疑いあり現金でも要精査。",
+          "recommended_plan": {
+            "self_fund": 800,
+            "loan": 0,
+            "monthly_repay": 0,
+            "dscr": 0
+          }
+        },
+        "pros": [
+          "木場駅徒歩1分という極めて優れた駅近立地",
+          "311㎡の大型スペースで多様な業態対応可能",
+          "800万円という破格の低価格（実態要確認）"
+        ],
+        "cons": [
+          "価格800万円・利回3.25%・311㎡という数値の組み合わせがデータ異常の可能性が高く実態不明",
+          "1986年築旧耐震・利回3.25%で融資評価ゼロ・DSCR未達確実"
+        ],
+        "over_budget": false,
+        "source": "健美家／HOMES",
+        "category": "store",
+        "ward": "江東区",
+        "title": "東京都江東区の",
+        "price": 800,
+        "yield_pct": 3.25,
+        "size": 311.76,
+        "built": "1986年7月",
+        "station": "木場駅 徒歩1分",
+        "walk_min": 1,
+        "floor": "1階／12階建",
+        "address": "東京都江東区",
+        "scraped_at": "2026-04-25"
+      }
+    ],
     "condo": []
   },
   "rent_data": {
