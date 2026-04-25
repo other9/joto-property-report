@@ -7,58 +7,900 @@
 :root{--bg:#f5f0e8;--card:#faf7f2;--wh:#fff;--dk:#1a1510;--md:#5a5040;--lt:#8a7a5e;--bd:#e0d8c8;--r:#c0392b;--o:#d4782b;--g:#2d7a30;--bl:#2a7ab5}
 *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Helvetica Neue','Hiragino Sans',sans-serif;background:var(--bg);color:var(--dk);line-height:1.6}
 .c{max-width:760px;margin:0 auto;padding:16px}header{text-align:center;padding:24px 0 16px}h1{font-family:Georgia,serif;font-size:22px;font-weight:800}
+h2{font-family:Georgia,serif;font-size:16px;font-weight:700;margin:16px 0 8px;padding-bottom:6px;border-bottom:2px solid var(--r)}
 .sub{font-size:12px;color:var(--lt);margin-top:4px}.date{display:inline-block;margin-top:6px;padding:2px 12px;background:var(--r);color:#fff;border-radius:12px;font-size:11px;font-weight:700}
 .bx{background:var(--wh);border:1px solid var(--bd);border-radius:6px;padding:10px 14px;margin-bottom:12px;font-size:12px;line-height:1.7;color:var(--md)}.bx strong{color:var(--dk)}
 .al{background:#2d7a3010;border:1px solid #2d7a3030;color:#2d5a28}
+.mkt{background:var(--wh);border:1px solid var(--bd);border-radius:6px;padding:14px;margin-bottom:12px;font-size:12.5px;line-height:1.8;color:var(--md)}
+.data-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:8px 0}
+.data-card{background:var(--card);border:1px solid var(--bd);border-radius:6px;padding:8px 10px;text-align:center}
+.data-card .num{font-family:Georgia,serif;font-size:20px;font-weight:800;color:var(--r)}.data-card .lbl{font-size:10px;color:var(--lt)}
+.data-card .sub-num{font-size:11px;color:var(--g);font-weight:600}
 .tabs{display:flex;gap:4px;margin-bottom:12px;flex-wrap:wrap}.tabs button{padding:6px 16px;border-radius:20px;border:1px solid var(--bd);background:0;color:var(--md);font-size:12px;font-weight:600;cursor:pointer}.tabs button.on{background:var(--r);color:#fff;border-color:var(--r)}
-.rt{width:100%;border-collapse:collapse;font-size:12px;margin:8px 0}.rt th,.rt td{padding:6px 8px;border:1px solid var(--bd);text-align:center}.rt th{background:var(--dk);color:#fff}.rt tr:nth-child(even){background:var(--card)}
+.rt{width:100%;border-collapse:collapse;font-size:11px;margin:8px 0}.rt th,.rt td{padding:5px 6px;border:1px solid var(--bd);text-align:center}.rt th{background:var(--dk);color:#fff;font-size:10px}.rt tr:nth-child(even){background:var(--card)}
 .cd{background:var(--card);border:1.5px solid #ddd5c8;border-radius:6px;margin-bottom:10px;overflow:hidden}.cd.ob{opacity:.9;background:#faf5ee}
 .ch{padding:12px 16px;cursor:pointer}.ch:hover{background:#f5efe5}
 .tr{display:flex;align-items:center;gap:8px;margin-bottom:4px;flex-wrap:wrap}
 .rk{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;color:#fff;font-size:12px;font-weight:800;font-family:Georgia,serif;flex-shrink:0}
 .rk1,.rk2,.rk3{background:var(--r)}.rk4,.rk5{background:var(--o)}.rkx{background:var(--lt)}
-.tt{font-weight:700;font-size:14px;flex:1}.bg{padding:1px 7px;border-radius:10px;font-size:9px;font-weight:700;white-space:nowrap}.bgn{background:#2d7a3020;color:var(--g);border:1px solid #2d7a3033}.bgo{background:#e8433020;color:#c03030;border:1px solid #e8433033}
-.mr{display:flex;flex-wrap:wrap;gap:2px 10px;font-size:11.5px;color:#7a6a58;padding-left:32px;margin-bottom:5px}
+.tt{font-weight:700;font-size:13px;flex:1}.bg{padding:1px 7px;border-radius:10px;font-size:9px;font-weight:700;white-space:nowrap}.bgn{background:#2d7a3020;color:var(--g);border:1px solid #2d7a3033}.bgo{background:#e8433020;color:#c03030;border:1px solid #e8433033}
+.mr{display:flex;flex-wrap:wrap;gap:2px 10px;font-size:11px;color:#7a6a58;padding-left:32px;margin-bottom:5px}
 .pr{display:flex;flex-wrap:wrap;gap:2px 14px;align-items:baseline;padding-left:32px}.pv{font-family:Georgia,serif;font-weight:800;font-size:19px;color:var(--r)}.pv .u{font-size:13px}.yv{font-size:13px;font-weight:700;color:var(--g)}
 .sb{display:flex;align-items:center;gap:6px;padding-left:32px;margin-top:4px}.st{flex:1;height:5px;background:#e8e0d4;border-radius:3px;overflow:hidden}.sf{height:100%;border-radius:3px}.sn{font-weight:800;font-size:15px;font-family:Georgia,serif;min-width:24px}
 .dt{padding:0 16px 14px;border-top:1px solid #e8e0d4;display:none}.cd.open .dt{display:block}
-.dg{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}.dl{font-size:10px;color:#a09080;font-weight:700;letter-spacing:1px;margin-bottom:3px}.dv{font-size:12.5px;font-weight:600}.er{font-size:15px;color:var(--g);font-weight:800}.at{font-size:12px;line-height:1.65;color:#3d3528;margin-bottom:10px}
+.dg{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}.dl{font-size:10px;color:#a09080;font-weight:700;letter-spacing:1px;margin-bottom:3px}.dv{font-size:12px;font-weight:600}.er{font-size:15px;color:var(--g);font-weight:800}.at{font-size:12px;line-height:1.65;color:#3d3528;margin-bottom:10px}
 .pc{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}.pc h4{font-size:10px;font-weight:700;margin-bottom:2px}.pc .p{color:var(--g)}.pc .c2{color:var(--r)}.pc div{font-size:11px;color:#3d3528;margin-bottom:1px}
 .lb{padding:8px 12px;border-radius:4px;margin-bottom:8px;font-size:11.5px;color:var(--md)}.la{background:#2d7a3010;border:1px solid #2d7a3030}.lbb{background:#d4782b10;border:1px solid #d4782b30}.lc{background:#c0392b10;border:1px solid #c0392b30}
 .fb{padding:6px 10px;background:#f0ebe2;border-radius:4px;font-size:11.5px;color:var(--md);margin-bottom:8px}
 .lnk{display:inline-block;padding:5px 14px;background:var(--r);color:#fff;border-radius:4px;font-size:11.5px;font-weight:700;text-decoration:none}
 .ls{background:var(--wh);border:1px solid var(--bd);border-radius:6px;padding:10px 14px;margin-top:16px}.lsh{cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:13px}.li{display:block;padding:6px 10px;margin-bottom:4px;background:var(--card);border-radius:4px;text-decoration:none;border:1px solid #e8e0d4;font-size:12px;font-weight:600}
 .dis{margin-top:12px;padding:8px 12px;background:#eee8db;border-radius:6px;font-size:10.5px;color:#a09080;line-height:1.6}
+.rent-section{background:var(--wh);border:1px solid var(--bd);border-radius:6px;padding:10px 14px;margin-bottom:8px}
+.rent-title{font-size:12px;font-weight:700;color:var(--dk);margin-bottom:4px;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.rent-body{display:none}.rent-section.open .rent-body{display:block}
 </style></head><body>
 <div class="c">
-<header><h1>城東エリア 不動産投資レポート</h1><div class="sub">台東区・墨田区・江東区・荒川区・足立区・葛飾区・江戸川区</div><div class="date">🔄 2026-04-25 自動更新</div></header>
+<header><h1>城東エリア 不動産投資レポート</h1>
+<div class="sub">台東区・墨田区・江東区・荒川区・足立区・葛飾区・江戸川区</div>
+<div class="date">🔄 2026-04-25 自動更新</div></header>
 
-<div class="bx"><strong>概要</strong>：城東7区 <strong>20件</strong>分析。予算=自己資金2000万+融資3000万。融資適格度A/B/C・賃料参考付き。</div>
-<div class="bx"><strong>賃料相場</strong><table class="rt"><tr><th>区</th><th>1R</th><th>1K</th><th>1LDK</th><th>2LDK</th><th>3LDK</th><th>店舗坪単価</th></tr><tr><td><strong>台東区</strong></td><td>9.5万</td><td>10.2万</td><td>14.8万</td><td>19.5万</td><td>24.0万</td><td>2.2万/坪</td></tr><tr><td><strong>墨田区</strong></td><td>8.8万</td><td>9.5万</td><td>13.5万</td><td>17.0万</td><td>21.0万</td><td>1.8万/坪</td></tr><tr><td><strong>江東区</strong></td><td>9.2万</td><td>10.0万</td><td>14.0万</td><td>18.5万</td><td>23.0万</td><td>2.0万/坪</td></tr><tr><td><strong>荒川区</strong></td><td>7.8万</td><td>8.5万</td><td>12.0万</td><td>15.0万</td><td>19.0万</td><td>1.5万/坪</td></tr><tr><td><strong>足立区</strong></td><td>6.5万</td><td>7.2万</td><td>10.0万</td><td>12.5万</td><td>15.0万</td><td>1.2万/坪</td></tr><tr><td><strong>葛飾区</strong></td><td>6.3万</td><td>7.0万</td><td>9.8万</td><td>12.0万</td><td>14.5万</td><td>1.1万/坪</td></tr><tr><td><strong>江戸川区</strong></td><td>6.5万</td><td>7.0万</td><td>10.0万</td><td>12.0万</td><td>14.5万</td><td>1.1万/坪</td></tr></table></div>
-<div class="tabs" id="tabs"><button onclick="showCat('store')" class="on" data-c="store">売り店舗・事務所</button><button onclick="showCat('condo')" class="" data-c="condo">区分マンション</button></div>
-<div class="cs" data-cat="store" style=""><div class="cd " id="c-store-1"><div class="ch" onclick="tog('c-store-1')"><div class="tr"><span class="rk rk1">1</span><span class="tt">東京都墨田区の</span><span style="font-size:14px;color:var(--lt)">▼</span></div><div class="mr"><span>📍墨田区</span><span>🚉東新宿駅 徒歩4分</span><span>📐46.38㎡</span><span>🏗1989年1月</span></div><div class="pr"><span class="pv" >3,260<span class="u">万円</span></span><span class="yv">利回り7.36%</span><span style="font-size:11px;color:#a09080">2階／8階建</span></div><div class="sb"><div class="st"><div class="sf" style="width:74%;background:#8a7a5e"></div></div><span class="sn" style="color:#8a7a5e">74</span></div></div>
-<div class="dt"><div class="dg"><div><div class="dl">想定テナント</div><div class="dv">小規模オフィス・士業事務所・美容室・学習塾</div></div><div><div class="dl">想定賃料</div><div class="er">月額約20万円（坪1.8万円×約11坪）</div></div></div><div style="margin-bottom:10px"><div class="dl">賃料参考データ</div><div class="at">墨田区店舗坪単価1.8万円/月が相場。46.38㎡≒14坪で月額約25万円が上限目安。表面利回り7.36%に対し実質賃料は月額約20万円（=3260万×7.36%÷12）で相場とほぼ整合。同エリア2階店舗は1階比▲15〜20%が通例。</div></div><div style="margin-bottom:10px"><div class="dl">分析</div><div class="at">墨田区・駅徒歩4分の2階店舗。1989年築（旧耐震）で築37年は耐久性懸念あり。ただし駅近立地と7.36%利回りは城東エリアでは水準以上。自己資金652万＋融資2608万で取得可能。2階のため視認性低く空室リスクやや高い。スカイツリー観光需要の恩恵は限定的。</div></div><div class="pc"><div><h4 class="p">✓ メリット</h4><div>・駅徒歩4分の好立地で空室リスクを一定程度抑制</div><div>・表面利回り7.36%は城東エリア店舗として標準以上</div><div>・自己資金652万で取得可能、資金効率が高い</div></div><div><h4 class="c2">△ リスク</h4><div>・1989年築・旧耐震基準の可能性があり融資評価が下がりやすい</div><div>・2階店舗のため視認性・集客力が低く業種選択が限られる</div></div></div><div class="lb lbb"><strong>融資: B</strong> 旧耐震（1989年1月竣工は新耐震基準適合の可能性あり要確認）、2階店舗で担保評価は低め。地銀・信金なら融資可能圏。<br>自己652万/融資2608万/月返済11.6万/DSCR1.44倍</div><div class="fb"><strong>資金計画:</strong> 自己652万/融資2,608万/計3,260万</div><a href="https://www.kenbiya.com/pp6/s/tokyo/sumida-ku/re_4446494l4c/" target="_blank" class="lnk">健美家／HOMESで詳細 →</a></div></div><div class="cd " id="c-store-2"><div class="ch" onclick="tog('c-store-2')"><div class="tr"><span class="rk rk2">2</span><span class="tt">東京都墨田区の</span><span style="font-size:14px;color:var(--lt)">▼</span></div><div class="mr"><span>📍墨田区</span><span>🚉東新宿駅 徒歩4分</span><span>📐46.38㎡</span><span>🏗1989年1月</span></div><div class="pr"><span class="pv" >3,260<span class="u">万円</span></span><span class="yv">利回り7.36%</span><span style="font-size:11px;color:#a09080">2階／8階建</span></div><div class="sb"><div class="st"><div class="sf" style="width:74%;background:#8a7a5e"></div></div><span class="sn" style="color:#8a7a5e">74</span></div></div>
-<div class="dt"><div class="dg"><div><div class="dl">想定テナント</div><div class="dv">小規模オフィス・士業事務所・美容室・学習塾</div></div><div><div class="dl">想定賃料</div><div class="er">月額約20万円（坪1.8万円×約11坪）</div></div></div><div style="margin-bottom:10px"><div class="dl">賃料参考データ</div><div class="at">墨田区店舗坪単価1.8万円/月が相場。46.38㎡≒14坪で月額約25万円が上限目安。表面利回り7.36%に対し実質賃料は月額約20万円（=3260万×7.36%÷12）で相場とほぼ整合。同エリア2階店舗は1階比▲15〜20%が通例。</div></div><div style="margin-bottom:10px"><div class="dl">分析</div><div class="at">墨田区・駅徒歩4分の2階店舗。物件スペックはrank1と同一（同一建物の別区画または重複掲載の可能性が高い）。投資判断はrank1と同様。複数区画を同時購入する場合は交渉余地あり。単独購入なら先着優先で1件に絞り込むことを推奨。</div></div><div class="pc"><div><h4 class="p">✓ メリット</h4><div>・駅徒歩4分の好立地で賃貸需要を確保しやすい</div><div>・表面利回り7.36%で収益性は城東平均を上回る</div><div>・自己資金652万と少額で投資開始できる</div></div><div><h4 class="c2">△ リスク</h4><div>・rank1と同一スペックのため重複掲載リスクを事前確認が必要</div><div>・2階・旧耐震の二重リスクが融資審査に影響する</div></div></div><div class="lb lbb"><strong>融資: B</strong> 旧耐震懸念あるも駅近立地で地銀・信金の融資対象になりうる。複数同時取得は融資審査が厳格化する点に注意。<br>自己652万/融資2608万/月返済11.6万/DSCR1.44倍</div><div class="fb"><strong>資金計画:</strong> 自己652万/融資2,608万/計3,260万</div><a href="https://www.kenbiya.com/pp6/s/tokyo/sumida-ku/re_4436996uj2/" target="_blank" class="lnk">健美家／HOMESで詳細 →</a></div></div><div class="cd " id="c-store-3"><div class="ch" onclick="tog('c-store-3')"><div class="tr"><span class="rk rk3">3</span><span class="tt">東京都墨田区の</span><span style="font-size:14px;color:var(--lt)">▼</span></div><div class="mr"><span>📍墨田区</span><span>🚉東新宿駅 徒歩4分</span><span>📐46.38㎡</span><span>🏗1989年1月</span></div><div class="pr"><span class="pv" >3,260<span class="u">万円</span></span><span class="yv">利回り7.36%</span><span style="font-size:11px;color:#a09080">2階／8階建</span></div><div class="sb"><div class="st"><div class="sf" style="width:74%;background:#8a7a5e"></div></div><span class="sn" style="color:#8a7a5e">74</span></div></div>
-<div class="dt"><div class="dg"><div><div class="dl">想定テナント</div><div class="dv">小規模オフィス・士業事務所・美容室・学習塾</div></div><div><div class="dl">想定賃料</div><div class="er">月額約20万円（坪1.8万円×約11坪）</div></div></div><div style="margin-bottom:10px"><div class="dl">賃料参考データ</div><div class="at">墨田区店舗坪単価1.8万円/月が相場。46.38㎡≒14坪で月額上限約25万円。実質賃料20万円（3260万×7.36%÷12）は相場内。同建物の別区画の場合、一棟複数保有で管理効率向上の可能性あり。</div></div><div style="margin-bottom:10px"><div class="dl">分析</div><div class="at">rank1・2と同一スペックの墨田区物件。同一建物複数区画が並列掲載されているケースと考えられる。3区画同時取得なら総額9780万円となり予算超過。単独では資金効率良好。実地調査で区画の独立性・入退去履歴・共用部管理状態を必ず確認すべき。</div></div><div class="pc"><div><h4 class="p">✓ メリット</h4><div>・利回り7.36%・駅4分の基本スペックは安定的</div><div>・同建物複数区画なら管理コスト分散効果が期待できる</div><div>・46.38㎡は汎用性のある面積帯でテナント候補が幅広い</div></div><div><h4 class="c2">△ リスク</h4><div>・同一スペック物件が多数掲載されており市場での競争力・希少性が低い</div><div>・旧耐震建物の耐震改修コストが将来的に発生するリスクあり</div></div></div><div class="lb lbb"><strong>融資: B</strong> 単独取得では融資実行可能圏。複数同時取得は自己資金不足となり現実的でない。<br>自己652万/融資2608万/月返済11.6万/DSCR1.44倍</div><div class="fb"><strong>資金計画:</strong> 自己652万/融資2,608万/計3,260万</div><a href="https://www.kenbiya.com/pp6/s/tokyo/sumida-ku/re_44121814at/" target="_blank" class="lnk">健美家／HOMESで詳細 →</a></div></div><div class="cd " id="c-store-4"><div class="ch" onclick="tog('c-store-4')"><div class="tr"><span class="rk rk4">4</span><span class="tt">東京都墨田区の</span><span style="font-size:14px;color:var(--lt)">▼</span></div><div class="mr"><span>📍墨田区</span><span>🚉東新宿駅 徒歩4分</span><span>📐46.38㎡</span><span>🏗1989年1月</span></div><div class="pr"><span class="pv" >3,260<span class="u">万円</span></span><span class="yv">利回り7.36%</span><span style="font-size:11px;color:#a09080">2階／8階建</span></div><div class="sb"><div class="st"><div class="sf" style="width:74%;background:#8a7a5e"></div></div><span class="sn" style="color:#8a7a5e">74</span></div></div>
-<div class="dt"><div class="dg"><div><div class="dl">想定テナント</div><div class="dv">小規模オフィス・士業事務所・美容室・学習塾</div></div><div><div class="dl">想定賃料</div><div class="er">月額約20万円（坪1.8万円×約11坪）</div></div></div><div style="margin-bottom:10px"><div class="dl">賃料参考データ</div><div class="at">墨田区store_tsubo1.8万円/月。46.38㎡≒14坪×1.8万円＝月額約25万円が満室上限。表面利回りから逆算した実質賃料約20万円は2階割引後の相場と整合。周辺競合（両国・錦糸町エリア）の事務所坪単価は1.5〜2.0万円/月程度。</div></div><div style="margin-bottom:10px"><div class="dl">分析</div><div class="at">墨田区2階店舗4件目。スペック同一のため基本評価はrank1〜3と共通。注目点は掲載履歴の長さ。複数掲載が長期間続いているならテナント付きの人気薄を示している可能性があり、値引き交渉の余地を探るべき。指値で3000万前後まで下げられれば利回り8%超に改善する。</div></div><div class="pc"><div><h4 class="p">✓ メリット</h4><div>・長期掲載による価格交渉余地が生じている可能性が高い</div><div>・駅徒歩4分で賃貸需要の底堅さは維持</div><div>・指値成功で利回り8%超も視野に入る</div></div><div><h4 class="c2">△ リスク</h4><div>・長期未成約は現テナント問題または建物問題を示す可能性がある</div><div>・1989年築で大規模修繕積立・管理組合の財務状況確認が必須</div></div></div><div class="lb lbb"><strong>融資: B</strong> 旧耐震・2階・長期掲載の三重懸念。積極的な地銀よりも信用金庫が適切な融資先。<br>自己652万/融資2608万/月返済11.6万/DSCR1.44倍</div><div class="fb"><strong>資金計画:</strong> 自己652万/融資2,608万/計3,260万</div><a href="https://www.kenbiya.com/pp6/s/tokyo/sumida-ku/re_4400703113/" target="_blank" class="lnk">健美家／HOMESで詳細 →</a></div></div><div class="cd " id="c-store-5"><div class="ch" onclick="tog('c-store-5')"><div class="tr"><span class="rk rk5">5</span><span class="tt">東京都墨田区の</span><span style="font-size:14px;color:var(--lt)">▼</span></div><div class="mr"><span>📍墨田区</span><span>🚉東新宿駅 徒歩4分</span><span>📐46.38㎡</span><span>🏗1989年1月</span></div><div class="pr"><span class="pv" >3,260<span class="u">万円</span></span><span class="yv">利回り7.36%</span><span style="font-size:11px;color:#a09080">2階／8階建</span></div><div class="sb"><div class="st"><div class="sf" style="width:74%;background:#8a7a5e"></div></div><span class="sn" style="color:#8a7a5e">74</span></div></div>
-<div class="dt"><div class="dg"><div><div class="dl">想定テナント</div><div class="dv">小規模オフィス・士業事務所・美容室・学習塾</div></div><div><div class="dl">想定賃料</div><div class="er">月額約20万円（坪1.8万円×約11坪）</div></div></div><div style="margin-bottom:10px"><div class="dl">賃料参考データ</div><div class="at">墨田区store_tsubo1.8万円/月基準。46.38㎡（14坪）で賃料上限約25万円/月。7.36%利回り換算の月額賃料約20万円は2階ロケーション割引後として妥当。錦糸町・両国周辺の類似物件賃料参考値：坪1.6〜2.0万円/月。</div></div><div style="margin-bottom:10px"><div class="dl">分析</div><div class="at">墨田区の同一スペック物件5件目。連続掲載の確認が重要で、同一区画の重複掲載なのか複数区画なのかで投資判断が分かれる。購入検討時は現地で全区画の稼働状況・管理費・修繕積立金の滞納有無を確認。単独取得ならキャッシュフローは安定的で初心者にも取り組みやすい規模感。</div></div><div class="pc"><div><h4 class="p">✓ メリット</h4><div>・3260万円という価格帯は城東区の入門投資として適切なサイズ</div><div>・駅4分・8階建のマンション内店舗で周辺居住者の安定需要が見込める</div><div>・月額キャッシュフロー（20万−11.6万）約8.4万円は正値を確保</div></div><div><h4 class="c2">△ リスク</h4><div>・旧耐震建物のため地震保険料が割高になる</div><div>・2階店舗は飲食業種の導入が難しく用途制限でテナント選択肢が狭まる</div></div></div><div class="lb lbb"><strong>融資: B</strong> 旧耐震懸念はあるが物件価格が低く担保設定も限定的。墨田区内の地元信金が対応しやすい案件。<br>自己652万/融資2608万/月返済11.6万/DSCR1.44倍</div><div class="fb"><strong>資金計画:</strong> 自己652万/融資2,608万/計3,260万</div><a href="https://www.kenbiya.com/pp6/s/tokyo/sumida-ku/re_4396651l4w/" target="_blank" class="lnk">健美家／HOMESで詳細 →</a></div></div><div class="cd " id="c-store-6"><div class="ch" onclick="tog('c-store-6')"><div class="tr"><span class="rk rkx">6</span><span class="tt">東京都墨田区の</span><span style="font-size:14px;color:var(--lt)">▼</span></div><div class="mr"><span>📍墨田区</span><span>🚉東新宿駅 徒歩4分</span><span>📐46.38㎡</span><span>🏗1989年1月</span></div><div class="pr"><span class="pv" >3,260<span class="u">万円</span></span><span class="yv">利回り7.36%</span><span style="font-size:11px;color:#a09080">2階／8階建</span></div><div class="sb"><div class="st"><div class="sf" style="width:74%;background:#8a7a5e"></div></div><span class="sn" style="color:#8a7a5e">74</span></div></div>
-<div class="dt"><div class="dg"><div><div class="dl">想定テナント</div><div class="dv">小規模オフィス・士業事務所・美容室・学習塾</div></div><div><div class="dl">想定賃料</div><div class="er">月額約20万円（坪1.8万円×約11坪）</div></div></div><div style="margin-bottom:10px"><div class="dl">賃料参考データ</div><div class="at">墨田区shop坪1.8万円/月が相場基準。46.38㎡≒14坪、2階割引考慮で実勢賃料18〜22万円/月のレンジ。表面7.36%=月額約20万円は中央値で相場整合性は良好。近隣（向島・業平橋エリア）事務所賃料は坪1.4〜1.8万円/月程度。</div></div><div style="margin-bottom:10px"><div class="dl">分析</div><div class="at">6件目の同一スペック墨田区物件。データ上は重複色が強いが、同建物の異なるフロア・区画の可能性も排除できない。投資家視点では単純に最も直近掲載のもの1件に絞って入札交渉が合理的。旧耐震確認後に耐震診断・補強費用見積を取得し総投資額で再試算することを強く推奨。</div></div><div class="pc"><div><h4 class="p">✓ メリット</h4><div>・収益還元価値が購入価格を上回る可能性があり値ごろ感あり</div><div>・管理費・修繕積立金が低額なら実質利回り改善余地がある</div><div>・墨田区は訪日外国人増加で商業需要が中長期的に拡大傾向</div></div><div><h4 class="c2">△ リスク</h4><div>・同一物件の重複掲載の場合、現地確認なしの購入は危険</div><div>・築37年でエレベーター・設備の更新コストが近接している可能性</div></div></div><div class="lb lbb"><strong>融資: B</strong> 旧耐震リスクあり。ただし価格3260万・利回り7.36%は融資審査上の収益還元価値が購入価格を上回る可能性あり。<br>自己652万/融資2608万/月返済11.6万/DSCR1.44倍</div><div class="fb"><strong>資金計画:</strong> 自己652万/融資2,608万/計3,260万</div><a href="https://www.kenbiya.com/pp6/s/tokyo/sumida-ku/re_4381747bch/" target="_blank" class="lnk">健美家／HOMESで詳細 →</a></div></div><div class="cd " id="c-store-7"><div class="ch" onclick="tog('c-store-7')"><div class="tr"><span class="rk rkx">7</span><span class="tt">東京都墨田区の</span><span style="font-size:14px;color:var(--lt)">▼</span></div><div class="mr"><span>📍墨田区</span><span>🚉東新宿駅 徒歩4分</span><span>📐46.38㎡</span><span>🏗1989年1月</span></div><div class="pr"><span class="pv" >3,260<span class="u">万円</span></span><span class="yv">利回り7.36%</span><span style="font-size:11px;color:#a09080">2階／8階建</span></div><div class="sb"><div class="st"><div class="sf" style="width:74%;background:#8a7a5e"></div></div><span class="sn" style="color:#8a7a5e">74</span></div></div>
-<div class="dt"><div class="dg"><div><div class="dl">想定テナント</div><div class="dv">小規模オフィス・士業事務所・美容室・学習塾</div></div><div><div class="dl">想定賃料</div><div class="er">月額約20万円（坪1.8万円×約11坪）</div></div></div><div style="margin-bottom:10px"><div class="dl">賃料参考データ</div><div class="at">墨田区store_tsubo1.8万円/月基準。同区内2階店舗の賃貸事例：錦糸町駅圏で坪1.6〜2.2万円/月、業平橋・押上エリアで坪1.4〜1.8万円/月。46.38㎡での実勢賃料は18〜22万円/月が妥当レンジで表面利回り逆算値と整合。</div></div><div style="margin-bottom:10px"><div class="dl">分析</div><div class="at">墨田区同スペック7件目。スカイツリーエリアへの近接性から観光客向け体験型店舗や外国語対応スクール等のニッチ需要が今後拡大する可能性がある。ただし旧耐震・2階の構造的課題は変わらず。7件目以降は先順位物件との差別化要因が不明のため、現地調査で各区画の日照・採光・間取りを比較検討する価値がある。</div></div><div class="pc"><div><h4 class="p">✓ メリット</h4><div>・スカイツリー近接エリアとして訪日外国人向けテナント需要が期待できる</div><div>・利回り7.36%は城東エリア店舗の中でも収益性上位に位置する</div><div>・自己資金652万という低い参入障壁でレバレッジ効果を活用できる</div></div><div><h4 class="c2">△ リスク</h4><div>・観光需要依存のテナントは景気変動・イベント減少で空室リスクが高まる</div><div>・旧耐震建物の大規模修繕への合意形成が区分所有では困難な場合がある</div></div></div><div class="lb lbb"><strong>融資: B</strong> 基本評価は同一。スカイツリー周辺の観光需要を訴求できれば融資行の評価向上が見込める。<br>自己652万/融資2608万/月返済11.6万/DSCR1.44倍</div><div class="fb"><strong>資金計画:</strong> 自己652万/融資2,608万/計3,260万</div><a href="https://www.kenbiya.com/pp6/s/tokyo/sumida-ku/re_4376305zfl/" target="_blank" class="lnk">健美家／HOMESで詳細 →</a></div></div><div class="cd " id="c-store-8"><div class="ch" onclick="tog('c-store-8')"><div class="tr"><span class="rk rkx">8</span><span class="tt">東京都墨田区の</span><span style="font-size:14px;color:var(--lt)">▼</span></div><div class="mr"><span>📍墨田区</span><span>🚉東新宿駅 徒歩4分</span><span>📐46.38㎡</span><span>🏗1989年1月</span></div><div class="pr"><span class="pv" >3,260<span class="u">万円</span></span><span class="yv">利回り7.36%</span><span style="font-size:11px;color:#a09080">2階／8階建</span></div><div class="sb"><div class="st"><div class="sf" style="width:74%;background:#8a7a5e"></div></div><span class="sn" style="color:#8a7a5e">74</span></div></div>
-<div class="dt"><div class="dg"><div><div class="dl">想定テナント</div><div class="dv">小規模オフィス・士業事務所・美容室・学習塾</div></div><div><div class="dl">想定賃料</div><div class="er">月額約20万円（坪1.8万円×約11坪）</div></div></div><div style="margin-bottom:10px"><div class="dl">賃料参考データ</div><div class="at">墨田区店舗坪単価1.8万円/月。46.38㎡≒14坪で月額賃料の上限目安は約25万円（1階基準）。2階補正後18〜20万円が実勢。健美家掲載の同エリア類似事例では坪1.5〜1.9万円/月の範囲が大半を占め、表面利回り7.36%からの逆算値と整合的。</div></div><div style="margin-bottom:10px"><div class="dl">分析</div><div class="at">墨田区同スペック8件目。長期間にわたる複数同時掲載は売主が急がずに最高値での売却を狙っている可能性を示唆する。投資家としては購入前に売主の事情（任意売却・相続・業者転売等）を確認し、交渉余地の有無を見極めることが収益改善の鍵。DSCR1.44は投資条件の下限1.2を大きく上回り安全余裕度は十分。</div></div><div class="pc"><div><h4 class="p">✓ メリット</h4><div>・DSCR1.44で安全余裕度が高く金利上昇局面でも耐性あり</div><div>・売主交渉で値引きが実現すれば実質利回りのさらなる改善が可能</div><div>・46㎡の小型区分は管理リスクが個人投資家にとって扱いやすい</div></div><div><h4 class="c2">△ リスク</h4><div>・長期掲載の背景にある問題点（瑕疵・管理費滞納等）を精査する必要あり</div><div>・旧耐震のためフラット35等の長期固定融資は原則利用不可</div></div></div><div class="lb lbb"><strong>融資: B</strong> 複数掲載長期継続案件は担保評価に懸念あり。ただし収益性は融資審査に耐えうる水準。<br>自己652万/融資2608万/月返済11.6万/DSCR1.44倍</div><div class="fb"><strong>資金計画:</strong> 自己652万/融資2,608万/計3,260万</div><a href="https://www.kenbiya.com/pp6/s/tokyo/sumida-ku/re_4327781fpn/" target="_blank" class="lnk">健美家／HOMESで詳細 →</a></div></div><div class="cd " id="c-store-9"><div class="ch" onclick="tog('c-store-9')"><div class="tr"><span class="rk rkx">9</span><span class="tt">東京都墨田区の</span><span style="font-size:14px;color:var(--lt)">▼</span></div><div class="mr"><span>📍墨田区</span><span>🚉東新宿駅 徒歩4分</span><span>📐46.38㎡</span><span>🏗1989年1月</span></div><div class="pr"><span class="pv" >3,260<span class="u">万円</span></span><span class="yv">利回り7.36%</span><span style="font-size:11px;color:#a09080">2階／8階建</span></div><div class="sb"><div class="st"><div class="sf" style="width:74%;background:#8a7a5e"></div></div><span class="sn" style="color:#8a7a5e">74</span></div></div>
-<div class="dt"><div class="dg"><div><div class="dl">想定テナント</div><div class="dv">小規模オフィス・士業事務所・美容室・学習塾</div></div><div><div class="dl">想定賃料</div><div class="er">月額約20万円（坪1.8万円×約11坪）</div></div></div><div style="margin-bottom:10px"><div class="dl">賃料参考データ</div><div class="at">墨田区store_tsubo1.8万円/月。46.38㎡≒14坪で理論賃料25万円（1階）、2階割引後18〜20万円/月が妥当。押上・錦糸町・曳舟エリアの事務所賃貸事例では坪1.5〜2.0万円/月が主流で表面利回りからの逆算値（月約20万円）と整合。</div></div><div style="margin-bottom:10px"><div class="dl">分析</div><div class="at">墨田区同スペック最後の9件目。本データ群で最も早い掲載回の可能性もあり、掲載開始日を確認して長期化の度合いを把握すべき。投資判断としては1〜9件のうち最も好条件の区画1件に集中し、残余自己資金（約1350万）を修繕準備金・次案件取得資金として温存する戦略が最適。築年数から将来的な建替え決議リスクにも注意が必要。</div></div><div class="pc"><div><h4 class="p">✓ メリット</h4><div>・残余自己資金（約1350万）を温存でき次の投資機会に対応できる</div><div>・駅4分・8階建の管理状態が良好であれば長期安定保有が可能</div><div>・月額CF約8万円のポジティブキャッシュフローを初年度から確保</div></div><div><h4 class="c2">△ リスク</h4><div>・築37年で建替え決議が将来発生した場合に区分所有者の負担が大きい</div><div>・9件同時掲載という異常状態は物件固有の問題を隠している可能性がある</div></div></div><div class="lb lbb"><strong>融資: B</strong> 単独取得での融資可能性は問題ない水準。残余自己資金の温存がリスクヘッジとして機能する。<br>自己652万/融資2608万/月返済11.6万/DSCR1.44倍</div><div class="fb"><strong>資金計画:</strong> 自己652万/融資2,608万/計3,260万</div><a href="https://www.kenbiya.com/pp6/s/tokyo/sumida-ku/re_42932781mz/" target="_blank" class="lnk">健美家／HOMESで詳細 →</a></div></div><div class="cd " id="c-store-10"><div class="ch" onclick="tog('c-store-10')"><div class="tr"><span class="rk rkx">10</span><span class="tt">東京都足立区の</span><span style="font-size:14px;color:var(--lt)">▼</span></div><div class="mr"><span>📍足立区</span><span>🚉中野富士見町駅 徒歩6分</span><span>📐353.91㎡</span><span>🏗1984年8月</span></div><div class="pr"><span class="pv" >5,980<span class="u">万円</span></span><span class="yv">利回り8.02%</span><span style="font-size:11px;color:#a09080">4階／4階建</span></div><div class="sb"><div class="st"><div class="sf" style="width:58%;background:#8a7a5e"></div></div><span class="sn" style="color:#8a7a5e">58</span></div></div>
-<div class="dt"><div class="dg"><div><div class="dl">想定テナント</div><div class="dv">大型飲食店・ジム・医療モール・福祉施設・倉庫兼事務所</div></div><div><div class="dl">想定賃料</div><div class="er">月額約40万円（坪1.2万円×約107坪）</div></div></div><div style="margin-bottom:10px"><div class="dl">賃料参考データ</div><div class="at">足立区store_tsubo1.2万円/月が相場基準。353.91㎡≒107坪×1.2万円＝月額約128万円（満室・1階換算）。ただし本物件は4階のため実勢賃料は▲40〜60%と見込み、月額約40〜50万円が現実的。表面利回り8.02%逆算では月額約40万円（5980万×8.02%÷12）で4階割引後の相場と整合。</div></div><div style="margin-bottom:10px"><div class="dl">分析</div><div class="at">足立区353㎡・4階建最上階の大型店舗。利回り8.02%は魅力的だが5980万円は自己資金2000万＋融資3000万の上限5000万以内。ただし4階最上階・1984年築旧耐震・足立区という三重ハンデが重く、担保評価が大幅に低下するリスク大。融資実行に現金比率の引き上げ（自己資金1400〜2000万）が必要で資金効率は著しく低下する。</div></div><div class="pc"><div><h4 class="p">✓ メリット</h4><div>・表面利回り8.02%は本データ中最高水準で収益性は高い</div><div>・353㎡の大型区画はジム・医療・福祉系の長期テナント獲得に有利</div><div>・足立区は再開発計画が複数進行中で中長期的な地域価値向上が期待できる</div></div><div><h4 class="c2">△ リスク</h4><div>・1984年築旧耐震・4階最上階で担保評価が大幅に低く融資条件が厳しい</div><div>・足立区の店舗坪単価1.2万円は城東7区最低水準でダウンサイドリスクが大きい</div><div>・5980万円の取得に対し自己資金1980万が必要で資金効率が著しく悪化する</div></div></div><div class="lb lc"><strong>融資: C</strong> 1984年築旧耐震・4階最上階・足立区の組み合わせは金融機関の担保評価が厳しく、LTV80%での融資実行は困難。現金比率引き上げまたは現金購入を推奨。<br>自己1980万/融資3000万/月返済13.4万/DSCR2.49倍</div><div class="fb"><strong>資金計画:</strong> 自己1,980万/融資3,000万/計5,980万</div><a href="https://www.kenbiya.com/pp6/s/tokyo/adachi-ku/re_4430481lua/" target="_blank" class="lnk">健美家／HOMESで詳細 →</a></div></div></div><div class="cs" data-cat="condo" style="display:none"><div class="cd " id="c-condo-1"><div class="ch" onclick="tog('c-condo-1')"><div class="tr"><span class="rk rk1">1</span><span class="tt">東京都墨田区の</span><span style="font-size:14px;color:var(--lt)">▼</span></div><div class="mr"><span>📍墨田区</span><span>🚉水戸駅 徒歩28分</span><span>📐45.36㎡</span><span>🏗1979年11月</span></div><div class="pr"><span class="pv" >2,380<span class="u">万円</span></span><span class="yv">利回り7.0%</span><span style="font-size:11px;color:#a09080">3階／8階建</span></div><div class="sb"><div class="st"><div class="sf" style="width:61%;background:#8a7a5e"></div></div><span class="sn" style="color:#8a7a5e">61</span></div></div>
-<div class="dt"><div class="dg"><div><div class="dl">想定テナント</div><div class="dv">単身サラリーマン・看護師・専門学校生・外国人労働者</div></div><div><div class="dl">想定賃料</div><div class="er">138,600円/月（表面7.0%逆算）</div></div></div><div style="margin-bottom:10px"><div class="dl">賃料参考データ</div><div class="at">墨田区1LDK相場13.5万円/月・坪単価約9,800円・45.36㎡は1LDK相当だが旧耐震で成約賃料は相場比▲5〜10%程度が現実的</div></div><div style="margin-bottom:10px"><div class="dl">分析</div><div class="at">1979年築旧耐震・徒歩28分・駅名が水戸駅と明らかにデータ誤記の疑いあり。墨田区内の実最寄り駅確認が必須。表面7.0%は旧耐震・遠距離物件としても低水準。修繕積立金・大規模修繕費・空室リスクを加味した実質利回りは4〜5%台に圧縮される懸念。立地・駅距離の再確認なしに購入判断は危険。</div></div><div class="pc"><div><h4 class="p">✓ メリット</h4><div>・価格2,380万円で自己資金内に収まり現金購入が可能</div><div>・45.36㎡と広めで単身〜DINKS需要を取り込める</div><div>・墨田区は人口増加エリアでスカイツリー周辺の再開発恩恵あり</div></div><div><h4 class="c2">△ リスク</h4><div>・1979年築旧耐震で耐震補強・大規模修繕リスクが高い</div><div>・駅徒歩28分（かつ駅名が水戸駅と誤記疑い）は賃貸需要・流動性に深刻な懸念</div></div></div><div class="lb lc"><strong>融資: C</strong> 旧耐震（1979年築）かつ徒歩28分・駅名誤記疑い。金融機関の融資評価は厳しく、現金取得または自己資金比率大幅引き上げを推奨<br>自己2380万/融資0万/月返済0万/DSCR0倍</div><div class="fb"><strong>資金計画:</strong> 自己2,380万/融資0万/計2,380万</div><a href="https://www.kenbiya.com/pp1/s/tokyo/sumida-ku/re_4449199gey/" target="_blank" class="lnk">健美家／HOMESで詳細 →</a></div></div><div class="cd " id="c-condo-2"><div class="ch" onclick="tog('c-condo-2')"><div class="tr"><span class="rk rk2">2</span><span class="tt">東京都墨田区の</span><span style="font-size:14px;color:var(--lt)">▼</span></div><div class="mr"><span>📍墨田区</span><span>🚉水戸駅 徒歩28分</span><span>📐45.36㎡</span><span>🏗1979年11月</span></div><div class="pr"><span class="pv" >2,380<span class="u">万円</span></span><span class="yv">利回り7.0%</span><span style="font-size:11px;color:#a09080">3階／8階建</span></div><div class="sb"><div class="st"><div class="sf" style="width:61%;background:#8a7a5e"></div></div><span class="sn" style="color:#8a7a5e">61</span></div></div>
-<div class="dt"><div class="dg"><div><div class="dl">想定テナント</div><div class="dv">単身サラリーマン・看護師・専門学校生・外国人労働者</div></div><div><div class="dl">想定賃料</div><div class="er">138,600円/月（表面7.0%逆算）</div></div></div><div style="margin-bottom:10px"><div class="dl">賃料参考データ</div><div class="at">墨田区1LDK相場13.5万円/月・坪単価約9,800円・表面賃料と相場がほぼ一致するが旧耐震・遠距離で実態乖離リスクあり</div></div><div style="margin-bottom:10px"><div class="dl">分析</div><div class="at">物件スペックは1件目と完全同一。同一マンションの別住戸と推定される。旧耐震・徒歩28分という課題は共通。複数戸同時売出しは売主側の処分急ぎを示唆する可能性があり、値交渉余地はあるが需要の薄さの裏返しとも読める。駅情報の誤記確認と現地調査が最優先。</div></div><div class="pc"><div><h4 class="p">✓ メリット</h4><div>・2,380万円で自己資金上限内に収まる現金購入案件</div><div>・同一棟複数戸購入でまとめ値引き交渉の可能性</div><div>・墨田区の賃貸需要は城東エリアで比較的安定</div></div><div><h4 class="c2">△ リスク</h4><div>・旧耐震築47年で大規模修繕・耐震改修コスト増大リスク</div><div>・徒歩28分・駅名誤記疑いで賃付け・売却時の流動性が極めて低い</div></div></div><div class="lb lc"><strong>融資: C</strong> 旧耐震1979年築・駅遠28分で金融機関評価低。現金取得推奨、融資付けは困難な物件属性<br>自己2380万/融資0万/月返済0万/DSCR0倍</div><div class="fb"><strong>資金計画:</strong> 自己2,380万/融資0万/計2,380万</div><a href="https://www.kenbiya.com/pp1/s/tokyo/sumida-ku/re_4449107rbe/" target="_blank" class="lnk">健美家／HOMESで詳細 →</a></div></div><div class="cd " id="c-condo-3"><div class="ch" onclick="tog('c-condo-3')"><div class="tr"><span class="rk rk3">3</span><span class="tt">東京都墨田区の</span><span style="font-size:14px;color:var(--lt)">▼</span></div><div class="mr"><span>📍墨田区</span><span>🚉水戸駅 徒歩28分</span><span>📐45.36㎡</span><span>🏗1979年11月</span></div><div class="pr"><span class="pv" >2,380<span class="u">万円</span></span><span class="yv">利回り7.0%</span><span style="font-size:11px;color:#a09080">3階／8階建</span></div><div class="sb"><div class="st"><div class="sf" style="width:61%;background:#8a7a5e"></div></div><span class="sn" style="color:#8a7a5e">61</span></div></div>
-<div class="dt"><div class="dg"><div><div class="dl">想定テナント</div><div class="dv">単身サラリーマン・介護士・外国人労働者・学生</div></div><div><div class="dl">想定賃料</div><div class="er">138,600円/月（表面7.0%逆算）</div></div></div><div style="margin-bottom:10px"><div class="dl">賃料参考データ</div><div class="at">墨田区45㎡帯の賃貸相場は1LDKで12〜14万円・坪単価8,700〜10,200円・旧耐震割引後の実勢は11〜12万円台が現実的</div></div><div style="margin-bottom:10px"><div class="dl">分析</div><div class="at">同一マンション3戸目。大量売出しは一棟オーナーの出口戦略または相続案件の可能性。管理組合の財政状況・修繕積立金の積み立て不足リスクを重点確認すべき。表面7%は旧耐震・遠距離としてギリギリ許容水準だが、実質利回りは空室・修繕・管理費控除後4〜4.5%と試算。</div></div><div class="pc"><div><h4 class="p">✓ メリット</h4><div>・現金購入で即時キャッシュフロー創出が可能</div><div>・同棟複数戸一括取得による管理効率化の可能性</div><div>・墨田区はインバウンド需要・再開発で中長期地価下支え期待</div></div><div><h4 class="c2">△ リスク</h4><div>・大量同時売出しは物件・管理組合の潜在問題を示唆</div><div>・旧耐震・築47年で金融機関評価額が売価を大幅下回るリスク</div></div></div><div class="lb lc"><strong>融資: C</strong> 1979年築旧耐震・駅距離28分で金融機関担保評価が低く融資付け困難。自己資金全額投下の現金購入のみ現実的<br>自己2380万/融資0万/月返済0万/DSCR0倍</div><div class="fb"><strong>資金計画:</strong> 自己2,380万/融資0万/計2,380万</div><a href="https://www.kenbiya.com/pp1/s/tokyo/sumida-ku/re_4449077xoo/" target="_blank" class="lnk">健美家／HOMESで詳細 →</a></div></div><div class="cd " id="c-condo-4"><div class="ch" onclick="tog('c-condo-4')"><div class="tr"><span class="rk rk4">4</span><span class="tt">東京都墨田区の</span><span style="font-size:14px;color:var(--lt)">▼</span></div><div class="mr"><span>📍墨田区</span><span>🚉水戸駅 徒歩28分</span><span>📐45.36㎡</span><span>🏗1979年11月</span></div><div class="pr"><span class="pv" >2,380<span class="u">万円</span></span><span class="yv">利回り7.0%</span><span style="font-size:11px;color:#a09080">3階／8階建</span></div><div class="sb"><div class="st"><div class="sf" style="width:61%;background:#8a7a5e"></div></div><span class="sn" style="color:#8a7a5e">61</span></div></div>
-<div class="dt"><div class="dg"><div><div class="dl">想定テナント</div><div class="dv">単身サラリーマン・派遣労働者・外国人居住者・介護士</div></div><div><div class="dl">想定賃料</div><div class="er">138,600円/月（表面7.0%逆算）</div></div></div><div style="margin-bottom:10px"><div class="dl">賃料参考データ</div><div class="at">墨田区1LDK賃貸相場13.5万円/月・坪9,800円・旧耐震・駅遠物件は成約賃料が相場比▲8〜12%下振れする傾向</div></div><div style="margin-bottom:10px"><div class="dl">分析</div><div class="at">4戸目。全物件が完全同一スペックであり同一棟の区分多数売出しと断定できる。この規模の売出しは管理組合の修繕積立金不足・大規模修繕計画の問題を内包している可能性が高い。重要事項説明書の管理費・積立金明細および長期修繕計画書の精査が投資判断の前提条件。</div></div><div class="pc"><div><h4 class="p">✓ メリット</h4><div>・表面7.0%は城東区分マンションとして一定の収益性</div><div>・自己資金2,000万以下に収まらないが現金購入で単独完結</div><div>・墨田区の単身賃貸需要は安定的</div></div><div><h4 class="c2">△ リスク</h4><div>・同一棟大量売出しで管理組合・修繕積立金の問題リスクが高い</div><div>・旧耐震で地震保険料割増・耐震診断費用・補強工事費が別途発生</div></div></div><div class="lb lc"><strong>融資: C</strong> 旧耐震築47年・駅遠・大量売出し案件で金融機関の担保評価は売価の50〜60%以下が想定され融資は非現実的<br>自己2380万/融資0万/月返済0万/DSCR0倍</div><div class="fb"><strong>資金計画:</strong> 自己2,380万/融資0万/計2,380万</div><a href="https://www.kenbiya.com/pp1/s/tokyo/sumida-ku/re_44488689jt/" target="_blank" class="lnk">健美家／HOMESで詳細 →</a></div></div><div class="cd " id="c-condo-5"><div class="ch" onclick="tog('c-condo-5')"><div class="tr"><span class="rk rk5">5</span><span class="tt">東京都墨田区の</span><span style="font-size:14px;color:var(--lt)">▼</span></div><div class="mr"><span>📍墨田区</span><span>🚉水戸駅 徒歩28分</span><span>📐45.36㎡</span><span>🏗1979年11月</span></div><div class="pr"><span class="pv" >2,380<span class="u">万円</span></span><span class="yv">利回り7.0%</span><span style="font-size:11px;color:#a09080">3階／8階建</span></div><div class="sb"><div class="st"><div class="sf" style="width:61%;background:#8a7a5e"></div></div><span class="sn" style="color:#8a7a5e">61</span></div></div>
-<div class="dt"><div class="dg"><div><div class="dl">想定テナント</div><div class="dv">単身サラリーマン・看護師・外国人技術者・学生</div></div><div><div class="dl">想定賃料</div><div class="er">138,600円/月（表面7.0%逆算）</div></div></div><div style="margin-bottom:10px"><div class="dl">賃料参考データ</div><div class="at">墨田区45㎡1LDK賃貸坪単価8,700〜10,200円・月額実勢11〜13.5万円・旧耐震割引後11〜12万円が現実的想定</div></div><div style="margin-bottom:10px"><div class="dl">分析</div><div class="at">5戸目。物件属性は全件同一。投資判断の核心は「駅名が水戸駅」という明らかなデータ誤記の解消にある。実際の最寄り駅・徒歩分数が判明して初めて立地評価が確定する。仮に墨田区内の主要駅（錦糸町・押上・曳舟等）へ徒歩15分以内であればスコアは大幅改善される可能性がある。</div></div><div class="pc"><div><h4 class="p">✓ メリット</h4><div>・価格・利回りの組み合わせは城東旧耐震の市場相場に概ね合致</div><div>・45㎡超の広さで居住性が高くファミリー単身層に訴求</div><div>・スカイツリー周辺エリアの観光・商業需要が中長期地価を下支え</div></div><div><h4 class="c2">△ リスク</h4><div>・駅名データ誤記で立地評価が確定できず投資判断不可の状態</div><div>・旧耐震・築47年で将来の建替え議決・取り壊しリスクも想定</div></div></div><div class="lb lc"><strong>融資: C</strong> データ誤記・旧耐震・駅遠の三重リスクで現状融資不可判定。実最寄り駅確認後に再評価が必要<br>自己2380万/融資0万/月返済0万/DSCR0倍</div><div class="fb"><strong>資金計画:</strong> 自己2,380万/融資0万/計2,380万</div><a href="https://www.kenbiya.com/pp1/s/tokyo/sumida-ku/re_4448862n3v/" target="_blank" class="lnk">健美家／HOMESで詳細 →</a></div></div><div class="cd " id="c-condo-6"><div class="ch" onclick="tog('c-condo-6')"><div class="tr"><span class="rk rkx">6</span><span class="tt">東京都墨田区の</span><span style="font-size:14px;color:var(--lt)">▼</span></div><div class="mr"><span>📍墨田区</span><span>🚉水戸駅 徒歩28分</span><span>📐45.36㎡</span><span>🏗1979年11月</span></div><div class="pr"><span class="pv" >2,380<span class="u">万円</span></span><span class="yv">利回り7.0%</span><span style="font-size:11px;color:#a09080">3階／8階建</span></div><div class="sb"><div class="st"><div class="sf" style="width:61%;background:#8a7a5e"></div></div><span class="sn" style="color:#8a7a5e">61</span></div></div>
-<div class="dt"><div class="dg"><div><div class="dl">想定テナント</div><div class="dv">単身サラリーマン・外国人居住者・介護福祉士・派遣労働者</div></div><div><div class="dl">想定賃料</div><div class="er">138,600円/月（表面7.0%逆算）</div></div></div><div style="margin-bottom:10px"><div class="dl">賃料参考データ</div><div class="at">墨田区1LDK相場13.5万円/月・坪9,800円・旧耐震・徒歩28分（誤記疑い）物件は成約賃料11〜12万円/月が現実的</div></div><div style="margin-bottom:10px"><div class="dl">分析</div><div class="at">6戸目。同一マンションの大量売出しにおいて注意すべきは、複数戸取得した場合の管理費・修繕積立金の総負担額。仮に5戸取得すれば月額管理費・積立金だけで15〜25万円超になる可能性があり、収支計算に必ず組み込む必要がある。単戸取得に絞った投資判断を推奨。</div></div><div class="pc"><div><h4 class="p">✓ メリット</h4><div>・2,380万円は自己資金2,000万円にやや超過するが単戸現金取得を検討できるレンジ</div><div>・墨田区の人口・賃貸需要は城東7区中で比較的高水準</div><div>・表面7%確保で短期キャッシュフローはプラス維持可能</div></div><div><h4 class="c2">△ リスク</h4><div>・自己資金2,000万円上限をわずかに超過し資金計画の調整が必要</div><div>・大量売出し・旧耐震・築47年の複合リスクで出口（売却）が極めて困難</div></div></div><div class="lb lc"><strong>融資: C</strong> 旧耐震・駅遠・同棟大量売出し案件。現金購入以外の選択肢なし。融資打診前に実最寄り駅・管理状態の確認必須<br>自己2380万/融資0万/月返済0万/DSCR0倍</div><div class="fb"><strong>資金計画:</strong> 自己2,380万/融資0万/計2,380万</div><a href="https://www.kenbiya.com/pp1/s/tokyo/sumida-ku/re_4448843jbu/" target="_blank" class="lnk">健美家／HOMESで詳細 →</a></div></div><div class="cd " id="c-condo-7"><div class="ch" onclick="tog('c-condo-7')"><div class="tr"><span class="rk rkx">7</span><span class="tt">東京都墨田区の</span><span style="font-size:14px;color:var(--lt)">▼</span></div><div class="mr"><span>📍墨田区</span><span>🚉水戸駅 徒歩28分</span><span>📐45.36㎡</span><span>🏗1979年11月</span></div><div class="pr"><span class="pv" >2,380<span class="u">万円</span></span><span class="yv">利回り7.0%</span><span style="font-size:11px;color:#a09080">3階／8階建</span></div><div class="sb"><div class="st"><div class="sf" style="width:61%;background:#8a7a5e"></div></div><span class="sn" style="color:#8a7a5e">61</span></div></div>
-<div class="dt"><div class="dg"><div><div class="dl">想定テナント</div><div class="dv">単身サラリーマン・看護師・外国人技術者・学生</div></div><div><div class="dl">想定賃料</div><div class="er">138,600円/月（表面7.0%逆算）</div></div></div><div style="margin-bottom:10px"><div class="dl">賃料参考データ</div><div class="at">墨田区45㎡帯賃貸坪単価9,800円・1LDK月額相場13.5万円・旧耐震割引考慮後の実勢賃料11〜12.5万円</div></div><div style="margin-bottom:10px"><div class="dl">分析</div><div class="at">7戸目。全30件が完全同一スペックであり、本データは1棟マンションの区分多数同時売出し案件と判断。投資家として最重要確認事項は①実最寄り駅と徒歩時間（データ誤記解消）②修繕積立金残高と長期修繕計画③管理組合の財務健全性④耐震診断の有無と結果。これらが未確認の状態では購入推奨不可。</div></div><div class="pc"><div><h4 class="p">✓ メリット</h4><div>・墨田区は東京23区内で賃貸需要の底堅いエリア</div><div>・表面7.0%は現金購入時の税引き前収益として許容水準</div><div>・45㎡超の専有面積で汎用性の高い間取り設計が期待できる</div></div><div><h4 class="c2">△ リスク</h4><div>・旧耐震1979年築で建物の物理的・法的リスクが高い</div><div>・同一棟30戸超の大量売出しは資産価値の市場評価の低さを如実に示す</div></div></div><div class="lb lc"><strong>融資: C</strong> 旧耐震・データ誤記・大量売出し三重リスク。金融機関審査通過の見込み薄く現金取得のみ現実的選択肢<br>自己2380万/融資0万/月返済0万/DSCR0倍</div><div class="fb"><strong>資金計画:</strong> 自己2,380万/融資0万/計2,380万</div><a href="https://www.kenbiya.com/pp1/s/tokyo/sumida-ku/re_4448813okr/" target="_blank" class="lnk">健美家／HOMESで詳細 →</a></div></div><div class="cd " id="c-condo-8"><div class="ch" onclick="tog('c-condo-8')"><div class="tr"><span class="rk rkx">8</span><span class="tt">東京都墨田区の</span><span style="font-size:14px;color:var(--lt)">▼</span></div><div class="mr"><span>📍墨田区</span><span>🚉水戸駅 徒歩28分</span><span>📐45.36㎡</span><span>🏗1979年11月</span></div><div class="pr"><span class="pv" >2,380<span class="u">万円</span></span><span class="yv">利回り7.0%</span><span style="font-size:11px;color:#a09080">3階／8階建</span></div><div class="sb"><div class="st"><div class="sf" style="width:61%;background:#8a7a5e"></div></div><span class="sn" style="color:#8a7a5e">61</span></div></div>
-<div class="dt"><div class="dg"><div><div class="dl">想定テナント</div><div class="dv">単身サラリーマン・派遣労働者・外国人居住者・介護士</div></div><div><div class="dl">想定賃料</div><div class="er">138,600円/月（表面7.0%逆算）</div></div></div><div style="margin-bottom:10px"><div class="dl">賃料参考データ</div><div class="at">墨田区1LDK賃貸相場13.5万円/月・坪9,800円・旧耐震・遠距離で実勢は相場比▲10%前後の11〜12万円/月を想定</div></div><div style="margin-bottom:10px"><div class="dl">分析</div><div class="at">8戸目。現金購入を前提とした実質利回り試算：年間賃料138.6万円×12＝166.3万円、空室率10%・管理費修繕費月3万円を控除すると実質年収入約113万円、実質利回り約4.7%。都市銀行定期2.5〜3%水準と比較するとリスクプレミアムが薄く、投資の優位性は限定的。</div></div><div class="pc"><div><h4 class="p">✓ メリット</h4><div>・現金購入で月次キャッシュフローは即時プラスに</div><div>・墨田区の立地ブランドはエリア内比較で資産性を下支え</div><div>・複数戸一括購入交渉で総額値下げの余地あり</div></div><div><h4 class="c2">△ リスク</h4><div>・実質利回り約4.7%はリスク対比で投資妙味が薄い</div><div>・旧耐震・築47年で10〜15年後の大規模修繕・建替えリスクが顕在化</div></div></div><div class="lb lc"><strong>融資: C</strong> 旧耐震・遠距離・大量売出しで融資付け不可。現金購入でも実質利回り4.7%程度にとどまりリスク対比の投資効率は低い<br>自己2380万/融資0万/月返済0万/DSCR0倍</div><div class="fb"><strong>資金計画:</strong> 自己2,380万/融資0万/計2,380万</div><a href="https://www.kenbiya.com/pp1/s/tokyo/sumida-ku/re_4448805hfk/" target="_blank" class="lnk">健美家／HOMESで詳細 →</a></div></div><div class="cd " id="c-condo-9"><div class="ch" onclick="tog('c-condo-9')"><div class="tr"><span class="rk rkx">9</span><span class="tt">東京都墨田区の</span><span style="font-size:14px;color:var(--lt)">▼</span></div><div class="mr"><span>📍墨田区</span><span>🚉水戸駅 徒歩28分</span><span>📐45.36㎡</span><span>🏗1979年11月</span></div><div class="pr"><span class="pv" >2,380<span class="u">万円</span></span><span class="yv">利回り7.0%</span><span style="font-size:11px;color:#a09080">3階／8階建</span></div><div class="sb"><div class="st"><div class="sf" style="width:61%;background:#8a7a5e"></div></div><span class="sn" style="color:#8a7a5e">61</span></div></div>
-<div class="dt"><div class="dg"><div><div class="dl">想定テナント</div><div class="dv">単身サラリーマン・看護師・外国人技術者・専門学校生</div></div><div><div class="dl">想定賃料</div><div class="er">138,600円/月（表面7.0%逆算）</div></div></div><div style="margin-bottom:10px"><div class="dl">賃料参考データ</div><div class="at">墨田区45㎡1LDK賃貸相場13.5万円/月・坪単価9,800円・旧耐震・駅遠の実勢賃料は11〜12.5万円/月と推計</div></div><div style="margin-bottom:10px"><div class="dl">分析</div><div class="at">9戸目。DSCRの観点から検討すると、仮に融資2,380万円×80%=1,904万円、金利2.5%・25年で試算すると月返済約8.5万円・年返済約102万円。年間純収入を賃料138.6万円×空室控除90%=124.7万円から管理費等36万円を控除した88.7万円で割るとDSCR約0.87となり、DSCR下限1.2を大幅に下回り融資条件未達。</div></div><div class="pc"><div><h4 class="p">✓ メリット</h4><div>・自己資金2,380万円の現金購入で返済義務なしのキャッシュフロー</div><div>・表面7%は墨田区旧耐震の市場相場と概ね合致</div><div>・45㎡超は単身・DINKS両対応で空室リスクを分散</div></div><div><h4 class="c2">△ リスク</h4><div>・融資条件（DSCR1.2・旧耐震・駅遠）を全項目でクリアできない</div><div>・大量同時売出しによる同棟内競合リスクで賃料下押し・空室長期化が懸念</div></div></div><div class="lb lc"><strong>融資: C</strong> DSCR試算約0.87で下限1.2を大幅下回る。旧耐震・遠距離・大量売出しで融資付けは全金融機関で困難と判断<br>自己2380万/融資0万/月返済0万/DSCR0倍</div><div class="fb"><strong>資金計画:</strong> 自己2,380万/融資0万/計2,380万</div><a href="https://www.kenbiya.com/pp1/s/tokyo/sumida-ku/re_44487946zp/" target="_blank" class="lnk">健美家／HOMESで詳細 →</a></div></div><div class="cd " id="c-condo-10"><div class="ch" onclick="tog('c-condo-10')"><div class="tr"><span class="rk rkx">10</span><span class="tt">東京都墨田区の</span><span style="font-size:14px;color:var(--lt)">▼</span></div><div class="mr"><span>📍墨田区</span><span>🚉水戸駅 徒歩28分</span><span>📐45.36㎡</span><span>🏗1979年11月</span></div><div class="pr"><span class="pv" >2,380<span class="u">万円</span></span><span class="yv">利回り7.0%</span><span style="font-size:11px;color:#a09080">3階／8階建</span></div><div class="sb"><div class="st"><div class="sf" style="width:61%;background:#8a7a5e"></div></div><span class="sn" style="color:#8a7a5e">61</span></div></div>
-<div class="dt"><div class="dg"><div><div class="dl">想定テナント</div><div class="dv">単身サラリーマン・外国人居住者・介護福祉士・派遣労働者</div></div><div><div class="dl">想定賃料</div><div class="er">138,600円/月（表面7.0%逆算）</div></div></div><div style="margin-bottom:10px"><div class="dl">賃料参考データ</div><div class="at">墨田区1LDK賃貸坪単価9,800円・月額相場13.5万円・旧耐震・駅遠実勢賃料11〜12万円/月・年間賃料収入132〜144万円レンジ</div></div><div style="margin-bottom:10px"><div class="dl">分析</div><div class="at">10戸目。総括として、本データセット30件は全て同一マンション同一スペックの大量売出し案件。城東7区分析の観点では、墨田区は台東・江東に次ぐ需要力を持つが、旧耐震・駅遠・大量売出しの三重リスクにより融資付けは困難。現金購入かつ実最寄り駅・管理状態確認後に単戸取得するのが唯一の現実的投資シナリオ。</div></div><div class="pc"><div><h4 class="p">✓ メリット</h4><div>・墨田区ブランドで城東7区内では比較的資産性が維持されやすい</div><div>・2,380万円という価格帯は現金投資家の参入障壁が低い</div><div>・30戸同時売出しにより価格交渉の余地が最も大きい案件群の一つ</div></div><div><h4 class="c2">△ リスク</h4><div>・全30件が完全同一スペックで差別化・優劣判断が困難</div><div>・旧耐震・築47年・駅遠・大量売出しの複合リスクは城東7区内でも最低水準の投資効率</div></div></div><div class="lb lc"><strong>融資: C</strong> 全件旧耐震・遠距離・大量売出しで融資評価Cが確定。現金取得のみ推奨、投資前に必ず現地調査・管理組合確認を実施すること<br>自己2380万/融資0万/月返済0万/DSCR0倍</div><div class="fb"><strong>資金計画:</strong> 自己2,380万/融資0万/計2,380万</div><a href="https://www.kenbiya.com/pp1/s/tokyo/sumida-ku/re_4448786axa/" target="_blank" class="lnk">健美家／HOMESで詳細 →</a></div></div></div>
-<div class="ls"><div class="lsh" onclick="document.getElementById('lb').style.display=document.getElementById('lb').style.display==='none'?'block':'none'"><span>検索リンク集</span><span>▼</span></div><div id="lb" style="display:none;margin-top:8px"><a href="https://www.kenbiya.com/pp6/s/tokyo/taito-ku/" target="_blank" class="li" style="color:#c47a3a">健美家 台東区</a><a href="https://www.kenbiya.com/pp6/s/tokyo/sumida-ku/" target="_blank" class="li" style="color:#c47a3a">健美家 墨田区</a><a href="https://www.kenbiya.com/pp6/s/tokyo/koto-ku/" target="_blank" class="li" style="color:#c47a3a">健美家 江東区</a><a href="https://www.kenbiya.com/pp6/s/tokyo/arakawa-ku/" target="_blank" class="li" style="color:#c47a3a">健美家 荒川区</a><a href="https://www.kenbiya.com/pp6/s/tokyo/adachi-ku/" target="_blank" class="li" style="color:#c47a3a">健美家 足立区</a><a href="https://www.kenbiya.com/pp6/s/tokyo/katsushika-ku/" target="_blank" class="li" style="color:#c47a3a">健美家 葛飾区</a><a href="https://www.kenbiya.com/pp6/s/tokyo/edogawa-ku/" target="_blank" class="li" style="color:#c47a3a">健美家 江戸川区</a><a href="https://house.goo.ne.jp/toushi/office/area_tokyo.html" target="_blank" class="li" style="color:var(--bl)">goo不動産</a><a href="https://www.athome.co.jp/buy_store/tokyo/" target="_blank" class="li" style="color:#3a7ac4">アットホーム</a><a href="https://www.rakumachi.jp/syuuekibukken/area/prefecture/dim2002/" target="_blank" class="li" style="color:#5a9a3a">楽待</a></div></div>
-<div class="dis">⚠ 2026-04-25時点のWeb公開情報に基づくAI自動分析（GitHub Actions + Claude API）。融資適格度はAI推定であり実際の融資可否は金融機関審査によります。購入前に現地確認・重説・融資審査を必ず実施してください。</div>
+<!-- ========== データ取得現況 ========== -->
+<div class="bx">
+<strong>📊 データ取得現況（2026-04-25）</strong>
+<div class="data-grid">
+
+<div class="data-card">
+<div class="lbl">区分マンション</div>
+<div class="num">7<span style="font-size:12px;font-weight:400">件</span></div>
+<div class="sub-num">予算内 6件</div>
 </div>
-<script>function showCat(c){document.querySelectorAll('.cs').forEach(s=>s.style.display='none');document.querySelector('[data-cat="'+c+'"]').style.display='block';document.querySelectorAll('#tabs button').forEach(b=>b.classList.remove('on'));document.querySelector('#tabs button[data-c="'+c+'"]').classList.add('on')}function tog(id){document.getElementById(id).classList.toggle('open')}document.addEventListener('DOMContentLoaded',()=>{const f=document.querySelector('.cd');if(f)f.classList.add('open')})</script>
+
+<div class="data-card">
+<div class="lbl">戸建て</div>
+<div class="num">7<span style="font-size:12px;font-weight:400">件</span></div>
+<div class="sub-num">予算内 3件</div>
+</div>
+
+<div class="data-card">
+<div class="lbl">売り店舗・事務所</div>
+<div class="num">8<span style="font-size:12px;font-weight:400">件</span></div>
+<div class="sub-num">予算内 2件</div>
+</div>
+
+</div>
+</div>
+
+<!-- ========== 市況概説 ========== -->
+
+<div class="mkt">
+<strong>📈 城東エリア市況</strong><br>
+城東7区の不動産投資市況は全体的に上昇基調が続いており、都心部と比較した割安感から投資家の注目が高まっています。台東区は浅草を中心にインバウンド需要が旺盛で店舗・民泊需要が堅調。墨田区はスカイツリー周辺の再開発効果で地価上昇が顕著です。江東区は湾岸エリアのマンション需要が根強く、大規模開発も継続中。荒川区・足立区・葛飾区・江戸川区は利回り重視の投資家に人気で、特に足立区は交通利便性改善により割安感を保ちつつ価格上昇が進んでいます。投資家にとっては高利回りと将来的なキャピタルゲインの両立が期待できるエリアとして評価が高まっており、インフラ整備や再開発計画の動向が今後の鍵となります。
+</div>
+
+
+<!-- ========== 変動アラート ========== -->
+
+
+<!-- ========== カテゴリ別賃料相場 ========== -->
+
+<div class="rent-section" id="rent-condo" onclick="this.classList.toggle('open')">
+<div class="rent-title">区分マンション賃料相場（万円/月） <span>▼</span></div>
+<div class="rent-body">
+<table class="rt">
+<tr><th>区</th><th>1R</th><th>1K</th><th>1DK</th><th>1LDK</th><th>2LDK</th><th>3LDK</th></tr>
+
+<tr><td><strong>台東区</strong></td><td>9.5万</td><td>10.2万</td><td>11.5万</td><td>14.8万</td><td>19.5万</td><td>24.0万</td></tr>
+
+<tr><td><strong>墨田区</strong></td><td>8.8万</td><td>9.5万</td><td>10.5万</td><td>13.5万</td><td>17.0万</td><td>21.0万</td></tr>
+
+<tr><td><strong>江東区</strong></td><td>9.2万</td><td>10.0万</td><td>11.0万</td><td>14.0万</td><td>18.5万</td><td>23.0万</td></tr>
+
+<tr><td><strong>荒川区</strong></td><td>7.8万</td><td>8.5万</td><td>9.5万</td><td>12.0万</td><td>15.0万</td><td>19.0万</td></tr>
+
+<tr><td><strong>足立区</strong></td><td>6.5万</td><td>7.2万</td><td>8.0万</td><td>10.0万</td><td>12.5万</td><td>15.0万</td></tr>
+
+<tr><td><strong>葛飾区</strong></td><td>6.3万</td><td>7.0万</td><td>7.8万</td><td>9.8万</td><td>12.0万</td><td>14.5万</td></tr>
+
+<tr><td><strong>江戸川区</strong></td><td>6.5万</td><td>7.0万</td><td>7.8万</td><td>10.0万</td><td>12.0万</td><td>14.5万</td></tr>
+
+</table>
+</div>
+</div>
+
+<div class="rent-section" id="rent-house" onclick="this.classList.toggle('open')">
+<div class="rent-title">戸建て賃料相場（万円/月） <span>▼</span></div>
+<div class="rent-body">
+<table class="rt">
+<tr><th>区</th><th>2LDK</th><th>3LDK</th><th>4LDK</th></tr>
+
+<tr><td><strong>台東区</strong></td><td>22.0万</td><td>28.0万</td><td>35.0万</td></tr>
+
+<tr><td><strong>墨田区</strong></td><td>18.0万</td><td>23.0万</td><td>28.0万</td></tr>
+
+<tr><td><strong>江東区</strong></td><td>20.0万</td><td>25.0万</td><td>30.0万</td></tr>
+
+<tr><td><strong>荒川区</strong></td><td>16.0万</td><td>20.0万</td><td>25.0万</td></tr>
+
+<tr><td><strong>足立区</strong></td><td>12.0万</td><td>15.0万</td><td>18.0万</td></tr>
+
+<tr><td><strong>葛飾区</strong></td><td>11.5万</td><td>14.0万</td><td>17.0万</td></tr>
+
+<tr><td><strong>江戸川区</strong></td><td>12.0万</td><td>14.5万</td><td>17.5万</td></tr>
+
+</table>
+</div>
+</div>
+
+<div class="rent-section" id="rent-store" onclick="this.classList.toggle('open')">
+<div class="rent-title">店舗・事務所賃料相場（万円/坪） <span>▼</span></div>
+<div class="rent-body">
+<table class="rt">
+<tr><th>区</th><th>坪単価</th><th>20㎡</th><th>40㎡</th><th>60㎡</th></tr>
+
+<tr><td><strong>台東区</strong></td><td>2.2</td><td>11〜14</td><td>22〜28</td><td>33〜42</td></tr>
+
+<tr><td><strong>墨田区</strong></td><td>1.8</td><td>9〜12</td><td>18〜24</td><td>27〜36</td></tr>
+
+<tr><td><strong>江東区</strong></td><td>2.0</td><td>10〜13</td><td>20〜26</td><td>30〜39</td></tr>
+
+<tr><td><strong>荒川区</strong></td><td>1.5</td><td>8〜10</td><td>15〜20</td><td>23〜30</td></tr>
+
+<tr><td><strong>足立区</strong></td><td>1.2</td><td>6〜8</td><td>12〜16</td><td>18〜24</td></tr>
+
+<tr><td><strong>葛飾区</strong></td><td>1.1</td><td>5〜7</td><td>11〜15</td><td>17〜22</td></tr>
+
+<tr><td><strong>江戸川区</strong></td><td>1.1</td><td>5〜7</td><td>11〜15</td><td>17〜22</td></tr>
+
+</table>
+</div>
+</div>
+
+
+<!-- ========== カテゴリタブ ========== -->
+<div class="tabs" id="tabs">
+
+<button onclick="showCat('condo')" class="on" data-c="condo">区分マンション (6)</button>
+
+<button onclick="showCat('house')" class="" data-c="house">戸建て (3)</button>
+
+<button onclick="showCat('store')" class="" data-c="store">売り店舗・事務所 (2)</button>
+
+</div>
+
+<!-- ========== 物件カード ========== -->
+
+<div class="cs" data-cat="condo" style="">
+
+
+<div class="cd " id="c-condo-1">
+<div class="ch" onclick="tog('c-condo-1')">
+<div class="tr">
+<span class="rk rk1">1</span>
+<span class="tt">東京都台東区の（他49件同条件あり）</span>
+
+
+<span style="font-size:14px;color:var(--lt)">▼</span>
+</div>
+<div class="mr">
+<span>📍東京都台東区の</span>
+<span>🚉浅草駅 徒歩6分</span>
+<span>📐22.0㎡</span>
+<span>🏗1990年1月</span>
+</div>
+<div class="pr">
+<span class="pv" >2,499<span class="u">万円</span></span>
+<span class="yv">利回り4.8%</span>
+<span style="font-size:11px;color:#a09080">12階／12階建</span>
+</div>
+<div class="sb"><div class="st"><div class="sf" style="width:78%;background:#8a7a5e"></div></div><span class="sn" style="color:#8a7a5e">78</span></div>
+</div>
+<div class="dt">
+<div class="dg"><div><div class="dl">想定テナント</div><div class="dv">単身会社員・観光業従事者・外国人居住者・フリーランス</div></div><div><div class="dl">想定賃料</div><div class="er">月額約10.0万円（1K想定）</div></div></div>
+<div style="margin-bottom:10px"><div class="dl">賃料参考データ</div><div class="at">台東区1K相場10.2万円/月。22㎡は1K～1DK境界。浅草駅6分の希少立地で相場上限近辺を維持可能。坪単価換算で約15,000円/坪・月と相場整合。</div></div>
+<div style="margin-bottom:10px"><div class="dl">分析</div><div class="at">「他49件同条件あり」の大量売出し案件。同一マンション内に50戸超が同時売出しとなっており、需給面でのリスクに注意が必要。1990年築（旧耐震の可能性・要確認）だが浅草駅徒歩6分・最上階12階は希少性高い。表面利回4.8%は台東区標準下限水準。インバウンド回復による賃料下支えは期待できるが管理組合の健全性確認必須。</div></div>
+<div class="pc"><div><h4 class="p">✓ メリット</h4><div>・浅草駅徒歩6分の都心アクセス</div><div>・最上階12階で眺望・日照優位</div><div>・インバウンド・外国人需要による賃料下支え</div></div><div><h4 class="c2">△ リスク</h4><div>・1990年築・旧耐震該当リスクあり（要耐震診断確認）</div><div>・49件同条件大量売出し＝出口売却時の競合多数</div></div></div>
+<div class="lb lbb"><strong>融資: B</strong> 1990年築で旧耐震基準の可能性あり・利回4.8%がDSCR基準をギリギリ下回る。耐震診断書と管理状況の確認が先決。<br>自己700万/融資1799万/月返済8.1万/DSCR1.15倍</div>
+<div class="fb"><strong>資金計画:</strong> 自己700万/融資1,799万/計2,499万</div>
+<a href="https://www.kenbiya.com/pp1/s/tokyo/taito-ku/re_4449862osd/" target="_blank" class="lnk">健美家／HOMESで詳細 →</a>
+</div></div>
+
+<div class="cd " id="c-condo-2">
+<div class="ch" onclick="tog('c-condo-2')">
+<div class="tr">
+<span class="rk rk2">2</span>
+<span class="tt">東京都江東区の（他49件同条件あり）</span>
+
+
+<span style="font-size:14px;color:var(--lt)">▼</span>
+</div>
+<div class="mr">
+<span>📍東京都江東区の</span>
+<span>🚉西川口駅 徒歩11分</span>
+<span>📐25.62㎡</span>
+<span>🏗2022年1月</span>
+</div>
+<div class="pr">
+<span class="pv" >2,800<span class="u">万円</span></span>
+<span class="yv">利回り3.93%</span>
+<span style="font-size:11px;color:#a09080">8階／13階建</span>
+</div>
+<div class="sb"><div class="st"><div class="sf" style="width:61%;background:#8a7a5e"></div></div><span class="sn" style="color:#8a7a5e">61</span></div>
+</div>
+<div class="dt">
+<div class="dg"><div><div class="dl">想定テナント</div><div class="dv">単身会社員・カップル・若年ファミリー</div></div><div><div class="dl">想定賃料</div><div class="er">月額約9.2万円（1K相場基準）</div></div></div>
+<div style="margin-bottom:10px"><div class="dl">賃料参考データ</div><div class="at">江東区1K相場10.0万円/月。25.62㎡・2022年築で新築プレミアムは剥落局面。表面利回3.93%は満室賃料月約9.2万円に対応するが、相場との乖離は小さく適正水準。坪単価約12,500円/坪・月。</div></div>
+<div style="margin-bottom:10px"><div class="dl">分析</div><div class="at">「他49件同条件あり」の大量売出し案件。2022年築新耐震・8階建13階中8階と居住性は高いが、表面利回3.93%は城東区分マンションとして最低水準。記載駅「西川口駅」は埼玉県川口市であり江東区物件との整合性に重大な疑義あり。駅情報の誤記入の可能性が高く、実際の最寄駅・交通利便性は現地確認必須。DSCR1.2クリアが困難な水準。</div></div>
+<div class="pc"><div><h4 class="p">✓ メリット</h4><div>・2022年築・新耐震で融資評価高い</div><div>・江東区の再開発エリアに近接する可能性</div></div><div><h4 class="c2">△ リスク</h4><div>・表面利回3.93%でDSCR1.2未達・CF赤字リスク大</div><div>・記載最寄駅（西川口）が江東区物件として地理的に矛盾・要現地確認</div><div>・49件同条件大量売出しで出口リスク高</div></div></div>
+<div class="lb lc"><strong>融資: C</strong> 表面利回3.93%では月次返済後のキャッシュフローがマイナス転落リスク大。駅情報の不整合もあり現金購入か見送りを推奨。<br>自己2800万/融資0万/月返済0万/DSCR1.09倍</div>
+<div class="fb"><strong>資金計画:</strong> 自己2,800万/融資0万/計2,800万</div>
+<a href="https://www.kenbiya.com/pp1/s/tokyo/koto-ku/re_4449197i7t/" target="_blank" class="lnk">健美家／HOMESで詳細 →</a>
+</div></div>
+
+<div class="cd " id="c-condo-3">
+<div class="ch" onclick="tog('c-condo-3')">
+<div class="tr">
+<span class="rk rk3">3</span>
+<span class="tt">東京都荒川区の（他49件同条件あり）</span>
+
+
+<span style="font-size:14px;color:var(--lt)">▼</span>
+</div>
+<div class="mr">
+<span>📍東京都荒川区の</span>
+<span>🚉小田急相模原駅 徒歩8分</span>
+<span>📐30.09㎡</span>
+<span>🏗2014年5月</span>
+</div>
+<div class="pr">
+<span class="pv" >2,080<span class="u">万円</span></span>
+<span class="yv">利回り4.26%</span>
+<span style="font-size:11px;color:#a09080">2階／10階建</span>
+</div>
+<div class="sb"><div class="st"><div class="sf" style="width:65%;background:#8a7a5e"></div></div><span class="sn" style="color:#8a7a5e">65</span></div>
+</div>
+<div class="dt">
+<div class="dg"><div><div class="dl">想定テナント</div><div class="dv">単身会社員・ファミリー・高齢単身者</div></div><div><div class="dl">想定賃料</div><div class="er">月額約7.4万円（1K～1DK境界・30㎡）</div></div></div>
+<div style="margin-bottom:10px"><div class="dl">賃料参考データ</div><div class="at">荒川区1DK相場9.5万円/月。30.09㎡は1DKに相当するが、記載駅「小田急相模原駅」は神奈川県相模原市であり荒川区物件として地理的に矛盾。実際の最寄駅・立地の現地確認が必須。表面利回4.26%は月賃料約7.4万円に相当し相場をやや下回る。</div></div>
+<div style="margin-bottom:10px"><div class="dl">分析</div><div class="at">「他49件同条件あり」の大量売出し案件。2014年築新耐震・30㎡で利回4.26%は荒川区標準的水準。ただし記載最寄駅「小田急相模原駅」は荒川区に存在しない駅であり、物件データの信頼性に重大な疑問あり。2階部分は日照・防犯面でやや劣位。実データ確認後に投資判断を行うべき案件。</div></div>
+<div class="pc"><div><h4 class="p">✓ メリット</h4><div>・2014年築・新耐震基準適合</div><div>・30㎡のゆとりある面積でファミリー・単身両需要対応</div></div><div><h4 class="c2">△ リスク</h4><div>・最寄駅データ（小田急相模原）が荒川区物件として地理的に矛盾・信頼性要確認</div><div>・2階は日照・防犯・浸水リスクで賃料査定に不利</div></div></div>
+<div class="lb lbb"><strong>融資: B</strong> 2014年築新耐震で融資評価は可だが利回4.26%でDSCR1.2の達成は厳しく、駅情報の不整合解消後に再評価が必要。<br>自己520万/融資1560万/月返済7.0万/DSCR1.05倍</div>
+<div class="fb"><strong>資金計画:</strong> 自己520万/融資1,560万/計2,080万</div>
+<a href="https://www.kenbiya.com/pp1/s/tokyo/arakawa-ku/re_4449806qwx/" target="_blank" class="lnk">健美家／HOMESで詳細 →</a>
+</div></div>
+
+<div class="cd " id="c-condo-4">
+<div class="ch" onclick="tog('c-condo-4')">
+<div class="tr">
+<span class="rk rk4">4</span>
+<span class="tt">東京都足立区の（他49件同条件あり）</span>
+
+
+<span style="font-size:14px;color:var(--lt)">▼</span>
+</div>
+<div class="mr">
+<span>📍東京都足立区の</span>
+<span>🚉三軒茶屋駅 徒歩8分</span>
+<span>📐32.19㎡</span>
+<span>🏗2018年5月</span>
+</div>
+<div class="pr">
+<span class="pv" >2,240<span class="u">万円</span></span>
+<span class="yv">利回り4.5%</span>
+<span style="font-size:11px;color:#a09080">1階／6階建</span>
+</div>
+<div class="sb"><div class="st"><div class="sf" style="width:67%;background:#8a7a5e"></div></div><span class="sn" style="color:#8a7a5e">67</span></div>
+</div>
+<div class="dt">
+<div class="dg"><div><div class="dl">想定テナント</div><div class="dv">単身会社員・カップル・学生</div></div><div><div class="dl">想定賃料</div><div class="er">月額約8.4万円（1DK・32㎡想定）</div></div></div>
+<div style="margin-bottom:10px"><div class="dl">賃料参考データ</div><div class="at">足立区1DK相場8.0万円/月。32.19㎡は1DK上位～1LDK境界。記載駅「三軒茶屋」は世田谷区であり足立区物件として地理的に矛盾。実際の最寄駅確認が不可欠。表面利回4.5%は月賃料約8.4万円に相当し足立区相場とほぼ整合。坪単価約8,600円/坪・月。</div></div>
+<div style="margin-bottom:10px"><div class="dl">分析</div><div class="at">「他49件同条件あり」の大量売出し案件。2018年築新耐震・1階は日照・防犯面でマイナス評価。記載最寄駅「三軒茶屋駅」は足立区に存在しないため物件データの信頼性が低く、実際の交通アクセスは現地確認必須。足立区は近年再開発が進み賃貸需要は底堅いが、1階・大量売出しは出口売却で苦戦しやすい。</div></div>
+<div class="pc"><div><h4 class="p">✓ メリット</h4><div>・2018年築・新耐震で管理費修繕積立金の負担が比較的軽微</div><div>・32㎡の広さでファミリー転用も視野</div></div><div><h4 class="c2">△ リスク</h4><div>・最寄駅データ（三軒茶屋）が足立区物件として地理的に矛盾・要現地確認</div><div>・1階は賃料査定・売却価格ともに不利・空室リスク高め</div></div></div>
+<div class="lb lbb"><strong>融資: B</strong> 2018年築新耐震で金融機関評価は可だが1階・駅情報不整合あり。利回4.5%でDSCR1.2達成には自己資金厚め設定が必要。<br>自己560万/融資1680万/月返済7.5万/DSCR1.12倍</div>
+<div class="fb"><strong>資金計画:</strong> 自己560万/融資1,680万/計2,240万</div>
+<a href="https://www.kenbiya.com/pp1/s/tokyo/adachi-ku/re_4449703028/" target="_blank" class="lnk">健美家／HOMESで詳細 →</a>
+</div></div>
+
+<div class="cd " id="c-condo-5">
+<div class="ch" onclick="tog('c-condo-5')">
+<div class="tr">
+<span class="rk rk5">5</span>
+<span class="tt">東京都葛飾区の（他49件同条件あり）</span>
+
+
+<span style="font-size:14px;color:var(--lt)">▼</span>
+</div>
+<div class="mr">
+<span>📍東京都葛飾区の</span>
+<span>🚉幸手駅 徒歩14分</span>
+<span>📐20.16㎡</span>
+<span>🏗2020年4月</span>
+</div>
+<div class="pr">
+<span class="pv" >2,125<span class="u">万円</span></span>
+<span class="yv">利回り5.02%</span>
+<span style="font-size:11px;color:#a09080">5階／15階建</span>
+</div>
+<div class="sb"><div class="st"><div class="sf" style="width:70%;background:#8a7a5e"></div></div><span class="sn" style="color:#8a7a5e">70</span></div>
+</div>
+<div class="dt">
+<div class="dg"><div><div class="dl">想定テナント</div><div class="dv">単身会社員・単身女性・学生</div></div><div><div class="dl">想定賃料</div><div class="er">月額約8.9万円（1R・20㎡・表面利回逆算）</div></div></div>
+<div style="margin-bottom:10px"><div class="dl">賃料参考データ</div><div class="at">葛飾区1R相場6.3万円/月。表面利回5.02%は月賃料約8.9万円を示すが、葛飾区1R相場6.3万円と大きく乖離しており賃料設定の妥当性に要注意。実際の賃料は6.5～7.0万円程度が現実的で、実質利回は3.7%前後に低下する可能性あり。記載駅「幸手駅」は埼玉県幸手市であり葛飾区物件として地理的に矛盾・要確認。</div></div>
+<div style="margin-bottom:10px"><div class="dl">分析</div><div class="at">「他49件同条件あり」の大量売出し案件。2020年築・5階建15階中5階で居住性は標準的。表面利回5.02%は城東7区の中で比較的高水準だが、最寄駅データ（幸手駅：埼玉）が葛飾区物件として地理的に矛盾しており信頼性に疑念。実相場との乖離が大きく、賃料の根拠となる入居者・賃貸借契約書の現物確認が必須。データ整合性確認後であれば投資妙味はある。</div></div>
+<div class="pc"><div><h4 class="p">✓ メリット</h4><div>・2020年築・新耐震・築浅で修繕リスク低</div><div>・5階で日照・眺望が標準以上</div></div><div><h4 class="c2">△ リスク</h4><div>・表面利回が葛飾区相場を大幅超過しており実質利回の精査必須</div><div>・最寄駅データ（幸手）が葛飾区物件として地理的に矛盾・立地確認不可</div></div></div>
+<div class="lb la"><strong>融資: A</strong> 2020年築・新耐震・表面利回5%超でA基準を満たすが、実賃料が相場乖離している場合はB以下に格下げ。駅情報の確認が前提条件。<br>自己425万/融資1700万/月返済7.6万/DSCR1.22倍</div>
+<div class="fb"><strong>資金計画:</strong> 自己425万/融資1,700万/計2,125万</div>
+<a href="https://www.kenbiya.com/pp1/s/tokyo/katsushika-ku/re_4449804ryt/" target="_blank" class="lnk">健美家／HOMESで詳細 →</a>
+</div></div>
+
+<div class="cd " id="c-condo-6">
+<div class="ch" onclick="tog('c-condo-6')">
+<div class="tr">
+<span class="rk rkx">6</span>
+<span class="tt">東京都江戸川区の（他49件同条件あり）</span>
+
+
+<span style="font-size:14px;color:var(--lt)">▼</span>
+</div>
+<div class="mr">
+<span>📍東京都江戸川区の</span>
+<span>🚉篠崎駅 徒歩12分</span>
+<span>📐64.29㎡</span>
+<span>🏗1988年6月</span>
+</div>
+<div class="pr">
+<span class="pv" >1,175<span class="u">万円</span></span>
+<span class="yv">利回り11.03%</span>
+<span style="font-size:11px;color:#a09080">2階／14階建</span>
+</div>
+<div class="sb"><div class="st"><div class="sf" style="width:55%;background:#8a7a5e"></div></div><span class="sn" style="color:#8a7a5e">55</span></div>
+</div>
+<div class="dt">
+<div class="dg"><div><div class="dl">想定テナント</div><div class="dv">ファミリー・高齢者・生活保護受給者・外国人世帯</div></div><div><div class="dl">想定賃料</div><div class="er">月額約10.8万円（表面利回逆算：1175万×11.03%÷12）</div></div></div>
+<div style="margin-bottom:10px"><div class="dl">賃料参考データ</div><div class="at">江戸川区2LDK相場12.0万円/月。64.29㎡は2LDK相当。篠崎駅徒歩12分・2階・1988年築（旧耐震）を考慮すると相場上限近辺の設定は強気。実質的に10.0～11.0万円が妥当水準。坪単価約5,500円/坪・月。</div></div>
+<div style="margin-bottom:10px"><div class="dl">分析</div><div class="at">1988年築旧耐震・64.29㎡・篠崎駅12分・2階と流動性の低い属性が重なる。表面利回11.03%は城東7区最高水準だが、旧耐震・大面積・駅遠・低層は売却出口が極めて限定される。空室時の賃料収入ゼロリスクと管理費・修繕積立の増加リスクが高い。取得価格1175万円は自己資金内で完結できるため現金一括購入であればCF面の妙味はある。融資活用は銀行評価額の低さから非推奨。</div></div>
+<div class="pc"><div><h4 class="p">✓ メリット</h4><div>・表面利回11.03%と絶対水準は城東7区最高</div><div>・自己資金1175万で完結・フルキャッシュCF最大化</div></div><div><h4 class="c2">△ リスク</h4><div>・1988年築旧耐震・耐震改修コスト発生リスク大</div><div>・64㎡大面積・駅遠・2階・江戸川区篠崎は売却出口が極めて限定的</div></div></div>
+<div class="lb lc"><strong>融資: C</strong> 1988年築旧耐震・築38年・駅徒歩12分・2階で金融機関の担保評価が著しく低く融資は期待薄。現金購入を強く推奨。<br>自己1175万/融資0万/月返済0万/DSCR0倍</div>
+<div class="fb"><strong>資金計画:</strong> 自己1,175万/融資0万/計1,175万</div>
+<a href="https://www.kenbiya.com/pp1/s/tokyo/edogawa-ku/re_4444861kbc/" target="_blank" class="lnk">健美家／HOMESで詳細 →</a>
+</div></div>
+
+<div class="cd ob" id="c-condo-7">
+<div class="ch" onclick="tog('c-condo-7')">
+<div class="tr">
+<span class="rk rkx">7</span>
+<span class="tt">東京都墨田区の（他49件同条件あり）</span>
+
+<span class="bg bgo">予算超</span>
+<span style="font-size:14px;color:var(--lt)">▼</span>
+</div>
+<div class="mr">
+<span>📍東京都墨田区の</span>
+<span>🚉両国駅 徒歩7分</span>
+<span>📐38.73㎡</span>
+<span>🏗1982年4月</span>
+</div>
+<div class="pr">
+<span class="pv" style="color:#b08050">14,300<span class="u">万円</span></span>
+<span class="yv">利回り11.03%</span>
+<span style="font-size:11px;color:#a09080">9階／9階建</span>
+</div>
+<div class="sb"><div class="st"><div class="sf" style="width:28%;background:#8a7a5e"></div></div><span class="sn" style="color:#8a7a5e">28</span></div>
+</div>
+<div class="dt">
+<div class="dg"><div><div class="dl">想定テナント</div><div class="dv">複数テナント（一棟想定）・事務所・倉庫利用</div></div><div><div class="dl">想定賃料</div><div class="er">月額約131.6万円（14300万×11.03%÷12・一棟換算）</div></div></div>
+<div style="margin-bottom:10px"><div class="dl">賃料参考データ</div><div class="at">墨田区1DK相場10.5万円/月。価格1億4300万円・38.73㎡は区分マンション単体の価格としては著しく異常。一棟マンションまたは複数戸パッケージの可能性が高く、区分マンション単体データとして分析不能。両国駅徒歩7分の立地価値は高いが物件の性質・区分か一棟かの確認が必須。</div></div>
+<div style="margin-bottom:10px"><div class="dl">分析</div><div class="at">「他49件同条件あり」の大量売出し案件。価格1億4300万円・面積38.73㎡の組み合わせは坪単価約1,220万円/坪に相当し区分マンション単体の価格として市場水準を大幅逸脱。一棟ビル・複数戸パッケージ・データ誤入力の可能性が高く、投資判断の前提となる物件種別の確認が先決。自己資金2000万・融資上限3000万の合計5000万円を大幅超過しており、本投資条件では購入不可。</div></div>
+<div class="pc"><div><h4 class="p">✓ メリット</h4><div>・両国駅徒歩7分の好立地（仮に一棟ビルであれば）</div><div>・墨田区は再開発ポテンシャルがある</div></div><div><h4 class="c2">△ リスク</h4><div>・価格1億4300万円が投資予算5000万を大幅超過・購入不可</div><div>・物件種別（区分/一棟）が不明確でデータ信頼性ゼロ・要問い合わせ</div></div></div>
+<div class="lb lc"><strong>融資: C</strong> 予算5000万を9300万超過。物件データ自体の信頼性に疑義あり。現状では投資検討対象外。<br>自己0万/融資0万/月返済0万/DSCR0倍</div>
+<div class="fb"><strong>資金計画:</strong> 自己0万/融資0万/計14,300万<span style="color:#c03030;font-weight:700"> ※融資増額必要</span></div>
+<a href="https://www.kenbiya.com/pp1/s/tokyo/sumida-ku/re_4449874ge3/" target="_blank" class="lnk">健美家／HOMESで詳細 →</a>
+</div></div>
+
+</div>
+<div class="cs" data-cat="house" style="display:none">
+
+
+<div class="cd " id="c-house-1">
+<div class="ch" onclick="tog('c-house-1')">
+<div class="tr">
+<span class="rk rk1">1</span>
+<span class="tt">東京都台東区の（他49件同条件あり）</span>
+
+
+<span style="font-size:14px;color:var(--lt)">▼</span>
+</div>
+<div class="mr">
+<span>📍東京都台東区の</span>
+<span>🚉入谷駅 徒歩10分</span>
+<span>📐250.15㎡</span>
+<span>🏗2024年11月</span>
+</div>
+<div class="pr">
+<span class="pv" >2,400<span class="u">万円</span></span>
+<span class="yv">利回り6.25%</span>
+
+</div>
+<div class="sb"><div class="st"><div class="sf" style="width:81%;background:#d4782b"></div></div><span class="sn" style="color:#d4782b">81</span></div>
+</div>
+<div class="dt">
+<div class="dg"><div><div class="dl">想定テナント</div><div class="dv">単身・DINKS会社員、外国人労働者、観光業従事者</div></div><div><div class="dl">想定賃料</div><div class="er">月額28万円（3LDK想定）</div></div></div>
+<div style="margin-bottom:10px"><div class="dl">賃料参考データ</div><div class="at">台東区3LDK相場28万円/月。年間336万円。表面利回り6.25%（掲載値）と概ね整合。坪単価換算で約3.7万円/坪（250㎡=75.7坪）。浅草・上野エリア需要あり相場水準妥当。</div></div>
+<div style="margin-bottom:10px"><div class="dl">分析</div><div class="at">2024年11月築の新築同然物件。入谷駅徒歩10分、台東区の希少戸建て。「他49件同条件あり」表記あり＝同一条件での大量売出し案件の可能性あり。価格2400万は城東最安水準で自己資金内完結可能。利回り6.25%は台東区としてまずまず。新築節税効果も見込める。</div></div>
+<div class="pc"><div><h4 class="p">✓ メリット</h4><div>・新築同然で修繕リスク極小</div><div>・自己資金2000万以内で完結・フルキャッシュも可</div><div>・台東区は観光・商業エリアで賃貸需要安定</div></div><div><h4 class="c2">△ リスク</h4><div>・他49件同条件あり＝大量売出し案件のため個別物件詳細の確認が必須</div><div>・台東区戸建ては流動性がやや低く出口戦略に時間を要する可能性</div></div></div>
+<div class="lb la"><strong>融資: A</strong> 新耐震・新築・駅10分・利回り6.25%でA基準完全充足。LTV80%以内かつDSCR1.2超を確認。<br>自己480万/融資1920万/月返済8.6万/DSCR2.71倍</div>
+<div class="fb"><strong>資金計画:</strong> 自己480万/融資1,920万/計2,400万</div>
+<a href="https://www.kenbiya.com/pp3/s/tokyo/taito-ku/re_4449114jsu/" target="_blank" class="lnk">健美家／HOMESで詳細 →</a>
+</div></div>
+
+<div class="cd " id="c-house-2">
+<div class="ch" onclick="tog('c-house-2')">
+<div class="tr">
+<span class="rk rk2">2</span>
+<span class="tt">東京都墨田区の（他49件同条件あり）</span>
+
+
+<span style="font-size:14px;color:var(--lt)">▼</span>
+</div>
+<div class="mr">
+<span>📍東京都墨田区の</span>
+<span>🚉三軒茶屋駅 徒歩8分</span>
+<span>📐227.3㎡</span>
+<span>🏗2022年1月</span>
+</div>
+<div class="pr">
+<span class="pv" >5,000<span class="u">万円</span></span>
+<span class="yv">利回り20.06%</span>
+
+</div>
+<div class="sb"><div class="st"><div class="sf" style="width:78%;background:#8a7a5e"></div></div><span class="sn" style="color:#8a7a5e">78</span></div>
+</div>
+<div class="dt">
+<div class="dg"><div><div class="dl">想定テナント</div><div class="dv">ファミリー層、DINKS、外国人居住者</div></div><div><div class="dl">想定賃料</div><div class="er">月額83.6万円（表示利回り20.06%逆算＝約838万円/年÷12）</div></div></div>
+<div style="margin-bottom:10px"><div class="dl">賃料参考データ</div><div class="at">墨田区4LDK相場28万円/月。年336万円。掲載利回り20.06%は逆算年収838万円となり相場と大きく乖離。実態は複数戸一棟売り・現況家賃収入込みの可能性が高く要精査。「他49件同条件あり」の大量売出し案件。</div></div>
+<div style="margin-bottom:10px"><div class="dl">分析</div><div class="at">掲載利回り20.06%は著しく高く、通常の戸建て単棟賃料では説明困難。複数区画一括売却・現況利用・事業用途等の特殊事情が推察される。「他49件同条件あり」で大量売出し案件。三軒茶屋駅表記は墨田区物件としては地理的に矛盾があり、データ精度に疑義。現地確認・詳細資料取得が不可欠。価格5000万は予算上限に合致するが情報精度リスク大。</div></div>
+<div class="pc"><div><h4 class="p">✓ メリット</h4><div>・表示利回り20%超と突出した高数値（実態要確認）</div><div>・2022年築・新耐震で建物リスク低</div><div>・駅徒歩8分で賃貸付けに有利</div></div><div><h4 class="c2">△ リスク</h4><div>・利回り・駅名データに重大な疑義あり。詳細確認なしに投資判断不可</div><div>・他49件同条件あり＝大量売出し案件で相場形成が不透明</div></div></div>
+<div class="lb lbb"><strong>融資: B</strong> 利回り表示に疑義あり実態不明。新耐震・駅8分はB基準充足だが収支根拠の再確認が融資審査の前提。<br>自己1000万/融資3000万/月返済13.4万/DSCR5.21倍</div>
+<div class="fb"><strong>資金計画:</strong> 自己1,000万/融資3,000万/計5,000万</div>
+<a href="https://www.kenbiya.com/pp3/s/tokyo/sumida-ku/re_4449834mni/" target="_blank" class="lnk">健美家／HOMESで詳細 →</a>
+</div></div>
+
+<div class="cd " id="c-house-3">
+<div class="ch" onclick="tog('c-house-3')">
+<div class="tr">
+<span class="rk rk3">3</span>
+<span class="tt">東京都荒川区の（他49件同条件あり）</span>
+
+
+<span style="font-size:14px;color:var(--lt)">▼</span>
+</div>
+<div class="mr">
+<span>📍東京都荒川区の</span>
+<span>🚉三河島駅 徒歩10分</span>
+<span>📐319.14㎡</span>
+<span>🏗2022年4月</span>
+</div>
+<div class="pr">
+<span class="pv" >4,100<span class="u">万円</span></span>
+<span class="yv">利回り4.38%</span>
+
+</div>
+<div class="sb"><div class="st"><div class="sf" style="width:62%;background:#8a7a5e"></div></div><span class="sn" style="color:#8a7a5e">62</span></div>
+</div>
+<div class="dt">
+<div class="dg"><div><div class="dl">想定テナント</div><div class="dv">ファミリー層、準工業系勤労者世帯</div></div><div><div class="dl">想定賃料</div><div class="er">月額15万円（3LDK〜4LDK中間想定）</div></div></div>
+<div style="margin-bottom:10px"><div class="dl">賃料参考データ</div><div class="at">荒川区3LDK相場20万円/月・4LDK25万円/月。中間で月約22万円が上限目安。掲載利回り4.38%は年収179.6万円に相当し月約15万円水準。相場より低い現況賃料か空室の可能性あり。「他49件同条件あり」の大量売出し案件。</div></div>
+<div style="margin-bottom:10px"><div class="dl">分析</div><div class="at">荒川区三河島駅徒歩10分・2022年築の比較的新しい戸建て。利回り4.38%は城東エリアの戸建て投資として低水準。年収約180万円に対し価格4100万は割高感があり、賃料相場対比でもアップサイドが限定的。「他49件同条件あり」で大量売出し案件。荒川区は再開発余地あるが賃料上昇余地は小さい。</div></div>
+<div class="pc"><div><h4 class="p">✓ メリット</h4><div>・2022年築で修繕リスク低・減価償却活用可能</div><div>・荒川区は都心へのアクセス良好で長期保有に適す</div><div>・面積319㎡で大型ファミリー需要に対応可能</div></div><div><h4 class="c2">△ リスク</h4><div>・利回り4.38%は低水準でDSCR1.2割れリスクあり（試算1.12）</div><div>・他49件同条件あり＝大量売出し案件で個別詳細確認必須</div></div></div>
+<div class="lb la"><strong>融資: A</strong> 新耐震・築4年・駅10分でA基準充足。ただし利回り4.38%は5%を下回りDSCR確保に注意。<br>自己1100万/融資3000万/月返済13.4万/DSCR1.12倍</div>
+<div class="fb"><strong>資金計画:</strong> 自己1,100万/融資3,000万/計4,100万</div>
+<a href="https://www.kenbiya.com/pp3/s/tokyo/arakawa-ku/re_4448856xqz/" target="_blank" class="lnk">健美家／HOMESで詳細 →</a>
+</div></div>
+
+<div class="cd ob" id="c-house-4">
+<div class="ch" onclick="tog('c-house-4')">
+<div class="tr">
+<span class="rk rk4">4</span>
+<span class="tt">東京都江戸川区の（他49件同条件あり）</span>
+
+<span class="bg bgo">予算超</span>
+<span style="font-size:14px;color:var(--lt)">▼</span>
+</div>
+<div class="mr">
+<span>📍東京都江戸川区の</span>
+<span>🚉平井駅 徒歩14分</span>
+<span>📐442.95㎡</span>
+<span>🏗2015年6月</span>
+</div>
+<div class="pr">
+<span class="pv" style="color:#b08050">7,150<span class="u">万円</span></span>
+<span class="yv">利回り8.5%</span>
+
+</div>
+<div class="sb"><div class="st"><div class="sf" style="width:67%;background:#8a7a5e"></div></div><span class="sn" style="color:#8a7a5e">67</span></div>
+</div>
+<div class="dt">
+<div class="dg"><div><div class="dl">想定テナント</div><div class="dv">大型ファミリー、二世帯利用、グループホーム・福祉施設事業者</div></div><div><div class="dl">想定賃料</div><div class="er">月額50.8万円（掲載利回り8.5%逆算＝年607.8万円÷12）</div></div></div>
+<div style="margin-bottom:10px"><div class="dl">賃料参考データ</div><div class="at">江戸川区4LDK相場17.5万円/月。442㎡の大型物件は通常戸建て相場を大きく超え、複数戸・事業用途の可能性が高い。逆算月50万円超は単棟戸建てでは非現実的で詳細確認必須。「他49件同条件あり」の大量売出し案件。</div></div>
+<div style="margin-bottom:10px"><div class="dl">分析</div><div class="at">江戸川区平井駅徒歩14分、2015年築、面積442㎡の超大型戸建て。価格7150万は投資条件（融資上限3000万・自己資金2000万＝合計5000万）を超過。利回り8.5%は表面では魅力的だが価格帯・面積からして単棟戸建てではなく複数戸・事業用物件の可能性が高い。徒歩14分は弱点。「他49件同条件あり」で大量売出し案件。</div></div>
+<div class="pc"><div><h4 class="p">✓ メリット</h4><div>・利回り8.5%は城東エリアで高水準</div><div>・442㎡の大型敷地は希少性があり事業用途・複合利用の選択肢が広がる</div><div>・2015年築・新耐震で当面の大規模修繕リスク低</div></div><div><h4 class="c2">△ リスク</h4><div>・価格7150万で投資予算（5000万）を大幅超過</div><div>・他49件同条件あり＝大量売出し案件・平井駅徒歩14分は賃貸付けに不利</div></div></div>
+<div class="lb lbb"><strong>融資: B</strong> 2015年築新耐震だが駅14分・価格超過。予算5000万超のため自己資金不足。追加資金調達が前提。<br>自己2000万/融資3000万/月返済13.4万/DSCR3.17倍</div>
+<div class="fb"><strong>資金計画:</strong> 自己2,000万/融資3,000万/計7,150万<span style="color:#c03030;font-weight:700"> ※融資増額必要</span></div>
+<a href="https://www.kenbiya.com/pp3/s/tokyo/edogawa-ku/re_4448775co7/" target="_blank" class="lnk">健美家／HOMESで詳細 →</a>
+</div></div>
+
+<div class="cd ob" id="c-house-5">
+<div class="ch" onclick="tog('c-house-5')">
+<div class="tr">
+<span class="rk rk5">5</span>
+<span class="tt">東京都足立区の（他49件同条件あり）</span>
+
+<span class="bg bgo">予算超</span>
+<span style="font-size:14px;color:var(--lt)">▼</span>
+</div>
+<div class="mr">
+<span>📍東京都足立区の</span>
+<span>🚉練馬駅 徒歩8分</span>
+<span>📐359.23㎡</span>
+<span>🏗1988年12月</span>
+</div>
+<div class="pr">
+<span class="pv" style="color:#b08050">14,600<span class="u">万円</span></span>
+<span class="yv">利回り7.0%</span>
+
+</div>
+<div class="sb"><div class="st"><div class="sf" style="width:44%;background:#8a7a5e"></div></div><span class="sn" style="color:#8a7a5e">44</span></div>
+</div>
+<div class="dt">
+<div class="dg"><div><div class="dl">想定テナント</div><div class="dv">大型ファミリー、複数世帯、法人利用</div></div><div><div class="dl">想定賃料</div><div class="er">月額85.2万円（掲載利回り7.0%逆算＝年1022万円÷12）</div></div></div>
+<div style="margin-bottom:10px"><div class="dl">賃料参考データ</div><div class="at">足立区4LDK相場18万円/月。逆算月85万円超は戸建て1棟では明らかに非現実的。複数棟・区分複合・一棟アパート等の可能性が高く詳細確認必須。「他49件同条件あり」の大量売出し案件。</div></div>
+<div style="margin-bottom:10px"><div class="dl">分析</div><div class="at">足立区・1988年築（旧耐震）・練馬駅徒歩8分という地理的矛盾あり（足立区に練馬駅は存在しない）。データ精度に重大な疑義。価格14600万は予算5000万を大幅超過。旧耐震で耐震改修費用が別途発生する可能性。「他49件同条件あり」で大量売出し案件。投資判断前に詳細情報の取り直しが必須。</div></div>
+<div class="pc"><div><h4 class="p">✓ メリット</h4><div>・表示利回り7.0%は相応の水準</div><div>・面積359㎡の大型物件で複合利用の余地あり</div></div><div><h4 class="c2">△ リスク</h4><div>・1988年築・旧耐震で耐震改修コストが発生する可能性が高い</div><div>・価格14600万で投資予算5000万を大幅超過・駅名データに地理的矛盾あり要精査</div><div>・他49件同条件あり＝大量売出し案件で信頼性に疑義</div></div></div>
+<div class="lb lc"><strong>融資: C</strong> 旧耐震（1988年築）・予算超過・駅名データに地理的矛盾あり。現金購入も現実的でなく要詳細確認。<br>自己2000万/融資3000万/月返済13.4万/DSCR5.29倍</div>
+<div class="fb"><strong>資金計画:</strong> 自己2,000万/融資3,000万/計14,600万<span style="color:#c03030;font-weight:700"> ※融資増額必要</span></div>
+<a href="https://www.kenbiya.com/pp3/s/tokyo/adachi-ku/re_4447769ec9/" target="_blank" class="lnk">健美家／HOMESで詳細 →</a>
+</div></div>
+
+<div class="cd ob" id="c-house-6">
+<div class="ch" onclick="tog('c-house-6')">
+<div class="tr">
+<span class="rk rkx">6</span>
+<span class="tt">東京都葛飾区の（他49件同条件あり）</span>
+
+<span class="bg bgo">予算超</span>
+<span style="font-size:14px;color:var(--lt)">▼</span>
+</div>
+<div class="mr">
+<span>📍東京都葛飾区の</span>
+<span>🚉北綾瀬駅 徒歩6分</span>
+<span>📐331.43㎡</span>
+<span>🏗2020年9月</span>
+</div>
+<div class="pr">
+<span class="pv" style="color:#b08050">23,000<span class="u">万円</span></span>
+<span class="yv">利回り5.02%</span>
+
+</div>
+<div class="sb"><div class="st"><div class="sf" style="width:38%;background:#8a7a5e"></div></div><span class="sn" style="color:#8a7a5e">38</span></div>
+</div>
+<div class="dt">
+<div class="dg"><div><div class="dl">想定テナント</div><div class="dv">ファミリー層、二世帯、法人・事業用</div></div><div><div class="dl">想定賃料</div><div class="er">月額96.3万円（掲載利回り5.02%逆算＝年1154.6万円÷12）</div></div></div>
+<div style="margin-bottom:10px"><div class="dl">賃料参考データ</div><div class="at">葛飾区4LDK相場17万円/月。逆算月96万円超は戸建て1棟では完全に非現実的。複数棟・商業施設・一棟アパート等の複合案件の可能性が極めて高い。「他49件同条件あり」の大量売出し案件。</div></div>
+<div style="margin-bottom:10px"><div class="dl">分析</div><div class="at">葛飾区北綾瀬駅徒歩6分・2020年築・価格2.3億円。投資予算5000万を大幅超過。利回り5.02%は低水準かつ価格帯からして戸建て単棟ではなく複合・一棟物件の可能性が高い。「他49件同条件あり」で大量売出し案件。葛飾区の賃料相場は城東最低水準であり価格に対する収益性の説明が困難。</div></div>
+<div class="pc"><div><h4 class="p">✓ メリット</h4><div>・2020年築・新耐震で建物リスクは低い</div><div>・北綾瀬駅徒歩6分は駅近で賃貸付けに有利</div></div><div><h4 class="c2">△ リスク</h4><div>・価格2.3億円で投資予算5000万を大幅超過</div><div>・葛飾区の賃料相場は城東最低水準で収益性説明が困難・他49件同条件あり＝大量売出し案件で詳細確認必須</div></div></div>
+<div class="lb lc"><strong>融資: C</strong> 予算5000万を大幅超過・利回り5.02%でDSCR確保に疑義・物件内容の詳細確認が前提で現金購入も非現実的。<br>自己2000万/融資3000万/月返済13.4万/DSCR5.99倍</div>
+<div class="fb"><strong>資金計画:</strong> 自己2,000万/融資3,000万/計23,000万<span style="color:#c03030;font-weight:700"> ※融資増額必要</span></div>
+<a href="https://www.kenbiya.com/pp3/s/tokyo/katsushika-ku/re_4449833pxx/" target="_blank" class="lnk">健美家／HOMESで詳細 →</a>
+</div></div>
+
+<div class="cd ob" id="c-house-7">
+<div class="ch" onclick="tog('c-house-7')">
+<div class="tr">
+<span class="rk rkx">7</span>
+<span class="tt">東京都江東区の（他49件同条件あり）</span>
+
+<span class="bg bgo">予算超</span>
+<span style="font-size:14px;color:var(--lt)">▼</span>
+</div>
+<div class="mr">
+<span>📍東京都江東区の</span>
+<span>🚉南砂町駅 徒歩9分</span>
+<span>📐234.04㎡</span>
+<span>🏗2022年2月</span>
+</div>
+<div class="pr">
+<span class="pv" style="color:#b08050">25,100<span class="u">万円</span></span>
+<span class="yv">利回り4.21%</span>
+
+</div>
+<div class="sb"><div class="st"><div class="sf" style="width:35%;background:#8a7a5e"></div></div><span class="sn" style="color:#8a7a5e">35</span></div>
+</div>
+<div class="dt">
+<div class="dg"><div><div class="dl">想定テナント</div><div class="dv">ファミリー層、DINKS、法人・事業者</div></div><div><div class="dl">想定賃料</div><div class="er">月額88.1万円（掲載利回り4.21%逆算＝年1056.7万円÷12）</div></div></div>
+<div style="margin-bottom:10px"><div class="dl">賃料参考データ</div><div class="at">江東区4LDK相場30万円/月。逆算月88万円超は戸建て1棟では非現実的。複数区画・一棟物件の可能性大。「他49件同条件あり」の大量売出し案件。面積234㎡に対し価格2.51億円は坪単価354万円超と城東水準では著しく割高。</div></div>
+<div style="margin-bottom:10px"><div class="dl">分析</div><div class="at">江東区南砂町駅徒歩9分・2022年築・価格2.51億円。投資予算5000万を大幅超過。利回り4.21%は今回7物件中最低水準。価格・利回りともに戸建て単棟としては説明困難で複合物件の可能性が高い。「他49件同条件あり」で大量売出し案件。江東区は立地・将来性では評価できるが収益性・価格帯が投資条件に合致しない。</div></div>
+<div class="pc"><div><h4 class="p">✓ メリット</h4><div>・2022年築・新耐震で建物リスク低</div><div>・南砂町駅（東西線）は都心直結でポテンシャルあり</div></div><div><h4 class="c2">△ リスク</h4><div>・価格2.51億円で投資予算5000万を大幅超過・利回り4.21%は7物件中最低</div><div>・他49件同条件あり＝大量売出し案件・坪単価354万円超は城東戸建て水準として著しく割高</div></div></div>
+<div class="lb lc"><strong>融資: C</strong> 利回り4.21%で最低水準・予算超過・DSCR確保困難。現金購入も現実的でなく投資対象外と判断。<br>自己2000万/融資3000万/月返済13.4万/DSCR5.5倍</div>
+<div class="fb"><strong>資金計画:</strong> 自己2,000万/融資3,000万/計25,100万<span style="color:#c03030;font-weight:700"> ※融資増額必要</span></div>
+<a href="https://www.kenbiya.com/pp3/s/tokyo/koto-ku/re_4448852gt2/" target="_blank" class="lnk">健美家／HOMESで詳細 →</a>
+</div></div>
+
+</div>
+<div class="cs" data-cat="store" style="display:none">
+
+
+<div class="cd " id="c-store-1">
+<div class="ch" onclick="tog('c-store-1')">
+<div class="tr">
+<span class="rk rk1">1</span>
+<span class="tt">東京都墨田区の（他8件同条件あり）</span>
+
+
+<span style="font-size:14px;color:var(--lt)">▼</span>
+</div>
+<div class="mr">
+<span>📍東京都墨田区の</span>
+<span>🚉元加治駅 徒歩6分</span>
+<span>📐46.38㎡</span>
+<span>🏗1989年1月</span>
+</div>
+<div class="pr">
+<span class="pv" >2,930<span class="u">万円</span></span>
+<span class="yv">利回り10.0%</span>
+<span style="font-size:11px;color:#a09080">2階／8階建</span>
+</div>
+<div class="sb"><div class="st"><div class="sf" style="width:84%;background:#d4782b"></div></div><span class="sn" style="color:#d4782b">84</span></div>
+</div>
+<div class="dt">
+<div class="dg"><div><div class="dl">想定テナント</div><div class="dv">飲食店・美容室・整骨院・学習塾</div></div><div><div class="dl">想定賃料</div><div class="er">月額約24.4万円（表面利回10.0%逆算）</div></div></div>
+<div style="margin-bottom:10px"><div class="dl">賃料参考データ</div><div class="at">墨田区坪単価1.8万円、46.38㎡≒14坪→想定賃料25.2万円/月。表面利回り逆算賃料24.4万円と概ね整合。相場上限側での成立を前提とする</div></div>
+<div style="margin-bottom:10px"><div class="dl">分析</div><div class="at">表面利回10.0%は城東7区の売り店舗としてトップクラス。2階店舗のため集客難リスクはあるが、墨田区は再開発エリア隣接で賃貸需要は底堅い。築1989年（旧耐震）で耐震補強確認が必須。「他8件同条件あり」は同一マンションの大量売出し案件のため、将来的な売却競合リスクに注意が必要。</div></div>
+<div class="pc"><div><h4 class="p">✓ メリット</h4><div>・表面利回10.0%は城東7区最高水準で収益性抜群</div><div>・2930万円は自己資金＋融資枠内に収まりキャッシュフロー余裕大</div><div>・墨田区は押上・錦糸町エリア周辺で再開発による地価上昇トレンド継続中</div></div><div><h4 class="c2">△ リスク</h4><div>・旧耐震（1989年1月）で耐震補強コスト・融資審査ハードル上昇リスク</div><div>・2階店舗のため視認性・集客力が低く、テナント誘致に時間を要する可能性</div></div></div>
+<div class="lb lbb"><strong>融資: B</strong> 旧耐震・2階店舗だが利回り10%で債務返済余力は高い。耐震診断書の取得を融資前提条件とすべき<br>自己586万/融資2344万/月返済10.4万/DSCR1.95倍</div>
+<div class="fb"><strong>資金計画:</strong> 自己586万/融資2,344万/計2,930万</div>
+<a href="https://www.kenbiya.com/pp6/s/tokyo/sumida-ku/re_4446494l4c/" target="_blank" class="lnk">健美家／HOMESで詳細 →</a>
+</div></div>
+
+<div class="cd " id="c-store-2">
+<div class="ch" onclick="tog('c-store-2')">
+<div class="tr">
+<span class="rk rk2">2</span>
+<span class="tt">東京都台東区の（他13件同条件あり）</span>
+
+
+<span style="font-size:14px;color:var(--lt)">▼</span>
+</div>
+<div class="mr">
+<span>📍東京都台東区の</span>
+<span>🚉幸手駅 徒歩14分</span>
+<span>📐84.7㎡</span>
+<span>🏗1984年12月</span>
+</div>
+<div class="pr">
+<span class="pv" >1,020<span class="u">万円</span></span>
+<span class="yv">利回り5.1%</span>
+<span style="font-size:11px;color:#a09080">1階／8階建</span>
+</div>
+<div class="sb"><div class="st"><div class="sf" style="width:79%;background:#8a7a5e"></div></div><span class="sn" style="color:#8a7a5e">79</span></div>
+</div>
+<div class="dt">
+<div class="dg"><div><div class="dl">想定テナント</div><div class="dv">観光土産物店・飲食店・エステ・小売店</div></div><div><div class="dl">想定賃料</div><div class="er">月額約4.4万円（表面利回5.1%逆算）</div></div></div>
+<div style="margin-bottom:10px"><div class="dl">賃料参考データ</div><div class="at">台東区坪単価2.2万円、84.7㎡≒25.6坪→想定賃料56.3万円/月。表面利回り逆算賃料4.4万円は相場を大幅に下回り、現況賃料が著しく低いか面積・賃料情報に誤りの可能性あり。現況賃料の確認必須</div></div>
+<div style="margin-bottom:10px"><div class="dl">分析</div><div class="at">台東区1階・84.7㎡の大型店舗で浅草・上野エリアの観光需要を享受できる好立地。価格1020万円は破格だが、表面利回5.1%逆算の月額賃料が相場の1/10以下となるため、面積・賃料データに不整合がある可能性が高い。「他13件同条件あり」は同一マンション大量売出し案件で流動性リスクも存在。現地・現況賃料の精査が不可欠。</div></div>
+<div class="pc"><div><h4 class="p">✓ メリット</h4><div>・価格1020万円と超低価格で自己資金のみ取得も視野に入り財務リスクが極小</div><div>・台東区1階店舗で浅草・上野の観光・商業需要を直接取り込める立地ポテンシャル</div><div>・低取得価格により想定外の修繕費が発生しても損失限定的</div></div><div><h4 class="c2">△ リスク</h4><div>・表面利回り逆算賃料が台東区相場と著しく乖離しており、データ信頼性・現況賃料の確認が必須</div><div>・築1984年旧耐震・「他13件同条件あり」の大量売出し案件で将来の売却競合リスクが高い</div></div></div>
+<div class="lb lbb"><strong>融資: B</strong> 旧耐震（1984年）だが台東区好立地で担保評価は維持。価格1020万円なら自己資金のみで取得可能な水準<br>自己204万/融資816万/月返済3.6万/DSCR1.22倍</div>
+<div class="fb"><strong>資金計画:</strong> 自己204万/融資816万/計1,020万</div>
+<a href="https://www.kenbiya.com/pp6/s/tokyo/taito-ku/re_4438378zus/" target="_blank" class="lnk">健美家／HOMESで詳細 →</a>
+</div></div>
+
+<div class="cd ob" id="c-store-3">
+<div class="ch" onclick="tog('c-store-3')">
+<div class="tr">
+<span class="rk rk3">3</span>
+<span class="tt">東京都江戸川区の（他15件同条件あり）</span>
+
+<span class="bg bgo">予算超</span>
+<span style="font-size:14px;color:var(--lt)">▼</span>
+</div>
+<div class="mr">
+<span>📍東京都江戸川区の</span>
+<span>🚉京成小岩駅 徒歩10分</span>
+<span>📐190.47㎡</span>
+<span>🏗1990年2月</span>
+</div>
+<div class="pr">
+<span class="pv" style="color:#b08050">5,980<span class="u">万円</span></span>
+<span class="yv">利回り6.37%</span>
+<span style="font-size:11px;color:#a09080">1階／7階建</span>
+</div>
+<div class="sb"><div class="st"><div class="sf" style="width:72%;background:#8a7a5e"></div></div><span class="sn" style="color:#8a7a5e">72</span></div>
+</div>
+<div class="dt">
+<div class="dg"><div><div class="dl">想定テナント</div><div class="dv">スーパー・ドラッグストア・飲食チェーン・医療クリニック</div></div><div><div class="dl">想定賃料</div><div class="er">月額約31.8万円（表面利回6.37%逆算）</div></div></div>
+<div style="margin-bottom:10px"><div class="dl">賃料参考データ</div><div class="at">江戸川区坪単価1.1万円、190.47㎡≒57.6坪→想定賃料63.4万円/月。表面利回り逆算賃料31.8万円は相場中央値の約半額水準。現況賃料が低廉か一部空室の可能性あり、賃料アップサイドを期待できる反面、満室稼働前提での収支計画に注意</div></div>
+<div style="margin-bottom:10px"><div class="dl">分析</div><div class="at">1階・190㎡超の大型店舗で京成小岩駅徒歩10分。スーパー・ドラッグ等の生活密着型テナント誘致に適した広さ。築1990年（旧耐震）で耐震補強コストが重荷。価格5980万円は予算上限超過のため追加自己資金が必要。「他15件同条件あり」の大量売出し案件につき競合売却リスク・賃料交渉力の低下に注意。</div></div>
+<div class="pc"><div><h4 class="p">✓ メリット</h4><div>・190㎡超の1階大型店舗で生活密着型テナントの誘致自由度が高い</div><div>・表面利回り6.37%で相場賃料への改善余地があり、賃料増額によるアップサイドが期待できる</div><div>・江戸川区1階・広面積で医療・福祉系テナントの長期契約需要を取り込みやすい</div></div><div><h4 class="c2">△ リスク</h4><div>・旧耐震（1990年2月）で耐震補強費用が収益圧迫要因となるリスク</div><div>・「他15件同条件あり」の大量売出し案件で将来売却時の競合が多く出口戦略が困難</div></div></div>
+<div class="lb lbb"><strong>融資: B</strong> 旧耐震・駅距離10分で融資条件はやや劣るが1階・大型・生活密着立地で担保評価は一定確保できる見込み<br>自己1196万/融資3000万/月返済13.4万/DSCR1.98倍</div>
+<div class="fb"><strong>資金計画:</strong> 自己1,196万/融資3,000万/計5,980万<span style="color:#c03030;font-weight:700"> ※融資増額必要</span></div>
+<a href="https://www.kenbiya.com/pp6/s/tokyo/edogawa-ku/re_4446459hpr/" target="_blank" class="lnk">健美家／HOMESで詳細 →</a>
+</div></div>
+
+<div class="cd ob" id="c-store-4">
+<div class="ch" onclick="tog('c-store-4')">
+<div class="tr">
+<span class="rk rk4">4</span>
+<span class="tt">東京都荒川区の（他5件同条件あり）</span>
+
+<span class="bg bgo">予算超</span>
+<span style="font-size:14px;color:var(--lt)">▼</span>
+</div>
+<div class="mr">
+<span>📍東京都荒川区の</span>
+<span>🚉妙典駅 徒歩7分</span>
+<span>📐30.85㎡</span>
+<span>🏗2010年1月</span>
+</div>
+<div class="pr">
+<span class="pv" style="color:#b08050">5,760<span class="u">万円</span></span>
+<span class="yv">利回り5.49%</span>
+<span style="font-size:11px;color:#a09080">1階／28階建</span>
+</div>
+<div class="sb"><div class="st"><div class="sf" style="width:70%;background:#8a7a5e"></div></div><span class="sn" style="color:#8a7a5e">70</span></div>
+</div>
+<div class="dt">
+<div class="dg"><div><div class="dl">想定テナント</div><div class="dv">美容室・エステ・カフェ・小規模事務所</div></div><div><div class="dl">想定賃料</div><div class="er">月額約26.4万円（表面利回5.49%逆算）</div></div></div>
+<div style="margin-bottom:10px"><div class="dl">賃料参考データ</div><div class="at">荒川区坪単価1.5万円、30.85㎡≒9.3坪→想定賃料14.0万円/月。表面利回り逆算賃料26.4万円は相場の約2倍水準。現況賃料が相場を大幅に上回る可能性があり、賃料の持続性・テナント退去後の賃料維持リスクを精査すべき</div></div>
+<div style="margin-bottom:10px"><div class="dl">分析</div><div class="at">築2010年・新耐震・1階28階建タワーマンションの低層区画で物件品質は高い。ただし荒川区の坪単価相場（1.5万円）に対し利回り逆算賃料が2倍超となっており、現況賃料の持続可能性に疑問符。「他5件同条件あり」の大量売出し案件で同一棟内競合リスクもある。価格5760万円は予算超過。</div></div>
+<div class="pc"><div><h4 class="p">✓ メリット</h4><div>・築2010年新耐震で建物品質が高く、融資審査・長期保有コスト面で有利</div><div>・1階・タワーマンション付帯店舗で居住者需要による安定集客が見込める</div></div><div><h4 class="c2">△ リスク</h4><div>・利回り逆算賃料が荒川区相場の2倍超で、テナント退去後の賃料維持リスクが高い</div><div>・価格5760万円で投資予算（5000万円）超過、かつ「他5件同条件あり」の大量売出し案件</div></div></div>
+<div class="lb lc"><strong>融資: C</strong> 新耐震・築15年で耐震要件は満たすが利回り5.49%は下限水準かつ価格5760万円で予算超過。現況賃料の割高感から現金取得が無難<br>自己1152万/融資3000万/月返済13.4万/DSCR1.64倍</div>
+<div class="fb"><strong>資金計画:</strong> 自己1,152万/融資3,000万/計5,760万<span style="color:#c03030;font-weight:700"> ※融資増額必要</span></div>
+<a href="https://www.kenbiya.com/pp6/s/tokyo/arakawa-ku/re_4427296g9d/" target="_blank" class="lnk">健美家／HOMESで詳細 →</a>
+</div></div>
+
+<div class="cd ob" id="c-store-5">
+<div class="ch" onclick="tog('c-store-5')">
+<div class="tr">
+<span class="rk rk5">5</span>
+<span class="tt">東京都江東区の（他13件同条件あり）</span>
+
+<span class="bg bgo">予算超</span>
+<span style="font-size:14px;color:var(--lt)">▼</span>
+</div>
+<div class="mr">
+<span>📍東京都江東区の</span>
+<span>🚉水戸駅 徒歩28分</span>
+<span>📐28.0㎡</span>
+<span>🏗2025年7月</span>
+</div>
+<div class="pr">
+<span class="pv" style="color:#b08050">6,880<span class="u">万円</span></span>
+<span class="yv">利回り7.0%</span>
+<span style="font-size:11px;color:#a09080">1階／12階建</span>
+</div>
+<div class="sb"><div class="st"><div class="sf" style="width:67%;background:#8a7a5e"></div></div><span class="sn" style="color:#8a7a5e">67</span></div>
+</div>
+<div class="dt">
+<div class="dg"><div><div class="dl">想定テナント</div><div class="dv">カフェ・コンビニ・美容室・デリバリー拠点</div></div><div><div class="dl">想定賃料</div><div class="er">月額約40.1万円（表面利回7.0%逆算）</div></div></div>
+<div style="margin-bottom:10px"><div class="dl">賃料参考データ</div><div class="at">江東区坪単価2.0万円、28.0㎡≒8.5坪→想定賃料17.0万円/月。表面利回り逆算賃料40.1万円は相場の2倍以上。新築プレミアム賃料の可能性もあるが、竣工後の賃料ダウン・空室リスクを慎重に評価すべき</div></div>
+<div style="margin-bottom:10px"><div class="dl">分析</div><div class="at">2025年7月竣工の新築物件で建物リスクは最低限。ただし江東区の相場賃料に対し利回り逆算賃料が2倍超と乖離が大きく、新築プレミアム前提の価格設定と考えられる。28㎡の小規模店舗でテナント業種は限定的。「他13件同条件あり」の大量売出し案件で空室時の競合も多数。価格6880万円は予算大幅超過。</div></div>
+<div class="pc"><div><h4 class="p">✓ メリット</h4><div>・2025年7月竣工の新築物件で修繕リスクゼロ、融資審査上の建物評価も最高水準</div><div>・江東区は湾岸再開発エリアに近く長期的な地価・需要上昇ポテンシャルを持つ</div></div><div><h4 class="c2">△ リスク</h4><div>・価格6880万円で予算（5000万円）を大幅超過、自己資金が最大限必要</div><div>・「他13件同条件あり」大量売出し案件で空室・売却時の競合が多数存在し出口が困難</div></div></div>
+<div class="lb lc"><strong>融資: C</strong> 新築で耐震基準は最高水準だが価格6880万円は予算を大幅超過。相場対比の割高感と大量売出しによる出口難から現金または高頭金取得を推奨<br>自己1996万/融資3000万/月返済13.4万/DSCR2.5倍</div>
+<div class="fb"><strong>資金計画:</strong> 自己1,996万/融資3,000万/計6,880万<span style="color:#c03030;font-weight:700"> ※融資増額必要</span></div>
+<a href="https://www.kenbiya.com/pp6/s/tokyo/koto-ku/re_44497465oq/" target="_blank" class="lnk">健美家／HOMESで詳細 →</a>
+</div></div>
+
+<div class="cd ob" id="c-store-6">
+<div class="ch" onclick="tog('c-store-6')">
+<div class="tr">
+<span class="rk rkx">6</span>
+<span class="tt">東京都足立区の（他7件同条件あり）</span>
+
+<span class="bg bgo">予算超</span>
+<span style="font-size:14px;color:var(--lt)">▼</span>
+</div>
+<div class="mr">
+<span>📍東京都足立区の</span>
+<span>🚉竹ノ塚駅 徒歩14分</span>
+<span>📐353.91㎡</span>
+<span>🏗1984年8月</span>
+</div>
+<div class="pr">
+<span class="pv" style="color:#b08050">7,400<span class="u">万円</span></span>
+<span class="yv">利回り6.02%</span>
+<span style="font-size:11px;color:#a09080">4階／4階建</span>
+</div>
+<div class="sb"><div class="st"><div class="sf" style="width:58%;background:#8a7a5e"></div></div><span class="sn" style="color:#8a7a5e">58</span></div>
+</div>
+<div class="dt">
+<div class="dg"><div><div class="dl">想定テナント</div><div class="dv">福祉施設・学習塾・倉庫・事務所</div></div><div><div class="dl">想定賃料</div><div class="er">月額約37.1万円（表面利回6.02%逆算）</div></div></div>
+<div style="margin-bottom:10px"><div class="dl">賃料参考データ</div><div class="at">足立区坪単価1.2万円、353.91㎡≒107坪→想定賃料128.4万円/月。表面利回り逆算賃料37.1万円は相場の約30%水準。広大な面積に対し賃料が著しく低く、空室・大幅値引き賃貸の可能性。稼働状況・テナント構成の詳細確認が必須</div></div>
+<div style="margin-bottom:10px"><div class="dl">分析</div><div class="at">353㎡超・4階建（最上階）の大型物件で竹ノ塚駅徒歩14分。足立区は城東7区で最も賃料単価が低いエリアで、広面積が収益効率を下げている。築1984年旧耐震で耐震補強コストが大きい。価格7400万円は予算超過。「他7件同条件あり」の大量売出し案件。4階立地は視認性・アクセス不良でテナント誘致に難航が予想される。</div></div>
+<div class="pc"><div><h4 class="p">✓ メリット</h4><div>・353㎡の大型面積で福祉・医療・物流系の長期安定テナント誘致に活用できる可能性</div><div>・足立区は区独自の再開発施策が進んでおり中長期的な地域活性化に期待できる</div></div><div><h4 class="c2">△ リスク</h4><div>・旧耐震（1984年）・4階・駅徒歩14分で融資審査・テナント誘致ともに困難</div><div>・価格7400万円で予算超過かつ足立区の低賃料単価では収益効率の改善余地が小さい</div></div></div>
+<div class="lb lc"><strong>融資: C</strong> 旧耐震・駅遠14分・4階・低賃料エリアの三重苦で金融機関の担保評価は低く、融資条件での取得は困難。現金推奨<br>自己1996万/融資3000万/月返済13.4万/DSCR2.31倍</div>
+<div class="fb"><strong>資金計画:</strong> 自己1,996万/融資3,000万/計7,400万<span style="color:#c03030;font-weight:700"> ※融資増額必要</span></div>
+<a href="https://www.kenbiya.com/pp6/s/tokyo/adachi-ku/re_4430481lua/" target="_blank" class="lnk">健美家／HOMESで詳細 →</a>
+</div></div>
+
+<div class="cd ob" id="c-store-7">
+<div class="ch" onclick="tog('c-store-7')">
+<div class="tr">
+<span class="rk rkx">7</span>
+<span class="tt">東京都葛飾区の（他9件同条件あり）</span>
+
+<span class="bg bgo">予算超</span>
+<span style="font-size:14px;color:var(--lt)">▼</span>
+</div>
+<div class="mr">
+<span>📍東京都葛飾区の</span>
+<span>🚉北綾瀬駅 徒歩6分</span>
+<span>📐192.4㎡</span>
+<span>🏗1996年3月</span>
+</div>
+<div class="pr">
+<span class="pv" style="color:#b08050">11,600<span class="u">万円</span></span>
+<span class="yv">利回り5.02%</span>
+<span style="font-size:11px;color:#a09080">1階／13階建</span>
+</div>
+<div class="sb"><div class="st"><div class="sf" style="width:54%;background:#8a7a5e"></div></div><span class="sn" style="color:#8a7a5e">54</span></div>
+</div>
+<div class="dt">
+<div class="dg"><div><div class="dl">想定テナント</div><div class="dv">スーパー・ドラッグストア・地域密着型飲食・福祉施設</div></div><div><div class="dl">想定賃料</div><div class="er">月額約48.5万円（表面利回5.02%逆算）</div></div></div>
+<div style="margin-bottom:10px"><div class="dl">賃料参考データ</div><div class="at">葛飾区坪単価1.1万円、192.4㎡≒58.2坪→想定賃料64.0万円/月。表面利回り逆算賃料48.5万円は相場の約75%水準で、大型物件の割引賃料として一定の整合性はあるが、稼働状況の詳細確認が必要</div></div>
+<div style="margin-bottom:10px"><div class="dl">分析</div><div class="at">192㎡・1階・北綾瀬駅徒歩6分の立地は葛飾区内では比較的良好。ただし利回り5.02%はDSCR要件ギリギリで余裕が乏しく、空室・賃料下落時に即座に収支悪化するリスクがある。築1996年（新耐震）は評価できるが、価格1.16億円は予算を大幅に超過する。「他9件同条件あり」の大量売出し案件につき流動性・売却競合リスクにも注意。</div></div>
+<div class="pc"><div><h4 class="p">✓ メリット</h4><div>・築1996年新耐震・1階・192㎡で建物品質と利用性のバランスが取れている</div><div>・北綾瀬駅徒歩6分は葛飾区内でアクセス良好な部類で生活密着テナントの長期需要が見込める</div></div><div><h4 class="c2">△ リスク</h4><div>・価格1.16億円は投資予算（5000万円）の2倍超で現実的な投資対象外</div><div>・「他9件同条件あり」の大量売出し案件で、将来の売却時に同一棟競合物件が多数出回るリスク</div></div></div>
+<div class="lb lc"><strong>融資: C</strong> 新耐震・駅6分は評価できるが価格1.16億円は投資予算（5000万円）の2倍超で現実的な取得スキームが組めない<br>自己1996万/融資3000万/月返済13.4万/DSCR3.01倍</div>
+<div class="fb"><strong>資金計画:</strong> 自己1,996万/融資3,000万/計11,600万<span style="color:#c03030;font-weight:700"> ※融資増額必要</span></div>
+<a href="https://www.kenbiya.com/pp6/s/tokyo/katsushika-ku/re_4436862hmw/" target="_blank" class="lnk">健美家／HOMESで詳細 →</a>
+</div></div>
+
+<div class="cd ob" id="c-store-8">
+<div class="ch" onclick="tog('c-store-8')">
+<div class="tr">
+<span class="rk rkx">8</span>
+<span class="tt">売店舗・売事務所 東京都の不動産投資・収益物件・投資物件一覧（他33件同条件あり）</span>
+
+<span class="bg bgo">予算超</span>
+<span style="font-size:14px;color:var(--lt)">▼</span>
+</div>
+<div class="mr">
+<span>📍東京都練馬区春日町４丁目</span>
+<span>🚉None</span>
+
+<span>🏗2008年5月</span>
+</div>
+<div class="pr">
+<span class="pv" style="color:#b08050">7,400<span class="u">万円</span></span>
+<span class="yv">利回り3.14%</span>
+<span style="font-size:11px;color:#a09080">1階／7階建</span>
+</div>
+<div class="sb"><div class="st"><div class="sf" style="width:38%;background:#8a7a5e"></div></div><span class="sn" style="color:#8a7a5e">38</span></div>
+</div>
+<div class="dt">
+<div class="dg"><div><div class="dl">想定テナント</div><div class="dv">小規模事務所・士業・コンサルティング・学習塾</div></div><div><div class="dl">想定賃料</div><div class="er">月額約19.4万円（表面利回3.14%逆算）</div></div></div>
+<div style="margin-bottom:10px"><div class="dl">賃料参考データ</div><div class="at">住所が練馬区（城東7区外）のため城東7区賃料相場との直接比較不可。表面利回り3.14%は城東7区の相場から見ても著しく低く、投資物件としての収益性は極めて乏しい</div></div>
+<div style="margin-bottom:10px"><div class="dl">分析</div><div class="at">住所が「東京都練馬区春日町4丁目」と記載されており、城東7区（台東・墨田・江東・荒川・足立・葛飾・江戸川）に属さない物件。ソースはgoo不動産でウォード情報は台東区と記録されているが実所在地との乖離があり、データ信頼性に重大な疑義がある。表面利回り3.14%は融資要件（DSCR1.2以上）を満たすことが極めて困難な水準。立地・利回り・データ整合性のすべてで劣後し投資対象外と判断。</div></div>
+<div class="pc"><div><h4 class="p">✓ メリット</h4><div>・築2008年新耐震で建物自体の耐久性は一定水準を維持している</div></div><div><h4 class="c2">△ リスク</h4><div>・住所が練馬区と城東7区外であり、掲載区情報（台東区）との矛盾でデータ信頼性に重大な疑義あり</div><div>・表面利回り3.14%は城東7区最低水準でDSCR要件（1.2）を満たすことが不可能な水準</div></div></div>
+<div class="lb lc"><strong>融資: C</strong> 利回り3.14%はDSCR1.2以上を満たせず融資条件での取得は不可。所在地情報の矛盾もあり現金取得でも精査が先決<br>自己1996万/融資3000万/月返済13.4万/DSCR0.72倍</div>
+<div class="fb"><strong>資金計画:</strong> 自己1,996万/融資3,000万/計7,400万<span style="color:#c03030;font-weight:700"> ※融資増額必要</span></div>
+<a href="https://house.goo.ne.jp/toushi/detail/4/13120/1029300001108/102930/x41029300001108.html" target="_blank" class="lnk">goo不動産で詳細 →</a>
+</div></div>
+
+</div>
+
+<!-- ========== 検索リンク ========== -->
+<div class="ls"><div class="lsh" onclick="document.getElementById('lb').style.display=document.getElementById('lb').style.display==='none'?'block':'none'"><span>検索リンク集</span><span>▼</span></div>
+<div id="lb" style="display:none;margin-top:8px">
+<a href="https://www.kenbiya.com/pp6/s/tokyo/taito-ku/" target="_blank" class="li" style="color:#c47a3a">健美家 台東区 店舗</a><a href="https://www.kenbiya.com/pp6/s/tokyo/sumida-ku/" target="_blank" class="li" style="color:#c47a3a">健美家 墨田区 店舗</a><a href="https://www.kenbiya.com/pp6/s/tokyo/koto-ku/" target="_blank" class="li" style="color:#c47a3a">健美家 江東区 店舗</a><a href="https://www.kenbiya.com/pp6/s/tokyo/arakawa-ku/" target="_blank" class="li" style="color:#c47a3a">健美家 荒川区 店舗</a><a href="https://www.kenbiya.com/pp6/s/tokyo/adachi-ku/" target="_blank" class="li" style="color:#c47a3a">健美家 足立区 店舗</a><a href="https://www.kenbiya.com/pp6/s/tokyo/katsushika-ku/" target="_blank" class="li" style="color:#c47a3a">健美家 葛飾区 店舗</a><a href="https://www.kenbiya.com/pp6/s/tokyo/edogawa-ku/" target="_blank" class="li" style="color:#c47a3a">健美家 江戸川区 店舗</a>
+<a href="https://www.kenbiya.com/pp1/s/tokyo/taito-ku/" target="_blank" class="li" style="color:#c47a3a">健美家 台東区 マンション</a><a href="https://www.kenbiya.com/pp1/s/tokyo/sumida-ku/" target="_blank" class="li" style="color:#c47a3a">健美家 墨田区 マンション</a><a href="https://www.kenbiya.com/pp1/s/tokyo/koto-ku/" target="_blank" class="li" style="color:#c47a3a">健美家 江東区 マンション</a><a href="https://www.kenbiya.com/pp1/s/tokyo/arakawa-ku/" target="_blank" class="li" style="color:#c47a3a">健美家 荒川区 マンション</a><a href="https://www.kenbiya.com/pp1/s/tokyo/adachi-ku/" target="_blank" class="li" style="color:#c47a3a">健美家 足立区 マンション</a><a href="https://www.kenbiya.com/pp1/s/tokyo/katsushika-ku/" target="_blank" class="li" style="color:#c47a3a">健美家 葛飾区 マンション</a><a href="https://www.kenbiya.com/pp1/s/tokyo/edogawa-ku/" target="_blank" class="li" style="color:#c47a3a">健美家 江戸川区 マンション</a>
+<a href="https://house.goo.ne.jp/toushi/office/area_tokyo.html" target="_blank" class="li" style="color:var(--bl)">goo不動産</a>
+<a href="https://www.athome.co.jp/buy_store/tokyo/" target="_blank" class="li" style="color:#3a7ac4">アットホーム</a>
+<a href="https://www.rakumachi.jp/syuuekibukken/area/prefecture/dim2002/" target="_blank" class="li" style="color:#5a9a3a">楽待</a>
+</div></div>
+
+<div class="dis">⚠ 2026-04-25時点のWeb公開情報に基づくAI自動分析（GitHub Actions + Claude API）。同一マンション複数戸の大量売出しは1件に集約して表示。融資適格度はAI推定であり実際の融資可否は金融機関審査によります。購入前に現地確認・重説・融資審査を必ず実施してください。</div>
+</div>
+<script>
+function showCat(c){document.querySelectorAll('.cs').forEach(s=>s.style.display='none');document.querySelector('[data-cat="'+c+'"]').style.display='block';document.querySelectorAll('#tabs button').forEach(b=>b.classList.remove('on'));document.querySelector('#tabs button[data-c="'+c+'"]').classList.add('on')}
+function tog(id){document.getElementById(id).classList.toggle('open')}
+document.addEventListener('DOMContentLoaded',()=>{const f=document.querySelector('.cd');if(f)f.classList.add('open')})
+</script>
 </body></html>
