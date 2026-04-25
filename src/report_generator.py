@@ -2,7 +2,7 @@ import json,os,logging
 from datetime import datetime,timezone,timedelta
 from pathlib import Path
 from jinja2 import Environment,FileSystemLoader
-from config import DATA_DIR,OUTPUT_DIR,PROPERTY_CATEGORIES,JOTO_WARDS,BUDGET
+from config import DATA_DIR,OUTPUT_DIR,PROPERTY_CATEGORIES,JOTO_WARDS,BUDGET,RENT_DATA_BY_CATEGORY
 logging.basicConfig(level=logging.INFO,format="%(asctime)s %(levelname)s %(message)s")
 log=logging.getLogger(__name__)
 
@@ -34,7 +34,20 @@ def main():
     env=Environment(loader=FileSystemLoader("templates"),autoescape=True)
     tmpl=env.get_template("report.html")
     rd=data.get("analyzed_at","")
-    html=tmpl.render(report_date=rd,categories=PROPERTY_CATEGORIES,wards=JOTO_WARDS,results=data["results"],rent_data=data.get("rent_data",{}),ward_counts=data.get("ward_counts",{}),budget=BUDGET,changes=changes,total_props=sum(len(v) for v in data["results"].values()))
+    html=tmpl.render(
+        report_date=rd,
+        categories=PROPERTY_CATEGORIES,
+        wards=JOTO_WARDS,
+        results=data["results"],
+        rent_data=data.get("rent_data",{}),
+        rent_by_category=data.get("rent_by_category",RENT_DATA_BY_CATEGORY),
+        ward_counts=data.get("ward_counts",{}),
+        budget=BUDGET,
+        changes=changes,
+        total_props=sum(len(v) for v in data["results"].values()),
+        market_summary=data.get("market_summary",""),
+        data_summary=data.get("data_summary",{}),
+    )
     with open(os.path.join(OUTPUT_DIR,"index.html"),"w",encoding="utf-8") as f:f.write(html)
     with open(os.path.join(OUTPUT_DIR,f"report_{rd}.html"),"w",encoding="utf-8") as f:f.write(html)
     with open(pp,"w",encoding="utf-8") as f:json.dump(data,f,ensure_ascii=False,indent=2)
