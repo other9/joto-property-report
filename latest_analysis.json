@@ -2,8 +2,7 @@
   "analyzed_at": "2026-04-25",
   "results": {
     "store": [],
-    "condo": [],
-    "house": []
+    "condo": []
   },
   "rent_data": {
     "台東区": {
@@ -66,38 +65,31 @@
   "ward_counts": {
     "台東区": {
       "store": 48,
-      "condo": 50,
-      "house": 42
+      "condo": 50
     },
     "墨田区": {
       "store": 9,
-      "condo": 49,
-      "house": 48
+      "condo": 50
     },
     "江東区": {
       "store": 14,
-      "condo": 50,
-      "house": 44
+      "condo": 50
     },
     "荒川区": {
       "store": 6,
-      "condo": 50,
-      "house": 43
+      "condo": 50
     },
     "足立区": {
       "store": 9,
-      "condo": 50,
-      "house": 48
+      "condo": 50
     },
     "葛飾区": {
       "store": 10,
-      "condo": 50,
-      "house": 41
+      "condo": 50
     },
     "江戸川区": {
       "store": 16,
-      "condo": 49,
-      "house": 39
+      "condo": 50
     }
   },
   "budget": {
