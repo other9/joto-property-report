@@ -1,246 +1,2865 @@
 {
   "analyzed_at": "2026-04-25",
   "results": {
-    "condo": [],
-    "house": [],
-    "apart": [
+    "condo": [
       {
-        "url": "https://www.kenbiya.com/pp2/s/tokyo/taito-ku/re_4444278qpm/",
+        "url": "https://www.kenbiya.com/pp1/s/tokyo/taito-ku/re_4447433m5r/",
         "source": "健美家／HOMES",
-        "category": "apart",
+        "category": "condo",
         "ward": "台東区",
-        "title": "台東区鳥越1丁目 1棟アパート（No.4444278qpm）",
-        "price": 4980,
-        "yield_pct": null,
-        "size": 29.68,
-        "land_size": 29.68,
-        "built": "1950年12月",
-        "station": "新御徒町駅 徒歩6分",
-        "walk_min": 6,
-        "floor": null,
+        "title": "▲利7.2％！平成築・台東区・室内洗濯機置き場・賃貸中！ 三ノ輪駅 徒歩11分",
+        "price": 999,
+        "yield_pct": 7.2,
+        "size": 16.99,
+        "land_size": null,
+        "built": "1989年12月",
+        "station": "三ノ輪駅 徒歩11分",
+        "walk_min": 11,
+        "floor": "2階／8階建",
         "structure": "",
-        "layout": "住戸の専有面積",
-        "address": "東京都台東区鳥越1丁目",
-        "prop_name": "台東区鳥越1丁目",
-        "total_units": 1,
-        "lat": 35.702919,
-        "lng": 139.782959,
+        "total_units": null,
+        "address": "東京都台東区千束",
+        "lat": 35.718632,
+        "lng": 139.791336,
         "geo_source": "GSI",
         "scraped_at": "2026-04-25",
         "rank": 1,
-        "score": 38,
+        "score": 88,
         "score_breakdown": {
-          "location": 14,
-          "yield_return": 4,
-          "tenant_demand": 9,
-          "future_value": 6,
-          "capital_eff": 5
+          "location": 24,
+          "yield_return": 19,
+          "tenant_demand": 18,
+          "future_value": 14,
+          "capital_eff": 13
         },
-        "tenant_type": "単身労働者・外国人居住者・高齢単身者",
-        "estimated_rent": "月額賃料推定不可（戸数・間取り不明・専有面積29.68㎡は建物全体の可能性大）",
-        "rent_reference": "台東区1K相場9.0万円/月。ただし1950年築（築75年超）・木造旧耐震・専有面積29.68㎡が建物全体と推定されるため、実質1戸のみか区分未確定。坪単価換算で鳥越エリア中古木造は@40〜60万円/坪が相場上限。表面利回り非開示はリスク要因。",
-        "analysis": "1950年12月築・築75年超の旧耐震木造。専有面積と土地面積が同一の29.68㎡で、戸数1戸・延床面積不明という著しく情報不足な物件。価格4,980万円に対し賃料収入の根拠が立てられず、利回り試算不能。鳥越1丁目は新御徒町駅徒歩6分で立地は一定評価できるが、再建築条件・接道・法令上の建物状況の確認が必須。",
+        "tenant_type": "単身社会人・専門学校生・外国人労働者・フリーランス",
+        "estimated_rent": "月額6.0〜6.5万円",
+        "rent_reference": "台東区1R相場9.5万円/月。16.99㎡は狭小で相場より割引、千束エリア実勢6.0〜6.5万円想定。坪単価約11.7万円/月。",
+        "analysis": "利回り7.2%表示・平成築(1989年)・999万円と低価格帯で自己資金効率が高い。三ノ輪駅徒歩11分とやや遠いが台東区内でキャッシュフロー確保可能。築35年超で修繕・設備更新リスクあり。小型区分の流動性は高め。",
         "loan_analysis": {
-          "feasibility": "C",
-          "reason": "1950年築旧耐震・築75年超・専有面積と土地面積が同値で建物規模不明。金融機関融資は事実上不可能。現金購入前提でも収支根拠が立証できず、取得推奨不可。",
+          "feasibility": "B",
+          "reason": "旧耐震基準年(1989年は新耐震だが築35年超)・利回り7.2%は基準超過。低価格帯ゆえ現金購入が最効率だが融資可能水準。",
           "recommended_plan": {
-            "self_fund": 4980,
+            "self_fund": 999,
             "loan": 0,
-            "monthly_repay": 0,
-            "dscr": 0
+            "monthly_repay": 0.0,
+            "dscr": null
           }
         },
-        "lat_estimated": 35.702919,
-        "lng_estimated": 139.782959,
+        "lat_estimated": 35.7237,
+        "lng_estimated": 139.7946,
         "pros": [
-          "新御徒町駅徒歩6分・浅草橋・秋葉原エリアへのアクセス良好",
-          "台東区は外国人観光客・単身需要が底堅く空室リスクは立地面では低め",
-          "価格4,980万円は台東区立地としては表面上割安感がある（利回り次第）"
+          "利回り7.2%で収益性トップクラス",
+          "999万円と低価格で現金購入も可能",
+          "平成元年築・新耐震基準適合"
         ],
         "cons": [
-          "1950年築・築75年超の旧耐震木造で融資付け事実上不可。耐震補強・大規模修繕費が物件価格を上回るリスク",
-          "専有面積・土地面積が29.68㎡で同一値。戸数1・間取り不明・延床不明で投資収益試算が根本的に不可能。物件データ自体の信頼性に重大な疑義がある"
+          "16.99㎡の狭小住戸でリファイナンス困難",
+          "三ノ輪駅徒歩11分でアクセスやや弱い"
+        ],
+        "over_budget": false
+      },
+      {
+        "url": "https://www.kenbiya.com/pp1/s/tokyo/taito-ku/re_4446378jfn/",
+        "source": "健美家／HOMES",
+        "category": "condo",
+        "ward": "台東区",
+        "title": "利回り7.05％ 入谷駅 徒歩5分",
+        "price": 1360,
+        "yield_pct": 7.05,
+        "size": 17.64,
+        "land_size": null,
+        "built": "1970年9月",
+        "station": "入谷駅 徒歩5分",
+        "walk_min": 5,
+        "floor": "6階／11階建",
+        "structure": "",
+        "total_units": null,
+        "address": "東京都台東区下谷2丁目",
+        "lat": 35.722015,
+        "lng": 139.78389,
+        "geo_source": "GSI",
+        "scraped_at": "2026-04-25",
+        "rank": 2,
+        "score": 84,
+        "score_breakdown": {
+          "location": 23,
+          "yield_return": 18,
+          "tenant_demand": 17,
+          "future_value": 12,
+          "capital_eff": 14
+        },
+        "tenant_type": "単身社会人・外国人労働者・高齢単身者",
+        "estimated_rent": "月額7.5〜8.0万円",
+        "rent_reference": "台東区1R相場9.5万円/月。下谷2丁目・17.64㎡の旧耐震物件として実勢7.5〜8.0万円。坪単価約14.1万円/月。利回り7.05%との整合性良好。",
+        "analysis": "利回り7.05%・1360万円と割安感あり。入谷駅徒歩5分で日比谷線直通の利便性高い。1970年築で旧耐震・建替リスクあるが、台東区の希少低価格帯として現金投資向き。17.64㎡は融資評価困難。",
+        "loan_analysis": {
+          "feasibility": "C",
+          "reason": "1970年築旧耐震・17.64㎡の狭小住戸は金融機関評価が極めて厳しく現金購入推奨。",
+          "recommended_plan": {
+            "self_fund": 1360,
+            "loan": 0,
+            "monthly_repay": 0.0,
+            "dscr": null
+          }
+        },
+        "lat_estimated": 35.722,
+        "lng_estimated": 139.7839,
+        "pros": [
+          "利回り7.05%で高収益",
+          "入谷駅徒歩5分・日比谷線利便性高い",
+          "1360万円の低価格帯で資金回収が早い"
+        ],
+        "cons": [
+          "1970年築旧耐震で耐震リスク・建替可能性",
+          "17.64㎡狭小で融資・売却時に制約多い"
+        ],
+        "over_budget": false
+      },
+      {
+        "url": "https://www.kenbiya.com/pp1/s/tokyo/taito-ku/re_4446381qhx/",
+        "source": "健美家／HOMES",
+        "category": "condo",
+        "ward": "台東区",
+        "title": "利回り6.54％ 蔵前駅 徒歩1分（他1件同条件あり）",
+        "price": 1650,
+        "yield_pct": 6.54,
+        "size": 18.72,
+        "land_size": null,
+        "built": "1969年12月",
+        "station": "蔵前駅 徒歩1分",
+        "walk_min": 1,
+        "floor": "8階／12階建",
+        "structure": "",
+        "total_units": null,
+        "address": "東京都台東区駒形2丁目",
+        "lat": 35.706589,
+        "lng": 139.795456,
+        "geo_source": "GSI",
+        "scraped_at": "2026-04-25",
+        "rank": 3,
+        "score": 82,
+        "score_breakdown": {
+          "location": 26,
+          "yield_return": 17,
+          "tenant_demand": 18,
+          "future_value": 11,
+          "capital_eff": 10
+        },
+        "tenant_type": "単身社会人・観光業従事者・外国人居住者",
+        "estimated_rent": "月額8.5〜9.0万円",
+        "rent_reference": "台東区1R相場9.5万円/月。蔵前駅徒歩1分の好立地で18.72㎡・1969年築。実勢8.5〜9.0万円。坪単価約14.8万円/月。利回り6.54%と整合。「他1件同条件あり」複数戸販売の可能性。",
+        "analysis": "蔵前駅1分の極めて希少な好立地。利回り6.54%・1650万円で収益性と立地を両立。ただし1969年築で旧耐震、18.72㎡の狭小住戸。蔵前エリアはカフェ・デザイン系施設集積で外国人需要・単身需要堅調。現金投資向き。「他1件同条件あり」に注意。",
+        "loan_analysis": {
+          "feasibility": "C",
+          "reason": "1969年築旧耐震・18.72㎡狭小は融資評価不可が大半。蔵前の立地価値で現金買い検討推奨。",
+          "recommended_plan": {
+            "self_fund": 1650,
+            "loan": 0,
+            "monthly_repay": 0.0,
+            "dscr": null
+          }
+        },
+        "lat_estimated": 35.7066,
+        "lng_estimated": 139.7955,
+        "pros": [
+          "蔵前駅徒歩1分の極上立地",
+          "利回り6.54%・1650万円で高効率",
+          "蔵前エリアの外国人・単身需要が旺盛"
+        ],
+        "cons": [
+          "1969年築旧耐震・建替リスク高い",
+          "18.72㎡で融資評価困難・売却市場も限定的",
+          "「他1件同条件あり」で流動性に注意"
+        ],
+        "over_budget": false
+      },
+      {
+        "url": "https://www.kenbiya.com/pp1/s/tokyo/taito-ku/re_4449862osd/",
+        "source": "健美家／HOMES",
+        "category": "condo",
+        "ward": "台東区",
+        "title": "区分マンション 入谷駅 徒歩6分",
+        "price": 1680,
+        "yield_pct": 5.07,
+        "size": 22.0,
+        "land_size": null,
+        "built": "1990年1月",
+        "station": "入谷駅 徒歩6分",
+        "walk_min": 6,
+        "floor": "12階／12階建",
+        "structure": "",
+        "total_units": null,
+        "address": "東京都台東区松が谷4丁目26-14",
+        "lat": 35.718166,
+        "lng": 139.788651,
+        "geo_source": "GSI",
+        "scraped_at": "2026-04-25",
+        "rank": 4,
+        "score": 79,
+        "score_breakdown": {
+          "location": 24,
+          "yield_return": 16,
+          "tenant_demand": 18,
+          "future_value": 12,
+          "capital_eff": 9
+        },
+        "tenant_type": "単身社会人・観光業従事者・外国人労働者",
+        "estimated_rent": "月額7.1〜7.5万円",
+        "rent_reference": "台東区1R相場9.5万円/月。松が谷4丁目・22㎡・1990年築最上階。実勢7.1〜7.5万円/月。坪単価約10.7万円/月。利回り5.07%との整合性ほぼ良好。",
+        "analysis": "利回り5.07%・1680万円。入谷駅徒歩6分で日比谷線利用可。1990年築新耐震・22㎡・最上階12階と上位スペック。浅草エリア隣接で外国人需要期待。ただしRC造未表記のため構造確認要。融資適格水準に近い物件。",
+        "loan_analysis": {
+          "feasibility": "A",
+          "reason": "1990年築新耐震・利回り5.07%・1680万円でA基準ほぼ充足。駅6分はやや遠いが許容範囲内。",
+          "recommended_plan": {
+            "self_fund": 336,
+            "loan": 1344,
+            "monthly_repay": 6.0,
+            "dscr": 1.28
+          }
+        },
+        "lat_estimated": 35.7182,
+        "lng_estimated": 139.7887,
+        "pros": [
+          "利回り5.07%で収益性と新耐震を両立",
+          "1680万円の低価格帯・最上階で希少性あり",
+          "浅草・入谷エリアで外国人需要堅調"
+        ],
+        "cons": [
+          "22㎡は小型で融資銀行が限られる",
+          "入谷駅徒歩6分でアクセスやや弱い"
+        ],
+        "over_budget": false
+      },
+      {
+        "url": "https://www.kenbiya.com/pp1/s/tokyo/taito-ku/re_4448804g8k/",
+        "source": "健美家／HOMES",
+        "category": "condo",
+        "ward": "台東区",
+        "title": "管理良好！ 入谷駅 徒歩3分",
+        "price": 2590,
+        "yield_pct": 4.23,
+        "size": 26.17,
+        "land_size": null,
+        "built": "2007年8月",
+        "station": "入谷駅 徒歩3分",
+        "walk_min": 3,
+        "floor": "4階／10階建",
+        "structure": "",
+        "total_units": null,
+        "address": "東京都台東区北上野2-26-8",
+        "lat": 35.718761,
+        "lng": 139.785294,
+        "geo_source": "GSI",
+        "scraped_at": "2026-04-25",
+        "rank": 5,
+        "score": 76,
+        "score_breakdown": {
+          "location": 25,
+          "yield_return": 14,
+          "tenant_demand": 18,
+          "future_value": 12,
+          "capital_eff": 7
+        },
+        "tenant_type": "単身社会人・ITワーカー・観光関連従事者",
+        "estimated_rent": "月額9.1〜9.5万円",
+        "rent_reference": "台東区1K相場10.2万円/月。北上野2丁目・26.17㎡・2007年築。実勢9.1〜9.5万円/月。坪単価約11.5万円/月。表面利回り4.23%と概ね整合。",
+        "analysis": "2007年築・入谷駅徒歩3分と好立地。26.17㎡の1K相当で単身需要安定。4.23%利回りは低めだが管理良好との表記で空室率低減期待。2590万円は融資活用しやすい価格帯。築18年でリフォームコスト低い点も評価。",
+        "loan_analysis": {
+          "feasibility": "A",
+          "reason": "2007年築新耐震・入谷駅3分・利回り4.23%。利回りが5%をわずかに下回るが築年・立地でA評価。",
+          "recommended_plan": {
+            "self_fund": 518,
+            "loan": 2072,
+            "monthly_repay": 9.2,
+            "dscr": 1.07
+          }
+        },
+        "lat_estimated": 35.7188,
+        "lng_estimated": 139.7853,
+        "pros": [
+          "2007年築で管理状態良好・融資評価高い",
+          "入谷駅徒歩3分の好立地",
+          "26.17㎡で1Kとして賃貸需要安定"
+        ],
+        "cons": [
+          "利回り4.23%でDSCR1.2達成がギリギリ",
+          "2590万円に対しキャッシュフローが薄い"
+        ],
+        "over_budget": false
+      },
+      {
+        "url": "https://www.kenbiya.com/pp1/s/tokyo/taito-ku/re_4447024npn/",
+        "source": "健美家／HOMES",
+        "category": "condo",
+        "ward": "台東区",
+        "title": "投資用マンション 浅草駅 徒歩5分",
+        "price": 2820,
+        "yield_pct": 4.04,
+        "size": 25.9,
+        "land_size": null,
+        "built": "2007年9月",
+        "station": "浅草駅 徒歩5分",
+        "walk_min": 5,
+        "floor": "5階／11階建",
+        "structure": "",
+        "total_units": null,
+        "address": "東京都台東区西浅草3丁目",
+        "lat": 35.716007,
+        "lng": 139.790863,
+        "geo_source": "GSI",
+        "scraped_at": "2026-04-25",
+        "rank": 6,
+        "score": 74,
+        "score_breakdown": {
+          "location": 25,
+          "yield_return": 13,
+          "tenant_demand": 18,
+          "future_value": 11,
+          "capital_eff": 7
+        },
+        "tenant_type": "単身社会人・観光業従事者・外国人居住者",
+        "estimated_rent": "月額9.5〜10.0万円",
+        "rent_reference": "台東区1K相場10.2万円/月。西浅草3丁目・25.9㎡・2007年築。実勢9.5〜10.0万円/月。坪単価約12.1万円/月。利回り4.04%との整合性良好。",
+        "analysis": "浅草駅徒歩5分・2007年築で立地と新しさを両立。4.04%利回り・2820万円はキャッシュフロー薄いが長期安定保有向き。西浅草エリアは外国人観光需要の高まりで賃料上昇期待。融資活用でレバレッジ効果を狙える物件。",
+        "loan_analysis": {
+          "feasibility": "A",
+          "reason": "2007年築・浅草駅5分・新耐震でA基準適合。利回り4.04%でDSCR確保には頭金比率を高める必要あり。",
+          "recommended_plan": {
+            "self_fund": 820,
+            "loan": 2000,
+            "monthly_repay": 8.9,
+            "dscr": 1.07
+          }
+        },
+        "lat_estimated": 35.716,
+        "lng_estimated": 139.7909,
+        "pros": [
+          "浅草駅徒歩5分の好立地・観光需要恩恵",
+          "2007年築で融資評価が高い",
+          "外国人・観光関連テナント需要が旺盛"
+        ],
+        "cons": [
+          "利回り4.04%でキャッシュフローが薄い",
+          "25.9㎡はやや狭く賃料上昇余地が限定的"
+        ],
+        "over_budget": false
+      },
+      {
+        "url": "https://www.kenbiya.com/pp1/s/tokyo/taito-ku/re_444849069m/",
+        "source": "健美家／HOMES",
+        "category": "condo",
+        "ward": "台東区",
+        "title": "区分マンション 浅草駅 徒歩4分（他1件同条件あり）",
+        "price": 3080,
+        "yield_pct": 4.36,
+        "size": 36.53,
+        "land_size": null,
+        "built": "1986年5月",
+        "station": "浅草駅 徒歩4分",
+        "walk_min": 4,
+        "floor": "7階／7階建",
+        "structure": "",
+        "total_units": null,
+        "address": "東京都台東区西浅草2丁目19-9",
+        "lat": 35.713737,
+        "lng": 139.789536,
+        "geo_source": "GSI",
+        "scraped_at": "2026-04-25",
+        "rank": 7,
+        "score": 72,
+        "score_breakdown": {
+          "location": 26,
+          "yield_return": 13,
+          "tenant_demand": 17,
+          "future_value": 10,
+          "capital_eff": 6
+        },
+        "tenant_type": "単身社会人・外国人居住者・観光業従事者",
+        "estimated_rent": "月額11.2〜11.8万円",
+        "rent_reference": "台東区1DK相場11.5万円/月。西浅草2丁目・36.53㎡・1986年築最上階。実勢11.2〜11.8万円/月。坪単価約10.1万円/月。利回り4.36%と概ね整合。「他1件同条件あり」複数戸に注意。",
+        "analysis": "浅草駅徒歩4分・最上階7階・36.53㎡の1DK相当。4.36%利回り・3080万円。1986年築旧耐震が最大課題だが立地の希少性は高い。「他1件同条件あり」のため複数棟購入も視野。浅草ブランドで賃料下落リスク低め。",
+        "loan_analysis": {
+          "feasibility": "B",
+          "reason": "1986年築旧耐震だが浅草駅4分の好立地でB評価。旧耐震適合証明取得で融資可能性向上。",
+          "recommended_plan": {
+            "self_fund": 1080,
+            "loan": 2000,
+            "monthly_repay": 8.9,
+            "dscr": 1.24
+          }
+        },
+        "lat_estimated": 35.7137,
+        "lng_estimated": 139.7895,
+        "pros": [
+          "浅草駅徒歩4分・最上階で希少立地",
+          "36.53㎡の1DKは賃貸市場での需要安定",
+          "「他1件同条件あり」で複数取得も検討可"
+        ],
+        "cons": [
+          "1986年築旧耐震で耐震改修コスト発生の可能性",
+          "利回り4.36%でDSCR確保に自己資金比率要調整"
+        ],
+        "over_budget": false
+      },
+      {
+        "url": "https://www.kenbiya.com/pp1/s/tokyo/taito-ku/re_4449544cwl/",
+        "source": "健美家／HOMES",
+        "category": "condo",
+        "ward": "台東区",
+        "title": "投資用マンション 新御徒町駅 徒歩2分",
+        "price": 2480,
+        "yield_pct": 6.67,
+        "size": 50.44,
+        "land_size": null,
+        "built": "1975年1月",
+        "station": "新御徒町駅 徒歩2分",
+        "walk_min": 2,
+        "floor": "6階／9階建",
+        "structure": "",
+        "total_units": null,
+        "address": "東京都台東区小島2丁目",
+        "lat": 35.705914,
+        "lng": 139.783249,
+        "geo_source": "GSI",
+        "scraped_at": "2026-04-25",
+        "rank": 8,
+        "score": 70,
+        "score_breakdown": {
+          "location": 26,
+          "yield_return": 15,
+          "tenant_demand": 16,
+          "future_value": 8,
+          "capital_eff": 5
+        },
+        "tenant_type": "ファミリー・SOHO利用・外国人家族",
+        "estimated_rent": "月額16.5〜17.5万円",
+        "rent_reference": "台東区1LDK〜2LDK相場14.8〜19.5万円/月。小島2丁目・50.44㎡・1975年築。2LDK相当実勢16.5〜17.5万円/月。坪単価約10.8万円/月。利回り6.67%と概ね整合。",
+        "analysis": "新御徒町駅徒歩2分・50.44㎡・利回り6.67%と収益性は魅力的。2480万円は予算内。1975年築旧耐震が課題だが駅至近・広面積は稀少。ファミリー・SOHO需要が見込める。融資は旧耐震のため厳しく、現金または自己資金厚めの計画が現実的。",
+        "loan_analysis": {
+          "feasibility": "B",
+          "reason": "1975年築旧耐震だが新御徒町駅2分・利回り6.67%の優良立地でB。旧耐震適合証明で融資余地あり。",
+          "recommended_plan": {
+            "self_fund": 1240,
+            "loan": 1240,
+            "monthly_repay": 5.5,
+            "dscr": 1.51
+          }
+        },
+        "lat_estimated": 35.7059,
+        "lng_estimated": 139.7832,
+        "pros": [
+          "新御徒町駅徒歩2分の極上立地",
+          "50.44㎡で広面積・ファミリー需要対応",
+          "利回り6.67%で収益性高い"
+        ],
+        "cons": [
+          "1975年築旧耐震で耐震リスク・融資制約",
+          "大江戸線・新御徒町エリアは賃料水準がやや読みにくい"
+        ],
+        "over_budget": false
+      },
+      {
+        "url": "https://www.kenbiya.com/pp1/s/tokyo/taito-ku/re_4448242fur/",
+        "source": "健美家／HOMES",
+        "category": "condo",
+        "ward": "台東区",
+        "title": "■■浅草駅徒歩４分・オートロック・室内洗濯置場有■■ 浅草駅 徒歩4分（他1件同条件あり）",
+        "price": 2180,
+        "yield_pct": 0.56,
+        "size": 25.01,
+        "land_size": null,
+        "built": "1985年5月",
+        "station": "浅草駅 徒歩4分",
+        "walk_min": 4,
+        "floor": "8階／9階建",
+        "structure": "",
+        "total_units": null,
+        "address": "東京都台東区浅草2丁目",
+        "lat": 35.714943,
+        "lng": 139.795456,
+        "geo_source": "GSI",
+        "scraped_at": "2026-04-25",
+        "rank": 9,
+        "score": 65,
+        "score_breakdown": {
+          "location": 24,
+          "yield_return": 10,
+          "tenant_demand": 17,
+          "future_value": 9,
+          "capital_eff": 5
+        },
+        "tenant_type": "単身社会人・外国人居住者・観光業従事者",
+        "estimated_rent": "月әне10.0〜10.5万円",
+        "rent_reference": "台東区1K相場10.2万円/月。浅草2丁目・25.01㎡・1985年築。実勢10.0〜10.5万円/月。坪単価約13.1万円/月。利回り0.56%は大幅に低く価格過大の可能性あり。「他1件同条件あり」複数戸販売に注意。",
+        "analysis": "浅草駅徒歩4分・オートロック・室内洗濯置場ありと設備充実。しかし表示利回り0.56%は異常に低く、現況賃料が極端に低いオーナーチェンジか賃貸未付物件の可能性が高い。2180万円での実質利回りは市場賃料換算で約5.5%程度に改善余地あり。精査必須。",
+        "loan_analysis": {
+          "feasibility": "B",
+          "reason": "1985年築旧耐震・利回り表示0.56%は審査通過困難。実質利回り改善後に再評価が必要。浅草立地でB評価保留。",
+          "recommended_plan": {
+            "self_fund": 2180,
+            "loan": 0,
+            "monthly_repay": 0.0,
+            "dscr": null
+          }
+        },
+        "lat_estimated": 35.7149,
+        "lng_estimated": 139.7955,
+        "pros": [
+          "浅草駅徒歩4分の好立地",
+          "オートロック・室内洗濯置場で競争力あり",
+          "市場賃料換算での実質利回り改善余地が大きい"
+        ],
+        "cons": [
+          "表示利回り0.56%は異常値・現況賃料の精査必須",
+          "1985年築旧耐震で融資評価困難",
+          "「他1件同条件あり」で物件精査に時間要する"
+        ],
+        "over_budget": false
+      },
+      {
+        "url": "https://www.kenbiya.com/pp1/s/tokyo/taito-ku/re_4450145cub/",
+        "source": "健美家／HOMES",
+        "category": "condo",
+        "ward": "台東区",
+        "title": "イメージ画像は 三ノ輪駅 徒歩1分",
+        "price": 4500,
+        "yield_pct": 4.24,
+        "size": 40.59,
+        "land_size": null,
+        "built": "2020年6月",
+        "station": "三ノ輪駅 徒歩1分",
+        "walk_min": 1,
+        "floor": "14階／14階建",
+        "structure": "",
+        "total_units": null,
+        "address": "東京都台東区根岸5丁目20-10",
+        "lat": 35.729477,
+        "lng": 139.790588,
+        "geo_source": "GSI",
+        "scraped_at": "2026-04-25",
+        "rank": 10,
+        "score": 63,
+        "score_breakdown": {
+          "location": 25,
+          "yield_return": 12,
+          "tenant_demand": 15,
+          "future_value": 7,
+          "capital_eff": 4
+        },
+        "tenant_type": "単身社会人・ITワーカー・DINKs",
+        "estimated_rent": "月額15.9〜16.8万円",
+        "rent_reference": "台東区1LDK相場14.8万円/月。根岸5丁目・40.59㎡・2020年築最上階14階。実勢15.9〜16.8万円/月。坪単価約13.0万円/月。利回り4.24%と概ね整合。",
+        "analysis": "2020年築築浅・三ノ輪駅徒歩1分・最上階14階と物件スペックは高い。利回り4.24%・4500万円は予算内。融資適格性は高いが、根岸エリアは浅草や上野中心部より賃料上昇余地が限定的。長期保有前提の安定志向投資家向け物件。DSCR確保に要注意。",
+        "loan_analysis": {
+          "feasibility": "A",
+          "reason": "2020年築・三ノ輪駅1分・利回り4.24%でA基準適合。DSCR1.2確保のため自己資金を20〜25%程度に設定推奨。",
+          "recommended_plan": {
+            "self_fund": 1125,
+            "loan": 3375,
+            "monthly_repay": 15.0,
+            "dscr": 1.07
+          }
+        },
+        "lat_estimated": 35.7295,
+        "lng_estimated": 139.7906,
+        "pros": [
+          "2020年築築浅・最上階14階で競争力高い",
+          "三ノ輪駅徒歩1分の極上アクセス",
+          "新耐震・築浅で融資評価が最も高い"
+        ],
+        "cons": [
+          "4500万円・利回り4.24%でDSCR1.2確保が困難",
+          "根岸エリアは浅草中心部比で賃料上昇余地が限定的"
+        ],
+        "over_budget": false
+      }
+    ],
+    "house": [
+      {
+        "url": "https://www.kenbiya.com/pp3/s/tokyo/sumida-ku/re_4445293plx/",
+        "source": "健美家／HOMES",
+        "category": "house",
+        "ward": "墨田区",
+        "title": "墨田区！駅4分！満室！土地実勢価格＞販売価格！約7.9％！ 東向島駅 徒歩4分",
+        "price": 5150,
+        "yield_pct": 7.9,
+        "size": 152.2,
+        "land_size": null,
+        "built": "1971年3月",
+        "station": "東向島駅 徒歩4分",
+        "walk_min": 4,
+        "floor": null,
+        "structure": "",
+        "total_units": 5,
+        "address": "東京都墨田区東向島6丁目",
+        "lat": 35.724449,
+        "lng": 139.822235,
+        "geo_source": "GSI",
+        "scraped_at": "2026-04-25",
+        "rank": 1,
+        "score": 81,
+        "score_breakdown": {
+          "location": 23,
+          "yield_return": 18,
+          "tenant_demand": 17,
+          "future_value": 12,
+          "capital_eff": 11
+        },
+        "tenant_type": "単身社会人・カップル・外国人労働者・学生",
+        "estimated_rent": "月額約34万円（5戸×約6.8万円）",
+        "rent_reference": "墨田区2LDK相場18万円/戸・東向島駅4分好立地・坪単価換算3.8万円/坪で相場整合",
+        "analysis": "東向島駅徒歩4分・表面利回7.9%と城東エリアでは高水準。旧耐震（1971年築）はリスクだが土地実勢価格が売値を上回るとのことで出口戦略に余裕あり。5戸構成で空室分散効果も期待できる。予算内で自己資金のみでも取得可能な点も優位。",
+        "loan_analysis": {
+          "feasibility": "B",
+          "reason": "旧耐震で融資難度高いが土地価値が担保として有効。地銀・信金で打診余地あり",
+          "recommended_plan": {
+            "self_fund": 1200,
+            "loan": 3950,
+            "monthly_repay": 17.7,
+            "dscr": 1.52
+          }
+        },
+        "lat_estimated": 35.7244,
+        "lng_estimated": 139.8222,
+        "pros": [
+          "利回7.9%と高水準",
+          "駅徒歩4分の好立地",
+          "土地実勢価格が販売価格を上回り下値余地小"
+        ],
+        "cons": [
+          "1971年築旧耐震で融資条件厳しい",
+          "大規模修繕リスク大"
+        ],
+        "over_budget": false
+      },
+      {
+        "url": "https://www.kenbiya.com/pp3/s/tokyo/sumida-ku/re_4412175zr5/",
+        "source": "健美家／HOMES",
+        "category": "house",
+        "ward": "墨田区",
+        "title": "一棟マンション 菊川駅 徒歩5分",
+        "price": 4100,
+        "yield_pct": 6.6,
+        "size": 506.53,
+        "land_size": null,
+        "built": "2005年4月",
+        "station": "菊川駅 徒歩5分",
+        "walk_min": 5,
+        "floor": null,
+        "structure": "",
+        "total_units": 14,
+        "address": "東京都墨田区菊川3-14-17",
+        "lat": 35.689735,
+        "lng": 139.808792,
+        "geo_source": "GSI",
+        "scraped_at": "2026-04-25",
+        "rank": 2,
+        "score": 79,
+        "score_breakdown": {
+          "location": 24,
+          "yield_return": 17,
+          "tenant_demand": 17,
+          "future_value": 11,
+          "capital_eff": 10
+        },
+        "tenant_type": "単身社会人・DINKS・IT系テナント・外国人居住者",
+        "estimated_rent": "月額約225万円（14戸×約16万円）",
+        "rent_reference": "墨田区2LDK相場18万円・菊川駅5分・都営新宿線利便性高く坪単価4.2万円/坪で相場整合",
+        "analysis": "菊川駅徒歩5分・2005年築で新耐震基準適合・表面利回6.6%は城東RC物件として優良水準。14戸の規模で安定賃料収入が見込める。4,100万円と総予算内に収まり、融資適性Aクラス。都営新宿線・大江戸線2路線利用可能で需要底堅い。",
+        "loan_analysis": {
+          "feasibility": "A",
+          "reason": "新耐震・築20年・利回6.6%・駅5分で金融機関融資条件を全て充足",
+          "recommended_plan": {
+            "self_fund": 900,
+            "loan": 3200,
+            "monthly_repay": 14.3,
+            "dscr": 1.61
+          }
+        },
+        "lat_estimated": 35.6897,
+        "lng_estimated": 139.8088,
+        "pros": [
+          "2005年築新耐震で融資調達しやすい",
+          "2路線利用可で入居需要安定",
+          "利回6.6%と収益性良好"
+        ],
+        "cons": [
+          "14戸と管理負担が大きい",
+          "墨田区南部で将来的な地価上昇余地は限定的"
+        ],
+        "over_budget": false
+      },
+      {
+        "url": "https://www.kenbiya.com/pp3/s/tokyo/taito-ku/re_4428077vyv/",
+        "source": "健美家／HOMES",
+        "category": "house",
+        "ward": "台東区",
+        "title": "1億3,000万円 浅草橋駅 徒歩6分",
+        "price": 3000,
+        "yield_pct": 13.82,
+        "size": 80.7,
+        "land_size": null,
+        "built": "1992年5月",
+        "station": "浅草橋駅 徒歩6分",
+        "walk_min": 6,
+        "floor": null,
+        "structure": "",
+        "total_units": 1,
+        "address": "東京都台東区浅草橋2",
+        "lat": 35.699627,
+        "lng": 139.785492,
+        "geo_source": "GSI",
+        "scraped_at": "2026-04-25",
+        "rank": 3,
+        "score": 77,
+        "score_breakdown": {
+          "location": 26,
+          "yield_return": 19,
+          "tenant_demand": 17,
+          "future_value": 9,
+          "capital_eff": 6
+        },
+        "tenant_type": "単身ビジネスマン・外国人旅行者（民泊転用検討）・SOHOオフィス",
+        "estimated_rent": "月額約34.6万円（台東区2LDK相場×1戸）",
+        "rent_reference": "台東区2LDK相場22万円/戸・浅草橋駅6分・観光需要隣接で坪単価10万円超の商業立地",
+        "analysis": "表面利回13.82%は本データ中最高水準。浅草橋駅徒歩6分・台東区の商業立地で観光・ビジネス需要が厚い。ただし1戸・1992年築・80.7㎡と規模が小さく単一テナントリスクあり。空室時の収入ゼロリスクを許容できる投資家向け。価格3,000万円は予算内。",
+        "loan_analysis": {
+          "feasibility": "B",
+          "reason": "旧耐震かつ1戸のみで収益安定性に懸念。立地評価で一部金融機関対応可",
+          "recommended_plan": {
+            "self_fund": 700,
+            "loan": 2300,
+            "monthly_repay": 10.3,
+            "dscr": 2.73
+          }
+        },
+        "lat_estimated": 35.6996,
+        "lng_estimated": 139.7855,
+        "pros": [
+          "表面利回13.82%と突出した収益率",
+          "浅草橋駅6分・台東区の強い賃貸需要",
+          "3,000万円と取得コストが低い"
+        ],
+        "cons": [
+          "1戸のみで空室リスクが収入全損に直結",
+          "1992年築で旧耐震基準"
+        ],
+        "over_budget": false
+      },
+      {
+        "url": "https://www.kenbiya.com/pp3/s/tokyo/taito-ku/re_4434910ueq/",
+        "source": "健美家／HOMES",
+        "category": "house",
+        "ward": "台東区",
+        "title": "浅草寺近郊の一棟RCレジ 浅草駅 徒歩8分",
+        "price": 2800,
+        "yield_pct": 6.1,
+        "size": 640.93,
+        "land_size": null,
+        "built": "1970年1月",
+        "station": "浅草駅 徒歩8分",
+        "walk_min": 8,
+        "floor": null,
+        "structure": "",
+        "total_units": 17,
+        "address": "東京都台東区浅草六丁目",
+        "lat": 35.717903,
+        "lng": 139.800522,
+        "geo_source": "GSI",
+        "scraped_at": "2026-04-25",
+        "rank": 4,
+        "score": 76,
+        "score_breakdown": {
+          "location": 25,
+          "yield_return": 16,
+          "tenant_demand": 18,
+          "future_value": 11,
+          "capital_eff": 6
+        },
+        "tenant_type": "外国人旅行者・単身社会人・観光業関係者・民泊（旅館業許可取得前提）",
+        "estimated_rent": "月額約142万円（17戸×約8.4万円、1970年築小規模戸型想定）",
+        "rent_reference": "台東区2LDK相場22万円・浅草観光地隣接で賃貸・民泊需要ともに旺盛・坪単価5.5万円/坪",
+        "analysis": "浅草寺至近・浅草駅徒歩8分・表面利回6.1%。17戸と規模が大きく収入分散効果高い。1970年築旧耐震が最大リスクだが観光需要の強さと再開発圧力で立地評価は高い。2,800万円と低価格帯で資本効率が高く、大規模修繕費用を織り込んでも取得妙味あり。",
+        "loan_analysis": {
+          "feasibility": "B",
+          "reason": "1970年築で耐震診断・補強が融資条件。浅草立地が担保評価を補完",
+          "recommended_plan": {
+            "self_fund": 800,
+            "loan": 2000,
+            "monthly_repay": 9.0,
+            "dscr": 1.35
+          }
+        },
+        "lat_estimated": 35.7179,
+        "lng_estimated": 139.8005,
+        "pros": [
+          "浅草寺近郊の観光立地で賃貸・民泊双方の需要",
+          "17戸分散で空室リスク低減",
+          "2,800万円と低価格で資本効率良好"
+        ],
+        "cons": [
+          "1970年築で耐震補強費用が発生リスク",
+          "築55年超で修繕・建替え費用の将来負担大"
+        ],
+        "over_budget": false
+      },
+      {
+        "url": "https://www.kenbiya.com/pp3/s/tokyo/sumida-ku/re_44053064yp/",
+        "source": "健美家／HOMES",
+        "category": "house",
+        "ward": "墨田区",
+        "title": "2億6,900万円 森下駅 徒歩2分（他1件同条件あり）",
+        "price": 6900,
+        "yield_pct": 4.6,
+        "size": 273.8,
+        "land_size": null,
+        "built": "2019年5月",
+        "station": "森下駅 徒歩2分",
+        "walk_min": 2,
+        "floor": null,
+        "structure": "",
+        "total_units": 10,
+        "address": "東京都墨田区千歳三丁目3番2号",
+        "lat": 35.689056,
+        "lng": 139.796844,
+        "geo_source": "GSI",
+        "scraped_at": "2026-04-25",
+        "rank": 5,
+        "score": 74,
+        "score_breakdown": {
+          "location": 26,
+          "yield_return": 14,
+          "tenant_demand": 18,
+          "future_value": 10,
+          "capital_eff": 6
+        },
+        "tenant_type": "単身～DINKS・IT系ビジネスパーソン・外国人居住者",
+        "estimated_rent": "月額約260万円（10戸×約26万円）",
+        "rent_reference": "墨田区2LDK相場18万円・森下駅2分の圧倒的立地で相場プレミアム上乗せ・坪単価8.5万円/坪",
+        "analysis": "森下駅徒歩2分・2019年築の新築近接物件で表面利回4.6%。都営大江戸線・新宿線2路線直結で都心アクセス抜群。「他1件同条件あり」と注記あり。6,900万円は総予算上限と一致し自己資金・融資余力のフル活用が必要。利回りはやや低いが立地の将来価値を評価。",
+        "loan_analysis": {
+          "feasibility": "A",
+          "reason": "2019年築・駅2分・利回4.6%で金融機関評価高い。ただし予算上限でバッファなし",
+          "recommended_plan": {
+            "self_fund": 1500,
+            "loan": 5400,
+            "monthly_repay": 24.1,
+            "dscr": 1.2
+          }
+        },
+        "lat_estimated": 35.6891,
+        "lng_estimated": 139.7968,
+        "pros": [
+          "森下駅徒歩2分の希少立地",
+          "2019年築で長期修繕リスク低い",
+          "2路線利用で入居需要安定"
+        ],
+        "cons": [
+          "利回4.6%はDSCR1.2ぎりぎりで余裕なし",
+          "6,900万円で予算上限に達しリスクバッファなし"
+        ],
+        "over_budget": false
+      },
+      {
+        "url": "https://www.kenbiya.com/pp3/s/tokyo/koto-ku/re_4447687muk/",
+        "source": "健美家／HOMES",
+        "category": "house",
+        "ward": "江東区",
+        "title": "一棟売りマンション 東大島駅 徒歩7分（他2件同条件あり）",
+        "price": 6000,
+        "yield_pct": 9.03,
+        "size": 200.0,
+        "land_size": null,
+        "built": "1967年1月",
+        "station": "東大島駅 徒歩7分",
+        "walk_min": 7,
+        "floor": null,
+        "structure": "",
+        "total_units": 8,
+        "address": "東京都江東区大島",
+        "lat": 35.68718,
+        "lng": 139.823425,
+        "geo_source": "GSI",
+        "scraped_at": "2026-04-25",
+        "rank": 6,
+        "score": 72,
+        "score_breakdown": {
+          "location": 19,
+          "yield_return": 18,
+          "tenant_demand": 15,
+          "future_value": 11,
+          "capital_eff": 9
+        },
+        "tenant_type": "単身社会人・ファミリー・工場系勤務者・外国人労働者",
+        "estimated_rent": "月額約452万円（8戸×約56.5万円、表面利回9.03%から逆算）",
+        "rent_reference": "江東区2LDK相場20万円・東大島駅7分・大島エリアの賃料水準・坪単価4.5万円/坪",
+        "analysis": "表面利回9.03%は高水準で本データ中上位。東大島駅徒歩7分・江東区大島エリア。1967年築と最古参クラスで耐震性・修繕費用リスクは最大級。「他2件同条件あり」と複数案件あり。6,000万円と予算内だが旧耐震で現金買い推奨。土地値として評価する戦略も有効。",
+        "loan_analysis": {
+          "feasibility": "C",
+          "reason": "1967年築で金融機関融資はほぼ困難。現金もしくはノンバンク活用が現実的",
+          "recommended_plan": {
+            "self_fund": 2000,
+            "loan": 4000,
+            "monthly_repay": 17.9,
+            "dscr": 2.11
+          }
+        },
+        "lat_estimated": 35.6872,
+        "lng_estimated": 139.8234,
+        "pros": [
+          "利回9.03%と高収益",
+          "6,000万円で8戸分散リスク低減",
+          "土地値取得に近い割安感"
+        ],
+        "cons": [
+          "1967年築で耐震性・融資ともに最難関",
+          "修繕・建替え費用の将来負担が重大"
+        ],
+        "over_budget": false
+      },
+      {
+        "url": "https://www.kenbiya.com/pp3/s/tokyo/sumida-ku/re_4437295rxm/",
+        "source": "健美家／HOMES",
+        "category": "house",
+        "ward": "墨田区",
+        "title": "2018年築重鉄造◇利回7％◇東武曳舟駅徒歩10分 曳舟駅 徒歩10分（他7件同条件あり）",
+        "price": 1000,
+        "yield_pct": 7.0,
+        "size": 455.87,
+        "land_size": null,
+        "built": "2018年9月",
+        "station": "曳舟駅 徒歩10分",
+        "walk_min": 10,
+        "floor": null,
+        "structure": "",
+        "total_units": 14,
+        "address": "東京都墨田区向島5丁目",
+        "lat": 35.718987,
+        "lng": 139.810257,
+        "geo_source": "GSI",
+        "scraped_at": "2026-04-25",
+        "rank": 7,
+        "score": 70,
+        "score_breakdown": {
+          "location": 20,
+          "yield_return": 16,
+          "tenant_demand": 15,
+          "future_value": 10,
+          "capital_eff": 9
+        },
+        "tenant_type": "単身社会人・カップル・外国人居住者",
+        "estimated_rent": "月額約58.3万円（14戸×約4.2万円、利回7%から逆算）",
+        "rent_reference": "墨田区2LDK相場18万円・曳舟駅10分・向島エリアの賃料水準・「他7件同条件あり」と競合多数",
+        "analysis": "2018年築重量鉄骨造・表面利回7.0%・曳舟駅徒歩10分。新耐震・比較的築浅で融資調達しやすい。「他7件同条件あり」と同類物件が多数存在し需給バランスに注意が必要。1,000万円という記載価格は14戸を考えると著しく低く、データ誤記の可能性あり要確認。",
+        "loan_analysis": {
+          "feasibility": "A",
+          "reason": "2018年築・重鉄・利回7%・新耐震で融資条件クリア。ただし価格データ要確認",
+          "recommended_plan": {
+            "self_fund": 300,
+            "loan": 700,
+            "monthly_repay": 3.1,
+            "dscr": 1.89
+          }
+        },
+        "lat_estimated": 35.719,
+        "lng_estimated": 139.8103,
+        "pros": [
+          "2018年築新耐震で融資条件良好",
+          "利回7%と収益性高い",
+          "14戸で空室分散効果"
+        ],
+        "cons": [
+          "価格1,000万円は14戸物件として異常に安く要データ確認",
+          "「他7件同条件あり」で供給過多リスク"
+        ],
+        "over_budget": false
+      },
+      {
+        "url": "https://www.kenbiya.com/pp3/s/tokyo/sumida-ku/re_44299835xt/",
+        "source": "健美家／HOMES",
+        "category": "house",
+        "ward": "墨田区",
+        "title": "2億5,900万円 本所吾妻橋駅 徒歩8分（他1件同条件あり）",
+        "price": 5900,
+        "yield_pct": 4.54,
+        "size": 227.3,
+        "land_size": null,
+        "built": "2022年1月",
+        "station": "本所吾妻橋駅 徒歩8分",
+        "walk_min": 8,
+        "floor": null,
+        "structure": "",
+        "total_units": 10,
+        "address": "東京都墨田区本所",
+        "lat": 35.703739,
+        "lng": 139.797272,
+        "geo_source": "GSI",
+        "scraped_at": "2026-04-25",
+        "rank": 8,
+        "score": 67,
+        "score_breakdown": {
+          "location": 21,
+          "yield_return": 13,
+          "tenant_demand": 16,
+          "future_value": 10,
+          "capital_eff": 7
+        },
+        "tenant_type": "単身社会人・DINKS・外国人居住者",
+        "estimated_rent": "月額約223万円（10戸×約22.3万円）",
+        "rent_reference": "墨田区2LDK相場18万円・本所吾妻橋駅8分・2022年築新築プレミアムで相場上乗せ・坪単価7.2万円/坪",
+        "analysis": "2022年築・本所吾妻橋駅徒歩8分・表面利回4.54%。築浅で修繕リスク低く融資条件も良好。「他1件同条件あり」と注記あり。5,900万円と予算内。ただし利回4.54%はDSCR確保に若干不安が残る水準で、金利上昇局面では注意が必要。長期保有で含み益を狙うスタンスが適切。",
+        "loan_analysis": {
+          "feasibility": "A",
+          "reason": "2022年築・10戸・駅8分で金融機関評価良好。利回やや低めだがDSCR1.2は確保可",
+          "recommended_plan": {
+            "self_fund": 1300,
+            "loan": 4600,
+            "monthly_repay": 20.5,
+            "dscr": 1.22
+          }
+        },
+        "lat_estimated": 35.7037,
+        "lng_estimated": 139.7973,
+        "pros": [
+          "2022年築で修繕リスク極小",
+          "10戸分散で安定収入",
+          "融資調達の選択肢が広い"
+        ],
+        "cons": [
+          "利回4.54%でDSCRの余裕が薄い",
+          "「他1件同条件あり」で交渉力やや弱まる"
+        ],
+        "over_budget": false
+      },
+      {
+        "url": "https://www.kenbiya.com/pp3/s/tokyo/sumida-ku/re_4438529tnd/",
+        "source": "健美家／HOMES",
+        "category": "house",
+        "ward": "墨田区",
+        "title": "★2駅利用可能！R8年3月完成予定！表面利回り4％！ 押上駅 徒歩8分",
+        "price": 3000,
+        "yield_pct": 4.0,
+        "size": 405.6,
+        "land_size": null,
+        "built": "2026年3月",
+        "station": "押上駅 徒歩8分",
+        "walk_min": 8,
+        "floor": null,
+        "structure": "",
+        "total_units": 9,
+        "address": "東京都墨田区横川2丁目",
+        "lat": 35.704433,
+        "lng": 139.812164,
+        "geo_source": "GSI",
+        "scraped_at": "2026-04-25",
+        "rank": 9,
+        "score": 63,
+        "score_breakdown": {
+          "location": 21,
+          "yield_return": 11,
+          "tenant_demand": 15,
+          "future_value": 10,
+          "capital_eff": 6
+        },
+        "tenant_type": "単身社会人・カップル・外国人居住者",
+        "estimated_rent": "月額約100万円（9戸×約11.1万円）",
+        "rent_reference": "墨田区2LDK相場18万円・押上駅8分・スカイツリー商圏・坪単価4.2万円/坪で相場概ね整合",
+        "analysis": "2026年3月完成予定の新築・押上駅徒歩8分・表面利回4.0%。スカイツリー隣接エリアで観光・居住需要両面に期待。未完成物件のため賃料実績なし・施工リスクあり。3,000万円と取得コストは低いが利回4.0%はDSCR1.2維持にギリギリで金利変動リスクに注意。",
+        "loan_analysis": {
+          "feasibility": "A",
+          "reason": "新築・駅8分・RC造で融資適性高い。ただし未完成物件で竣工リスクを考慮要",
+          "recommended_plan": {
+            "self_fund": 700,
+            "loan": 2300,
+            "monthly_repay": 10.3,
+            "dscr": 1.26
+          }
+        },
+        "lat_estimated": 35.7044,
+        "lng_estimated": 139.8122,
+        "pros": [
+          "2026年新築で長期修繕リスクなし",
+          "3,000万円と低価格で資本効率高い",
+          "押上・スカイツリー圏の観光・居住需要"
+        ],
+        "cons": [
+          "未完成物件で竣工リスクと賃料実績なし",
+          "利回4.0%はDSCR余裕が非常に薄い"
+        ],
+        "over_budget": false
+      },
+      {
+        "url": "https://www.kenbiya.com/pp3/s/tokyo/taito-ku/re_44313688ix/",
+        "source": "健美家／HOMES",
+        "category": "house",
+        "ward": "台東区",
+        "title": "3億2,000万円 南千住駅 徒歩8分",
+        "price": 2000,
+        "yield_pct": 7.34,
+        "size": 388.98,
+        "land_size": null,
+        "built": "1974年2月",
+        "station": "南千住駅 徒歩8分",
+        "walk_min": 8,
+        "floor": null,
+        "structure": "",
+        "total_units": 29,
+        "address": "東京都台東区清川2-16-5",
+        "lat": 35.727654,
+        "lng": 139.800247,
+        "geo_source": "GSI",
+        "scraped_at": "2026-04-25",
+        "rank": 10,
+        "score": 61,
+        "score_breakdown": {
+          "location": 20,
+          "yield_return": 14,
+          "tenant_demand": 14,
+          "future_value": 8,
+          "capital_eff": 5
+        },
+        "tenant_type": "単身・カップル・外国人労働者・日雇い系就労者",
+        "estimated_rent": "月額約122.3万円（29戸×約4.2万円、利回7.34%から逆算）",
+        "rent_reference": "台東区清川エリア2LDK相場22万円・南千住駅8分・簡易宿所密集地帯で賃料水準やや低め・坪単価3.2万円/坪",
+        "analysis": "表面利回7.34%・南千住駅徒歩8分・29戸で収入分散効果は最高水準。2,000万円と極めて低価格だが1974年築旧耐震・清川エリアは生活保護受給者・外国人の集住地区で管理難度が高い。タイトル「3億2,000万円」と価格2,000万円の乖離が大きく、データ誤記の可能性あり要現地確認。",
+        "loan_analysis": {
+          "feasibility": "C",
+          "reason": "1974年築旧耐震・エリア特性で一般金融機関融資困難。現金取得前提で検討",
+          "recommended_plan": {
+            "self_fund": 2000,
+            "loan": 0,
+            "monthly_repay": 0.0,
+            "dscr": 0.0
+          }
+        },
+        "lat_estimated": 35.7277,
+        "lng_estimated": 139.8002,
+        "pros": [
+          "利回7.34%と高収益",
+          "29戸で空室分散効果最大",
+          "2,000万円（要確認）と低い取得コスト"
+        ],
+        "cons": [
+          "1974年築旧耐震で耐震改修費用リスク大",
+          "清川エリアの管理難度高・タイトルと価格の乖離要確認"
+        ],
+        "over_budget": false
+      }
+    ],
+    "apart": [
+      {
+        "url": "https://www.kenbiya.com/pp2/s/tokyo/taito-ku/re_4326652sld/",
+        "source": "健美家／HOMES",
+        "category": "apart",
+        "ward": "台東区",
+        "title": "鶯谷駅11分 鶯谷駅 徒歩11分（他1件同条件あり）",
+        "price": 6800,
+        "yield_pct": 11.29,
+        "size": 390.02,
+        "land_size": null,
+        "built": "2024年2月",
+        "station": "鶯谷駅 徒歩11分",
+        "walk_min": 11,
+        "floor": null,
+        "structure": "",
+        "total_units": 16,
+        "address": "東京都台東区根岸4",
+        "lat": 35.725544,
+        "lng": 139.784134,
+        "geo_source": "GSI",
+        "scraped_at": "2026-04-25",
+        "rank": 1,
+        "score": 88,
+        "score_breakdown": {
+          "location": 27,
+          "yield_return": 18,
+          "tenant_demand": 18,
+          "future_value": 13,
+          "capital_eff": 12
+        },
+        "tenant_type": "単身会社員・専門学校生・外国人労働者・クリエイター系",
+        "estimated_rent": "月額賃料：16戸×約8.5万円=136万円/月（年間1,632万円）",
+        "rent_reference": "台東区根岸エリア1K想定9.0万円/月・鶯谷徒歩11分・相場比やや割安。健美家表示利回11.29%は満室前提の表面利回。「他1件同条件あり」につき同一物件の複数掲載の可能性あり要確認。",
+        "analysis": "2024年築・16戸・鶯谷徒歩11分。新築直後のため設備・構造ともに最高水準。山手線鶯谷駅圏で台東区の賃貸需要は安定。利回11.29%は優秀で予算内。ただし徒歩11分はやや遠く、満室継続には賃料設定の適正化が必要。",
+        "loan_analysis": {
+          "feasibility": "A",
+          "reason": "2024年築・新耐震・駅11分・利回11.29%でA基準を概ね満たす。融資評価も高く長期融資が期待できる。",
+          "recommended_plan": {
+            "self_fund": 1360,
+            "loan": 5440,
+            "monthly_repay": 24.3,
+            "dscr": 4.69
+          }
+        },
+        "lat_estimated": 35.7255,
+        "lng_estimated": 139.7841,
+        "pros": [
+          "2024年新築・16戸で空室リスク分散",
+          "利回11.29%と高水準・表面CF優良",
+          "山手線鶯谷駅圏・台東区の強い賃貸需要"
+        ],
+        "cons": [
+          "徒歩11分でアクセスやや劣後",
+          "他1件同条件掲載あり・物件詳細の精査必須"
+        ],
+        "over_budget": false
+      },
+      {
+        "url": "https://www.kenbiya.com/pp2/s/tokyo/sumida-ku/re_4358146vcz/",
+        "source": "健美家／HOMES",
+        "category": "apart",
+        "ward": "墨田区",
+        "title": "イメージ画像は 京成曳舟駅 徒歩7分",
+        "price": 3480,
+        "yield_pct": 8.99,
+        "size": 149.04,
+        "land_size": null,
+        "built": "2004年9月",
+        "station": "京成曳舟駅 徒歩7分",
+        "walk_min": 7,
+        "floor": null,
+        "structure": "",
+        "total_units": 6,
+        "address": "東京都墨田区京島",
+        "lat": 35.717056,
+        "lng": 139.81958,
+        "geo_source": "GSI",
+        "scraped_at": "2026-04-25",
+        "rank": 2,
+        "score": 82,
+        "score_breakdown": {
+          "location": 25,
+          "yield_return": 17,
+          "tenant_demand": 17,
+          "future_value": 12,
+          "capital_eff": 11
+        },
+        "tenant_type": "単身会社員・外国人労働者・フリーランス・若年カップル",
+        "estimated_rent": "月額賃料：6戸×約8.5万円=51万円/月（年間612万円）",
+        "rent_reference": "墨田区京島1K想定8.0万円/月・京成曳舟徒歩7分・健美家表示利回8.99%は相場と整合。表面年収312万円（8.99%×3,480万円）と推計賃料に乖離あり要精査。",
+        "analysis": "2004年築・6戸・京成曳舟徒歩7分。新耐震基準内でスカイツリーエリアの再開発恩恵を受けやすい立地。利回8.99%は現実的水準。6戸で空室リスク分散も可能。旧来の墨田区西部エリアで外国人需要も旺盛。予算内で自己資金効率良好。",
+        "loan_analysis": {
+          "feasibility": "A",
+          "reason": "2004年築・新耐震・駅7分・利回8.99%でA基準適合。融資評価可能な物件。",
+          "recommended_plan": {
+            "self_fund": 870,
+            "loan": 2610,
+            "monthly_repay": 11.7,
+            "dscr": 2.22
+          }
+        },
+        "lat_estimated": 35.7171,
+        "lng_estimated": 139.8196,
+        "pros": [
+          "利回8.99%・新耐震・駅7分で融資適合性高い",
+          "6戸構成で空室リスク分散",
+          "スカイツリー周辺再開発で資産価値向上期待"
+        ],
+        "cons": [
+          "築20年超で修繕費積立が必要",
+          "京成線単体では路線力やや限定的"
+        ],
+        "over_budget": false
+      },
+      {
+        "url": "https://www.kenbiya.com/pp2/s/tokyo/sumida-ku/re_4364088ykb/",
+        "source": "健美家／HOMES",
+        "category": "apart",
+        "ward": "墨田区",
+        "title": "イメージ画像は とうきょうスカイツリー駅 徒歩8分",
+        "price": 2980,
+        "yield_pct": 6.93,
+        "size": 244.0,
+        "land_size": null,
+        "built": "1999年2月",
+        "station": "とうきょうスカイツリー駅 徒歩8分",
+        "walk_min": 8,
+        "floor": null,
+        "structure": "",
+        "total_units": 12,
+        "address": "東京都墨田区向島",
+        "lat": 35.711773,
+        "lng": 139.804611,
+        "geo_source": "GSI",
+        "scraped_at": "2026-04-25",
+        "rank": 3,
+        "score": 79,
+        "score_breakdown": {
+          "location": 24,
+          "yield_return": 16,
+          "tenant_demand": 16,
+          "future_value": 12,
+          "capital_eff": 11
+        },
+        "tenant_type": "単身会社員・観光業従事者・外国人労働者・若年層",
+        "estimated_rent": "月額賃料：12戸×約7.5万円=90万円/月（年間1,080万円）",
+        "rent_reference": "墨田区向島1K想定8.0万円/月・スカイツリー駅徒歩8分・健美家表示利回6.93%は年収約206万円で相場と概ね整合。244㎡÷12戸=約20㎡/戸で1R中心の構成と推定。",
+        "analysis": "1999年築・12戸・スカイツリー駅徒歩8分。観光地スカイツリー至近で外国人需要含む賃貸需要が旺盛。12戸で空室分散が効く。利回6.93%はエリア平均水準。築25年超で大規模修繕時期が近く費用計上が必要。予算内で自己資金効率は良好。",
+        "loan_analysis": {
+          "feasibility": "A",
+          "reason": "1999年築・新耐震・駅8分・利回6.93%でA基準概ね適合。築年数考慮し融資期間に注意。",
+          "recommended_plan": {
+            "self_fund": 745,
+            "loan": 2235,
+            "monthly_repay": 10.0,
+            "dscr": 1.8
+          }
+        },
+        "lat_estimated": 35.7118,
+        "lng_estimated": 139.8046,
+        "pros": [
+          "12戸で空室リスク大幅分散",
+          "スカイツリー至近・観光需要含む強い賃貸需要",
+          "予算3,000万円以下で自己資金効率最良"
+        ],
+        "cons": [
+          "築25年超・大規模修繕リスクあり",
+          "利回6.93%は城東エリアで中位水準"
+        ],
+        "over_budget": false
+      },
+      {
+        "url": "https://www.kenbiya.com/pp2/s/tokyo/taito-ku/re_4440894wup/",
+        "source": "健美家／HOMES",
+        "category": "apart",
+        "ward": "台東区",
+        "title": "8.8％ 浅草橋駅 徒歩4分",
+        "price": 4200,
+        "yield_pct": 8.8,
+        "size": 65.82,
+        "land_size": null,
+        "built": "1960年3月",
+        "station": "浅草橋駅 徒歩4分",
+        "walk_min": 4,
+        "floor": null,
+        "structure": "",
+        "total_units": 2,
+        "address": "東京都台東区浅草橋2丁目",
+        "lat": 35.699627,
+        "lng": 139.785492,
+        "geo_source": "GSI",
+        "scraped_at": "2026-04-25",
+        "rank": 4,
+        "score": 72,
+        "score_breakdown": {
+          "location": 26,
+          "yield_return": 17,
+          "tenant_demand": 14,
+          "future_value": 8,
+          "capital_eff": 7
+        },
+        "tenant_type": "単身職人・外国人労働者・高齢単身者",
+        "estimated_rent": "月額賃料：2戸×約9.0万円=18万円/月（年間216万円）",
+        "rent_reference": "台東区浅草橋1K想定9.0万円/月・JR浅草橋駅徒歩4分・健美家表示利回8.8%は年収約370万円で推計との乖離大。戸数・面積から賃料単価の再確認必須。",
+        "analysis": "1960年築・2戸・浅草橋駅徒歩4分。駅至近の立地は秀逸だが築64年で旧耐震・建替え前提の土地値買い物件。戸数2戸は空室リスク集中。利回8.8%は魅力的だが現況賃料の持続性に疑問。解体更地化か建替えを前提とした長期戦略が必要。融資は現金推奨。",
+        "loan_analysis": {
+          "feasibility": "C",
+          "reason": "1960年築・旧耐震・2戸・築64年で融資困難。現金または短期ブリッジローン前提。",
+          "recommended_plan": {
+            "self_fund": 2000,
+            "loan": 2200,
+            "monthly_repay": 9.8,
+            "dscr": 1.53
+          }
+        },
+        "lat_estimated": 35.6996,
+        "lng_estimated": 139.7855,
+        "pros": [
+          "浅草橋駅徒歩4分の優良立地",
+          "表面利回8.8%と高水準",
+          "土地値として再開発・建替えポテンシャル"
+        ],
+        "cons": [
+          "1960年築・旧耐震・融資ほぼ不可",
+          "2戸のみで空室リスク極めて高い"
+        ],
+        "over_budget": false
+      },
+      {
+        "url": "https://www.kenbiya.com/pp2/s/tokyo/sumida-ku/re_4432972cn2/",
+        "source": "健美家／HOMES",
+        "category": "apart",
+        "ward": "墨田区",
+        "title": "弊社売主◆墨田区太平一丁目 錦糸町駅 徒歩9分",
+        "price": 2399,
+        "yield_pct": 10.89,
+        "size": 73.54,
+        "land_size": null,
+        "built": "1947年1月",
+        "station": "錦糸町駅 徒歩9分",
+        "walk_min": 9,
+        "floor": null,
+        "structure": "",
+        "total_units": 1,
+        "address": "東京都墨田区太平1-19-8",
+        "lat": 35.70105,
+        "lng": 139.809662,
+        "geo_source": "GSI",
+        "scraped_at": "2026-04-25",
+        "rank": 5,
+        "score": 68,
+        "score_breakdown": {
+          "location": 22,
+          "yield_return": 17,
+          "tenant_demand": 13,
+          "future_value": 8,
+          "capital_eff": 8
+        },
+        "tenant_type": "単身高齢者・外国人労働者・低所得単身者",
+        "estimated_rent": "月額賃料：1戸×約8.0万円=8万円/月（年間96万円）",
+        "rent_reference": "墨田区太平1K想定8.0万円/月・錦糸町駅徒歩9分・健美家表示利回10.89%は年収約261万円。単戸ゆえ賃料全体が少額で収益基盤が脆弱。",
+        "analysis": "1947年築・1戸・錦糸町徒歩9分。利回10.89%は高いが築77年で旧耐震・戦後直後の建築。錦糸町駅圏の立地メリットはあるが、単戸・超高築年数・融資不可の三重リスク。土地面積次第では更地売却価値に期待できる局面もあるが、投資物件としてのリスクは最高水準。",
+        "loan_analysis": {
+          "feasibility": "C",
+          "reason": "1947年築・旧耐震・単戸で融資完全不可。現金のみでの対応となり予算効率も低い。",
+          "recommended_plan": {
+            "self_fund": 2000,
+            "loan": 399,
+            "monthly_repay": 1.8,
+            "dscr": 4.44
+          }
+        },
+        "lat_estimated": 35.7011,
+        "lng_estimated": 139.8097,
+        "pros": [
+          "錦糸町駅徒歩9分の好立地",
+          "表面利回10.89%と高水準",
+          "土地取得コストとして更地評価に期待"
+        ],
+        "cons": [
+          "1947年築・旧耐震・築77年で物件としての寿命限界",
+          "単戸で空室=収入ゼロのリスク"
+        ],
+        "over_budget": false
+      },
+      {
+        "url": "https://www.kenbiya.com/pp2/s/tokyo/koto-ku/re_44488081gw/",
+        "source": "健美家／HOMES",
+        "category": "apart",
+        "ward": "江東区",
+        "title": "イメージ画像は 葛西駅 徒歩11分",
+        "price": 7000,
+        "yield_pct": 6.9,
+        "size": 173.04,
+        "land_size": null,
+        "built": "2023年8月",
+        "station": "葛西駅 徒歩11分",
+        "walk_min": 11,
+        "floor": null,
+        "structure": "",
+        "total_units": 9,
+        "address": "東京都江東区東葛西",
+        "lat": 35.648418,
+        "lng": 139.801819,
+        "geo_source": "GSI",
+        "scraped_at": "2026-04-25",
+        "rank": 6,
+        "score": 75,
+        "score_breakdown": {
+          "location": 22,
+          "yield_return": 15,
+          "tenant_demand": 16,
+          "future_value": 12,
+          "capital_eff": 10
+        },
+        "tenant_type": "単身会社員・ファミリー・子育て世帯・外国人労働者",
+        "estimated_rent": "月額賃料：9戸×約8.5万円=76.5万円/月（年間918万円）",
+        "rent_reference": "江東区東葛西1K想定8.5万円/月・葛西駅徒歩11分・健美家表示利回6.9%は年収483万円で相場と概ね整合。9戸で空室分散効果高い。",
+        "analysis": "2023年築・9戸・葛西駅徒歩11分。新築直後で設備最新・建物リスク最小。江東区東葛西は子育て世帯にも人気で賃貸需要安定。利回6.9%は新築物件としては許容範囲。徒歩11分はやや遠く賃料設定に注意が必要。予算7,000万円ぴったりで自己資金配分が厳しい。",
+        "loan_analysis": {
+          "feasibility": "A",
+          "reason": "2023年築・新耐震・9戸・利回6.9%でA基準適合。ただし予算上限のため自己資金圧迫に注意。",
+          "recommended_plan": {
+            "self_fund": 1750,
+            "loan": 5250,
+            "monthly_repay": 23.5,
+            "dscr": 3.26
+          }
+        },
+        "lat_estimated": 35.6484,
+        "lng_estimated": 139.8018,
+        "pros": [
+          "2023年新築・9戸で管理・融資評価最良",
+          "江東区葛西エリアのファミリー賃貸需要旺盛",
+          "東京メトロ東西線葛西駅圏でアクセス良好"
+        ],
+        "cons": [
+          "徒歩11分でやや遠い",
+          "予算7,000万円ぴったりで資金余裕なし"
+        ],
+        "over_budget": false
+      },
+      {
+        "url": "https://www.kenbiya.com/pp2/s/tokyo/koto-ku/re_4445591yxt/",
+        "source": "健美家／HOMES",
+        "category": "apart",
+        "ward": "江東区",
+        "title": "一棟売りアパート 西大島駅 徒歩7分（他3件同条件あり）",
+        "price": 4800,
+        "yield_pct": 5.28,
+        "size": 76.32,
+        "land_size": null,
+        "built": "2001年1月",
+        "station": "西大島駅 徒歩7分",
+        "walk_min": 7,
+        "floor": null,
+        "structure": "",
+        "total_units": 3,
+        "address": "東京都江東区大島",
+        "lat": 35.68718,
+        "lng": 139.823425,
+        "geo_source": "GSI",
+        "scraped_at": "2026-04-25",
+        "rank": 7,
+        "score": 70,
+        "score_breakdown": {
+          "location": 22,
+          "yield_return": 14,
+          "tenant_demand": 15,
+          "future_value": 10,
+          "capital_eff": 9
+        },
+        "tenant_type": "単身会社員・若年カップル・外国人労働者",
+        "estimated_rent": "月額賃料：3戸×約8.5万円=25.5万円/月（年間306万円）",
+        "rent_reference": "江東区大島1K想定8.5万円/月・西大島駅徒歩7分・健美家表示利回5.28%は年収約253万円で相場と概ね整合。3戸で空室リスク集中気味。「他3件同条件あり」で同一物件複数掲載の可能性あり。",
+        "analysis": "2001年築・3戸・西大島駅徒歩7分。都営新宿線西大島駅圏で都心アクセス良好。利回5.28%はエリア内では低水準。3戸のみで空室インパクトが大きい。新耐震基準内で融資は可能。「他3件同条件あり」のため複数媒体掲載の同一物件である可能性が高く詳細確認が必須。",
+        "loan_analysis": {
+          "feasibility": "A",
+          "reason": "2001年築・新耐震・駅7分でA基準を満たすが利回5.28%はDSCR上やや低め。詳細確認要。",
+          "recommended_plan": {
+            "self_fund": 1200,
+            "loan": 3600,
+            "monthly_repay": 16.1,
+            "dscr": 1.59
+          }
+        },
+        "lat_estimated": 35.6872,
+        "lng_estimated": 139.8234,
+        "pros": [
+          "都営新宿線西大島駅徒歩7分の利便性",
+          "新耐震基準内で融資評価可能",
+          "江東区大島エリアの安定した賃貸需要"
+        ],
+        "cons": [
+          "3戸のみで空室リスク集中",
+          "利回5.28%は城東エリアで低水準・他3件掲載あり確認必須"
+        ],
+        "over_budget": false
+      },
+      {
+        "url": "https://www.kenbiya.com/pp2/s/tokyo/taito-ku/re_4450195f8e/",
+        "source": "健美家／HOMES",
+        "category": "apart",
+        "ward": "台東区",
+        "title": "4億3,000万円 入谷駅 徒歩7分",
+        "price": 3000,
+        "yield_pct": 7.04,
+        "size": 185.04,
+        "land_size": null,
+        "built": "1987年4月",
+        "station": "入谷駅 徒歩7分",
+        "walk_min": 7,
+        "floor": null,
+        "structure": "",
+        "total_units": 1,
+        "address": "東京都台東区根岸4丁目5-13",
+        "lat": 35.724754,
+        "lng": 139.783249,
+        "geo_source": "GSI",
+        "scraped_at": "2026-04-25",
+        "rank": 8,
+        "score": 65,
+        "score_breakdown": {
+          "location": 24,
+          "yield_return": 14,
+          "tenant_demand": 13,
+          "future_value": 9,
+          "capital_eff": 5
+        },
+        "tenant_type": "単身会社員・外国人労働者・高齢単身者",
+        "estimated_rent": "月額賃料：1戸×約9.0万円=9万円/月（年間108万円）",
+        "rent_reference": "台東区根岸1K想定9.0万円/月・入谷駅徒歩7分・健美家表示利回7.04%は年収211万円で単戸185㎡の評価と整合しない点あり。面積185㎡で1戸は大型戸建または事務所用途の可能性あり要確認。",
+        "analysis": "1987年築・1戸・入谷駅徒歩7分。台東区根岸の立地は賃貸需要面で優位性があるが、185㎡で1戸という構成が特殊。アパートとして機能しているか用途確認が必須。利回7.04%は魅力的だが、単戸のため空室リスクが収益全体に直結する。旧耐震（1987年は新耐震）で融資は検討可能。",
+        "loan_analysis": {
+          "feasibility": "B",
+          "reason": "1987年築・新耐震基準内だが単戸・用途不明で融資評価にリスクあり。Bグレード扱いが妥当。",
+          "recommended_plan": {
+            "self_fund": 750,
+            "loan": 2250,
+            "monthly_repay": 10.1,
+            "dscr": 1.77
+          }
+        },
+        "lat_estimated": 35.7248,
+        "lng_estimated": 139.7832,
+        "pros": [
+          "台東区根岸・入谷駅徒歩7分の利便性",
+          "利回7.04%は台東区水準で適正",
+          "1987年築・新耐震基準内で融資検討可能"
+        ],
+        "cons": [
+          "185㎡・1戸という特殊構成で用途・収益構造の確認必須",
+          "単戸のため空室リスクが収益直結"
+        ],
+        "over_budget": false
+      },
+      {
+        "url": "https://www.kenbiya.com/pp2/s/tokyo/koto-ku/re_44217377xd/",
+        "source": "健美家／HOMES",
+        "category": "apart",
+        "ward": "江東区",
+        "title": "◆オーナーチェンジ物件 西大島駅 徒歩14分",
+        "price": 2900,
+        "yield_pct": 5.5,
+        "size": 35.34,
+        "land_size": null,
+        "built": "2017年12月",
+        "station": "西大島駅 徒歩14分",
+        "walk_min": 14,
+        "floor": null,
+        "structure": "",
+        "total_units": 2,
+        "address": "東京都江東区北砂3丁目",
+        "lat": 35.682434,
+        "lng": 139.828918,
+        "geo_source": "GSI",
+        "scraped_at": "2026-04-25",
+        "rank": 9,
+        "score": 63,
+        "score_breakdown": {
+          "location": 18,
+          "yield_return": 13,
+          "tenant_demand": 14,
+          "future_value": 10,
+          "capital_eff": 8
+        },
+        "tenant_type": "単身会社員・外国人労働者・若年カップル",
+        "estimated_rent": "月額賃料：2戸×約8.5万円=17万円/月（年間204万円）",
+        "rent_reference": "江東区北砂1K想定8.5万円/月・西大島駅徒歩14分・健美家表示利回5.5%は年収約160万円で推計との乖離あり。2戸で35㎡は1R構成と推定。",
+        "analysis": "2017年築・2戸・西大島駅徒歩14分。新耐震・比較的新しい建物で管理面の安心感はある。ただし徒歩14分は城東エリアでは遠く、賃料競争力がやや低下。2戸の空室リスク集中と利回5.5%の低水準が課題。自己資金効率は良いが収益性で劣後する。",
+        "loan_analysis": {
+          "feasibility": "B",
+          "reason": "2017年築・新耐震だが徒歩14分・2戸・利回5.5%でDSCR1.2達成がやや際どい。",
+          "recommended_plan": {
+            "self_fund": 725,
+            "loan": 2175,
+            "monthly_repay": 9.7,
+            "dscr": 1.75
+          }
+        },
+        "lat_estimated": 35.6824,
+        "lng_estimated": 139.8289,
+        "pros": [
+          "2017年築・新耐震で建物リスク低い",
+          "江東区北砂の安定した生活賃貸需要",
+          "予算2,900万円で自己資金効率は良好"
+        ],
+        "cons": [
+          "徒歩14分で立地競争力弱い",
+          "2戸のみで空室=収入半減リスク・利回5.5%は低水準"
+        ],
+        "over_budget": false
+      },
+      {
+        "url": "https://www.kenbiya.com/pp2/s/tokyo/sumida-ku/re_4448541zzs/",
+        "source": "健美家／HOMES",
+        "category": "apart",
+        "ward": "墨田区",
+        "title": "イメージ画像は 小村井駅 徒歩7分（他3件同条件あり）",
+        "price": 3880,
+        "yield_pct": 6.5,
+        "size": 199.84,
+        "land_size": null,
+        "built": "2015年12月",
+        "station": "小村井駅 徒歩7分",
+        "walk_min": 7,
+        "floor": null,
+        "structure": "",
+        "total_units": 12,
+        "address": "東京都墨田区文花1丁目",
+        "lat": 35.709003,
+        "lng": 139.821869,
+        "geo_source": "GSI",
+        "scraped_at": "2026-04-25",
+        "rank": 10,
+        "score": 74,
+        "score_breakdown": {
+          "location": 21,
+          "yield_return": 15,
+          "tenant_demand": 16,
+          "future_value": 11,
+          "capital_eff": 11
+        },
+        "tenant_type": "単身会社員・外国人労働者・クリエイター・若年カップル",
+        "estimated_rent": "月額賃料：12戸×約8.0万円=96万円/月（年間1,152万円）",
+        "rent_reference": "墨田区文花1K想定8.0万円/月・小村井駅徒歩7分・健美家表示利回6.5%は年収252万円（3,880万円×6.5%）。12戸で年収252万円は一戸あたり月約1.75万円と低すぎ、賃料データの異常値の可能性が高く現況賃料の精査が必須。「他3件同条件あり」で複数掲載確認要。",
+        "analysis": "2015年築・12戸・小村井駅徒歩7分。東武亀戸線小村井駅圏・墨田区文花エリアは静穏な住宅地で単身需要が安定。12戸構成で空室分散が効く。利回6.5%の表示に対し戸数・賃料整合性に疑問があり、現況賃料・満室想定の再確認が必要。「他3件同条件あり」で同一物件の複数掲載の可能性大。",
+        "loan_analysis": {
+          "feasibility": "A",
+          "reason": "2015年築・新耐震・駅7分・12戸でA基準適合。賃料精査後に融資条件を詰めること。",
+          "recommended_plan": {
+            "self_fund": 970,
+            "loan": 2910,
+            "monthly_repay": 13.0,
+            "dscr": 1.47
+          }
+        },
+        "lat_estimated": 35.709,
+        "lng_estimated": 139.8219,
+        "pros": [
+          "2015年築・12戸で空室リスク分散・管理安定",
+          "新耐震・築10年水準で融資評価高い",
+          "墨田区文花の安定した単身賃貸需要"
+        ],
+        "cons": [
+          "表示利回6.5%と戸数賃料の整合性に疑問・現況賃料精査必須",
+          "他3件同条件掲載あり・同一物件の重複出稿の可能性大"
         ],
         "over_budget": false
       }
     ],
     "building": [
       {
-        "url": "https://www.kenbiya.com/pp5/s/tokyo/taito-ku/re_4443407kje/",
+        "url": "https://www.kenbiya.com/pp5/s/tokyo/taito-ku/re_4445045cx7/",
         "source": "健美家／HOMES",
         "category": "building",
         "ward": "台東区",
-        "title": "台東区日本堤2丁目（台東区 8,580万円 土地（No.4443407kje））",
-        "price": 8580,
-        "yield_pct": null,
-        "size": 67.96,
-        "land_size": 67.96,
+        "title": "浅草駅徒歩2分 浅草駅 徒歩2分",
+        "price": 6880,
+        "yield_pct": 2.0,
+        "size": 50.54,
+        "land_size": null,
         "built": null,
-        "station": "三ノ輪駅 徒歩6分",
-        "walk_min": 6,
+        "station": "浅草駅 徒歩2分",
+        "walk_min": 2,
         "floor": null,
         "structure": "",
-        "layout": "部屋数及び間取りタイプ別の住戸数を表示",
-        "address": "東京都台東区日本堤2丁目34",
-        "prop_name": "台東区日本堤2丁目",
         "total_units": null,
-        "lat": 35.728199,
-        "lng": 139.795471,
+        "address": "東京都台東区西浅草一丁目",
+        "lat": 35.71096,
+        "lng": 139.79007,
         "geo_source": "GSI",
         "scraped_at": "2026-04-25",
         "rank": 1,
-        "score": 41,
+        "score": 74,
         "score_breakdown": {
-          "location": 16,
-          "yield_return": 6,
-          "tenant_demand": 9,
-          "future_value": 6,
-          "capital_eff": 4
+          "location": 27,
+          "yield_return": 10,
+          "tenant_demand": 17,
+          "future_value": 12,
+          "capital_eff": 8
         },
-        "tenant_type": "小規模事務所・物販店舗・飲食テイクアウト・軽作業倉庫",
-        "estimated_rent": "月額約11〜15万円（延床面積未確定のため土地面積67.96㎡≒20.6坪を仮基準として試算）",
-        "rent_reference": "台東区相場：事務所1.5万円/坪・店舗1F 2.5万円/坪。20.6坪×1.5万＝約30.9万円（フル事務所想定）ただし建物詳細不明のため実効賃料は大幅に不確実。土地のみの可能性高く賃料試算の信頼性低い。",
-        "analysis": "三ノ輪駅徒歩6分と立地は一定評価できるが、物件価格8,580万円は総予算7,000万円を大幅超過。土地67.96㎡のみの売地の可能性が高く、建物情報・築年・構造・利回りが全て不明。単独では投資判断不可。",
+        "tenant_type": "飲食店・土産物店・観光客向け小売・ゲストハウス",
+        "estimated_rent": "月額約115万円（想定年収1,380万円、表面利回り約2.0%）",
+        "rent_reference": "台東区店舗1F坪単価2.5万円×延床50.54㎡(約15.3坪)≒月38万円/フロア、複数フロア想定で推計。掲載利回り2.0%から逆算すると年収約1,376万円。浅草観光エリア店舗相場と概ね整合",
+        "analysis": "浅草駅徒歩2分という城東最強立地。観光需要・インバウンド回復で店舗・飲食賃料は底堅い。ただし掲載利回り2.0%は極めて低く、6,880万円は予算上限内だが融資後キャッシュフローはほぼゼロ。築年・構造不明で追加調査必須。",
         "loan_analysis": {
-          "feasibility": "C",
-          "reason": "予算超過（8,580万円）かつ土地のみ売地の疑い。建物情報・利回り不明で融資審査通過困難。現金購入でも予算外。",
+          "feasibility": "B",
+          "reason": "立地は極めて良好だが利回り2.0%はDSCR1.2を大幅に下回る。自己資金を厚く積むか値引き交渉が前提",
           "recommended_plan": {
-            "self_fund": null,
-            "loan": null,
-            "monthly_repay": null,
-            "dscr": null
+            "self_fund": 2000,
+            "loan": 4880,
+            "monthly_repay": 21.5,
+            "dscr": 0.75
           }
         },
-        "lat_estimated": 35.7282,
-        "lng_estimated": 139.7955,
+        "lat_estimated": 35.71096,
+        "lng_estimated": 139.79007,
         "pros": [
-          "三ノ輪駅徒歩6分と城東エリアでは比較的駅近",
-          "台東区は城東7区内で最も賃料水準が高く、事務所・店舗需要が見込める",
-          "日本堤エリアは再開発余地があり将来的な土地価値上昇の可能性"
+          "浅草駅徒歩2分・観光地隣接で空室リスク低",
+          "インバウンド需要回復による賃料上昇期待",
+          "総額6,880万円で予算内"
         ],
         "cons": [
-          "価格8,580万円は総予算7,000万円を1,580万円超過しており投資不可",
-          "建物情報・築年・構造・利回りが全て未記載で収益性の試算が不可能",
-          "土地面積67.96㎡（約21坪）は小規模すぎて中古ビル（一棟）投資としての有効活用が極めて困難"
+          "表面利回り2.0%はDSCR基準を大きく下回りCF赤字",
+          "築年・構造・総戸数不明で精査コスト増"
         ],
-        "over_budget": true
+        "over_budget": false
       },
       {
-        "url": "https://www.kenbiya.com/pp5/s/tokyo/koto-ku/re_4447466zpx/",
+        "url": "https://www.kenbiya.com/pp5/s/tokyo/taito-ku/re_4432278nhf/",
         "source": "健美家／HOMES",
         "category": "building",
-        "ward": "江東区",
-        "title": "江東区北砂627売地（●建築条件なし●江東区北砂六丁目売地（No.4447466zpx））",
-        "price": 19800,
+        "ward": "台東区",
+        "title": "【EMAの1棟マンション企画】施工店倒産時の安心補償付き！！ 南千住駅 徒歩8分",
+        "price": 6480,
         "yield_pct": null,
-        "size": 255.7,
-        "land_size": 255.7,
+        "size": 83.25,
+        "land_size": null,
         "built": null,
-        "station": "大島駅 徒歩17分",
-        "walk_min": 17,
+        "station": "南千住駅 徒歩8分",
+        "walk_min": 8,
         "floor": null,
         "structure": "",
-        "layout": "部屋数及び間取りタイプ別の住戸数を表示",
-        "address": "東京都江東区北砂六丁目",
-        "prop_name": "江東区北砂627売地",
         "total_units": null,
-        "lat": 35.683105,
-        "lng": 139.837387,
+        "address": "東京都台東区清川2丁目",
+        "lat": 35.727711,
+        "lng": 139.802628,
         "geo_source": "GSI",
         "scraped_at": "2026-04-25",
         "rank": 2,
-        "score": 28,
+        "score": 58,
         "score_breakdown": {
-          "location": 8,
-          "yield_return": 4,
-          "tenant_demand": 7,
-          "future_value": 5,
-          "capital_eff": 4
+          "location": 18,
+          "yield_return": 10,
+          "tenant_demand": 13,
+          "future_value": 9,
+          "capital_eff": 8
         },
-        "tenant_type": "建築条件なし売地のため現状収益不動産としては対象外（将来的に：倉庫・軽工業・共同住宅等）",
-        "estimated_rent": "現状賃料収入なし。仮に将来建築後：江東区事務所1.3万円/坪×77坪（255.7㎡）≒約100万円/月（新築フル稼働時の上限想定）",
-        "rent_reference": "江東区相場：事務所1.3万円/坪・店舗1F 2.2万円/坪。255.7㎡≒77.3坪。ただし大島駅徒歩17分の距離は賃料水準を20〜30%押し下げる要因。実効賃料は相場の70%程度と見込む。",
-        "analysis": "価格1億9,800万円は総予算7,000万円の約2.8倍で論外。建築条件なし更地で即時収益ゼロ。大島駅徒歩17分は利便性低く、テナント需要も限定的。現中古ビル一棟投資の分析対象として不適格。",
+        "tenant_type": "単身者向け賃貸住宅・学生・外国人労働者",
+        "estimated_rent": "利回り未掲載のため推計：台東区事務所坪単価1.5万円×83.25㎡(約25.2坪)≒月38万円、年収約456万円。表面利回り約7.0%想定",
+        "rent_reference": "台東区事務所坪単価1.5万円/坪を基準。EMA企画マンションのため住宅用途なら周辺賃料を別途調査要",
+        "analysis": "EMA1棟マンション企画物件で施工店倒産補償付きは安心材料。南千住駅徒歩8分は許容範囲。ただし利回り未掲載・築年不明・新築企画のため完成リスクがある。総額6,480万円は予算内だが収支詳細の開示が必要。「他N件同条件あり」には該当しない。",
         "loan_analysis": {
-          "feasibility": "C",
-          "reason": "価格1億9,800万円は予算の約2.8倍超。更地で収益ゼロのため融資審査においてDSCR算定不可。投資対象外。",
+          "feasibility": "B",
+          "reason": "新築企画かつ補償付きで融資評価は得やすいが利回り未掲載のため収支検証が必須",
           "recommended_plan": {
-            "self_fund": null,
-            "loan": null,
-            "monthly_repay": null,
-            "dscr": null
+            "self_fund": 1500,
+            "loan": 4980,
+            "monthly_repay": 21.9,
+            "dscr": 1.2
           }
         },
-        "lat_estimated": 35.6831,
-        "lng_estimated": 139.8374,
+        "lat_estimated": 35.727711,
+        "lng_estimated": 139.802628,
         "pros": [
-          "土地面積255.7㎡（約77坪）と一定規模があり、将来的な建築自由度は高い",
-          "建築条件なしのため用途・設計の柔軟性がある",
-          "江東区北砂エリアは物流・倉庫需要の底堅さがある"
+          "施工店倒産補償付きで竣工リスク軽減",
+          "南千住駅8分・利便性まずまず",
+          "6,480万円で予算内"
         ],
         "cons": [
-          "価格1億9,800万円は総予算7,000万円の約2.8倍で完全に予算外",
-          "大島駅徒歩17分は城東エリアでも利便性が低く、テナント賃料・空室リスクともに不利",
-          "更地のため即時収益ゼロ。建築費が別途数千万〜1億円以上必要で総事業費が極めて高額になる"
+          "利回り・賃料根拠が未開示で収支検証不能",
+          "築年・構造・総戸数データ欠如"
         ],
-        "over_budget": true
+        "over_budget": false
+      },
+      {
+        "url": "https://www.kenbiya.com/pp5/s/tokyo/taito-ku/re_4432275iyz/",
+        "source": "健美家／HOMES",
+        "category": "building",
+        "ward": "台東区",
+        "title": "【EMAの1棟マンション企画】施工店倒産時の安心補償付 南千住駅 徒歩16分",
+        "price": 6000,
+        "yield_pct": null,
+        "size": 204.94,
+        "land_size": null,
+        "built": null,
+        "station": "南千住駅 徒歩16分",
+        "walk_min": 16,
+        "floor": null,
+        "structure": "",
+        "total_units": null,
+        "address": "東京都台東区清川1丁目",
+        "lat": 35.724541,
+        "lng": 139.803024,
+        "geo_source": "GSI",
+        "scraped_at": "2026-04-25",
+        "rank": 3,
+        "score": 55,
+        "score_breakdown": {
+          "location": 14,
+          "yield_return": 10,
+          "tenant_demand": 12,
+          "future_value": 9,
+          "capital_eff": 10
+        },
+        "tenant_type": "単身・DINKs向け賃貸住宅・外国人労働者",
+        "estimated_rent": "推計：台東区事務所坪単価1.5万円×204.94㎡(約62坪)≒月93万円、年収約1,116万円。表面利回り約18.6%は非現実的なため実態は大幅割引が必要",
+        "rent_reference": "EMA企画マンションのため住宅用途前提。台東区賃料相場から推計するが延床面積が大きく複数戸想定。実際の賃料設定はプランナーへ確認必須",
+        "analysis": "南千住駅徒歩16分は城東エリアでは遠く、徒歩利便性に課題。延床204.94㎡と大きく複数戸確保可能だが、利回り・築年未掲載で判断材料が乏しい。EMA企画物件として新築想定なら評価余地あるも、駅距離がネック。",
+        "loan_analysis": {
+          "feasibility": "C",
+          "reason": "駅徒歩16分・利回り未掲載・データ欠如が重なり融資評価困難。現金検討か詳細開示後に再判断",
+          "recommended_plan": {
+            "self_fund": 2000,
+            "loan": 4000,
+            "monthly_repay": 17.6,
+            "dscr": 1.05
+          }
+        },
+        "lat_estimated": 35.724541,
+        "lng_estimated": 139.803024,
+        "pros": [
+          "延床約205㎡と大きく多戸構成で収益分散",
+          "EMA新築企画で補償付き",
+          "6,000万円で予算内"
+        ],
+        "cons": [
+          "南千住駅徒歩16分は賃貸需要が限定的",
+          "利回り・収支根拠が一切未開示"
+        ],
+        "over_budget": false
+      },
+      {
+        "url": "https://www.kenbiya.com/pp5/s/tokyo/sumida-ku/re_44430522pt/",
+        "source": "健美家／HOMES",
+        "category": "building",
+        "ward": "墨田区",
+        "title": "イメージ画像は 東あずま駅 徒歩6分",
+        "price": 5500,
+        "yield_pct": null,
+        "size": 72.88,
+        "land_size": null,
+        "built": null,
+        "station": "東あずま駅 徒歩6分",
+        "walk_min": 6,
+        "floor": null,
+        "structure": "",
+        "total_units": null,
+        "address": "東京都墨田区立花",
+        "lat": 35.705215,
+        "lng": 139.829102,
+        "geo_source": "GSI",
+        "scraped_at": "2026-04-25",
+        "rank": 4,
+        "score": 56,
+        "score_breakdown": {
+          "location": 16,
+          "yield_return": 10,
+          "tenant_demand": 13,
+          "future_value": 9,
+          "capital_eff": 8
+        },
+        "tenant_type": "単身者向け賃貸・SOHO・軽作業系テナント",
+        "estimated_rent": "推計：墨田区事務所坪単価1.2万円×72.88㎡(約22坪)≒月26万円、年収約312万円。表面利回り約5.7%想定",
+        "rent_reference": "墨田区事務所坪単価1.2万円/坪、店舗1F2.0万円/坪を参照。東あずま駅周辺は準工業地域が多く工場転用・倉庫需要も一定程度存在",
+        "analysis": "東あずま駅徒歩6分、5,500万円は予算内。墨田区西部で利便性はやや限定的。延床72.88㎡はコンパクトで単一テナント向き。利回り・築年・構造未掲載のため精査が必要。準工業地域であればSOHO・軽作業系テナントの需要が見込める。",
+        "loan_analysis": {
+          "feasibility": "C",
+          "reason": "利回り・築年不明でA評価の条件を満たせない。立地はB圏内だが情報不足でリスク高",
+          "recommended_plan": {
+            "self_fund": 1500,
+            "loan": 4000,
+            "monthly_repay": 17.6,
+            "dscr": 0.88
+          }
+        },
+        "lat_estimated": 35.705215,
+        "lng_estimated": 139.829102,
+        "pros": [
+          "5,500万円と比較的手頃で予算に余裕",
+          "東あずま駅6分・準工業地域で用途柔軟性あり"
+        ],
+        "cons": [
+          "利回り・築年・構造・総戸数がすべて未掲載",
+          "東あずま駅の路線利便性は低く空室長期化リスク"
+        ],
+        "over_budget": false
+      },
+      {
+        "url": "https://www.kenbiya.com/pp5/s/tokyo/arakawa-ku/re_4379982yme/",
+        "source": "健美家／HOMES",
+        "category": "building",
+        "ward": "荒川区",
+        "title": "イメージ画像は 三河島駅 徒歩4分",
+        "price": 4000,
+        "yield_pct": null,
+        "size": 162.26,
+        "land_size": null,
+        "built": null,
+        "station": "三河島駅 徒歩4分",
+        "walk_min": 4,
+        "floor": null,
+        "structure": "",
+        "total_units": null,
+        "address": "東京都荒川区東日暮里",
+        "lat": 35.730019,
+        "lng": 139.788727,
+        "geo_source": "GSI",
+        "scraped_at": "2026-04-25",
+        "rank": 5,
+        "score": 55,
+        "score_breakdown": {
+          "location": 18,
+          "yield_return": 10,
+          "tenant_demand": 12,
+          "future_value": 9,
+          "capital_eff": 6
+        },
+        "tenant_type": "単身者向け賃貸・飲食小規模テナント・事務所",
+        "estimated_rent": "推計：荒川区事務所坪単価1.0万円×162.26㎡(約49坪)≒月49万円、年収約588万円。表面利回り約14.7%は過大のため実態は50〜60%水準と想定",
+        "rent_reference": "荒川区事務所坪単価1.0万円/坪、店舗1F1.6万円/坪を参照。三河島駅周辺は住宅・小規模店舗混在エリアで賃料水準は中程度",
+        "analysis": "三河島駅徒歩4分と近接しており荒川区内では好立地。延床162.26㎡と大きめで複数テナント構成可能。ただし4,000万円で利回り未掲載・築年不明はリスク。イメージ画像物件のため現況確認が必須。荒川区賃料相場から実質利回りは8〜10%程度と推定。",
+        "loan_analysis": {
+          "feasibility": "B",
+          "reason": "駅4分の近接立地は評価材料。ただし築年・構造不明でB判定。利回り確認後にA昇格可能性あり",
+          "recommended_plan": {
+            "self_fund": 1000,
+            "loan": 3000,
+            "monthly_repay": 13.2,
+            "dscr": 1.31
+          }
+        },
+        "lat_estimated": 35.730019,
+        "lng_estimated": 139.788727,
+        "pros": [
+          "三河島駅徒歩4分・荒川区内最短水準",
+          "延床162㎡で複数テナント構成可能",
+          "4,000万円で予算に大きな余裕"
+        ],
+        "cons": [
+          "利回り・築年・構造未掲載",
+          "「イメージ画像」物件で現況乖離リスク"
+        ],
+        "over_budget": false
+      },
+      {
+        "url": "https://www.kenbiya.com/pp5/s/tokyo/arakawa-ku/re_4423268jb8/",
+        "source": "健美家／HOMES",
+        "category": "building",
+        "ward": "荒川区",
+        "title": "建築条件無し×60坪×3路線利用可能 町屋駅 徒歩6分（他1件同条件あり）",
+        "price": 2200,
+        "yield_pct": null,
+        "size": 202.75,
+        "land_size": null,
+        "built": null,
+        "station": "町屋駅 徒歩6分",
+        "walk_min": 6,
+        "floor": null,
+        "structure": "",
+        "total_units": null,
+        "address": "東京都荒川区町屋",
+        "lat": 35.744644,
+        "lng": 139.785294,
+        "geo_source": "GSI",
+        "scraped_at": "2026-04-25",
+        "rank": 6,
+        "score": 52,
+        "score_breakdown": {
+          "location": 17,
+          "yield_return": 8,
+          "tenant_demand": 12,
+          "future_value": 9,
+          "capital_eff": 6
+        },
+        "tenant_type": "飲食・小売・学習塾・接骨院",
+        "estimated_rent": "推計：荒川区店舗1F坪単価1.6万円×202.75㎡(約61坪)×30%+事務所1.0万円×70%≒月約98万円、年収約1,176万円。表面利回り約53%は計算上非現実的なため実態精査要",
+        "rent_reference": "荒川区事務所1.0万円/坪・店舗1.6万円/坪を参照。町屋は3路線利用可能で荒川区内では賃料水準やや高め。建築条件なしの土地のため賃料は開発後想定",
+        "analysis": "町屋駅徒歩6分・3路線利用可能(京成・東京メトロ・都電)は荒川区内で希少立地。延床202.75㎡の大型敷地で開発余地大。ただし建築条件なし土地であり建物がない点に注意。「他1件同条件あり」とのことで複数購入検討も可能。開発コストが別途必要で総投資額が膨らむリスクがある。",
+        "loan_analysis": {
+          "feasibility": "C",
+          "reason": "土地のみのため建物融資は別途必要。現状では収益評価不能。開発計画込みで再査定が前提",
+          "recommended_plan": {
+            "self_fund": 2000,
+            "loan": 200,
+            "monthly_repay": 0.9,
+            "dscr": 0.0
+          }
+        },
+        "lat_estimated": 35.744644,
+        "lng_estimated": 139.785294,
+        "pros": [
+          "町屋駅6分・3路線利用可能の優良立地",
+          "2,200万円と低価格で開発余地が大きい",
+          "他1件同条件ありで複数取得検討可能"
+        ],
+        "cons": [
+          "建築条件なし土地のため建物は別途建設コスト必要",
+          "現状では賃料収益ゼロで投資分析が限定的"
+        ],
+        "over_budget": false
+      },
+      {
+        "url": "https://www.kenbiya.com/pp5/s/tokyo/adachi-ku/re_4439395ck9/",
+        "source": "健美家／HOMES",
+        "category": "building",
+        "ward": "足立区",
+        "title": "AP用地 TX六町駅 徒歩10分",
+        "price": 4980,
+        "yield_pct": 6.6,
+        "size": 116.65,
+        "land_size": null,
+        "built": null,
+        "station": "TX六町駅 徒歩10分",
+        "walk_min": 10,
+        "floor": null,
+        "structure": "",
+        "total_units": null,
+        "address": "東京都足立区南花畑",
+        "lat": 35.787716,
+        "lng": 139.824417,
+        "geo_source": "GSI",
+        "scraped_at": "2026-04-25",
+        "rank": 7,
+        "score": 50,
+        "score_breakdown": {
+          "location": 13,
+          "yield_return": 12,
+          "tenant_demand": 11,
+          "future_value": 8,
+          "capital_eff": 6
+        },
+        "tenant_type": "単身者向け賃貸アパート・外国人労働者向け住宅",
+        "estimated_rent": "掲載利回り6.6%から逆算：4,980万円×6.6%÷12≒月約27万円、年収約329万円",
+        "rent_reference": "足立区事務所坪単価0.8万円/坪・店舗1.3万円/坪を参照。TX六町駅周辺は開発進行中エリアで住宅需要が拡大傾向。掲載利回り6.6%は相場並み",
+        "analysis": "唯一利回り（6.6%）が掲載されている足立区物件。TX六町駅徒歩10分・4,980万円は予算内。ただしDSCR1.2を達成するには利回りが若干不足。足立区南部はTXによる地価上昇エリアで将来性に一定の期待。延床116.65㎡はコンパクト設計。",
+        "loan_analysis": {
+          "feasibility": "B",
+          "reason": "利回り開示あり・TX沿線で評価しやすい。ただし6.6%はDSCR1.2ギリギリで自己資金比率を高める必要",
+          "recommended_plan": {
+            "self_fund": 1500,
+            "loan": 3480,
+            "monthly_repay": 15.3,
+            "dscr": 1.22
+          }
+        },
+        "lat_estimated": 35.787716,
+        "lng_estimated": 139.824417,
+        "pros": [
+          "唯一利回り明示（6.6%）で収支検証可能",
+          "TX六町駅10分・開発進行エリアで需要拡大期待",
+          "4,980万円で予算に余裕"
+        ],
+        "cons": [
+          "足立区南花畑は知名度低く空室率リスクあり",
+          "DSCR1.2達成は借入条件次第でギリギリ"
+        ],
+        "over_budget": false
+      },
+      {
+        "url": "https://www.kenbiya.com/pp5/s/tokyo/adachi-ku/re_44340076mg/",
+        "source": "健美家／HOMES",
+        "category": "building",
+        "ward": "足立区",
+        "title": "＜建築条件なし＞解体更地渡し×南北二面道路×駅徒歩6分 西新井駅 徒歩6分（他1件同条件あり）",
+        "price": 5952,
+        "yield_pct": null,
+        "size": 310.36,
+        "land_size": null,
+        "built": null,
+        "station": "西新井駅 徒歩6分",
+        "walk_min": 6,
+        "floor": null,
+        "structure": "",
+        "total_units": null,
+        "address": "東京都足立区梅島",
+        "lat": 35.772495,
+        "lng": 139.800705,
+        "geo_source": "GSI",
+        "scraped_at": "2026-04-25",
+        "rank": 8,
+        "score": 48,
+        "score_breakdown": {
+          "location": 15,
+          "yield_return": 8,
+          "tenant_demand": 11,
+          "future_value": 8,
+          "capital_eff": 6
+        },
+        "tenant_type": "賃貸マンション・店舗付き住宅・SOHO",
+        "estimated_rent": "推計：足立区事務所坪単価0.8万円×310.36㎡(約94坪)≒月75万円、年収約900万円。表面利回り約15.1%は過大のため実態は50%水準と想定し年450万円・月37万円程度",
+        "rent_reference": "足立区事務所0.8万円/坪・店舗1.3万円/坪参照。西新井駅6分・南北二面道路・解体更地渡しで開発自由度高。「他1件同条件あり」のため複数購入検討も可能",
+        "analysis": "西新井駅徒歩6分・南北二面道路・解体更地渡しは開発条件として優秀。「他1件同条件あり」で隣地一体開発の可能性もある。5,952万円は予算内だが土地のみで建設コスト別途必要。延床310㎡超の大規模開発が可能だが総投資額が7,000万円を超えるリスク。",
+        "loan_analysis": {
+          "feasibility": "C",
+          "reason": "更地渡しのため建物融資は別途。開発計画確定後に再評価が必要。単純な収益物件として即評価不能",
+          "recommended_plan": {
+            "self_fund": 2000,
+            "loan": 3952,
+            "monthly_repay": 17.4,
+            "dscr": 0.0
+          }
+        },
+        "lat_estimated": 35.772495,
+        "lng_estimated": 139.800705,
+        "pros": [
+          "西新井駅6分・南北二面道路で開発自由度高",
+          "延床310㎡超の大規模開発可能",
+          "他1件同条件ありで一体開発検討可能"
+        ],
+        "cons": [
+          "解体更地渡しで建物建設コストが別途大幅追加",
+          "現状では収益ゼロ・融資評価が困難"
+        ],
+        "over_budget": false
+      },
+      {
+        "url": "https://www.kenbiya.com/pp5/s/tokyo/sumida-ku/re_4415340vk3/",
+        "source": "健美家／HOMES",
+        "category": "building",
+        "ward": "墨田区",
+        "title": "2億4,980万円 本所吾妻橋駅 徒歩7分",
+        "price": 4980,
+        "yield_pct": null,
+        "size": 143.79,
+        "land_size": null,
+        "built": null,
+        "station": "本所吾妻橋駅 徒歩7分",
+        "walk_min": 7,
+        "floor": null,
+        "structure": "",
+        "total_units": null,
+        "address": "東京都墨田区四丁目19番14号",
+        "lat": 35.710678,
+        "lng": 139.801514,
+        "geo_source": "GSI",
+        "scraped_at": "2026-04-25",
+        "rank": 9,
+        "score": 47,
+        "score_breakdown": {
+          "location": 16,
+          "yield_return": 8,
+          "tenant_demand": 11,
+          "future_value": 8,
+          "capital_eff": 4
+        },
+        "tenant_type": "飲食・小売・事務所・住宅混在テナント",
+        "estimated_rent": "推計：墨田区店舗1F坪単価2.0万円×143.79㎡(約43.5坪)×30%+事務所1.2万円×70%≒月約62万円、年収約744万円。表面利回り約14.9%は過大で実態6〜8%水準と想定",
+        "rent_reference": "墨田区事務所1.2万円/坪・店舗2.0万円/坪参照。本所吾妻橋駅7分・スカイツリー周辺エリアで観光・商業需要あり。タイトル記載2億4,980万円と掲載価格4,980万円に乖離があり要確認",
+        "analysis": "本所吾妻橋駅徒歩7分でスカイツリー観光圏内。延床143.79㎡は中規模で複数テナント構成可能。タイトルに「2億4,980万円」と記載があり、掲載価格4,980万円との乖離が大きく誤記・旧価格の可能性が高い。現地確認・担当者への価格確認が最優先。",
+        "loan_analysis": {
+          "feasibility": "B",
+          "reason": "立地は良好だがタイトルと価格の乖離が最大リスク。価格確認後に融資評価を再実施すべき",
+          "recommended_plan": {
+            "self_fund": 1000,
+            "loan": 3980,
+            "monthly_repay": 17.5,
+            "dscr": 1.18
+          }
+        },
+        "lat_estimated": 35.710678,
+        "lng_estimated": 139.801514,
+        "pros": [
+          "本所吾妻橋駅7分・スカイツリー観光圏で需要底堅い",
+          "延床143㎡で複数テナント構成可能",
+          "4,980万円なら予算に余裕大"
+        ],
+        "cons": [
+          "タイトル記載価格(2.49億)と掲載価格(4,980万)の乖離が極めて大きく要確認",
+          "利回り・築年・構造未掲載"
+        ],
+        "over_budget": false
+      },
+      {
+        "url": "https://www.kenbiya.com/pp5/s/tokyo/adachi-ku/re_4432258twl/",
+        "source": "健美家／HOMES",
+        "category": "building",
+        "ward": "足立区",
+        "title": "【EMAの1棟マンション企画】施工店倒産時の安心補償付 六町駅 徒歩11分",
+        "price": 4880,
+        "yield_pct": null,
+        "size": 97.7,
+        "land_size": null,
+        "built": null,
+        "station": "六町駅 徒歩11分",
+        "walk_min": 11,
+        "floor": null,
+        "structure": "",
+        "total_units": null,
+        "address": "東京都足立区南花畑3丁目",
+        "lat": 35.792442,
+        "lng": 139.824997,
+        "geo_source": "GSI",
+        "scraped_at": "2026-04-25",
+        "rank": 10,
+        "score": 44,
+        "score_breakdown": {
+          "location": 12,
+          "yield_return": 8,
+          "tenant_demand": 10,
+          "future_value": 8,
+          "capital_eff": 6
+        },
+        "tenant_type": "単身者向け賃貸・外国人労働者向け住宅",
+        "estimated_rent": "推計：足立区事務所坪単価0.8万円×97.7㎡(約29.6坪)≒月約24万円、年収約288万円。住宅用途なら足立区単身向け家賃相場5〜7万円×6戸程度＝月約36万円、年収432万円",
+        "rent_reference": "足立区事務所0.8万円/坪・店舗1.3万円/坪参照。EMA企画マンションのため住宅用途が前提。六町駅11分は徒歩圏ギリギリ水準",
+        "analysis": "EMA1棟マンション企画・施工店倒産補償付きで竣工リスクは抑制。六町駅徒歩11分は足立区内では標準的だが遠さが懸念。延床97.7㎡でコンパクト多戸設計と推測。利回り未掲載で収支検証が困難。4,880万円は予算内で自己資金効率は良好だが、足立区郊外エリアの空室リスクに注意。",
+        "loan_analysis": {
+          "feasibility": "C",
+          "reason": "利回り未掲載・六町駅11分・データ欠如が重なりA・B評価困難。EMA補償付きは加点材料だが情報開示後に再評価",
+          "recommended_plan": {
+            "self_fund": 1000,
+            "loan": 3880,
+            "monthly_repay": 17.1,
+            "dscr": 0.95
+          }
+        },
+        "lat_estimated": 35.792442,
+        "lng_estimated": 139.824997,
+        "pros": [
+          "施工店倒産補償付きで新築竣工リスク低減",
+          "4,880万円で予算に余裕あり",
+          "EMA企画で設計・仕様が標準化されている"
+        ],
+        "cons": [
+          "利回り未掲載で収支検証が不能",
+          "六町駅11分・足立区郊外で空室長期化リスク"
+        ],
+        "over_budget": false
       }
     ],
     "store": [
       {
-        "url": "https://house.goo.ne.jp/toushi/detail/4/13120/1029300001108/102930/x41029300001108.html",
-        "source": "goo不動産",
+        "url": "https://www.kenbiya.com/pp6/s/tokyo/sumida-ku/re_4450476nt2/",
+        "source": "健美家／HOMES",
         "category": "store",
-        "ward": "台東区",
-        "title": "台東区 7400万円（他33件同条件あり）",
-        "price": 7400,
-        "yield_pct": 3.14,
-        "size": null,
-        "built": "2008年5月",
-        "station": null,
-        "walk_min": null,
-        "floor": null,
-        "address": "東京都台東区",
-        "lat": 35.712631,
-        "lng": 139.779678,
+        "ward": "墨田区",
+        "title": "売り店舗・事務所 錦糸町駅 徒歩4分",
+        "price": 2930,
+        "yield_pct": 10.0,
+        "size": 4784.89,
+        "land_size": null,
+        "built": "1997年3月",
+        "station": "錦糸町駅 徒歩4分",
+        "walk_min": 4,
+        "floor": "9階／24階建",
+        "structure": "",
+        "total_units": null,
+        "address": "東京都墨田区錦糸1-2-1",
+        "lat": 35.696438,
+        "lng": 139.809265,
         "geo_source": "GSI",
         "scraped_at": "2026-04-25",
         "rank": 1,
-        "score": 52,
+        "score": 91,
         "score_breakdown": {
-          "location": 16,
-          "yield_return": 8,
-          "tenant_demand": 12,
-          "future_value": 9,
-          "capital_eff": 7
+          "location": 27,
+          "yield_return": 20,
+          "tenant_demand": 19,
+          "future_value": 13,
+          "capital_eff": 12
         },
-        "tenant_type": "飲食店・小売店・美容室・士業事務所",
-        "estimated_rent": "月額約19〜24万円（想定40〜60㎡規模）",
-        "rent_reference": "台東区売り店舗相場：坪単価2.2万円。40㎡帯で22〜28万円/月、60㎡帯で33〜42万円/月。表面利回り3.14%は相場水準を大きく下回り、賃料収益との整合性が低い。",
-        "analysis": "台東区の売り店舗。2008年築で新耐震基準適合。ただし表面利回り3.14%は投資水準として著しく低く、7,400万円は総予算7,000万円超過。駅・面積・階数データ欠損のため詳細評価困難。「他33件同条件あり」との記載があり、同一条件物件が多数存在することから希少性・bargaining powerは低い。",
+        "tenant_type": "飲食店・コワーキング・クリニック・物販",
+        "estimated_rent": "月額293,000円（想定10%表面利回り維持）",
+        "rent_reference": "墨田区坪単価1.8万円、35.5㎡（10.7坪）×1.8万=約19.3万円が相場中央。掲載利回10%は現況賃料ベースで相場超過の可能性あり要確認",
+        "analysis": "錦糸町駅徒歩4分・表面利回10%は城東エリア最高水準。1997年築新耐震・24階建て大型複合ビル内区分で管理体制良好。テナント入替リスクと共益費・修繕積立金水準の精査が必須。「他1件同条件あり」で同ビル内に複数売出し中。",
         "loan_analysis": {
-          "feasibility": "C",
-          "reason": "利回り3.14%はDSCR1.2確保に必要な水準（5%以上）を大幅に下回り、かつ予算超過7400万。融資単独での事業成立は困難で現金検討でも割高感が強い。",
+          "feasibility": "A",
+          "reason": "新耐震・駅4分・利回10%でDSCR余裕大。積立金等実費確認後に融資申請推奨",
           "recommended_plan": {
-            "self_fund": 2000,
-            "loan": 5000,
-            "monthly_repay": 22.0,
-            "dscr": 0.57
+            "self_fund": 586,
+            "loan": 2344,
+            "monthly_repay": 10.3,
+            "dscr": 2.8
           }
         },
-        "lat_estimated": 35.7126,
-        "lng_estimated": 139.7797,
+        "lat_estimated": 35.696438,
+        "lng_estimated": 139.809265,
         "pros": [
-          "2008年築・新耐震基準適合で融資対象になりやすい",
-          "台東区は訪日観光客需要・浅草エリア等の商業需要が継続的",
-          "同条件33件の選択肢から条件交渉余地がある可能性"
+          "表面利回10%は城東最高水準",
+          "錦糸町駅徒歩4分・新耐震1997年築",
+          "大型複合ビル内で管理信頼性高"
         ],
         "cons": [
-          "表面利回り3.14%は著しく低くDSCR1.2を大幅に下回る（約0.57）",
-          "総予算7,000万円を400万円超過しており投資条件外",
-          "駅・面積・階数・賃料等の基礎データが欠損しており精緻な投資判断不能"
+          "面積4784㎡は共用部含む可能性あり要精査",
+          "管理費・修繕積立金が高額になりやすい"
         ],
-        "over_budget": true
+        "over_budget": false
+      },
+      {
+        "url": "https://www.kenbiya.com/pp6/s/tokyo/sumida-ku/re_4436996uj2/",
+        "source": "健美家／HOMES",
+        "category": "store",
+        "ward": "墨田区",
+        "title": "売り店舗・事務所 錦糸町駅 徒歩4分",
+        "price": 2930,
+        "yield_pct": 10.0,
+        "size": 35.5,
+        "land_size": null,
+        "built": "1997年3月",
+        "station": "錦糸町駅 徒歩4分",
+        "walk_min": 4,
+        "floor": "9階／24階建",
+        "structure": "",
+        "total_units": null,
+        "address": "東京都墨田区錦糸1丁目",
+        "lat": 35.69791,
+        "lng": 139.810226,
+        "geo_source": "GSI",
+        "scraped_at": "2026-04-25",
+        "rank": 2,
+        "score": 89,
+        "score_breakdown": {
+          "location": 27,
+          "yield_return": 20,
+          "tenant_demand": 18,
+          "future_value": 13,
+          "capital_eff": 11
+        },
+        "tenant_type": "飲食店・物販・サービス業・エステ",
+        "estimated_rent": "月額293,000円（表面10%維持、35.5㎡）",
+        "rent_reference": "墨田区坪単価1.8万円、35.5㎡（10.7坪）×1.8万=約19.3万円が相場。掲載利回10%は相場の1.5倍超、現況賃料の実態確認が重要",
+        "analysis": "錦糸町駅徒歩4分・利回10%・1997年新耐震。前掲物件と同一ビル（錦糸1丁目）の別区画で連動評価可能。35.5㎡は実務的な店舗サイズで汎用性高い。相場賃料との乖離幅を契約書で必ず確認すること。",
+        "loan_analysis": {
+          "feasibility": "A",
+          "reason": "新耐震・好立地・高利回りで金融機関評価高。同ビル隣接物件と合わせた融資相談も有効",
+          "recommended_plan": {
+            "self_fund": 586,
+            "loan": 2344,
+            "monthly_repay": 10.3,
+            "dscr": 2.8
+          }
+        },
+        "lat_estimated": 35.69791,
+        "lng_estimated": 139.810226,
+        "pros": [
+          "利回10%・新耐震・錦糸町駅4分の三拍子",
+          "35.5㎡の汎用テナントサイズ",
+          "rank1物件と同ビル系で相乗り分析可能"
+        ],
+        "cons": [
+          "相場賃料との乖離が大きく契約内容精査必須",
+          "高利回りはテナント退去リスクの裏返しの可能性"
+        ],
+        "over_budget": false
+      },
+      {
+        "url": "https://www.kenbiya.com/pp6/s/tokyo/taito-ku/re_4321592eie/",
+        "source": "健美家／HOMES",
+        "category": "store",
+        "ward": "台東区",
+        "title": "売り店舗・事務所 田原町駅 徒歩1分",
+        "price": 1480,
+        "yield_pct": 5.83,
+        "size": 23.64,
+        "land_size": null,
+        "built": "1981年8月",
+        "station": "田原町駅 徒歩1分",
+        "walk_min": 1,
+        "floor": "2階／5階建",
+        "structure": "",
+        "total_units": null,
+        "address": "東京都台東区寿2-9-16",
+        "lat": 35.709389,
+        "lng": 139.790344,
+        "geo_source": "GSI",
+        "scraped_at": "2026-04-25",
+        "rank": 3,
+        "score": 85,
+        "score_breakdown": {
+          "location": 27,
+          "yield_return": 19,
+          "tenant_demand": 18,
+          "future_value": 11,
+          "capital_eff": 10
+        },
+        "tenant_type": "飲食店・小売・士業事務所・美容",
+        "estimated_rent": "月額71,900円（表面5.83%維持）",
+        "rent_reference": "台東区坪単価2.2万円、23.64㎡（7.15坪）×2.2万=約15.7万円が相場上限。現況賃料7.2万円は相場の半値圏で増額交渉余地あり",
+        "analysis": "田原町駅徒歩1分・表面5.83%・1,480万円は城東7区の中で最も資金効率が高い物件。旧耐震（1981年築）だが2階・5階建てで耐震補強の確認は必要。相場賃料との差が大きく、次回更新時の賃料増額でアップサイドが狙える。",
+        "loan_analysis": {
+          "feasibility": "B",
+          "reason": "旧耐震だが田原町駅1分の立地で評価可。耐震診断書取得で融資ランク改善の余地あり",
+          "recommended_plan": {
+            "self_fund": 296,
+            "loan": 1184,
+            "monthly_repay": 5.2,
+            "dscr": 1.37
+          }
+        },
+        "lat_estimated": 35.709389,
+        "lng_estimated": 139.790344,
+        "pros": [
+          "田原町駅1分・1,480万円の低価格帯",
+          "表面5.83%で相場賃料との差額にアップサイド",
+          "少額自己資金で取得可能・資金分散に最適"
+        ],
+        "cons": [
+          "1981年築旧耐震で耐震診断費用が発生",
+          "23.64㎡と狭小でテナント業種が限定される"
+        ],
+        "over_budget": false
+      },
+      {
+        "url": "https://www.kenbiya.com/pp6/s/tokyo/taito-ku/re_4370728ln0/",
+        "source": "健美家／HOMES",
+        "category": "store",
+        "ward": "台東区",
+        "title": "5.61％ 上野駅 徒歩1分",
+        "price": 1600,
+        "yield_pct": 5.61,
+        "size": 15.98,
+        "land_size": null,
+        "built": "1980年3月",
+        "station": "上野駅 徒歩1分",
+        "walk_min": 1,
+        "floor": "4階／12階建",
+        "structure": "",
+        "total_units": null,
+        "address": "東京都台東区上野7-3-9",
+        "lat": 35.712471,
+        "lng": 139.778076,
+        "geo_source": "GSI",
+        "scraped_at": "2026-04-25",
+        "rank": 4,
+        "score": 84,
+        "score_breakdown": {
+          "location": 29,
+          "yield_return": 18,
+          "tenant_demand": 17,
+          "future_value": 11,
+          "capital_eff": 9
+        },
+        "tenant_type": "士業事務所・コンサル・通販EC・美容",
+        "estimated_rent": "月額74,800円（表面5.61%維持）",
+        "rent_reference": "台東区坪単価2.2万円、15.98㎡（4.83坪）×2.2万=約10.6万円が相場。現況7.5万円は相場比71%、インバウンド需要拡大で増額余地あり",
+        "analysis": "上野駅徒歩1分・4階区画・表面5.61%・1,600万円。駅至近の希少立地で空室リスクが最も低い部類。1980年築旧耐震・15.98㎡の狭小区画だが、上野エリアのインバウンド恩恵を受けやすい。低単価で複数取得戦略にも適合。",
+        "loan_analysis": {
+          "feasibility": "B",
+          "reason": "旧耐震・上階だが上野駅1分の希少立地で銀行評価は良好。耐震適合証明で改善可",
+          "recommended_plan": {
+            "self_fund": 320,
+            "loan": 1280,
+            "monthly_repay": 5.6,
+            "dscr": 1.32
+          }
+        },
+        "lat_estimated": 35.712471,
+        "lng_estimated": 139.778076,
+        "pros": [
+          "上野駅徒歩1分の超好立地",
+          "1,600万円と低価格帯で資金効率高",
+          "インバウンド・外食需要の持続的恩恵"
+        ],
+        "cons": [
+          "1980年築旧耐震・4階で避難安全性に課題",
+          "15.98㎡極小区画でテナント確保が限定的"
+        ],
+        "over_budget": false
+      },
+      {
+        "url": "https://www.kenbiya.com/pp6/s/tokyo/koto-ku/re_4320012kzl/",
+        "source": "健美家／HOMES",
+        "category": "store",
+        "ward": "江東区",
+        "title": "店舗事務所 門前仲町駅 徒歩4分",
+        "price": 2990,
+        "yield_pct": 6.62,
+        "size": 48.24,
+        "land_size": null,
+        "built": "1974年4月",
+        "station": "門前仲町駅 徒歩4分",
+        "walk_min": 4,
+        "floor": "1階／5階建",
+        "structure": "",
+        "total_units": null,
+        "address": "東京都江東区牡丹2-9-10",
+        "lat": 35.670074,
+        "lng": 139.796219,
+        "geo_source": "GSI",
+        "scraped_at": "2026-04-25",
+        "rank": 5,
+        "score": 82,
+        "score_breakdown": {
+          "location": 25,
+          "yield_return": 18,
+          "tenant_demand": 18,
+          "future_value": 12,
+          "capital_eff": 9
+        },
+        "tenant_type": "飲食店・小売・整骨院・学習塾",
+        "estimated_rent": "月額164,900円（表面6.62%維持）",
+        "rent_reference": "江東区坪単価2.0万円、48.24㎡（14.6坪）×2.0万=約29.2万円が相場。現況16.5万円は相場比57%で大幅増額余地あり",
+        "analysis": "門前仲町駅徒歩4分・1階路面・表面6.62%・2,990万円。永代通り商圏で飲食・小売需要が旺盛。1974年築と老朽化が顕著で、耐震診断と大規模修繕計画の確認が必須。相場賃料との開差が最大クラスで再稼働時の収益改善が大きい。",
+        "loan_analysis": {
+          "feasibility": "B",
+          "reason": "1974年築の旧耐震で融資ハードル高いが門前仲町1階路面の希少性で交渉余地あり",
+          "recommended_plan": {
+            "self_fund": 598,
+            "loan": 2392,
+            "monthly_repay": 10.5,
+            "dscr": 1.56
+          }
+        },
+        "lat_estimated": 35.670074,
+        "lng_estimated": 139.796219,
+        "pros": [
+          "門前仲町駅4分・1階路面の希少立地",
+          "6.62%利回りで相場賃料とのアップサイド最大級",
+          "永代通り商圏で飲食需要が安定"
+        ],
+        "cons": [
+          "1974年築・最旧物件でリスク最大",
+          "耐震改修費用が収支計画に大きく影響"
+        ],
+        "over_budget": false
+      },
+      {
+        "url": "https://www.kenbiya.com/pp6/s/tokyo/arakawa-ku/re_4355923tlc/",
+        "source": "健美家／HOMES",
+        "category": "store",
+        "ward": "荒川区",
+        "title": "売り店舗・事務所 町屋駅 徒歩5分",
+        "price": 2850,
+        "yield_pct": 6.25,
+        "size": 57.84,
+        "land_size": null,
+        "built": "1990年2月",
+        "station": "町屋駅 徒歩5分",
+        "walk_min": 5,
+        "floor": "1階／9階建",
+        "structure": "",
+        "total_units": null,
+        "address": "東京都荒川区町屋3丁目",
+        "lat": 35.747463,
+        "lng": 139.781952,
+        "geo_source": "GSI",
+        "scraped_at": "2026-04-25",
+        "rank": 6,
+        "score": 79,
+        "score_breakdown": {
+          "location": 22,
+          "yield_return": 18,
+          "tenant_demand": 16,
+          "future_value": 12,
+          "capital_eff": 11
+        },
+        "tenant_type": "飲食店・調剤薬局・保育関連・地域密着サービス",
+        "estimated_rent": "月額148,100円（表面6.25%維持）",
+        "rent_reference": "荒川区坪単価1.5万円、57.84㎡（17.5坪）×1.5万=約26.3万円が相場。現況14.8万円は相場比56%で賃料改定余地大",
+        "analysis": "町屋駅徒歩5分・1階路面・57.84㎡・表面6.25%・2,850万円。1990年築新耐震・駅5分の良バランス。荒川区は地域密着型テナント需要が安定しており空室期間が短い傾向。坪単価の割安感があり相場改定後のNOI改善幅が大きい。",
+        "loan_analysis": {
+          "feasibility": "A",
+          "reason": "新耐震・駅5分・利回6.25%でDSCR1.2超を達成。フルローン近い設計も検討可",
+          "recommended_plan": {
+            "self_fund": 570,
+            "loan": 2280,
+            "monthly_repay": 10.0,
+            "dscr": 1.48
+          }
+        },
+        "lat_estimated": 35.747463,
+        "lng_estimated": 139.781952,
+        "pros": [
+          "新耐震1990年築・駅5分・利回6.25%の好バランス",
+          "57.84㎡の実用的面積で多業種対応",
+          "相場賃料比56%で賃料改定アップサイド大"
+        ],
+        "cons": [
+          "荒川区は坪単価が低く将来賃料上昇余地が限定的",
+          "周辺競合店舗の空室状況確認が必要"
+        ],
+        "over_budget": false
+      },
+      {
+        "url": "https://www.kenbiya.com/pp6/s/tokyo/arakawa-ku/re_4420750n16/",
+        "source": "健美家／HOMES",
+        "category": "store",
+        "ward": "荒川区",
+        "title": "店舗事務所 町屋駅前駅 徒歩7分",
+        "price": 4960,
+        "yield_pct": 5.8,
+        "size": 44.12,
+        "land_size": null,
+        "built": "1990年2月",
+        "station": "町屋駅前駅 徒歩7分",
+        "walk_min": 7,
+        "floor": "1階／9階建",
+        "structure": "",
+        "total_units": null,
+        "address": "東京都荒川区町屋3丁目2-1",
+        "lat": 35.745777,
+        "lng": 139.782333,
+        "geo_source": "GSI",
+        "scraped_at": "2026-04-25",
+        "rank": 7,
+        "score": 77,
+        "score_breakdown": {
+          "location": 21,
+          "yield_return": 18,
+          "tenant_demand": 16,
+          "future_value": 11,
+          "capital_eff": 11
+        },
+        "tenant_type": "飲食店・学習塾・整体・地域サービス",
+        "estimated_rent": "月額239,700円（表面5.8%維持）",
+        "rent_reference": "荒川区坪単価1.5万円、44.12㎡（13.4坪）×1.5万=約20万円が相場。現況24万円は相場超過の可能性あり、テナント退去後の賃料設定に要注意",
+        "analysis": "町屋駅前駅徒歩7分・1階・44.12㎡・表面5.8%・4,960万円。1990年新耐震で融資適格。現況賃料が相場上限を超えている可能性があり、オーナーチェンジの場合は次回更新時の賃料下落リスクを織り込む必要がある。",
+        "loan_analysis": {
+          "feasibility": "A",
+          "reason": "新耐震・利回5.8%で基準クリア。ただし実質賃料の下落リスクを加味しDSCRは保守計算推奨",
+          "recommended_plan": {
+            "self_fund": 992,
+            "loan": 3968,
+            "monthly_repay": 17.4,
+            "dscr": 1.37
+          }
+        },
+        "lat_estimated": 35.745777,
+        "lng_estimated": 139.782333,
+        "pros": [
+          "新耐震1990年築で融資評価高",
+          "1階路面44㎡の汎用テナントサイズ",
+          "町屋エリアは再開発気運あり将来性期待"
+        ],
+        "cons": [
+          "現況賃料が相場上限超過の可能性で下落リスク",
+          "駅徒歩7分はやや遠く空室時のテナント確保に時間"
+        ],
+        "over_budget": false
+      },
+      {
+        "url": "https://www.kenbiya.com/pp6/s/tokyo/taito-ku/re_4335685zom/",
+        "source": "健美家／HOMES",
+        "category": "store",
+        "ward": "台東区",
+        "title": "売り店舗・事務所 上野駅 徒歩3分",
+        "price": 4880,
+        "yield_pct": 5.4,
+        "size": 31.68,
+        "land_size": null,
+        "built": "1980年3月",
+        "station": "上野駅 徒歩3分",
+        "walk_min": 3,
+        "floor": "5階／12階建",
+        "structure": "",
+        "total_units": null,
+        "address": "東京都台東区上野7丁目",
+        "lat": 35.715878,
+        "lng": 139.779266,
+        "geo_source": "GSI",
+        "scraped_at": "2026-04-25",
+        "rank": 8,
+        "score": 74,
+        "score_breakdown": {
+          "location": 28,
+          "yield_return": 17,
+          "tenant_demand": 14,
+          "future_value": 10,
+          "capital_eff": 5
+        },
+        "tenant_type": "士業事務所・語学スクール・コンサル・Web制作",
+        "estimated_rent": "月額219,600円（表面5.4%維持）",
+        "rent_reference": "台東区坪単価2.2万円、31.68㎡（9.58坪）×2.2万=約21.1万円が相場。現況22万円は相場水準と概ね整合",
+        "analysis": "上野駅徒歩3分・5階区画・表面5.4%・4,880万円。1980年旧耐震が最大の懸念点。上野駅の希少な駅至近物件として立地評価は高いが、5階上階という点でテナント誘致が1階路面より難しい。賃料相場との整合は取れており安定感あり。",
+        "loan_analysis": {
+          "feasibility": "B",
+          "reason": "1980年旧耐震・5階で融資評価は下がるが上野駅3分の立地補正で交渉余地あり",
+          "recommended_plan": {
+            "self_fund": 976,
+            "loan": 3904,
+            "monthly_repay": 17.1,
+            "dscr": 1.28
+          }
+        },
+        "lat_estimated": 35.715878,
+        "lng_estimated": 139.779266,
+        "pros": [
+          "上野駅徒歩3分の高需要立地",
+          "表面5.4%で相場賃料と整合した安定収益",
+          "インバウンド・ビジネス需要の厚い上野エリア"
+        ],
+        "cons": [
+          "1980年旧耐震で大規模修繕・耐震改修費リスク",
+          "5階区画でテナント誘致が路面より困難"
+        ],
+        "over_budget": false
+      },
+      {
+        "url": "https://www.kenbiya.com/pp6/s/tokyo/arakawa-ku/re_4427296g9d/",
+        "source": "健美家／HOMES",
+        "category": "store",
+        "ward": "荒川区",
+        "title": "イメージ画像は 南千住駅 徒歩1分",
+        "price": 5760,
+        "yield_pct": 5.0,
+        "size": 30.85,
+        "land_size": null,
+        "built": "2010年1月",
+        "station": "南千住駅 徒歩1分",
+        "walk_min": 1,
+        "floor": "1階／28階建",
+        "structure": "",
+        "total_units": null,
+        "address": "東京都荒川区南千住7丁目1-11",
+        "lat": 35.733074,
+        "lng": 139.798203,
+        "geo_source": "GSI",
+        "scraped_at": "2026-04-25",
+        "rank": 9,
+        "score": 72,
+        "score_breakdown": {
+          "location": 23,
+          "yield_return": 17,
+          "tenant_demand": 14,
+          "future_value": 11,
+          "capital_eff": 7
+        },
+        "tenant_type": "コンビニ・飲食・調剤薬局・フィットネス",
+        "estimated_rent": "月額240,000円（表面5.0%維持）",
+        "rent_reference": "荒川区坪単価1.5万円、30.85㎡（9.3坪）×1.5万=約14万円が相場。現況24万円は相場の1.7倍で大幅超過、退去後の賃料下落に要注意",
+        "analysis": "南千住駅徒歩1分・28階建タワー1階・表面5.0%・5,760万円。2010年築の新耐震・高スペックビルで管理状態良好。ただし現況賃料が荒川区相場を大幅に上回っており、テナント退去後は実質利回りが3%台に落ち込む可能性がある。",
+        "loan_analysis": {
+          "feasibility": "A",
+          "reason": "2010年築・駅1分・DSCR計算上はクリアだが実質賃料下落後のDSCRが1.2を割る可能性あり要注意",
+          "recommended_plan": {
+            "self_fund": 1152,
+            "loan": 4608,
+            "monthly_repay": 20.2,
+            "dscr": 1.19
+          }
+        },
+        "lat_estimated": 35.733074,
+        "lng_estimated": 139.798203,
+        "pros": [
+          "2010年築・南千住駅1分のタワー1階路面",
+          "新耐震で融資評価最高水準",
+          "28階建大型マンション内の安定管理"
+        ],
+        "cons": [
+          "現況賃料が相場の1.7倍で退去後の大幅下落リスク",
+          "5,760万円の高価格で自己資金負担が重い"
+        ],
+        "over_budget": false
+      },
+      {
+        "url": "https://www.kenbiya.com/pp6/s/tokyo/sumida-ku/re_4376305zfl/",
+        "source": "健美家／HOMES",
+        "category": "store",
+        "ward": "墨田区",
+        "title": "東京都墨田区両国2-21-5 両国駅 徒歩1分",
+        "price": 1920,
+        "yield_pct": 5.84,
+        "size": 17.34,
+        "land_size": null,
+        "built": "1984年8月",
+        "station": "両国駅 徒歩1分",
+        "walk_min": 1,
+        "floor": "7階／9階建",
+        "structure": "",
+        "total_units": null,
+        "address": "東京都墨田区両国2-21-5",
+        "lat": 35.69566,
+        "lng": 139.792725,
+        "geo_source": "GSI",
+        "scraped_at": "2026-04-25",
+        "rank": 10,
+        "score": 70,
+        "score_breakdown": {
+          "location": 22,
+          "yield_return": 17,
+          "tenant_demand": 14,
+          "future_value": 10,
+          "capital_eff": 7
+        },
+        "tenant_type": "士業事務所・コンサル・ネイル・WEB制作",
+        "estimated_rent": "月約93,500円（表面5.84%維持）",
+        "rent_reference": "墨田区坪単価1.8万円、17.34㎡（5.25坪）×1.8万=約9.4万円が相場。現況9.4万円は相場と整合しており安定感あり",
+        "analysis": "両国駅徒歩1分・7階区画・表面5.84%・1,920万円。1984年築旧耐震が融資ネックだが、両国駅至近・1,920万円の低単価は自己資金優先戦略に適合。17.34㎡の狭小スペースは業種が限定されるが、賃料相場との整合は良好で安定性がある。",
+        "loan_analysis": {
+          "feasibility": "B",
+          "reason": "旧耐震・上階・狭小でAランク困難。低価格帯なので自己資金比率を上げた保守融資が現実的",
+          "recommended_plan": {
+            "self_fund": 384,
+            "loan": 1536,
+            "monthly_repay": 6.7,
+            "dscr": 1.39
+          }
+        },
+        "lat_estimated": 35.69566,
+        "lng_estimated": 139.792725,
+        "pros": [
+          "両国駅1分・低価格1,920万円で少額投資可能",
+          "相場賃料と整合した安定収益",
+          "少額物件として分散投資・ポートフォリオ補完に最適"
+        ],
+        "cons": [
+          "1984年築旧耐震・7階で融資評価が低い",
+          "17.34㎡極小区画でテナント業種が大幅に限定"
+        ],
+        "over_budget": false
       }
     ]
   },
@@ -577,53 +3196,53 @@
   },
   "ward_counts": {
     "台東区": {
-      "condo": 0,
-      "house": 0,
-      "apart": 1,
-      "building": 1,
-      "store": 1
+      "condo": 42,
+      "house": 33,
+      "apart": 15,
+      "building": 15,
+      "store": 12
     },
     "墨田区": {
-      "condo": 0,
-      "house": 0,
-      "apart": 0,
-      "building": 0,
-      "store": 0
+      "condo": 47,
+      "house": 29,
+      "apart": 21,
+      "building": 3,
+      "store": 7
     },
     "江東区": {
-      "condo": 0,
-      "house": 0,
-      "apart": 0,
-      "building": 1,
-      "store": 0
+      "condo": 48,
+      "house": 34,
+      "apart": 25,
+      "building": 7,
+      "store": 12
     },
     "荒川区": {
-      "condo": 0,
-      "house": 0,
-      "apart": 0,
-      "building": 0,
-      "store": 0
+      "condo": 39,
+      "house": 27,
+      "apart": 24,
+      "building": 4,
+      "store": 6
     },
     "足立区": {
-      "condo": 0,
-      "house": 0,
-      "apart": 0,
-      "building": 0,
-      "store": 0
+      "condo": 43,
+      "house": 33,
+      "apart": 27,
+      "building": 34,
+      "store": 7
     },
     "葛飾区": {
-      "condo": 0,
-      "house": 0,
-      "apart": 0,
-      "building": 0,
-      "store": 0
+      "condo": 44,
+      "house": 25,
+      "apart": 25,
+      "building": 16,
+      "store": 7
     },
     "江戸川区": {
-      "condo": 0,
-      "house": 0,
-      "apart": 0,
-      "building": 0,
-      "store": 0
+      "condo": 43,
+      "house": 29,
+      "apart": 29,
+      "building": 19,
+      "store": 10
     }
   },
   "budget": {
@@ -637,27 +3256,27 @@
     "ltv_max": 0.8,
     "dscr_min": 1.2
   },
-  "market_summary": "城東7区の不動産投資市況は全体的に在庫が極めて少なく、台東区でアパート・一棟ビル・店舗付物件が各1件、江東区で一棟ビルが1件確認されるのみ。墨田・荒川・足立・葛飾・江戸川区は全カテゴリーで物件ゼロと供給不足が顕著だ。地価は湾岸再開発の江東区や観光需要の台東区が上昇基調を維持。投資家は利回り重視でアパートや店舗付ビルに注目しているが、流通量の少なさが参入障壁となっている。",
+  "market_summary": "東京城東7区の不動産投資市況は全体的に堅調。マンション価格は江東区48・墨田区47万円/㎡台と高水準で、スカイツリー・湾岸開発の恩恵が顕著。足立・葛飾・江戸川区はアパート・一棟ビル供給が多く、利回り重視の投資家に人気。台東区は店舗・一棟ビル需要が観光需要を背景に底堅い。荒川区はアパート利回りが相対的に高く割安感から注目度上昇中。地価は再開発進展で全区上昇傾向にあり、特に湾岸・北千住周辺への資金流入が加速している。",
   "data_summary": {
     "condo": {
-      "total": 0,
-      "in_budget": 0
+      "total": 306,
+      "in_budget": 299
     },
     "house": {
-      "total": 0,
-      "in_budget": 0
+      "total": 210,
+      "in_budget": 101
     },
     "apart": {
-      "total": 1,
-      "in_budget": 1
+      "total": 166,
+      "in_budget": 87
     },
     "building": {
-      "total": 2,
-      "in_budget": 0
+      "total": 98,
+      "in_budget": 78
     },
     "store": {
-      "total": 1,
-      "in_budget": 0
+      "total": 61,
+      "in_budget": 49
     }
   }
 }
