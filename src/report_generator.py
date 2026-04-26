@@ -31,24 +31,15 @@ def main():
     changes=detect_changes(data,pp)
     log.info(f"差分: +{len(changes['new'])} -{len(changes['removed'])} Δ{len(changes['price_changed'])}")
 
-    # 全物件の座標データをJSON化（地図用）
     all_markers=[]
     for ck,rs in data["results"].items():
         cat_info=PROPERTY_CATEGORIES.get(ck,{})
         for p in rs:
             if p.get("lat") and p.get("lng"):
-                all_markers.append({
-                    "lat":p["lat"],"lng":p["lng"],
-                    "title":p.get("title",""),
-                    "price":p.get("price",0),
-                    "yield_pct":p.get("yield_pct"),
-                    "category":ck,
-                    "color":cat_info.get("color","#888"),
-                    "icon":cat_info.get("icon","📍"),
-                    "url":p.get("url",""),
-                    "station":p.get("station",""),
-                    "score":p.get("score",0),
-                })
+                all_markers.append({"lat":p["lat"],"lng":p["lng"],"title":p.get("title",""),
+                    "price":p.get("price",0),"yield_pct":p.get("yield_pct"),
+                    "category":ck,"color":cat_info.get("color","#888"),"icon":cat_info.get("icon","📍"),
+                    "url":p.get("url",""),"station":p.get("station",""),"score":p.get("score",0)})
 
     env=Environment(loader=FileSystemLoader("templates"),autoescape=True)
     tmpl=env.get_template("report.html")
@@ -62,6 +53,7 @@ def main():
         market_summary=data.get("market_summary",""),
         data_summary=data.get("data_summary",{}),
         markers_json=json.dumps(all_markers,ensure_ascii=False),
+        editorial=data.get("editorial",""),
     )
     with open(os.path.join(OUTPUT_DIR,"index.html"),"w",encoding="utf-8") as f:f.write(html)
     with open(os.path.join(OUTPUT_DIR,f"report_{rd}.html"),"w",encoding="utf-8") as f:f.write(html)

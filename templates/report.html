@@ -47,6 +47,14 @@ h2{font-family:Georgia,serif;font-size:16px;font-weight:700;margin:16px 0 8px;pa
 <div class="sub">台東区・墨田区・江東区・荒川区・足立区・葛飾区・江戸川区</div>
 <div class="date">🔄 {{ report_date }} 自動更新</div></header>
 
+<!-- ★ 総括コメント -->
+{% if editorial %}
+<div style="background:linear-gradient(135deg,#2a2318,#3d3528);border-radius:8px;padding:16px;margin-bottom:14px;color:#f5f0e8;font-size:13px;line-height:1.8">
+<div style="font-size:15px;font-weight:800;margin-bottom:8px;font-family:Georgia,serif">💡 今週の総括</div>
+{{ editorial }}
+</div>
+{% endif %}
+
 <!-- データ取得現況 -->
 <div class="bx">
 <strong>📊 データ取得現況</strong>（予算{{ budget.total_max // 10000 | default(7000) }}万円以下）
