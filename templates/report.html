@@ -4,7 +4,6 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>城東エリア不動産投資レポート - {{ report_date }}</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <style>
 :root{--bg:#f5f0e8;--card:#faf7f2;--wh:#fff;--dk:#1a1510;--md:#5a5040;--lt:#8a7a5e;--bd:#e0d8c8;--r:#c0392b;--o:#d4782b;--g:#2d7a30;--bl:#2a7ab5}
 *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Helvetica Neue','Hiragino Sans',sans-serif;background:var(--bg);color:var(--dk);line-height:1.6}
@@ -39,8 +38,8 @@ h2{font-family:Georgia,serif;font-size:16px;font-weight:700;margin:16px 0 8px;pa
 .lnk{display:inline-block;padding:5px 14px;background:var(--r);color:#fff;border-radius:4px;font-size:11.5px;font-weight:700;text-decoration:none}
 .ls{background:var(--wh);border:1px solid var(--bd);border-radius:6px;padding:10px 14px;margin-top:16px}.lsh{cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:13px}.li{display:block;padding:6px 10px;margin-bottom:4px;background:var(--card);border-radius:4px;text-decoration:none;border:1px solid #e8e0d4;font-size:12px;font-weight:600}
 .dis{margin-top:12px;padding:8px 12px;background:#eee8db;border-radius:6px;font-size:10.5px;color:#a09080;line-height:1.6}
-.rent-section{background:var(--wh);border:1px solid var(--bd);border-radius:6px;padding:10px 14px;margin-bottom:8px}
-.rent-title{font-size:12px;font-weight:700;color:var(--dk);margin-bottom:4px;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.rent-section{background:var(--wh);border:1px solid var(--bd);border-radius:6px;padding:10px 14px;margin-bottom:8px;cursor:pointer}
+.rent-title{font-size:12px;font-weight:700;color:var(--dk);margin-bottom:4px;display:flex;justify-content:space-between;align-items:center}
 .rent-body{display:none}.rent-section.open .rent-body{display:block}
 </style></head><body>
 <div class="c">
@@ -50,7 +49,7 @@ h2{font-family:Georgia,serif;font-size:16px;font-weight:700;margin:16px 0 8px;pa
 
 <!-- データ取得現況 -->
 <div class="bx">
-<strong>📊 データ取得現況</strong>（予算{{ budget.total_max // 10000 |default(7000)}}万円以下）
+<strong>📊 データ取得現況</strong>（予算{{ budget.total_max // 10000 | default(7000) }}万円以下）
 <div class="data-grid">
 {% for ck, ct in categories.items() %}
 <div class="data-card">
@@ -61,16 +60,14 @@ h2{font-family:Georgia,serif;font-size:16px;font-weight:700;margin:16px 0 8px;pa
 {% endfor %}
 </div></div>
 
-<!-- 市況概説 -->
 {% if market_summary %}
 <div class="mkt"><strong>📈 城東エリア市況</strong><br>{{ market_summary }}</div>
 {% endif %}
 
-<!-- 変動アラート -->
 {% if changes and (changes.new or changes.removed or changes.price_changed) %}
 <div class="bx al"><strong>📢 変動</strong><br>
 {% for p in changes.removed %}・<strong style="color:var(--r)">成約</strong>: {{ p.get('title','')[:40] }} {{ p.get('price','?') }}万<br>{% endfor %}
-{% for p in changes.new %}・<strong style="color:var(--g)">新規</strong>: {{ p.get('title','')[:40] }} {{ p.get('price','?') }}万{% if p.get('yield_pct') %}（{{ p.yield_pct }}%）{% endif %}<br>{% endfor %}
+{% for p in changes.new %}・<strong style="color:var(--g)">新規</strong>: {{ p.get('title','')[:40] }} {{ p.get('price','?') }}万<br>{% endfor %}
 {% for p in changes.price_changed %}・<strong>価格変更</strong>: {{ p.get('title','')[:30] }} {{ p.prev_price }}→{{ p.price }}万<br>{% endfor %}
 </div>{% endif %}
 
@@ -83,20 +80,20 @@ h2{font-family:Georgia,serif;font-size:16px;font-weight:700;margin:16px 0 8px;pa
 {% endfor %}
 </div>
 
-<!-- カテゴリ別賃料相場 -->
+<!-- 賃料相場 -->
 {% for ck, rbc in rent_by_category.items() %}
-<div class="rent-section" id="rent-{{ ck }}" onclick="this.classList.toggle('open')">
+<div class="rent-section" onclick="this.classList.toggle('open')">
 <div class="rent-title">{{ rbc.label }} <span>▼</span></div>
 <div class="rent-body">
 <table class="rt">
 <tr><th>区</th>{% for col in rbc.columns %}<th>{{ col }}</th>{% endfor %}</tr>
 {% for ward, vals in rbc.data.items() %}
-<tr><td><strong>{{ ward }}</strong></td>{% for col in rbc.columns %}<td>{{ vals.get(col, '-') }}{% if vals.get(col) is number and col != '坪単価' and '坪単価' not in col %}万{% endif %}</td>{% endfor %}</tr>
+<tr><td><strong>{{ ward }}</strong></td>{% for col in rbc.columns %}<td>{{ vals.get(col, '-') }}{% if vals.get(col) is number and '坪' not in col %}万{% endif %}</td>{% endfor %}</tr>
 {% endfor %}
 </table></div></div>
 {% endfor %}
 
-<!-- カテゴリタブ -->
+<!-- タブ -->
 <div class="tabs" id="tabs">
 {% for ck,ct in categories.items() %}
 <button onclick="showCat('{{ ck }}')" class="{{ 'on' if loop.first }}" data-c="{{ ck }}">{{ ct.icon }}{{ ct.label }}{% if data_summary.get(ck) %}({{ data_summary[ck].get('in_budget',0) }}){% endif %}</button>
@@ -113,9 +110,8 @@ h2{font-family:Georgia,serif;font-size:16px;font-weight:700;margin:16px 0 8px;pa
 <div class="cd {{ 'ob' if p.get('over_budget') }}" id="c-{{ ck }}-{{ loop.index }}">
 <div class="ch" onclick="tog('c-{{ ck }}-{{ loop.index }}')">
 <div class="tr">
-<span class="rk {{ 'rk'~p.rank if p.rank|default(99) <= 5 else 'rkx' }}">{{ p.rank|default('?') }}</span>
+<span class="rk {{ 'rk' ~ p.rank|default(99) if p.rank|default(99) <= 5 else 'rkx' }}">{{ p.rank|default('?') }}</span>
 <span class="tt">{{ p.get('title','物件名不明')[:50] }}</span>
-{% if p.get('is_new') %}<span class="bg bgn">NEW</span>{% endif %}
 {% if p.get('over_budget') %}<span class="bg bgo">予算超</span>{% endif %}
 <span style="font-size:14px;color:var(--lt)">▼</span></div>
 <div class="mr">
@@ -161,33 +157,56 @@ h2{font-family:Georgia,serif;font-size:16px;font-weight:700;margin:16px 0 8px;pa
 <div class="dis">⚠ {{ report_date }}時点のWeb公開情報に基づくAI自動分析（GitHub Actions + Claude API）。地図座標は国土地理院API＋AI推定。融資適格度はAI推定。購入前に現地確認・重説・融資審査を必ず実施してください。</div>
 </div>
 
+<!-- ★ UIスクリプト（Leafletと分離。Leafletが読込失敗してもタブ・プルダウンは動作する） -->
 <script>
-function showCat(c){document.querySelectorAll('.cs').forEach(s=>s.style.display='none');document.querySelector('[data-cat="'+c+'"]').style.display='block';document.querySelectorAll('#tabs button').forEach(b=>b.classList.remove('on'));document.querySelector('#tabs button[data-c="'+c+'"]').classList.add('on')}
-function tog(id){document.getElementById(id).classList.toggle('open')}
-document.addEventListener('DOMContentLoaded',()=>{
-  const f=document.querySelector('.cd');if(f)f.classList.add('open');
-  // Leaflet地図
-  const map=L.map('map').setView([35.72,139.82],12);
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
-    attribution:'&copy; OpenStreetMap',maxZoom:18
-  }).addTo(map);
-  const markers={{ markers_json }};
-  markers.forEach(m=>{
-    const icon=L.divIcon({
-      className:'',
-      html:'<div style="background:'+m.color+';color:#fff;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.3)">'+m.icon+'</div>',
-      iconSize:[28,28],iconAnchor:[14,14],popupAnchor:[0,-16]
+function showCat(c){
+  document.querySelectorAll('.cs').forEach(function(s){s.style.display='none'});
+  var el=document.querySelector('[data-cat="'+c+'"]');
+  if(el)el.style.display='block';
+  document.querySelectorAll('#tabs button').forEach(function(b){b.classList.remove('on')});
+  var btn=document.querySelector('#tabs button[data-c="'+c+'"]');
+  if(btn)btn.classList.add('on');
+}
+function tog(id){
+  var el=document.getElementById(id);
+  if(el)el.classList.toggle('open');
+}
+document.addEventListener('DOMContentLoaded',function(){
+  var f=document.querySelector('.cd');
+  if(f)f.classList.add('open');
+});
+</script>
+
+<!-- ★ 地図スクリプト（別ブロック。読込失敗してもUIに影響しない） -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  try{
+    var map=L.map('map').setView([35.72,139.82],12);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+      attribution:'© OpenStreetMap',maxZoom:18
+    }).addTo(map);
+    var markers={{ markers_json | safe }};
+    markers.forEach(function(m){
+      var icon=L.divIcon({
+        className:'',
+        html:'<div style="background:'+m.color+';color:#fff;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.3)">'+m.icon+'</div>',
+        iconSize:[28,28],iconAnchor:[14,14],popupAnchor:[0,-16]
+      });
+      L.marker([m.lat,m.lng],{icon:icon}).addTo(map).bindPopup(
+        '<div style="font-size:12px;min-width:200px">'+
+        '<strong>'+(m.title||'').substring(0,40)+'</strong><br>'+
+        '<span style="font-size:16px;font-weight:800;color:'+m.color+'">'+(m.price||0).toLocaleString()+'万円</span>'+
+        (m.yield_pct?' <span style="color:#2d7a30;font-weight:700">'+m.yield_pct+'%</span>':'')+
+        (m.station?'<br>🚉'+m.station:'')+
+        '<br>スコア: <strong>'+(m.score||'?')+'</strong>/100'+
+        '<br><a href="'+m.url+'" target="_blank" style="color:'+m.color+'">詳細→</a></div>'
+      );
     });
-    L.marker([m.lat,m.lng],{icon:icon}).addTo(map).bindPopup(
-      '<div style="font-size:12px;min-width:200px">'+
-      '<strong>'+m.title.substring(0,40)+'</strong><br>'+
-      '<span style="font-size:16px;font-weight:800;color:'+m.color+'">'+m.price.toLocaleString()+'万円</span>'+
-      (m.yield_pct?' <span style="color:#2d7a30;font-weight:700">'+m.yield_pct+'%</span>':'')+
-      '<br>🚉'+m.station+
-      '<br>スコア: <strong>'+m.score+'</strong>/100'+
-      '<br><a href="'+m.url+'" target="_blank" style="color:'+m.color+'">詳細→</a></div>'
-    );
-  });
+  }catch(e){
+    console.error('Map error:',e);
+    document.getElementById('map').innerHTML='<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#8a7a5e;font-size:13px">地図の読込に失敗しました</div>';
+  }
 });
 </script>
 </body></html>
