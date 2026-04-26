@@ -8,7 +8,7 @@ from datetime import datetime,timezone,timedelta
 from pathlib import Path
 import requests
 from bs4 import BeautifulSoup
-from config import JOTO_WARDS,PROPERTY_CATEGORIES,BUDGET,kenbiya_urls,suumo_rent_urls,DATA_DIR,RENT_DATA_BY_CATEGORY
+from config import JOTO_WARDS,PROPERTY_CATEGORIES,BUDGET,kenbiya_urls,suumo_rent_urls,DATA_DIR,RENT_DATA_BY_CATEGORY,MIN_SIZE_SQM
 
 logging.basicConfig(level=logging.INFO,format="%(asctime)s %(levelname)s %(message)s")
 log=logging.getLogger(__name__)
@@ -106,7 +106,11 @@ def scrape_list_page(url,category,ward):
         text=container.get_text(separator=" ",strip=True)
         if "万円" not in text and "億" not in text:continue
         prop=parse_property(text,full_url,category,ward)
-        if prop:props.append(prop)
+        if prop:
+            # 面積フィルタ: 面積データがあり MIN_SIZE_SQM 未満なら除外
+            if prop.get("size") and prop["size"] < MIN_SIZE_SQM:
+                continue
+            props.append(prop)
     if skipped_cat>0:
         log.info(f"  {ward} {category}: {skipped_cat} skipped (wrong path)")
     log.info(f"  {ward} {category}: {len(seen_urls)} links → {len(props)} parsed")
@@ -180,7 +184,11 @@ def scrape_goo():
         ward=next((w for w in JOTO_WARDS.values() if w in text),None)
         if not ward:continue
         prop=parse_property(text,full,"store",ward)
-        if prop:prop["source"]="goo不動産";props.append(prop)
+        if prop:
+            prop["source"]="goo不動産"
+            if prop.get("size") and prop["size"] < MIN_SIZE_SQM:
+                continue
+            props.append(prop)
     log.info(f"  goo: {len(props)} props")
     return props
 

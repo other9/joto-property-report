@@ -9,7 +9,7 @@ log=logging.getLogger(__name__)
 def build_prompt(properties,rent_data,category):
     cl=PROPERTY_CATEGORIES[category]["label"]
     cat_rent=RENT_DATA_BY_CATEGORY.get(category,{}).get("data",rent_data)
-    return f"""あなたは東京の不動産投資アナリストです。城東7区の{cl}を分析してください。
+    return f"""あなたは東京の不動産投資アナリストです。対象8区（台東・墨田・江東・荒川・足立・文京・大田・江戸川）の{cl}を分析してください。
 
 ## 投資条件
 自己資金上限:{BUDGET['self_fund_max']//10000}万 融資上限:{BUDGET['loan_max']//10000}万 総予算:{BUDGET['total_max']//10000}万
@@ -38,6 +38,11 @@ def build_prompt(properties,rent_data,category):
 "pros":["1","2","3"],"cons":["1","2"],"over_budget":false}}]
 
 スコア: location({SCORING_WEIGHTS['location']}) yield({SCORING_WEIGHTS['yield_return']}) demand({SCORING_WEIGHTS['tenant_demand']}) future({SCORING_WEIGHTS['future_value']}) efficiency({SCORING_WEIGHTS['capital_eff']})
+
+## カテゴリ別の追加評価基準
+- 区分マンション: 物件全体の総戸数が多い大規模マンション（50戸以上）はlocationとfuture_valueで加点。管理組合が安定し修繕積立金が潤沢な傾向があるため。100戸以上は更に高評価。
+- 店舗・事務所: 1階（路面店）はlocationとtenant_demandで大幅加点（+5〜8点）。視認性・集客力が圧倒的に高い。2階以上・地下は減点。
+
 融資: A=新耐震築30年以内駅10分利回5%以上 B=旧耐震だが立地良好 C=現金推奨
 予算超過物件は over_budget:true。"""
 
@@ -52,22 +57,24 @@ def build_editorial_prompt(all_results, data_summary, rent_data):
             summary_lines.append(f"【{ct['label']}】取得{ds.get('total',0)}件（予算内{ds.get('in_budget',0)}件）。1位: {top.get('title','')[:30]} {top.get('price',0)}万円 利回り{top.get('yield_pct','不明')}%")
         else:
             summary_lines.append(f"【{ct['label']}】取得{ds.get('total',0)}件（予算内{ds.get('in_budget',0)}件）。分析対象なし。")
-    return f"""あなたは不動産投資アドバイザーです。以下の城東7区の週次分析結果を踏まえ、投資家向けの総括コメントを300字以内で書いてください。
+    return f"""あなたは不動産投資アドバイザーです。以下の分析結果を踏まえ、投資家向けの総括コメントを300字以内で書いてください。
 
 {chr(10).join(summary_lines)}
 
 以下の観点を含めてください:
 - 今週の注目物件（1-2件）とその理由
-- カテゴリ横断での投資戦略の提案（例: マンション2件+アパート1件のポートフォリオ等）
-- 城東エリアの市況感（供給量、価格帯の傾向）
+- カテゴリ横断での投資戦略（ポートフォリオ提案）
+- 区分マンションは大規模物件（総戸数50戸以上）の有無に言及
+- 店舗は1階路面店の有無に言及
+- 対象エリア（台東・墨田・江東・荒川・足立・文京・大田・江戸川区）の市況感
 - 投資家へのアクションアドバイス
 
 プレーンテキストのみ（JSON・マークダウン不要）。簡潔かつ具体的に。"""
 
 def build_market_prompt(ward_counts,rent_data):
-    return f"""東京都城東7区の不動産投資市況を200字で概説。
+    return f"""東京都の対象8区（台東区・墨田区・江東区・荒川区・足立区・文京区・大田区・江戸川区）の不動産投資市況を200字で概説。
 取得データ: {json.dumps(ward_counts,ensure_ascii=False)}
-地価動向、各区の特徴、投資家の注目点を含めて。プレーンテキストのみ。"""
+地価動向、各区の特徴（文京区=教育・住環境、大田区=羽田空港・町工場再開発）、投資家の注目点を含めて。プレーンテキストのみ。"""
 
 def extract_json(text):
     text=text.strip()
