@@ -1,7 +1,7 @@
-"""スクレイパー v5 - URL-カテゴリ検証付き
+"""スクレイパー v6 - 億単位価格対応
 
-修正: URLのパス(pp1/pp2/pp3/pp5/pp6)が期待カテゴリと一致するか検証。
-不一致のURLは除外することで、別カテゴリの物件リンクが混入する問題を解消。
+修正: 「1億3,000万円」を正しく13,000万円としてパース。
+旧バグ: 正規表現が「3,000万円」だけ拾い、1億の部分を無視していた。
 """
 import json,os,re,time,logging
 from datetime import datetime,timezone,timedelta
@@ -20,14 +20,42 @@ HEADERS={
 }
 DELAY=1.0
 
-# カテゴリ→URLパスの対応
-CAT_PATH_MAP = {v["kenbiya_path"]:k for k,v in PROPERTY_CATEGORIES.items()}
-# 例: {"pp1":"condo","pp3":"house","pp2":"apart","pp5":"building","pp6":"store"}
-
 def url_matches_category(url, expected_category):
-    """URLのパス(pp1等)が期待カテゴリと一致するか検証"""
     expected_path = PROPERTY_CATEGORIES[expected_category]["kenbiya_path"]
     return f"/{expected_path}/" in url
+
+# ═══════════════════════════════════════
+# ★ 価格パーサー（億対応）
+# ═══════════════════════════════════════
+def parse_price(text):
+    """
+    テキストから価格（万円単位）を抽出。
+    対応パターン:
+      "1億3,000万円" → 13000
+      "2億万円"      → 20000
+      "2億円"        → 20000
+      "3,000万円"    → 3000
+      "980万円"      → 980
+    返値: int（万円）または None
+    """
+    # パターン1: X億Y万円
+    m = re.search(r"(\d+)\s*億\s*([\d,]+)\s*万円", text)
+    if m:
+        oku = int(m.group(1))
+        man = int(m.group(2).replace(",", ""))
+        return oku * 10000 + man
+
+    # パターン2: X億万円 or X億円（万の部分がない）
+    m = re.search(r"(\d+)\s*億\s*(?:万\s*)?円", text)
+    if m:
+        return int(m.group(1)) * 10000
+
+    # パターン3: Y万円（億なし）
+    m = re.search(r"([\d,]+)\s*万円", text)
+    if m:
+        return int(m.group(1).replace(",", ""))
+
+    return None
 
 def find_price_container(link_tag):
     el = link_tag
@@ -36,20 +64,21 @@ def find_price_container(link_tag):
         if parent is None or parent.name in ('body','html','[document]'):
             break
         text = parent.get_text()
-        has_price = "万円" in text
+        has_price = "万円" in text or "億" in text
         re_links = [a for a in parent.select("a[href*='/re_']") if "/re_" in a.get("href","")]
         if has_price and len(re_links) == 1:
             return parent
         if has_price and len(re_links) > 1:
             el_text = el.get_text()
-            return el if "万円" in el_text else parent
+            return el if ("万円" in el_text or "億" in el_text) else parent
         el = parent
     el = link_tag
     for _ in range(10):
         parent = el.parent
         if parent is None or parent.name in ('body','html','[document]'):
             return el
-        if "万円" in parent.get_text():
+        pt = parent.get_text()
+        if "万円" in pt or "億" in pt:
             return parent
         el = parent
     return link_tag.parent
@@ -63,38 +92,30 @@ def scrape_list_page(url,category,ward):
         soup=BeautifulSoup(resp.text,"lxml")
     except Exception as e:
         log.error(f"  FAIL: {e}");return props
-
-    seen_urls=set()
-    skipped_cat=0
+    seen_urls=set();skipped_cat=0
     for link in soup.select("a[href*='/re_']"):
         href=link.get("href","")
         if "/re_" not in href:continue
         full_url=href if href.startswith("http") else f"https://www.kenbiya.com{href}"
         if full_url in seen_urls:continue
         seen_urls.add(full_url)
-
-        # ★ URLのカテゴリパスが期待と一致するか検証
         if not url_matches_category(full_url, category):
-            skipped_cat+=1
-            continue
-
+            skipped_cat+=1;continue
         container=find_price_container(link)
         if container is None:continue
         text=container.get_text(separator=" ",strip=True)
-        if "万円" not in text:continue
-
+        if "万円" not in text and "億" not in text:continue
         prop=parse_property(text,full_url,category,ward)
         if prop:props.append(prop)
-
     if skipped_cat>0:
-        log.info(f"  {ward} {category}: {skipped_cat} links skipped (wrong category path)")
+        log.info(f"  {ward} {category}: {skipped_cat} skipped (wrong path)")
     log.info(f"  {ward} {category}: {len(seen_urls)} links → {len(props)} parsed")
     return props
 
 def parse_property(text,url,category,ward):
-    pm=re.search(r"([\d,]+)\s*万円",text)
-    if not pm:return None
-    price=int(pm.group(1).replace(",",""))
+    price = parse_price(text)
+    if price is None:return None
+
     ym=re.search(r"([\d.]+)\s*[％%]",text);yield_pct=float(ym.group(1)) if ym else None
     szm=re.search(r"([\d.]+)\s*m[²㎡]",text);size=float(szm.group(1)) if szm else None
     lsm=re.search(r"土地[：:]?\s*([\d.]+)\s*m[²㎡]",text);land_size=float(lsm.group(1)) if lsm else None
@@ -104,9 +125,18 @@ def parse_property(text,url,category,ward):
     stm=re.search(r"(RC造|SRC造|S造|木造|軽量鉄骨造|鉄骨造|W造)",text);structure=stm.group(1) if stm else ""
     um=re.search(r"(\d+)\s*戸",text);total_units=int(um.group(1)) if um else None
     am=re.search(r"東京都([\w]+区[\w\d丁目\-]*)",text);address=f"東京都{am.group(1)}" if am else f"東京都{ward}"
-    title=f"{ward} {price}万円"
-    if station:title+=f" {station}"
-    if yield_pct:title+=f" {yield_pct}%"
+
+    # タイトル（億単位も正しく表示）
+    if price >= 10000:
+        oku = price // 10000
+        man = price % 10000
+        price_str = f"{oku}億{man:,}万円" if man > 0 else f"{oku}億円"
+    else:
+        price_str = f"{price:,}万円"
+    title = f"{ward} {price_str}"
+    if station: title += f" {station}"
+    if yield_pct: title += f" {yield_pct}%"
+
     geo=geocode(address,ward)
     return {"url":url,"source":"健美家／HOMES","category":category,"ward":ward,
             "title":title,"price":price,"yield_pct":yield_pct,"size":size,
@@ -146,7 +176,7 @@ def scrape_goo():
         container=find_price_container(link)
         if container is None:continue
         text=container.get_text(separator=" ",strip=True)
-        if "万円" not in text:continue
+        if "万円" not in text and "億" not in text:continue
         ward=next((w for w in JOTO_WARDS.values() if w in text),None)
         if not ward:continue
         prop=parse_property(text,full,"store",ward)

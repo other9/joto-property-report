@@ -131,7 +131,7 @@ h2{font-family:Georgia,serif;font-size:16px;font-weight:700;margin:16px 0 8px;pa
 {% if p.get('total_units') %}<span>🚪{{ p.total_units }}戸</span>{% endif %}
 </div>
 <div class="pr">
-<span class="pv" {% if p.get('over_budget') %}style="color:#b08050"{% endif %}>{{ "{:,}".format(p.price|default(0)|int) }}<span class="u">万円</span></span>
+<span class="pv" {% if p.get('over_budget') %}style="color:#b08050"{% endif %}>{% set pr=p.price|default(0)|int %}{% if pr >= 10000 %}{{ pr // 10000 }}億{% if pr % 10000 > 0 %}{{ "{:,}".format(pr % 10000) }}万{% endif %}<span class="u">円</span>{% else %}{{ "{:,}".format(pr) }}<span class="u">万円</span>{% endif %}</span>
 {% if p.get('yield_pct') %}<span class="yv">利回り{{ p.yield_pct }}%</span>{% endif %}
 {% if p.get('floor') %}<span style="font-size:11px;color:#a09080">{{ p.floor }}</span>{% endif %}
 </div>
@@ -143,7 +143,7 @@ h2{font-family:Georgia,serif;font-size:16px;font-weight:700;margin:16px 0 8px;pa
 <div style="margin-bottom:10px"><div class="dl">分析</div><div class="at">{{ p.get('analysis','') }}</div></div>
 <div class="pc"><div><h4 class="p">✓ メリット</h4>{% for i in p.get('pros',[]) %}<div>・{{ i }}</div>{% endfor %}</div><div><h4 class="c2">△ リスク</h4>{% for i in p.get('cons',[]) %}<div>・{{ i }}</div>{% endfor %}</div></div>
 {% if p.get('loan_analysis') %}{% set la=p.loan_analysis %}<div class="lb {{ 'la' if la.feasibility|default('')=='A' else 'lbb' if la.feasibility|default('')=='B' else 'lc' }}"><strong>融資: {{ la.feasibility|default('?') }}</strong> {{ la.reason|default('') }}{% if la.get('recommended_plan') %}{% set rp=la.recommended_plan %}<br>自己{{ rp.self_fund|default(0) }}万/融資{{ rp.loan|default(0) }}万/月返済{{ rp.monthly_repay|default(0) }}万/DSCR{{ rp.dscr|default(0) }}倍{% endif %}</div>{% endif %}
-<div class="fb">{% if p.get('loan_analysis',{}).get('recommended_plan') %}{% set rp=p.loan_analysis.recommended_plan %}<strong>資金計画:</strong> 自己{{ "{:,}".format(rp.self_fund|default(0)|int) }}万/融資{{ "{:,}".format(rp.loan|default(0)|int) }}万/計{{ "{:,}".format(p.price|default(0)|int) }}万{% if p.get('over_budget') %}<span style="color:#c03030;font-weight:700"> ※予算超</span>{% endif %}{% endif %}</div>
+<div class="fb">{% if p.get('loan_analysis',{}).get('recommended_plan') %}{% set rp=p.loan_analysis.recommended_plan %}<strong>資金計画:</strong> 自己{{ "{:,}".format(rp.self_fund|default(0)|int) }}万/融資{{ "{:,}".format(rp.loan|default(0)|int) }}万/計{% set pr2=p.price|default(0)|int %}{% if pr2 >= 10000 %}{{ pr2 // 10000 }}億{% if pr2 % 10000 > 0 %}{{ "{:,}".format(pr2 % 10000) }}万{% endif %}{% else %}{{ "{:,}".format(pr2) }}万{% endif %}{% if p.get('over_budget') %}<span style="color:#c03030;font-weight:700"> ※予算超</span>{% endif %}{% endif %}</div>
 <a href="{{ p.url }}" target="_blank" class="lnk">{{ p.get('source','') }}で詳細 →</a>
 </div></div>
 {% endfor %}
