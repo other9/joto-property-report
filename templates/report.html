@@ -5,57 +5,134 @@
 <title>城東エリア不動産投資レポート - {{ report_date }}</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <style>
-:root{--bg:#f5f0e8;--card:#faf7f2;--wh:#fff;--dk:#1a1510;--md:#5a5040;--lt:#8a7a5e;--bd:#e0d8c8;--r:#c0392b;--o:#d4782b;--g:#2d7a30;--bl:#2a7ab5}
-*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Helvetica Neue','Hiragino Sans',sans-serif;background:var(--bg);color:var(--dk);line-height:1.6}
-.c{max-width:760px;margin:0 auto;padding:16px}header{text-align:center;padding:24px 0 16px}h1{font-family:Georgia,serif;font-size:22px;font-weight:800}
-h2{font-family:Georgia,serif;font-size:16px;font-weight:700;margin:16px 0 8px;padding-bottom:6px;border-bottom:2px solid var(--r)}
-.sub{font-size:12px;color:var(--lt);margin-top:4px}.date{display:inline-block;margin-top:6px;padding:2px 12px;background:var(--r);color:#fff;border-radius:12px;font-size:11px;font-weight:700}
-.bx{background:var(--wh);border:1px solid var(--bd);border-radius:6px;padding:10px 14px;margin-bottom:12px;font-size:12px;line-height:1.7;color:var(--md)}.bx strong{color:var(--dk)}
-.al{background:#2d7a3010;border:1px solid #2d7a3030;color:#2d5a28}
-.mkt{background:var(--wh);border:1px solid var(--bd);border-radius:6px;padding:14px;margin-bottom:12px;font-size:12.5px;line-height:1.8;color:var(--md)}
-.data-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin:8px 0}
-.data-card{background:var(--card);border:1px solid var(--bd);border-radius:6px;padding:6px 4px;text-align:center}
-.data-card .num{font-family:Georgia,serif;font-size:18px;font-weight:800;color:var(--r)}.data-card .lbl{font-size:9px;color:var(--lt)}.data-card .sub-num{font-size:10px;color:var(--g);font-weight:600}
-#map{height:400px;border-radius:8px;border:2px solid var(--bd);margin-bottom:12px}
-.map-legend{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;font-size:11px}
-.map-legend span{display:flex;align-items:center;gap:3px}.map-legend .dot{width:10px;height:10px;border-radius:50%;display:inline-block}
-.tabs{display:flex;gap:4px;margin-bottom:12px;flex-wrap:wrap}.tabs button{padding:6px 14px;border-radius:20px;border:1px solid var(--bd);background:0;color:var(--md);font-size:11px;font-weight:600;cursor:pointer}.tabs button.on{background:var(--r);color:#fff;border-color:var(--r)}
-.rt{width:100%;border-collapse:collapse;font-size:11px;margin:8px 0}.rt th,.rt td{padding:5px 6px;border:1px solid var(--bd);text-align:center}.rt th{background:var(--dk);color:#fff;font-size:10px}.rt tr:nth-child(even){background:var(--card)}
-.cd{background:var(--card);border:1.5px solid #ddd5c8;border-radius:6px;margin-bottom:10px;overflow:hidden}.cd.ob{opacity:.9;background:#faf5ee}
-.ch{padding:12px 16px;cursor:pointer}.ch:hover{background:#f5efe5}
-.tr{display:flex;align-items:center;gap:8px;margin-bottom:4px;flex-wrap:wrap}
-.rk{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;color:#fff;font-size:12px;font-weight:800;font-family:Georgia,serif;flex-shrink:0}
+:root{
+  --bg:#f4f1eb;--card:#fff;--card2:#faf8f4;--dk:#1a1a1a;--md:#444;--lt:#888;
+  --bd:#ddd6c8;--r:#c0392b;--o:#d4782b;--g:#1a8a3e;--bl:#1d6fa5;
+  --radius:10px;--shadow:0 2px 8px rgba(0,0,0,.06);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,'Hiragino Sans','Noto Sans JP',sans-serif;background:var(--bg);color:var(--dk);line-height:1.75;font-size:15px}
+.c{max-width:880px;margin:0 auto;padding:20px}
+
+/* ── ヘッダー ── */
+header{text-align:center;padding:32px 0 20px}
+h1{font-size:26px;font-weight:800;letter-spacing:1px}
+.sub{font-size:14px;color:var(--lt);margin-top:6px}
+.date{display:inline-block;margin-top:8px;padding:4px 16px;background:var(--r);color:#fff;border-radius:20px;font-size:13px;font-weight:700}
+
+/* ── 総括 ── */
+.editorial{background:linear-gradient(135deg,#2a2318,#3d3528);border-radius:var(--radius);padding:24px;margin-bottom:20px;color:#f0ebe0;font-size:15px;line-height:1.9}
+.editorial .hd{font-size:18px;font-weight:800;margin-bottom:10px;font-family:Georgia,serif;color:#fff}
+
+/* ── ボックス ── */
+.bx{background:var(--card);border:1px solid var(--bd);border-radius:var(--radius);padding:16px 20px;margin-bottom:16px;font-size:14px;line-height:1.8;color:var(--md);box-shadow:var(--shadow)}
+.bx strong{color:var(--dk);font-size:15px}
+.al{background:#e8f5e9;border-color:#a5d6a7;color:#2e7d32}
+.mkt{background:var(--card);border:1px solid var(--bd);border-radius:var(--radius);padding:20px 24px;margin-bottom:16px;font-size:15px;line-height:1.9;color:var(--md);box-shadow:var(--shadow)}
+
+/* ── データグリッド ── */
+.data-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:12px 0}
+@media(max-width:600px){.data-grid{grid-template-columns:repeat(3,1fr)}}
+.data-card{background:var(--card2);border:1px solid var(--bd);border-radius:8px;padding:12px 8px;text-align:center}
+.data-card .num{font-family:Georgia,serif;font-size:28px;font-weight:800;color:var(--r)}
+.data-card .lbl{font-size:12px;color:var(--lt);margin-bottom:4px}
+.data-card .sub-num{font-size:13px;color:var(--g);font-weight:700;margin-top:2px}
+
+/* ── 地図 ── */
+h2{font-size:20px;font-weight:800;margin:24px 0 12px;padding-bottom:8px;border-bottom:3px solid var(--r)}
+#map{height:450px;border-radius:var(--radius);border:2px solid var(--bd);margin-bottom:16px;box-shadow:var(--shadow)}
+.map-legend{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px;font-size:14px;font-weight:600}
+.map-legend span{display:flex;align-items:center;gap:5px}
+.map-legend .dot{width:14px;height:14px;border-radius:50%;display:inline-block;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+
+/* ── 賃料テーブル ── */
+.rent-section{background:var(--card);border:1px solid var(--bd);border-radius:var(--radius);padding:14px 20px;margin-bottom:10px;cursor:pointer;box-shadow:var(--shadow)}
+.rent-title{font-size:15px;font-weight:700;color:var(--dk);display:flex;justify-content:space-between;align-items:center}
+.rent-body{display:none;margin-top:10px}.rent-section.open .rent-body{display:block}
+.rt{width:100%;border-collapse:collapse;font-size:14px;margin:4px 0}
+.rt th,.rt td{padding:8px 10px;border:1px solid var(--bd);text-align:center}
+.rt th{background:var(--dk);color:#fff;font-weight:600;font-size:13px}
+.rt td{font-size:14px}
+.rt tr:nth-child(even){background:var(--card2)}
+.rt td:first-child{font-weight:700;text-align:left}
+
+/* ── タブ ── */
+.tabs{display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap}
+.tabs button{padding:10px 18px;border-radius:24px;border:2px solid var(--bd);background:var(--card);color:var(--md);font-size:14px;font-weight:700;cursor:pointer;transition:all .15s}
+.tabs button:hover{border-color:var(--r);color:var(--r)}
+.tabs button.on{background:var(--r);color:#fff;border-color:var(--r)}
+
+/* ── 物件カード ── */
+.cd{background:var(--card);border:2px solid #e8e2d8;border-radius:var(--radius);margin-bottom:14px;overflow:hidden;box-shadow:var(--shadow);transition:border-color .15s}
+.cd:hover{border-color:#ccc0b0}
+.cd.ob{opacity:.88;background:#fdf8f0}
+.ch{padding:18px 22px;cursor:pointer}
+.ch:hover{background:#faf7f2}
+.tr{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.rk{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;color:#fff;font-size:15px;font-weight:800;font-family:Georgia,serif;flex-shrink:0}
 .rk1,.rk2,.rk3{background:var(--r)}.rk4,.rk5{background:var(--o)}.rkx{background:var(--lt)}
-.tt{font-weight:700;font-size:13px;flex:1}.bg{padding:1px 7px;border-radius:10px;font-size:9px;font-weight:700;white-space:nowrap}.bgn{background:#2d7a3020;color:var(--g);border:1px solid #2d7a3033}.bgo{background:#e8433020;color:#c03030;border:1px solid #e8433033}
-.mr{display:flex;flex-wrap:wrap;gap:2px 10px;font-size:11px;color:#7a6a58;padding-left:32px;margin-bottom:5px}
-.pr{display:flex;flex-wrap:wrap;gap:2px 14px;align-items:baseline;padding-left:32px}.pv{font-family:Georgia,serif;font-weight:800;font-size:19px;color:var(--r)}.pv .u{font-size:13px}.yv{font-size:13px;font-weight:700;color:var(--g)}
-.sb{display:flex;align-items:center;gap:6px;padding-left:32px;margin-top:4px}.st{flex:1;height:5px;background:#e8e0d4;border-radius:3px;overflow:hidden}.sf{height:100%;border-radius:3px}.sn{font-weight:800;font-size:15px;font-family:Georgia,serif;min-width:24px}
-.dt{padding:0 16px 14px;border-top:1px solid #e8e0d4;display:none}.cd.open .dt{display:block}
-.dg{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}.dl{font-size:10px;color:#a09080;font-weight:700;letter-spacing:1px;margin-bottom:3px}.dv{font-size:12px;font-weight:600}.er{font-size:15px;color:var(--g);font-weight:800}.at{font-size:12px;line-height:1.65;color:#3d3528;margin-bottom:10px}
-.pc{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}.pc h4{font-size:10px;font-weight:700;margin-bottom:2px}.pc .p{color:var(--g)}.pc .c2{color:var(--r)}.pc div{font-size:11px;color:#3d3528;margin-bottom:1px}
-.lb{padding:8px 12px;border-radius:4px;margin-bottom:8px;font-size:11.5px;color:var(--md)}.la{background:#2d7a3010;border:1px solid #2d7a3030}.lbb{background:#d4782b10;border:1px solid #d4782b30}.lc{background:#c0392b10;border:1px solid #c0392b30}
-.fb{padding:6px 10px;background:#f0ebe2;border-radius:4px;font-size:11.5px;color:var(--md);margin-bottom:8px}
-.lnk{display:inline-block;padding:5px 14px;background:var(--r);color:#fff;border-radius:4px;font-size:11.5px;font-weight:700;text-decoration:none}
-.ls{background:var(--wh);border:1px solid var(--bd);border-radius:6px;padding:10px 14px;margin-top:16px}.lsh{cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:13px}.li{display:block;padding:6px 10px;margin-bottom:4px;background:var(--card);border-radius:4px;text-decoration:none;border:1px solid #e8e0d4;font-size:12px;font-weight:600}
-.dis{margin-top:12px;padding:8px 12px;background:#eee8db;border-radius:6px;font-size:10.5px;color:#a09080;line-height:1.6}
-.rent-section{background:var(--wh);border:1px solid var(--bd);border-radius:6px;padding:10px 14px;margin-bottom:8px;cursor:pointer}
-.rent-title{font-size:12px;font-weight:700;color:var(--dk);margin-bottom:4px;display:flex;justify-content:space-between;align-items:center}
-.rent-body{display:none}.rent-section.open .rent-body{display:block}
+.tt{font-weight:800;font-size:16px;flex:1;line-height:1.4;color:var(--dk)}
+.bg{padding:3px 10px;border-radius:12px;font-size:11px;font-weight:700;white-space:nowrap}
+.bgn{background:#e8f5e9;color:var(--g);border:1px solid #a5d6a7}
+.bgo{background:#fce4ec;color:#c62828;border:1px solid #ef9a9a}
+.mr{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:14px;color:#666;padding-left:42px;margin-bottom:8px}
+.pr{display:flex;flex-wrap:wrap;gap:4px 18px;align-items:baseline;padding-left:42px}
+.pv{font-family:Georgia,serif;font-weight:800;font-size:26px;color:var(--r)}.pv .u{font-size:15px}
+.yv{font-size:16px;font-weight:800;color:var(--g)}
+.sb{display:flex;align-items:center;gap:8px;padding-left:42px;margin-top:8px}
+.st{flex:1;height:7px;background:#e8e0d4;border-radius:4px;overflow:hidden}
+.sf{height:100%;border-radius:4px}
+.sn{font-weight:800;font-size:20px;font-family:Georgia,serif;min-width:28px}
+
+/* ── カード詳細 ── */
+.dt{padding:0 22px 22px;border-top:1px solid #e8e0d4;display:none}.cd.open .dt{display:block}
+.dg{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0}
+.dl{font-size:12px;color:var(--lt);font-weight:700;letter-spacing:1px;margin-bottom:4px;text-transform:uppercase}
+.dv{font-size:15px;font-weight:600;line-height:1.6}
+.er{font-size:20px;color:var(--g);font-weight:800}
+.at{font-size:14px;line-height:1.8;color:var(--md);margin-bottom:14px}
+.pc{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.pc h4{font-size:13px;font-weight:700;margin-bottom:4px}
+.pc .p{color:var(--g)}.pc .c2{color:var(--r)}
+.pc li{font-size:14px;color:var(--md);margin-bottom:3px;list-style:none}
+.lb{padding:12px 16px;border-radius:8px;margin-bottom:12px;font-size:14px;line-height:1.7;color:var(--md)}
+.la{background:#e8f5e9;border:1px solid #a5d6a7}.lbb{background:#fff3e0;border:1px solid #ffcc80}.lc{background:#fce4ec;border:1px solid #ef9a9a}
+.lb strong{font-size:15px}
+.fb{padding:10px 14px;background:var(--card2);border:1px solid var(--bd);border-radius:8px;font-size:14px;color:var(--md);margin-bottom:14px}
+.lnk{display:inline-block;padding:8px 20px;background:var(--r);color:#fff;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;transition:background .15s}
+.lnk:hover{background:#a93226}
+
+/* ── リンク集 ── */
+.ls{background:var(--card);border:1px solid var(--bd);border-radius:var(--radius);padding:14px 20px;margin-top:20px;box-shadow:var(--shadow)}
+.lsh{cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:16px}
+.li{display:block;padding:10px 14px;margin-bottom:6px;background:var(--card2);border-radius:8px;text-decoration:none;border:1px solid var(--bd);font-size:14px;font-weight:600;transition:background .1s}
+.li:hover{background:#f0ebe0}
+
+/* ── フッター ── */
+.dis{margin-top:20px;padding:14px 18px;background:#eae5db;border-radius:var(--radius);font-size:13px;color:var(--lt);line-height:1.7}
+
+/* ── レスポンシブ ── */
+@media(max-width:600px){
+  .c{padding:12px}
+  h1{font-size:20px}
+  .tabs button{padding:8px 12px;font-size:12px}
+  .data-grid{gap:6px}
+  .data-card .num{font-size:22px}
+  .pv{font-size:22px}
+  .ch{padding:14px 16px}
+  .dt{padding:0 16px 16px}
+  .dg,.pc{grid-template-columns:1fr}
+}
 </style></head><body>
 <div class="c">
 <header><h1>城東エリア 不動産投資レポート</h1>
 <div class="sub">台東区・墨田区・江東区・荒川区・足立区・葛飾区・江戸川区</div>
-<div class="date">🔄 {{ report_date }} 自動更新</div></header>
+<div class="date">🔄 {{ report_date }} 更新</div></header>
 
-<!-- ★ 総括コメント -->
 {% if editorial %}
-<div style="background:linear-gradient(135deg,#2a2318,#3d3528);border-radius:8px;padding:16px;margin-bottom:14px;color:#f5f0e8;font-size:13px;line-height:1.8">
-<div style="font-size:15px;font-weight:800;margin-bottom:8px;font-family:Georgia,serif">💡 今週の総括</div>
-{{ editorial }}
-</div>
+<div class="editorial"><div class="hd">💡 今週の総括</div>{{ editorial }}</div>
 {% endif %}
 
-<!-- データ取得現況 -->
 <div class="bx">
 <strong>📊 データ取得現況</strong>（予算{{ budget.total_max // 10000 | default(7000) }}万円以下）
 <div class="data-grid">
@@ -63,7 +140,7 @@ h2{font-family:Georgia,serif;font-size:16px;font-weight:700;margin:16px 0 8px;pa
 <div class="data-card">
 <div class="lbl">{{ ct.icon }} {{ ct.label }}</div>
 <div class="num">{{ data_summary.get(ck, {}).get('total', 0) }}</div>
-<div class="sub-num">予算内{{ data_summary.get(ck, {}).get('in_budget', 0) }}</div>
+<div class="sub-num">予算内 {{ data_summary.get(ck, {}).get('in_budget', 0) }}</div>
 </div>
 {% endfor %}
 </div></div>
@@ -73,13 +150,12 @@ h2{font-family:Georgia,serif;font-size:16px;font-weight:700;margin:16px 0 8px;pa
 {% endif %}
 
 {% if changes and (changes.new or changes.removed or changes.price_changed) %}
-<div class="bx al"><strong>📢 変動</strong><br>
-{% for p in changes.removed %}・<strong style="color:var(--r)">成約</strong>: {{ p.get('title','')[:40] }} {{ p.get('price','?') }}万<br>{% endfor %}
-{% for p in changes.new %}・<strong style="color:var(--g)">新規</strong>: {{ p.get('title','')[:40] }} {{ p.get('price','?') }}万<br>{% endfor %}
-{% for p in changes.price_changed %}・<strong>価格変更</strong>: {{ p.get('title','')[:30] }} {{ p.prev_price }}→{{ p.price }}万<br>{% endfor %}
+<div class="bx al"><strong>📢 前回からの変動</strong><br>
+{% for p in changes.removed %}・<strong style="color:var(--r)">成約</strong> {{ p.get('title','')[:40] }} {{ p.get('price','?') }}万<br>{% endfor %}
+{% for p in changes.new %}・<strong style="color:var(--g)">新規</strong> {{ p.get('title','')[:40] }} {{ p.get('price','?') }}万<br>{% endfor %}
+{% for p in changes.price_changed %}・<strong>変更</strong> {{ p.get('title','')[:30] }} {{ p.prev_price }}→{{ p.price }}万<br>{% endfor %}
 </div>{% endif %}
 
-<!-- 地図 -->
 <h2>📍 物件マップ</h2>
 <div id="map"></div>
 <div class="map-legend">
@@ -88,31 +164,28 @@ h2{font-family:Georgia,serif;font-size:16px;font-weight:700;margin:16px 0 8px;pa
 {% endfor %}
 </div>
 
-<!-- 賃料相場 -->
 {% for ck, rbc in rent_by_category.items() %}
 <div class="rent-section" onclick="this.classList.toggle('open')">
-<div class="rent-title">{{ rbc.label }} <span>▼</span></div>
+<div class="rent-title">{{ rbc.label }} <span style="font-size:18px;color:var(--lt)">▼</span></div>
 <div class="rent-body">
 <table class="rt">
 <tr><th>区</th>{% for col in rbc.columns %}<th>{{ col }}</th>{% endfor %}</tr>
 {% for ward, vals in rbc.data.items() %}
-<tr><td><strong>{{ ward }}</strong></td>{% for col in rbc.columns %}<td>{{ vals.get(col, '-') }}{% if vals.get(col) is number and '坪' not in col %}万{% endif %}</td>{% endfor %}</tr>
+<tr><td>{{ ward }}</td>{% for col in rbc.columns %}<td>{{ vals.get(col, '-') }}{% if vals.get(col) is number and '坪' not in col %}万{% endif %}</td>{% endfor %}</tr>
 {% endfor %}
 </table></div></div>
 {% endfor %}
 
-<!-- タブ -->
 <div class="tabs" id="tabs">
 {% for ck,ct in categories.items() %}
-<button onclick="showCat('{{ ck }}')" class="{{ 'on' if loop.first }}" data-c="{{ ck }}">{{ ct.icon }}{{ ct.label }}{% if data_summary.get(ck) %}({{ data_summary[ck].get('in_budget',0) }}){% endif %}</button>
+<button onclick="showCat('{{ ck }}')" class="{{ 'on' if loop.first }}" data-c="{{ ck }}">{{ ct.icon }} {{ ct.label }}{% if data_summary.get(ck) %} ({{ data_summary[ck].get('in_budget',0) }}){% endif %}</button>
 {% endfor %}
 </div>
 
-<!-- 物件カード -->
 {% for ck,rs in results.items() %}
 <div class="cs" data-cat="{{ ck }}" style="{{ '' if loop.first else 'display:none' }}">
 {% if rs|length == 0 %}
-<div class="bx" style="text-align:center;padding:20px;color:var(--lt)">{{ categories[ck].label }}の分析結果はありません。</div>
+<div class="bx" style="text-align:center;padding:30px;color:var(--lt);font-size:16px">{{ categories[ck].label }}の分析結果はありません。</div>
 {% endif %}
 {% for p in rs %}
 <div class="cd {{ 'ob' if p.get('over_budget') }}" id="c-{{ ck }}-{{ loop.index }}">
@@ -121,99 +194,99 @@ h2{font-family:Georgia,serif;font-size:16px;font-weight:700;margin:16px 0 8px;pa
 <span class="rk {{ 'rk' ~ p.rank|default(99) if p.rank|default(99) <= 5 else 'rkx' }}">{{ p.rank|default('?') }}</span>
 <span class="tt">{{ p.get('title','物件名不明')[:50] }}</span>
 {% if p.get('over_budget') %}<span class="bg bgo">予算超</span>{% endif %}
-<span style="font-size:14px;color:var(--lt)">▼</span></div>
+<span style="font-size:18px;color:var(--lt)">▼</span></div>
 <div class="mr">
-<span>📍{{ p.get('address', p.get('ward','')) }}</span>
-<span>🚉{{ p.get('station','') }}</span>
-{% if p.get('size') %}<span>📐{{ p.size }}㎡</span>{% endif %}
-{% if p.get('land_size') %}<span>🏞️{{ p.land_size }}㎡(土地)</span>{% endif %}
-{% if p.get('built') %}<span>🏗{{ p.built }}</span>{% endif %}
-{% if p.get('total_units') %}<span>🚪{{ p.total_units }}戸</span>{% endif %}
+<span>📍 {{ p.get('address', p.get('ward','')) }}</span>
+<span>🚉 {{ p.get('station','') }}</span>
+{% if p.get('size') %}<span>📐 {{ p.size }}㎡</span>{% endif %}
+{% if p.get('land_size') %}<span>🏞️ {{ p.land_size }}㎡(土地)</span>{% endif %}
+{% if p.get('built') %}<span>🏗 {{ p.built }}</span>{% endif %}
+{% if p.get('total_units') %}<span>🚪 {{ p.total_units }}戸</span>{% endif %}
 </div>
 <div class="pr">
 <span class="pv" {% if p.get('over_budget') %}style="color:#b08050"{% endif %}>{% set pr=p.price|default(0)|int %}{% if pr >= 10000 %}{{ pr // 10000 }}億{% if pr % 10000 > 0 %}{{ "{:,}".format(pr % 10000) }}万{% endif %}<span class="u">円</span>{% else %}{{ "{:,}".format(pr) }}<span class="u">万円</span>{% endif %}</span>
-{% if p.get('yield_pct') %}<span class="yv">利回り{{ p.yield_pct }}%</span>{% endif %}
-{% if p.get('floor') %}<span style="font-size:11px;color:#a09080">{{ p.floor }}</span>{% endif %}
+{% if p.get('yield_pct') %}<span class="yv">利回り {{ p.yield_pct }}%</span>{% endif %}
+{% if p.get('floor') %}<span style="font-size:13px;color:var(--lt)">{{ p.floor }}</span>{% endif %}
 </div>
-<div class="sb"><div class="st"><div class="sf" style="width:{{ p.score|default(0) }}%;background:{{ '#c0392b' if p.score|default(0)>=90 else '#d4782b' if p.score|default(0)>=80 else '#8a7a5e' }}"></div></div><span class="sn" style="color:{{ '#c0392b' if p.score|default(0)>=90 else '#d4782b' if p.score|default(0)>=80 else '#8a7a5e' }}">{{ p.score|default('?') }}</span></div>
+<div class="sb"><div class="st"><div class="sf" style="width:{{ p.score|default(0) }}%;background:{{ '#c0392b' if p.score|default(0)>=90 else '#d4782b' if p.score|default(0)>=80 else '#888' }}"></div></div><span class="sn" style="color:{{ '#c0392b' if p.score|default(0)>=90 else '#d4782b' if p.score|default(0)>=80 else '#888' }}">{{ p.score|default('?') }}</span></div>
 </div>
 <div class="dt">
-<div class="dg"><div><div class="dl">想定テナント</div><div class="dv">{{ p.get('tenant_type','') }}</div></div><div><div class="dl">想定賃料</div><div class="er">{{ p.get('estimated_rent','') }}</div></div></div>
-{% if p.get('rent_reference') %}<div style="margin-bottom:10px"><div class="dl">賃料参考データ</div><div class="at">{{ p.rent_reference }}</div></div>{% endif %}
-<div style="margin-bottom:10px"><div class="dl">分析</div><div class="at">{{ p.get('analysis','') }}</div></div>
-<div class="pc"><div><h4 class="p">✓ メリット</h4>{% for i in p.get('pros',[]) %}<div>・{{ i }}</div>{% endfor %}</div><div><h4 class="c2">△ リスク</h4>{% for i in p.get('cons',[]) %}<div>・{{ i }}</div>{% endfor %}</div></div>
-{% if p.get('loan_analysis') %}{% set la=p.loan_analysis %}<div class="lb {{ 'la' if la.feasibility|default('')=='A' else 'lbb' if la.feasibility|default('')=='B' else 'lc' }}"><strong>融資: {{ la.feasibility|default('?') }}</strong> {{ la.reason|default('') }}{% if la.get('recommended_plan') %}{% set rp=la.recommended_plan %}<br>自己{{ rp.self_fund|default(0) }}万/融資{{ rp.loan|default(0) }}万/月返済{{ rp.monthly_repay|default(0) }}万/DSCR{{ rp.dscr|default(0) }}倍{% endif %}</div>{% endif %}
-<div class="fb">{% if p.get('loan_analysis',{}).get('recommended_plan') %}{% set rp=p.loan_analysis.recommended_plan %}<strong>資金計画:</strong> 自己{{ "{:,}".format(rp.self_fund|default(0)|int) }}万/融資{{ "{:,}".format(rp.loan|default(0)|int) }}万/計{% set pr2=p.price|default(0)|int %}{% if pr2 >= 10000 %}{{ pr2 // 10000 }}億{% if pr2 % 10000 > 0 %}{{ "{:,}".format(pr2 % 10000) }}万{% endif %}{% else %}{{ "{:,}".format(pr2) }}万{% endif %}{% if p.get('over_budget') %}<span style="color:#c03030;font-weight:700"> ※予算超</span>{% endif %}{% endif %}</div>
-<a href="{{ p.url }}" target="_blank" class="lnk">{{ p.get('source','') }}で詳細 →</a>
+<div class="dg">
+<div><div class="dl">想定テナント</div><div class="dv">{{ p.get('tenant_type','') }}</div></div>
+<div><div class="dl">想定賃料</div><div class="er">{{ p.get('estimated_rent','') }}</div></div>
+</div>
+{% if p.get('rent_reference') %}<div style="margin-bottom:14px"><div class="dl">賃料参考データ</div><div class="at">{{ p.rent_reference }}</div></div>{% endif %}
+<div style="margin-bottom:14px"><div class="dl">分析</div><div class="at">{{ p.get('analysis','') }}</div></div>
+<div class="pc">
+<div><h4 class="p">✓ メリット</h4>{% for i in p.get('pros',[]) %}<li>{{ i }}</li>{% endfor %}</div>
+<div><h4 class="c2">△ リスク</h4>{% for i in p.get('cons',[]) %}<li>{{ i }}</li>{% endfor %}</div>
+</div>
+{% if p.get('loan_analysis') %}{% set la=p.loan_analysis %}
+<div class="lb {{ 'la' if la.feasibility|default('')=='A' else 'lbb' if la.feasibility|default('')=='B' else 'lc' }}">
+<strong>融資適格度: {{ la.feasibility|default('?') }}</strong><br>{{ la.reason|default('') }}
+{% if la.get('recommended_plan') %}{% set rp=la.recommended_plan %}<br>自己資金 {{ rp.self_fund|default(0) }}万 ／ 融資 {{ rp.loan|default(0) }}万 ／ 月返済 {{ rp.monthly_repay|default(0) }}万 ／ DSCR {{ rp.dscr|default(0) }}倍{% endif %}
+</div>{% endif %}
+<div class="fb">
+{% if p.get('loan_analysis',{}).get('recommended_plan') %}{% set rp=p.loan_analysis.recommended_plan %}
+<strong>資金計画:</strong> 自己資金 {{ "{:,}".format(rp.self_fund|default(0)|int) }}万 ／ 融資 {{ "{:,}".format(rp.loan|default(0)|int) }}万 ／ 合計 {% set pr2=p.price|default(0)|int %}{% if pr2 >= 10000 %}{{ pr2 // 10000 }}億{% if pr2 % 10000 > 0 %}{{ "{:,}".format(pr2 % 10000) }}万{% endif %}{% else %}{{ "{:,}".format(pr2) }}万{% endif %}
+{% if p.get('over_budget') %}<span style="color:var(--r);font-weight:700"> ※予算超過</span>{% endif %}
+{% endif %}
+</div>
+<a href="{{ p.url }}" target="_blank" class="lnk">{{ p.get('source','') }}で物件詳細を見る →</a>
 </div></div>
 {% endfor %}
 </div>{% endfor %}
 
-<!-- 検索リンク -->
-<div class="ls"><div class="lsh" onclick="document.getElementById('lb').style.display=document.getElementById('lb').style.display==='none'?'block':'none'"><span>検索リンク集</span><span>▼</span></div>
-<div id="lb" style="display:none;margin-top:8px">
+<div class="ls"><div class="lsh" onclick="document.getElementById('lb').style.display=document.getElementById('lb').style.display==='none'?'block':'none'"><span>🔗 検索リンク集</span><span style="font-size:18px;color:var(--lt)">▼</span></div>
+<div id="lb" style="display:none;margin-top:12px">
 {% for wk,wn in wards.items() %}
 {% for ck,ct in categories.items() %}
 <a href="https://www.kenbiya.com/{{ ct.kenbiya_path }}/s/tokyo/{{ wk }}/" target="_blank" class="li" style="color:{{ ct.color }}">{{ ct.icon }} {{ wn }} {{ ct.label }}</a>
 {% endfor %}
 {% endfor %}
-<a href="https://house.goo.ne.jp/toushi/office/area_tokyo.html" target="_blank" class="li" style="color:var(--bl)">goo不動産</a>
-<a href="https://www.athome.co.jp/buy_store/tokyo/" target="_blank" class="li" style="color:#3a7ac4">アットホーム</a>
-<a href="https://www.rakumachi.jp/syuuekibukken/area/prefecture/dim2002/" target="_blank" class="li" style="color:#5a9a3a">楽待</a>
+<a href="https://house.goo.ne.jp/toushi/office/area_tokyo.html" target="_blank" class="li" style="color:var(--bl)">🌐 goo不動産</a>
+<a href="https://www.athome.co.jp/buy_store/tokyo/" target="_blank" class="li" style="color:#3a7ac4">🌐 アットホーム</a>
+<a href="https://www.rakumachi.jp/syuuekibukken/area/prefecture/dim2002/" target="_blank" class="li" style="color:#5a9a3a">🌐 楽待</a>
 </div></div>
 
-<div class="dis">⚠ {{ report_date }}時点のWeb公開情報に基づくAI自動分析（GitHub Actions + Claude API）。地図座標は国土地理院API＋AI推定。融資適格度はAI推定。購入前に現地確認・重説・融資審査を必ず実施してください。</div>
+<div class="dis">⚠ {{ report_date }}時点のWeb公開情報に基づくAI自動分析（GitHub Actions + Claude API）。地図座標は国土地理院API＋AI推定。融資適格度はAI推定であり実際の融資可否は金融機関審査によります。購入前に現地確認・重説・融資審査を必ず実施してください。</div>
 </div>
 
-<!-- ★ UIスクリプト（Leafletと分離。Leafletが読込失敗してもタブ・プルダウンは動作する） -->
 <script>
 function showCat(c){
   document.querySelectorAll('.cs').forEach(function(s){s.style.display='none'});
-  var el=document.querySelector('[data-cat="'+c+'"]');
-  if(el)el.style.display='block';
+  var el=document.querySelector('[data-cat="'+c+'"]');if(el)el.style.display='block';
   document.querySelectorAll('#tabs button').forEach(function(b){b.classList.remove('on')});
-  var btn=document.querySelector('#tabs button[data-c="'+c+'"]');
-  if(btn)btn.classList.add('on');
+  var btn=document.querySelector('#tabs button[data-c="'+c+'"]');if(btn)btn.classList.add('on');
 }
-function tog(id){
-  var el=document.getElementById(id);
-  if(el)el.classList.toggle('open');
-}
-document.addEventListener('DOMContentLoaded',function(){
-  var f=document.querySelector('.cd');
-  if(f)f.classList.add('open');
-});
+function tog(id){var el=document.getElementById(id);if(el)el.classList.toggle('open')}
+document.addEventListener('DOMContentLoaded',function(){var f=document.querySelector('.cd');if(f)f.classList.add('open')});
 </script>
-
-<!-- ★ 地図スクリプト（別ブロック。読込失敗してもUIに影響しない） -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded',function(){
   try{
     var map=L.map('map').setView([35.72,139.82],12);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
-      attribution:'© OpenStreetMap',maxZoom:18
-    }).addTo(map);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap',maxZoom:18}).addTo(map);
     var markers={{ markers_json | safe }};
     markers.forEach(function(m){
-      var icon=L.divIcon({
-        className:'',
-        html:'<div style="background:'+m.color+';color:#fff;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.3)">'+m.icon+'</div>',
-        iconSize:[28,28],iconAnchor:[14,14],popupAnchor:[0,-16]
+      var icon=L.divIcon({className:'',
+        html:'<div style="background:'+m.color+';color:#fff;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;border:2px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.3)">'+m.icon+'</div>',
+        iconSize:[32,32],iconAnchor:[16,16],popupAnchor:[0,-18]
       });
       L.marker([m.lat,m.lng],{icon:icon}).addTo(map).bindPopup(
-        '<div style="font-size:12px;min-width:200px">'+
-        '<strong>'+(m.title||'').substring(0,40)+'</strong><br>'+
-        '<span style="font-size:16px;font-weight:800;color:'+m.color+'">'+(m.price||0).toLocaleString()+'万円</span>'+
-        (m.yield_pct?' <span style="color:#2d7a30;font-weight:700">'+m.yield_pct+'%</span>':'')+
-        (m.station?'<br>🚉'+m.station:'')+
+        '<div style="font-size:14px;min-width:220px;line-height:1.6">'+
+        '<strong style="font-size:15px">'+(m.title||'').substring(0,40)+'</strong><br>'+
+        '<span style="font-size:20px;font-weight:800;color:'+m.color+'">'+(m.price||0).toLocaleString()+'万円</span>'+
+        (m.yield_pct?' <span style="color:#1a8a3e;font-weight:700;font-size:15px">'+m.yield_pct+'%</span>':'')+
+        (m.station?'<br>🚉 '+m.station:'')+
         '<br>スコア: <strong>'+(m.score||'?')+'</strong>/100'+
-        '<br><a href="'+m.url+'" target="_blank" style="color:'+m.color+'">詳細→</a></div>'
+        '<br><a href="'+m.url+'" target="_blank" style="color:'+m.color+';font-weight:700">物件詳細 →</a></div>'
       );
     });
   }catch(e){
-    console.error('Map error:',e);
-    document.getElementById('map').innerHTML='<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#8a7a5e;font-size:13px">地図の読込に失敗しました</div>';
+    console.error('Map:',e);
+    document.getElementById('map').innerHTML='<div style="display:flex;align-items:center;justify-content:center;height:100%;color:var(--lt);font-size:15px">地図の読込に失敗しました</div>';
   }
 });
 </script>
