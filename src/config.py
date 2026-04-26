@@ -1,11 +1,14 @@
 JOTO_WARDS = {"taito-ku":"台東区","sumida-ku":"墨田区","koto-ku":"江東区","arakawa-ku":"荒川区","adachi-ku":"足立区","katsushika-ku":"葛飾区","edogawa-ku":"江戸川区"}
 
-# 表示順: マンション → 戸建て → 中古アパート → 中古ビル → 店舗
+# 健美家URLパス対応表:
+# pp1=区分マンション pp2=一棟アパート pp3=一棟マンション
+# pp4=一棟ビル pp5=土地 pp6=店舗・事務所 pp8=戸建て
+
 PROPERTY_CATEGORIES = {
     "condo":{"label":"区分マンション","kenbiya_path":"pp1","color":"#2563eb","icon":"🏢"},
-    "house":{"label":"戸建て","kenbiya_path":"pp3","color":"#16a34a","icon":"🏠"},
+    "house":{"label":"戸建て","kenbiya_path":"pp8","color":"#16a34a","icon":"🏠"},
     "apart":{"label":"中古アパート（一棟）","kenbiya_path":"pp2","color":"#9333ea","icon":"🏘️"},
-    "building":{"label":"中古ビル（一棟）","kenbiya_path":"pp5","color":"#ea580c","icon":"🏗️"},
+    "building":{"label":"中古ビル（一棟）","kenbiya_path":"pp4","color":"#ea580c","icon":"🏗️"},
     "store":{"label":"売り店舗・事務所","kenbiya_path":"pp6","color":"#dc2626","icon":"🏪"},
 }
 
