@@ -125,7 +125,15 @@ def parse_property(text,url,category,ward):
     lsm=re.search(r"土地[：:]?\s*([\d.]+)\s*m[²㎡]",text);land_size=float(lsm.group(1)) if lsm else None
     bm=re.search(r"(\d{4})年(\d{1,2})月",text);built=f"{bm.group(1)}年{bm.group(2)}月" if bm else None
     sm=re.search(r"([\w]+駅)\s*歩?(\d+)分",text);station=f"{sm.group(1)} 徒歩{sm.group(2)}分" if sm else None;walk_min=int(sm.group(2)) if sm else None
-    fm=re.search(r"(\d+)階[／/](\d+)階建",text);floor=f"{fm.group(1)}階／{fm.group(2)}階建" if fm else None
+    # 階数パース（地下対応）
+    bfm=re.search(r"地下(\d+)階[／/](\d+)階建",text)
+    nfm=re.search(r"(?<!地下)(\d+)階[／/](\d+)階建",text)
+    if bfm:
+        floor=f"B{bfm.group(1)}階／{bfm.group(2)}階建"
+    elif nfm:
+        floor=f"{nfm.group(1)}階／{nfm.group(2)}階建"
+    else:
+        floor=None
     stm=re.search(r"(RC造|SRC造|S造|木造|軽量鉄骨造|鉄骨造|W造)",text);structure=stm.group(1) if stm else ""
     um=re.search(r"(\d+)\s*戸",text);total_units=int(um.group(1)) if um else None
     am=re.search(r"東京都([\w]+区[\w\d丁目\-]*)",text);address=f"東京都{am.group(1)}" if am else f"東京都{ward}"
