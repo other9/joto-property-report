@@ -172,7 +172,7 @@ h2{font-size:20px;font-weight:800;margin:24px 0 12px;padding-bottom:8px;border-b
 <div class="dis">⚠ {{ report_date }}時点のWeb公開情報に基づくAI自動分析（GitHub Actions + Claude API）。推定実質利回りは経費率{{ (screening.get('expense_ratio',0.22)*100)|int }}%・取得諸経費{{ (screening.get('acquisition_cost',0.075)*100)|round(1) }}%・指値率3〜15%（物件状態別）で算出。指値は交渉の成否を保証するものではありません。融資適格度はAI推定。購入前に現地確認・重説・融資審査を必ず実施してください。</div>
 </div>
 <script>
-function tog(id){var el=document.getElementById('c-'+id);if(el)el.classList.toggle('open')}
+function tog(id){var el=document.getElementById(id);if(el)el.classList.toggle('open')}
 document.addEventListener('DOMContentLoaded',function(){var f=document.querySelector('.cd');if(f)f.classList.add('open')});
 </script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
