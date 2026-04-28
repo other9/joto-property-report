@@ -1,7 +1,7 @@
-name: 城東エリア不動産レポート自動生成
+name: 店舗物件投資レポート自動生成
 on:
   schedule:
-    - cron: '0 0 * * 1'   # 毎週月曜AM9:00 JST (UTC 0:00)
+    - cron: '0 0 * * 1'
   workflow_dispatch:
 permissions:
   contents: write

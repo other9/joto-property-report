@@ -1,7 +1,7 @@
 import json,os,logging
 from pathlib import Path
 from jinja2 import Environment,FileSystemLoader
-from config import DATA_DIR,OUTPUT_DIR,PROPERTY_CATEGORIES,JOTO_WARDS,BUDGET,RENT_DATA_BY_CATEGORY
+from config import DATA_DIR,OUTPUT_DIR,PROPERTY_CATEGORIES,JOTO_WARDS,BUDGET,RENT_DATA_BY_CATEGORY,MIN_NET_YIELD
 logging.basicConfig(level=logging.INFO,format="%(asctime)s %(levelname)s %(message)s")
 log=logging.getLogger(__name__)
 
@@ -29,17 +29,18 @@ def main():
     with open(ap,"r",encoding="utf-8") as f:data=json.load(f)
     pp=os.path.join(OUTPUT_DIR,"latest_analysis.json")
     changes=detect_changes(data,pp)
-    log.info(f"差分: +{len(changes['new'])} -{len(changes['removed'])} Δ{len(changes['price_changed'])}")
 
     all_markers=[]
     for ck,rs in data["results"].items():
-        cat_info=PROPERTY_CATEGORIES.get(ck,{})
+        ci=PROPERTY_CATEGORIES.get(ck,{})
         for p in rs:
             if p.get("lat") and p.get("lng"):
                 all_markers.append({"lat":p["lat"],"lng":p["lng"],"title":p.get("title",""),
                     "price":p.get("price",0),"yield_pct":p.get("yield_pct"),
-                    "category":ck,"color":cat_info.get("color","#888"),"icon":cat_info.get("icon","📍"),
-                    "url":p.get("url",""),"station":p.get("station",""),"score":p.get("score",0)})
+                    "est_net_yield":p.get("est_net_yield"),"nego_rate_pct":p.get("nego_rate_pct"),
+                    "category":ck,"color":ci.get("color","#888"),"icon":ci.get("icon","📍"),
+                    "url":p.get("url",""),"station":p.get("station",""),"score":p.get("score",0),
+                    "is_first_floor":p.get("is_first_floor",False)})
 
     env=Environment(loader=FileSystemLoader("templates"),autoescape=True)
     tmpl=env.get_template("report.html")
@@ -54,6 +55,9 @@ def main():
         data_summary=data.get("data_summary",{}),
         markers_json=json.dumps(all_markers,ensure_ascii=False),
         editorial=data.get("editorial",""),
+        by_source=data.get("by_source",{}),
+        screening=data.get("screening",{}),
+        min_net_yield=MIN_NET_YIELD,
     )
     with open(os.path.join(OUTPUT_DIR,"index.html"),"w",encoding="utf-8") as f:f.write(html)
     with open(os.path.join(OUTPUT_DIR,f"report_{rd}.html"),"w",encoding="utf-8") as f:f.write(html)
