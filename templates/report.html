@@ -72,7 +72,7 @@ h2{font-size:20px;font-weight:800;margin:24px 0 12px;padding-bottom:8px;border-b
 <div class="screening">
 <strong>🎯 スクリーニング条件</strong><br>
 推定実質利回り <strong>{{ min_net_yield }}%以上</strong>（経費率{{ (screening.get('expense_ratio',0.22)*100)|int }}%・取得諸経費{{ (screening.get('acquisition_cost',0.075)*100)|round(1) }}%・妥当な指値を考慮）<br>
-予算上限 <strong>{{ budget.total_max // 10000 | default(7000) }}万円</strong>（自己資金{{ budget.self_fund_max // 10000 }}万＋融資{{ budget.loan_max // 10000 }}万）／面積20㎡以上／1階路面店を高評価
+予算上限 <strong>{{ budget.total_max // 10000 | default(7000) }}万円</strong>（自己資金{{ budget.self_fund_max // 10000 }}万＋融資{{ budget.loan_max // 10000 }}万）／20㎡以上・徒歩15分以内／1階路面店を高評価
 </div>
 
 <div class="bx">
@@ -110,7 +110,7 @@ h2{font-size:20px;font-weight:800;margin:24px 0 12px;padding-bottom:8px;border-b
 {% for ward, vals in rbc.data.items() %}<tr><td>{{ ward }}</td>{% for col in rbc.columns %}<td>{{ vals.get(col, '-') }}</td>{% endfor %}</tr>{% endfor %}
 </table></div></div>{% endfor %}
 
-<h2>🏪 オススメ物件 TOP10</h2>
+<h2>🏪 オススメ物件 TOP15</h2>
 
 {% set rs = results.get('store',[]) %}
 {% if rs|length == 0 %}

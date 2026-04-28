@@ -9,7 +9,7 @@ from pathlib import Path
 import requests
 from bs4 import BeautifulSoup
 from config import (JOTO_WARDS,PROPERTY_CATEGORIES,BUDGET,kenbiya_urls,suumo_rent_urls,
-                    DATA_DIR,RENT_DATA_BY_CATEGORY,MIN_SIZE_SQM,
+                    DATA_DIR,RENT_DATA_BY_CATEGORY,MIN_SIZE_SQM,MAX_WALK_MIN,
                     TOTAL_EXPENSE_RATIO,ACQUISITION_COST_RATIO,NEGOTIATION_RATES,MIN_NET_YIELD)
 
 logging.basicConfig(level=logging.INFO,format="%(asctime)s %(levelname)s %(message)s")
@@ -117,6 +117,8 @@ def scrape_list_page(url,category,ward):
         prop=parse_property(text,full_url,category,ward,"健美家／HOMES")
         if prop:
             if prop.get("size") and prop["size"]<MIN_SIZE_SQM:continue
+            # 駅徒歩フィルタ
+            if prop.get("walk_min") and prop["walk_min"]>MAX_WALK_MIN:continue
             # 実質利回りフィルタ
             if prop.get("est_net_yield") is not None and prop["est_net_yield"]<MIN_NET_YIELD:
                 continue
@@ -214,6 +216,8 @@ def scrape_goo():
         prop=parse_property(text,full,"store",ward,"goo不動産")
         if prop:
             if prop.get("size") and prop["size"]<MIN_SIZE_SQM:continue
+            # 駅徒歩フィルタ
+            if prop.get("walk_min") and prop["walk_min"]>MAX_WALK_MIN:continue
             if prop.get("est_net_yield") is not None and prop["est_net_yield"]<MIN_NET_YIELD:continue
             props.append(prop)
     log.info(f"  goo: {len(props)} passed (net≥{MIN_NET_YIELD}%)")
