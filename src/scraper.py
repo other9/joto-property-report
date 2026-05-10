@@ -2,13 +2,17 @@
 
 追加取得: 新着/値下げフラグ、空室フラグ → 指値率推定に使用
 事前計算: 推定指値率、推定実質利回り → 5%未満を除外
+
+Tier 1 リファクタ:
+- scrape_rent → get_rent_data に改名（SUUMOダミーループ撤去、毎回約8秒短縮）
+- 2026 ハードコード → datetime.now(JST).year に動的化
 """
 import json,os,re,time,logging,math
 from datetime import datetime,timezone,timedelta
 from pathlib import Path
 import requests
 from bs4 import BeautifulSoup
-from config import (JOTO_WARDS,PROPERTY_CATEGORIES,BUDGET,kenbiya_urls,suumo_rent_urls,
+from config import (JOTO_WARDS,PROPERTY_CATEGORIES,BUDGET,kenbiya_urls,
                     DATA_DIR,RENT_DATA_BY_CATEGORY,MIN_SIZE_SQM,MAX_WALK_MIN,
                     TOTAL_EXPENSE_RATIO,ACQUISITION_COST_RATIO,NEGOTIATION_RATES,MIN_NET_YIELD)
 
@@ -40,7 +44,8 @@ def parse_price(text):
 # ═══════════════════════════════════════
 def estimate_negotiation_rate(is_new, is_reduced, is_vacant, built_year):
     """物件の状態から推定指値率を算出"""
-    age = 2026 - built_year if built_year else 30  # 築年数不明なら30年と仮定
+    current_year = datetime.now(JST).year  # Tier1: 2026ハードコード→動的化
+    age = current_year - built_year if built_year else 30  # 築年数不明なら30年と仮定
 
     if is_new:
         return NEGOTIATION_RATES["new_listing"]
@@ -244,13 +249,13 @@ def get_fallback_rent(ward):
     store=RENT_DATA_BY_CATEGORY["store"]["data"].get(ward,{})
     return {"store_tsubo":store.get("坪単価",1.5)}
 
-def scrape_rent():
-    rent={}
-    for item in suumo_rent_urls():
-        w=item["ward"]
-        rent[w]=get_fallback_rent(w)
-        time.sleep(DELAY)
-    return rent
+def get_rent_data():
+    """店舗賃料相場を返す（config.pyのRENT_DATA_BY_CATEGORYから取得）
+
+    Tier 1: 旧scrape_rent()はSUUMOダミーループだったので撤去。
+    実データはconfig.pyの静的テーブルから直接返す。
+    """
+    return {w: get_fallback_rent(w) for w in JOTO_WARDS.values()}
 
 def main():
     Path(DATA_DIR).mkdir(exist_ok=True);all_props=[]
@@ -263,7 +268,7 @@ def main():
     log.info("=== 重複排除 ===")
     uniq=dedup(all_props)
     log.info("=== 賃料相場 ===")
-    rent=scrape_rent()
+    rent=get_rent_data()
     wc={w:{"store":sum(1 for p in uniq if p["ward"]==w)} for w in JOTO_WARDS.values()}
     # 統計
     total_scraped=len(uniq)

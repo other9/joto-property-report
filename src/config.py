@@ -8,7 +8,7 @@ JOTO_WARDS = {
 }
 
 PROPERTY_CATEGORIES = {
-    "store":{"label":"売り店舗・事務所","kenbiya_path":"pp6","color":"#dc2626","icon":"🏪"},
+    "store":{"label":"売り店舗・事務所","kenbiya_path":"pp6","color":"#1e40af","icon":"🏪"},
 }
 
 def kenbiya_urls():
@@ -19,11 +19,8 @@ def kenbiya_urls():
                      "label":f"{wn} 売り店舗・事務所"})
     return urls
 
-def suumo_rent_urls():
-    base="https://suumo.jp/chintai/soba/tokyo/sc_"
-    codes={"台東区":"taito","墨田区":"sumida","江東区":"koto","荒川区":"arakawa",
-           "足立区":"adachi","文京区":"bunkyo","大田区":"ota","江戸川区":"edogawa"}
-    return [{"ward":w,"url":f"{base}{c}/"} for w,c in codes.items()]
+# NOTE: suumo_rent_urls()はTier1で削除（実際にはアクセスせずfallback固定値を返すダミーループだった）
+# 賃料相場は RENT_DATA_BY_CATEGORY から直接参照する
 
 MIN_SIZE_SQM = 20
 MAX_WALK_MIN = 15  # 駅徒歩15分以内
@@ -39,8 +36,12 @@ SCORING_WEIGHTS={
     "capital_eff":15,    # 資金効率
 }
 
+# 表示・分析対象件数（最大50件まで全表示）
+MAX_DISPLAY = 50
+MAX_CLAUDE_INPUT = 60  # Claudeに送る候補数の上限（dedup後MAX_DISPLAYに削る）
+
 CLAUDE_MODEL="claude-sonnet-4-6"
-CLAUDE_MAX_TOKENS=12000
+CLAUDE_MAX_TOKENS=24000  # 50件JSON出力に対応するため12000→24000に増額
 OUTPUT_DIR="output"
 DATA_DIR="data"
 
@@ -75,7 +76,8 @@ NEGOTIATION_RATES = {
 # 実質利回り最低ライン
 MIN_NET_YIELD = 5.0
 
-# ソース評価ボーナス（健美家以外を高く評価）
+# ソース評価ボーナス（Tier 2でPython側実装予定。現時点は未使用）
+# Tier 1ではanalyzer.pyのimportから外している
 SOURCE_BONUS = {
     "健美家／HOMES": 0,    # 基準（投資家向け高値付けが多い）
     "goo不動産":     5,    # +5点ボーナス

@@ -5,39 +5,40 @@
 <title>店舗物件投資レポート - {{ report_date }}</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <style>
-:root{--bg:#f4f1eb;--card:#fff;--card2:#faf8f4;--dk:#1a1a1a;--md:#444;--lt:#888;--bd:#ddd6c8;--r:#c0392b;--o:#d4782b;--g:#1a8a3e;--bl:#1d6fa5;--radius:10px;--shadow:0 2px 8px rgba(0,0,0,.06)}
+:root{--bg:#eef2f7;--card:#fff;--card2:#f1f5f9;--dk:#0f172a;--md:#475569;--lt:#94a3b8;--bd:#cbd5e1;--r:#1e40af;--o:#0891b2;--g:#059669;--bl:#0369a1;--radius:10px;--shadow:0 2px 8px rgba(15,23,42,.08)}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,'Hiragino Sans','Noto Sans JP',sans-serif;background:var(--bg);color:var(--dk);line-height:1.75;font-size:15px}
 .c{max-width:880px;margin:0 auto;padding:20px}
-header{text-align:center;padding:32px 0 20px}h1{font-size:26px;font-weight:800}
+header{text-align:center;padding:32px 0 20px}h1{font-size:26px;font-weight:800;color:var(--dk)}
 .sub{font-size:14px;color:var(--lt);margin-top:6px}.date{display:inline-block;margin-top:8px;padding:4px 16px;background:var(--r);color:#fff;border-radius:20px;font-size:13px;font-weight:700}
-.editorial{background:linear-gradient(135deg,#2a2318,#3d3528);border-radius:var(--radius);padding:24px;margin-bottom:20px;color:#f0ebe0;font-size:15px;line-height:1.9}.editorial .hd{font-size:18px;font-weight:800;margin-bottom:10px;color:#fff}
+.editorial{background:linear-gradient(135deg,#0f172a,#1e293b);border-radius:var(--radius);padding:24px;margin-bottom:20px;color:#e2e8f0;font-size:15px;line-height:1.9}.editorial .hd{font-size:18px;font-weight:800;margin-bottom:10px;color:#fff}
 .bx{background:var(--card);border:1px solid var(--bd);border-radius:var(--radius);padding:16px 20px;margin-bottom:16px;font-size:14px;line-height:1.8;color:var(--md);box-shadow:var(--shadow)}.bx strong{color:var(--dk);font-size:15px}
-.al{background:#e8f5e9;border-color:#a5d6a7;color:#2e7d32}
+.al{background:#d1fae5;border-color:#6ee7b7;color:#065f46}
 .mkt{background:var(--card);border:1px solid var(--bd);border-radius:var(--radius);padding:20px 24px;margin-bottom:16px;font-size:15px;line-height:1.9;color:var(--md);box-shadow:var(--shadow)}
-.screening{background:#fff3e0;border:1px solid #ffcc80;border-radius:var(--radius);padding:16px 20px;margin-bottom:16px;font-size:14px;line-height:1.8;color:#e65100}
-.screening strong{color:#bf360c}
-h2{font-size:20px;font-weight:800;margin:24px 0 12px;padding-bottom:8px;border-bottom:3px solid var(--r)}
+.screening{background:#dbeafe;border:1px solid #93c5fd;border-radius:var(--radius);padding:16px 20px;margin-bottom:16px;font-size:14px;line-height:1.8;color:#1e3a8a}
+.screening strong{color:#1e40af}
+h2{font-size:20px;font-weight:800;margin:24px 0 12px;padding-bottom:8px;border-bottom:3px solid var(--r);color:var(--dk)}
+h2 .cnt{font-size:14px;color:var(--lt);font-weight:600;margin-left:8px}
 #map{height:450px;border-radius:var(--radius);border:2px solid var(--bd);margin-bottom:16px;box-shadow:var(--shadow)}
-.map-legend{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px;font-size:14px;font-weight:600}
-.map-legend span{display:flex;align-items:center;gap:5px}.map-legend .dot{width:14px;height:14px;border-radius:50%;display:inline-block;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.map-legend{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px;font-size:14px;font-weight:600;color:var(--md)}
+.map-legend span{display:flex;align-items:center;gap:5px}.map-legend .dot{width:14px;height:14px;border-radius:50%;display:inline-block;border:2px solid #fff;box-shadow:0 1px 3px rgba(15,23,42,.2)}
 .rent-section{background:var(--card);border:1px solid var(--bd);border-radius:var(--radius);padding:14px 20px;margin-bottom:10px;cursor:pointer;box-shadow:var(--shadow)}
 .rent-title{font-size:15px;font-weight:700;color:var(--dk);display:flex;justify-content:space-between;align-items:center}
 .rent-body{display:none;margin-top:10px}.rent-section.open .rent-body{display:block}
 .rt{width:100%;border-collapse:collapse;font-size:14px;margin:4px 0}.rt th,.rt td{padding:8px 10px;border:1px solid var(--bd);text-align:center}.rt th{background:var(--dk);color:#fff;font-size:13px}.rt td{font-size:14px}.rt tr:nth-child(even){background:var(--card2)}.rt td:first-child{font-weight:700;text-align:left}
-.cd{background:var(--card);border:2px solid #e8e2d8;border-radius:var(--radius);margin-bottom:14px;overflow:hidden;box-shadow:var(--shadow)}.cd.ob{opacity:.88;background:#fdf8f0}
-.ch{padding:18px 22px;cursor:pointer}.ch:hover{background:#faf7f2}
+.cd{background:var(--card);border:2px solid var(--bd);border-radius:var(--radius);margin-bottom:14px;overflow:hidden;box-shadow:var(--shadow)}.cd.ob{opacity:.88;background:#f8fafc}
+.ch{padding:18px 22px;cursor:pointer}.ch:hover{background:#f8fafc}
 .tr{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap}
 .rk{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;color:#fff;font-size:15px;font-weight:800;font-family:Georgia,serif;flex-shrink:0}
 .rk1,.rk2,.rk3{background:var(--r)}.rk4,.rk5{background:var(--o)}.rkx{background:var(--lt)}
-.tt{font-weight:800;font-size:16px;flex:1;line-height:1.4}
+.tt{font-weight:800;font-size:16px;flex:1;line-height:1.4;color:var(--dk)}
 .bg{padding:3px 10px;border-radius:12px;font-size:11px;font-weight:700;white-space:nowrap}
-.bgn{background:#e8f5e9;color:var(--g);border:1px solid #a5d6a7}.bgo{background:#fce4ec;color:#c62828;border:1px solid #ef9a9a}
+.bgn{background:#d1fae5;color:var(--g);border:1px solid #6ee7b7}.bgo{background:#fee2e2;color:#991b1b;border:1px solid #fca5a5}
 .bg-src{font-size:12px;padding:2px 8px;border-radius:10px;font-weight:700}
-.bg-kenbiya{background:#fff3e0;color:#e65100;border:1px solid #ffcc80}
-.bg-other{background:#e3f2fd;color:#1565c0;border:1px solid #90caf9}
-.bg-1f{background:#e8f5e9;color:#2e7d32;border:1px solid #a5d6a7;font-size:11px;padding:2px 8px;border-radius:10px;font-weight:700}
-.mr{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:14px;color:#666;padding-left:42px;margin-bottom:8px}
+.bg-kenbiya{background:var(--card2);color:var(--md);border:1px solid var(--bd)}
+.bg-other{background:#dbeafe;color:#1e40af;border:1px solid #93c5fd}
+.bg-1f{background:#d1fae5;color:#065f46;border:1px solid #6ee7b7;font-size:11px;padding:2px 8px;border-radius:10px;font-weight:700}
+.mr{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:14px;color:var(--md);padding-left:42px;margin-bottom:8px}
 .pr{display:flex;flex-wrap:wrap;gap:4px 18px;align-items:baseline;padding-left:42px}
 .pv{font-family:Georgia,serif;font-weight:800;font-size:26px;color:var(--r)}.pv .u{font-size:15px}
 .yld-row{display:flex;flex-wrap:wrap;gap:6px 16px;padding-left:42px;margin-top:6px;align-items:baseline}
@@ -45,21 +46,21 @@ h2{font-size:20px;font-weight:800;margin:24px 0 12px;padding-bottom:8px;border-b
 .yld-net{font-size:18px;color:var(--g);font-weight:800}
 .yld-nego{font-size:13px;color:var(--o);font-weight:600}
 .sb{display:flex;align-items:center;gap:8px;padding-left:42px;margin-top:8px}
-.st{flex:1;height:7px;background:#e8e0d4;border-radius:4px;overflow:hidden}.sf{height:100%;border-radius:4px}
+.st{flex:1;height:7px;background:var(--card2);border-radius:4px;overflow:hidden}.sf{height:100%;border-radius:4px}
 .sn{font-weight:800;font-size:20px;font-family:Georgia,serif;min-width:28px}
-.dt{padding:0 22px 22px;border-top:1px solid #e8e0d4;display:none}.cd.open .dt{display:block}
+.dt{padding:0 22px 22px;border-top:1px solid var(--bd);display:none}.cd.open .dt{display:block}
 .dg{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0}
 .dl{font-size:12px;color:var(--lt);font-weight:700;letter-spacing:1px;margin-bottom:4px}.dv{font-size:15px;font-weight:600;line-height:1.6}
 .er{font-size:20px;color:var(--g);font-weight:800}
 .at{font-size:14px;line-height:1.8;color:var(--md);margin-bottom:14px}
-.pc{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}.pc h4{font-size:13px;font-weight:700;margin-bottom:4px}.pc .p{color:var(--g)}.pc .c2{color:var(--r)}.pc li{font-size:14px;color:var(--md);margin-bottom:3px;list-style:none}
-.lb{padding:12px 16px;border-radius:8px;margin-bottom:12px;font-size:14px;line-height:1.7;color:var(--md)}.la{background:#e8f5e9;border:1px solid #a5d6a7}.lbb{background:#fff3e0;border:1px solid #ffcc80}.lc{background:#fce4ec;border:1px solid #ef9a9a}.lb strong{font-size:15px}
+.pc{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}.pc h4{font-size:13px;font-weight:700;margin-bottom:4px}.pc .p{color:var(--g)}.pc .c2{color:#991b1b}.pc li{font-size:14px;color:var(--md);margin-bottom:3px;list-style:none}
+.lb{padding:12px 16px;border-radius:8px;margin-bottom:12px;font-size:14px;line-height:1.7;color:var(--md)}.la{background:#d1fae5;border:1px solid #6ee7b7}.lbb{background:#cffafe;border:1px solid #67e8f9}.lc{background:#fee2e2;border:1px solid #fca5a5}.lb strong{font-size:15px}
 .fb{padding:10px 14px;background:var(--card2);border:1px solid var(--bd);border-radius:8px;font-size:14px;color:var(--md);margin-bottom:14px}
-.lnk{display:inline-block;padding:8px 20px;background:var(--r);color:#fff;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none}.lnk:hover{background:#a93226}
+.lnk{display:inline-block;padding:8px 20px;background:var(--r);color:#fff;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none}.lnk:hover{background:#1e3a8a}
 .ls{background:var(--card);border:1px solid var(--bd);border-radius:var(--radius);padding:14px 20px;margin-top:20px;box-shadow:var(--shadow)}
-.lsh{cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:16px}
-.li{display:block;padding:10px 14px;margin-bottom:6px;background:var(--card2);border-radius:8px;text-decoration:none;border:1px solid var(--bd);font-size:14px;font-weight:600}.li:hover{background:#f0ebe0}
-.dis{margin-top:20px;padding:14px 18px;background:#eae5db;border-radius:var(--radius);font-size:13px;color:var(--lt);line-height:1.7}
+.lsh{cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:16px;color:var(--dk)}
+.li{display:block;padding:10px 14px;margin-bottom:6px;background:var(--card2);border-radius:8px;text-decoration:none;border:1px solid var(--bd);font-size:14px;font-weight:600}.li:hover{background:#e2e8f0}
+.dis{margin-top:20px;padding:14px 18px;background:var(--card2);border:1px solid var(--bd);border-radius:var(--radius);font-size:13px;color:var(--lt);line-height:1.7}
 @media(max-width:600px){.c{padding:12px}h1{font-size:20px}.pv{font-size:22px}.ch{padding:14px 16px}.dt{padding:0 16px 16px}.dg,.pc{grid-template-columns:1fr}}
 </style></head><body>
 <div class="c">
@@ -72,7 +73,7 @@ h2{font-size:20px;font-weight:800;margin:24px 0 12px;padding-bottom:8px;border-b
 <div class="screening">
 <strong>🎯 スクリーニング条件</strong><br>
 推定実質利回り <strong>{{ min_net_yield }}%以上</strong>（経費率{{ (screening.get('expense_ratio',0.22)*100)|int }}%・取得諸経費{{ (screening.get('acquisition_cost',0.075)*100)|round(1) }}%・妥当な指値を考慮）<br>
-予算上限 <strong>{{ budget.total_max // 10000 | default(7000) }}万円</strong>（自己資金{{ budget.self_fund_max // 10000 }}万＋融資{{ budget.loan_max // 10000 }}万）／20㎡以上・徒歩15分以内／1階路面店を高評価
+予算上限 <strong>{{ budget.total_max // 10000 | default(7000) }}万円</strong>（自己資金{{ budget.self_fund_max // 10000 }}万＋融資{{ budget.loan_max // 10000 }}万）／20㎡以上・徒歩15分以内／1階路面店を高評価／最大{{ screening.get('max_display',50) }}件表示
 </div>
 
 <div class="bx">
@@ -101,7 +102,7 @@ h2{font-size:20px;font-weight:800;margin:24px 0 12px;padding-bottom:8px;border-b
 
 <h2>📍 物件マップ</h2>
 <div id="map"></div>
-<div class="map-legend"><span><span class="dot" style="background:#dc2626"></span>🏪 店舗</span><span><span class="dot" style="background:#1a8a3e"></span>1階路面店</span></div>
+<div class="map-legend"><span><span class="dot" style="background:#1e40af"></span>🏪 店舗</span><span><span class="dot" style="background:#059669"></span>1階路面店</span></div>
 
 {% for ck, rbc in rent_by_category.items() %}
 <div class="rent-section" onclick="this.classList.toggle('open')">
@@ -110,9 +111,9 @@ h2{font-size:20px;font-weight:800;margin:24px 0 12px;padding-bottom:8px;border-b
 {% for ward, vals in rbc.data.items() %}<tr><td>{{ ward }}</td>{% for col in rbc.columns %}<td>{{ vals.get(col, '-') }}</td>{% endfor %}</tr>{% endfor %}
 </table></div></div>{% endfor %}
 
-<h2>🏪 オススメ物件 TOP15</h2>
-
 {% set rs = results.get('store',[]) %}
+<h2>🏪 オススメ物件 一覧<span class="cnt">（{{ rs|length }}件 / 最大{{ screening.get('max_display',50) }}件）</span></h2>
+
 {% if rs|length == 0 %}
 <div class="bx" style="text-align:center;padding:30px;font-size:16px;color:var(--lt)">推定実質利回り{{ min_net_yield }}%以上の物件が見つかりませんでした。</div>
 {% endif %}
@@ -134,14 +135,14 @@ h2{font-size:20px;font-weight:800;margin:24px 0 12px;padding-bottom:8px;border-b
 {% if p.get('floor') %}<span>🏢 {{ p.floor }}</span>{% endif %}
 </div>
 <div class="pr">
-<span class="pv" {% if p.get('over_budget') %}style="color:#b08050"{% endif %}>{% set pr=p.price|default(0)|int %}{% if pr >= 10000 %}{{ pr // 10000 }}億{% if pr % 10000 > 0 %}{{ "{:,}".format(pr % 10000) }}万{% endif %}<span class="u">円</span>{% else %}{{ "{:,}".format(pr) }}<span class="u">万円</span>{% endif %}</span>
+<span class="pv" {% if p.get('over_budget') %}style="color:#94a3b8"{% endif %}>{% set pr=p.price|default(0)|int %}{% if pr >= 10000 %}{{ pr // 10000 }}億{% if pr % 10000 > 0 %}{{ "{:,}".format(pr % 10000) }}万{% endif %}<span class="u">円</span>{% else %}{{ "{:,}".format(pr) }}<span class="u">万円</span>{% endif %}</span>
 </div>
 <div class="yld-row">
 {% if p.get('yield_pct') %}<span class="yld-gross">表面 {{ p.yield_pct }}%</span>{% endif %}
 {% if p.get('est_net_yield') %}<span class="yld-net">実質 {{ p.est_net_yield }}%</span>{% endif %}
 {% if p.get('nego_rate_pct') %}<span class="yld-nego">指値 ▼{{ p.nego_rate_pct }}%</span>{% endif %}
 </div>
-<div class="sb"><div class="st"><div class="sf" style="width:{{ p.score|default(0) }}%;background:{{ '#c0392b' if p.score|default(0)>=90 else '#d4782b' if p.score|default(0)>=80 else '#888' }}"></div></div><span class="sn" style="color:{{ '#c0392b' if p.score|default(0)>=90 else '#d4782b' if p.score|default(0)>=80 else '#888' }}">{{ p.score|default('?') }}</span></div>
+<div class="sb"><div class="st"><div class="sf" style="width:{{ p.score|default(0) }}%;background:{{ '#1e40af' if p.score|default(0)>=90 else '#0891b2' if p.score|default(0)>=80 else '#94a3b8' }}"></div></div><span class="sn" style="color:{{ '#1e40af' if p.score|default(0)>=90 else '#0891b2' if p.score|default(0)>=80 else '#94a3b8' }}">{{ p.score|default('?') }}</span></div>
 </div>
 <div class="dt">
 <div class="dg">
@@ -156,17 +157,17 @@ h2{font-size:20px;font-weight:800;margin:24px 0 12px;padding-bottom:8px;border-b
 <div><h4 class="c2">△ リスク</h4>{% for i in p.get('cons',[]) %}<li>{{ i }}</li>{% endfor %}</div>
 </div>
 {% if p.get('loan_analysis') %}{% set la=p.loan_analysis %}<div class="lb {{ 'la' if la.feasibility|default('')=='A' else 'lbb' if la.feasibility|default('')=='B' else 'lc' }}"><strong>融資: {{ la.feasibility|default('?') }}</strong><br>{{ la.reason|default('') }}{% if la.get('recommended_plan') %}{% set rp=la.recommended_plan %}<br>自己資金 {{ rp.self_fund|default(0) }}万／融資 {{ rp.loan|default(0) }}万／月返済 {{ rp.monthly_repay|default(0) }}万／DSCR {{ rp.dscr|default(0) }}倍{% endif %}</div>{% endif %}
-<div class="fb">{% if p.get('loan_analysis',{}).get('recommended_plan') %}{% set rp=p.loan_analysis.recommended_plan %}<strong>資金計画:</strong> 自己{{ "{:,}".format(rp.self_fund|default(0)|int) }}万／融資{{ "{:,}".format(rp.loan|default(0)|int) }}万／合計{% set pr2=p.price|default(0)|int %}{% if pr2 >= 10000 %} {{ pr2 // 10000 }}億{% if pr2 % 10000 > 0 %}{{ "{:,}".format(pr2 % 10000) }}万{% endif %}{% else %} {{ "{:,}".format(pr2) }}万{% endif %}{% if p.get('over_budget') %}<span style="color:var(--r);font-weight:700"> ※予算超過</span>{% endif %}{% endif %}</div>
+<div class="fb">{% if p.get('loan_analysis',{}).get('recommended_plan') %}{% set rp=p.loan_analysis.recommended_plan %}<strong>資金計画:</strong> 自己{{ "{:,}".format(rp.self_fund|default(0)|int) }}万／融資{{ "{:,}".format(rp.loan|default(0)|int) }}万／合計{% set pr2=p.price|default(0)|int %}{% if pr2 >= 10000 %} {{ pr2 // 10000 }}億{% if pr2 % 10000 > 0 %}{{ "{:,}".format(pr2 % 10000) }}万{% endif %}{% else %} {{ "{:,}".format(pr2) }}万{% endif %}{% if p.get('over_budget') %}<span style="color:#991b1b;font-weight:700"> ※予算超過</span>{% endif %}{% endif %}</div>
 <a href="{{ p.url }}" target="_blank" class="lnk">{{ p.get('source','') }}で物件詳細 →</a>
 </div></div>
 {% endfor %}
 
 <div class="ls"><div class="lsh" onclick="document.getElementById('lb').style.display=document.getElementById('lb').style.display==='none'?'block':'none'"><span>🔗 検索リンク集</span><span style="font-size:18px;color:var(--lt)">▼</span></div>
 <div id="lb" style="display:none;margin-top:12px">
-{% for wk,wn in wards.items() %}<a href="https://www.kenbiya.com/pp6/s/tokyo/{{ wk }}/" target="_blank" class="li" style="color:#c47a3a">🏪 {{ wn }} 健美家</a>{% endfor %}
+{% for wk,wn in wards.items() %}<a href="https://www.kenbiya.com/pp6/s/tokyo/{{ wk }}/" target="_blank" class="li" style="color:var(--md)">🏪 {{ wn }} 健美家</a>{% endfor %}
 <a href="https://house.goo.ne.jp/toushi/office/area_tokyo.html" target="_blank" class="li" style="color:var(--bl)">🌐 goo不動産</a>
-<a href="https://www.athome.co.jp/buy_store/tokyo/" target="_blank" class="li" style="color:#3a7ac4">🌐 アットホーム</a>
-<a href="https://www.rakumachi.jp/syuuekibukken/area/prefecture/dim2002/" target="_blank" class="li" style="color:#5a9a3a">🌐 楽待</a>
+<a href="https://www.athome.co.jp/buy_store/tokyo/" target="_blank" class="li" style="color:var(--bl)">🌐 アットホーム</a>
+<a href="https://www.rakumachi.jp/syuuekibukken/area/prefecture/dim2002/" target="_blank" class="li" style="color:var(--g)">🌐 楽待</a>
 </div></div>
 
 <div class="dis">⚠ {{ report_date }}時点のWeb公開情報に基づくAI自動分析（GitHub Actions + Claude API）。推定実質利回りは経費率{{ (screening.get('expense_ratio',0.22)*100)|int }}%・取得諸経費{{ (screening.get('acquisition_cost',0.075)*100)|round(1) }}%・指値率3〜15%（物件状態別）で算出。指値は交渉の成否を保証するものではありません。融資適格度はAI推定。購入前に現地確認・重説・融資審査を必ず実施してください。</div>
@@ -183,19 +184,19 @@ document.addEventListener('DOMContentLoaded',function(){
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap',maxZoom:18}).addTo(map);
     var markers={{ markers_json | safe }};
     markers.forEach(function(m){
-      var c=m.is_first_floor?'#1a8a3e':'#dc2626';
+      var c=m.is_first_floor?'#059669':'#1e40af';
       var icon=L.divIcon({className:'',
-        html:'<div style="background:'+c+';color:#fff;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;border:2px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.3)">'+(m.is_first_floor?'🏪':'🏬')+'</div>',
+        html:'<div style="background:'+c+';color:#fff;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;border:2px solid #fff;box-shadow:0 2px 8px rgba(15,23,42,.3)">'+(m.is_first_floor?'🏪':'🏬')+'</div>',
         iconSize:[32,32],iconAnchor:[16,16],popupAnchor:[0,-18]
       });
       L.marker([m.lat,m.lng],{icon:icon}).addTo(map).bindPopup(
         '<div style="font-size:14px;min-width:240px;line-height:1.6">'+
         '<strong style="font-size:15px">'+(m.title||'').substring(0,40)+'</strong>'+
-        (m.is_first_floor?' <span style="background:#e8f5e9;color:#2e7d32;padding:1px 6px;border-radius:8px;font-size:11px;font-weight:700">1階</span>':'')+
+        (m.is_first_floor?' <span style="background:#d1fae5;color:#065f46;padding:1px 6px;border-radius:8px;font-size:11px;font-weight:700">1階</span>':'')+
         '<br><span style="font-size:20px;font-weight:800;color:'+c+'">'+(m.price||0).toLocaleString()+'万円</span>'+
-        (m.yield_pct?' <span style="color:#888">表面'+m.yield_pct+'%</span>':'')+
-        (m.est_net_yield?' <span style="color:#1a8a3e;font-weight:700">実質'+m.est_net_yield+'%</span>':'')+
-        (m.nego_rate_pct?' <span style="color:#d4782b">指値▼'+m.nego_rate_pct+'%</span>':'')+
+        (m.yield_pct?' <span style="color:#94a3b8">表面'+m.yield_pct+'%</span>':'')+
+        (m.est_net_yield?' <span style="color:#059669;font-weight:700">実質'+m.est_net_yield+'%</span>':'')+
+        (m.nego_rate_pct?' <span style="color:#0891b2">指値▼'+m.nego_rate_pct+'%</span>':'')+
         (m.station?'<br>🚉 '+m.station:'')+
         '<br>スコア: <strong>'+(m.score||'?')+'</strong>/100'+
         '<br><a href="'+m.url+'" target="_blank" style="color:'+c+';font-weight:700">物件詳細 →</a></div>'
