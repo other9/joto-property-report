@@ -4,6 +4,10 @@ Tier 1 リファクタ:
 - SOURCE_BONUSの未使用importを削除（Tier 2でPython側実装予定）
 - 表示・分析対象を15件→最大50件に拡大
 - 候補送信を30件→60件に拡大
+
+Tier 1.5 修正:
+- analyze() を client.messages.stream() に変更（max_tokens大時のSDK 10分制限回避）
+- CLAUDE_MAX_TOKENS=40000 に増額（50件分の出力を確保）
 """
 import json,os,re,logging
 import anthropic
@@ -120,6 +124,11 @@ def dedup_results(results):
     return deduped
 
 def analyze(client,properties,rent_data):
+    """物件分析（ストリーミング呼び出し）
+
+    Tier1.5: max_tokens=40000のSDK 10分制限回避のため client.messages.stream() に変更。
+    cost計算は最終 usage から取得。
+    """
     if not properties:return []
     bmax=BUDGET["total_max"]//10000
     in_b=[p for p in properties if p["price"]<=bmax]
@@ -127,14 +136,23 @@ def analyze(client,properties,rent_data):
     sel=(in_b+over[:max(MAX_DISPLAY-len(in_b),5)])[:MAX_CLAUDE_INPUT]
     log.info(f"  store: {len(sel)}件送信（予算内{len(in_b)}件・最大表示{MAX_DISPLAY}件）")
     try:
-        msg=client.messages.create(model=CLAUDE_MODEL,max_tokens=CLAUDE_MAX_TOKENS,
-            messages=[{"role":"user","content":build_prompt(sel,rent_data)}])
-        raw=msg.content[0].text
-        log.info(f"  store: {len(raw)} chars, input_tokens={msg.usage.input_tokens}, output_tokens={msg.usage.output_tokens}")
-        # APIコスト算定
-        cost_input=msg.usage.input_tokens*3/1_000_000  # $3/MTok
-        cost_output=msg.usage.output_tokens*15/1_000_000  # $15/MTok
-        log.info(f"  store API cost: ${cost_input+cost_output:.4f} (in:{msg.usage.input_tokens} out:{msg.usage.output_tokens})")
+        # ストリーミング呼び出し（max_tokens大の長時間処理に必須）
+        raw_chunks=[]
+        with client.messages.stream(
+            model=CLAUDE_MODEL,
+            max_tokens=CLAUDE_MAX_TOKENS,
+            messages=[{"role":"user","content":build_prompt(sel,rent_data)}]
+        ) as stream:
+            for text in stream.text_stream:
+                raw_chunks.append(text)
+            final_msg=stream.get_final_message()
+        raw="".join(raw_chunks)
+        usage=final_msg.usage
+
+        log.info(f"  store: {len(raw)} chars, input_tokens={usage.input_tokens}, output_tokens={usage.output_tokens}")
+        cost_input=usage.input_tokens*3/1_000_000
+        cost_output=usage.output_tokens*15/1_000_000
+        log.info(f"  store API cost: ${cost_input+cost_output:.4f} (in:{usage.input_tokens} out:{usage.output_tokens})")
 
         results=extract_json(raw)
         if results is None:
@@ -155,6 +173,7 @@ def analyze(client,properties,rent_data):
         log.error(f"  store: {e}");return []
 
 def generate_text(client,prompt,label):
+    """市況概説・総括コメント生成（max_tokens=1000なので非ストリーミングのまま）"""
     log.info(f"=== {label} ===")
     try:
         msg=client.messages.create(model=CLAUDE_MODEL,max_tokens=1000,
@@ -178,7 +197,7 @@ def main():
     total_cost=0.0
     log.info("=== API呼び出し開始 ===")
 
-    # 分析（1回のAPI呼び出し）
+    # 分析（1回のAPI呼び出し・ストリーミング）
     results={"store":analyze(client,data["properties"],data["rent_data"])}
 
     # データサマリー

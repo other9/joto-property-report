@@ -41,7 +41,10 @@ MAX_DISPLAY = 50
 MAX_CLAUDE_INPUT = 60  # Claudeに送る候補数の上限（dedup後MAX_DISPLAYに削る）
 
 CLAUDE_MODEL="claude-sonnet-4-6"
-CLAUDE_MAX_TOKENS=24000  # 50件JSON出力に対応するため12000→24000に増額
+# Tier1.5: 50件×平均780トークン≒39000を確保。
+# 12000以下ならSDK非ストリーミング可だが、本パッチで analyze() はストリーミング化済。
+# 上限を上げてもコストは生成トークンに対する従量課金なので実コストは変わらない。
+CLAUDE_MAX_TOKENS=40000
 OUTPUT_DIR="output"
 DATA_DIR="data"
 
