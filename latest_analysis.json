@@ -25,110 +25,45 @@
         "nego_rate": 0.05,
         "nego_rate_pct": 5.0,
         "est_net_yield": 7.64,
-        "lat": 35.6975,
-        "lng": 139.8145,
+        "lat": 35.6966,
+        "lng": 139.8172,
         "geo_source": "claude",
         "scraped_at": "2026-05-11",
         "rank": 1,
         "score": 88,
         "score_breakdown": {
-          "location": 22,
+          "location": 21,
           "net_yield": 25,
           "tenant_demand": 18,
-          "future_value": 12,
+          "future_value": 13,
           "capital_eff": 11
         },
         "source_bonus": 0,
-        "tenant_type": "飲食店・学習塾・整骨院・美容室",
-        "estimated_rent": "月額約24万円（35.5㎡×1.8万円/坪×3.3換算）",
-        "rent_reference": "墨田区坪単価1.8万円/月・錦糸町駅圏は需要安定",
-        "analysis": "錦糸町駅徒歩4分・9階建24階建内テナント区画。est_net_yield7.64%は健美家物件中最高水準。指値5%（価格2,784万）後取得諸費用込み約3,000万。旧耐震1997年築で新耐震基準適合。自己資金2,000万＋融資1,000万で対応可能な低価格帯。ただし9階区画のため路面性なく集客力に制約あり。利回りの根拠は賃料293万/年（10%表面）の蓋然性要確認。",
-        "negotiation_comment": "新着でなく5%指値は標準的。売主の事情次第で7〜8%まで可能性あり。",
+        "tenant_type": "飲食店・物販・美容院・学習塾",
+        "estimated_rent": "月額約24.5万円（坪1.8万×35.5㎡÷3.3坪換算）",
+        "rent_reference": "墨田区錦糸町商業エリア 坪単価1.8〜2.2万円",
+        "analysis": "錦糸町駅徒歩4分・9階で路面ではないが、表面10%・実質7.64%は突出。1997年新耐震で融資適性高。指値5%（2,783万）で総取得2,992万と自己資金内収容も可能。ただし9階非路面は業種限定リスクあり。",
+        "negotiation_comment": "同条件物件複数掲載中。競合整理後に5〜8%指値で交渉余地あり。",
         "loan_analysis": {
           "feasibility": "A",
-          "reason": "1997年築・新耐震・錦糸町駅4分・実質7.64%でフルローン要件充足。小額案件のため融資額圧縮でDSCR余裕大。",
+          "reason": "新耐震・実質7.64%・駅4分。フルローン不要で自己資金2000万＋融資1000万圏内で完結可能。DSCR余裕大。",
           "recommended_plan": {
-            "self_fund": 1500,
-            "loan": 1500,
-            "monthly_repay": 6.7,
-            "dscr": 2.89
+            "self_fund": 600,
+            "loan": 2500,
+            "monthly_repay": 11.2,
+            "dscr": 1.82
           }
         },
-        "lat_estimated": 35.6975,
-        "lng_estimated": 139.8145,
+        "lat_estimated": 35.6966,
+        "lng_estimated": 139.8172,
         "pros": [
-          "錦糸町駅4分・東京東部の主要商業地でテナント需要旺盛",
-          "実質利回り7.64%はスクリーニング最高水準",
-          "1997年築・新耐震基準適合で融資評価が高い"
+          "実質利回り7.64%は今回リスト最高水準（異常値除く）",
+          "1997年築新耐震・錦糸町駅徒歩4分で融資付きやすい",
+          "総予算3,100万以内で自己資金効率が最良"
         ],
         "cons": [
-          "9階区画のため路面店でなく視認性・集客力に限界",
-          "4,784㎡のsize表記は明らかな誤記の可能性があり現地確認必須"
-        ],
-        "over_budget": false
-      },
-      {
-        "url": "https://www.kenbiya.com/pp6/s/tokyo/sumida-ku/re_4450476nt2/",
-        "source": "健美家／HOMES",
-        "category": "store",
-        "ward": "墨田区",
-        "title": "墨田区 2,930万円 錦糸町駅 徒歩4分 10.0%",
-        "price": 2930,
-        "yield_pct": 10.0,
-        "size": 4784.89,
-        "built": "1997年3月",
-        "built_year": 1997,
-        "station": "錦糸町駅 徒歩4分",
-        "walk_min": 4,
-        "floor": "9階／24階建",
-        "is_first_floor": false,
-        "structure": "",
-        "address": "東京都墨田区錦糸1-2-1",
-        "is_new": false,
-        "is_reduced": false,
-        "is_vacant": false,
-        "nego_rate": 0.05,
-        "nego_rate_pct": 5.0,
-        "est_net_yield": 7.64,
-        "lat": 35.6975,
-        "lng": 139.8145,
-        "geo_source": "claude",
-        "scraped_at": "2026-05-11",
-        "rank": 2,
-        "score": 85,
-        "score_breakdown": {
-          "location": 22,
-          "net_yield": 25,
-          "tenant_demand": 17,
-          "future_value": 11,
-          "capital_eff": 10
-        },
-        "source_bonus": 0,
-        "tenant_type": "飲食店・学習塾・整骨院・サービス業",
-        "estimated_rent": "月額約24万円（面積確認要・錦糸町相場適用）",
-        "rent_reference": "墨田区坪単価1.8万円/月・錦糸町商業圏",
-        "analysis": "錦糸町駅徒歩4分・同一物件の別掲載と推定（re_4436996uj2と住所・築年・価格一致）。sizeが4,784.89㎡とre_4436996uj2の35.5㎡と大幅乖離しておりデータ誤記の疑い濃厚。est_net_yield7.64%はre_4436996uj2と同値。精査の上いずれか一方での購入検討が必要。誤記が確認できた場合は35.5㎡ベースで利回り再算定すること。",
-        "negotiation_comment": "重複物件の可能性大。購入前に必ず登記・謄本で専有面積を確認すること。",
-        "loan_analysis": {
-          "feasibility": "A",
-          "reason": "錦糸町駅至近・新耐震・実質利回り高水準。面積確認後に融資申請が望ましい。",
-          "recommended_plan": {
-            "self_fund": 1500,
-            "loan": 1500,
-            "monthly_repay": 6.7,
-            "dscr": 2.89
-          }
-        },
-        "lat_estimated": 35.6975,
-        "lng_estimated": 139.8145,
-        "pros": [
-          "錦糸町駅4分・都内東部最大級商業地に近接",
-          "実質利回り7.64%で高収益期待",
-          "低価格帯（2,930万）で自己資金効率が高い"
-        ],
-        "cons": [
-          "面積データ（4,784㎡）が明らかに誤記の疑いがあり実態確認必須",
-          "re_4436996uj2との重複の可能性があり別途精査が必要"
+          "9階非路面店舗で入居業種が限定的（飲食不可の可能性）",
+          "35.5㎡とやや狭小で賃料絶対額が小さい"
         ],
         "over_budget": false
       },
@@ -155,110 +90,45 @@
         "nego_rate": 0.08,
         "nego_rate_pct": 8.0,
         "est_net_yield": 6.07,
-        "lat": 35.5785,
-        "lng": 139.7368,
+        "lat": 35.5793,
+        "lng": 139.7365,
         "geo_source": "claude",
         "scraped_at": "2026-05-11",
-        "rank": 3,
-        "score": 82,
-        "score_breakdown": {
-          "location": 19,
-          "net_yield": 23,
-          "tenant_demand": 16,
-          "future_value": 12,
-          "capital_eff": 12
-        },
-        "source_bonus": 0,
-        "tenant_type": "コンビニ・飲食店・美容室・クリニック",
-        "estimated_rent": "月額約18万円（24.12㎡×1.6万円/坪×3.3換算）",
-        "rent_reference": "大田区坪単価1.6万円/月・大森駅圏の路面店需要",
-        "analysis": "大森駅徒歩10分・1階路面店・表面利回り7.7%・est_net_yield6.07%。指値8%（価格2,650万）後取得込み約2,850万で自己資金内完結可能。24.12㎡の小型区画は飲食・美容・整骨院など小規模テナントに対応。1982年築旧耐震だが大森駅圏は生活需要が安定しており空室リスクが低い。路面1階で視認性良好。融資不要の現金購入も視野。",
-        "negotiation_comment": "1982年築旧耐震のため8%指値は許容範囲内。10%指値も試行余地あり。",
-        "loan_analysis": {
-          "feasibility": "B",
-          "reason": "旧耐震（1982年）のためB評価。大森駅10分・路面1階の立地評価で補完。現金購入が最も有利。",
-          "recommended_plan": {
-            "self_fund": 2000,
-            "loan": 900,
-            "monthly_repay": 4.0,
-            "dscr": 3.75
-          }
-        },
-        "lat_estimated": 35.5785,
-        "lng_estimated": 139.7368,
-        "pros": [
-          "1階路面店で視認性高く多業種テナント対応可能",
-          "2,880万円の低価格帯で自己資金内完結も可能",
-          "大森駅徒歩10分・生活需要安定エリア"
-        ],
-        "cons": [
-          "1982年築旧耐震基準で融資評価が下がりやすい",
-          "24㎡の小型区画は業種選択肢が限定される"
-        ],
-        "over_budget": false
-      },
-      {
-        "url": "https://www.kenbiya.com/pp6/s/tokyo/taito-ku/re_4467298db6/",
-        "source": "健美家／HOMES",
-        "category": "store",
-        "ward": "台東区",
-        "title": "台東区 6,980万円 南千住駅 徒歩15分 7.45%（他1件同条件あり）",
-        "price": 6980,
-        "yield_pct": 7.45,
-        "size": 84.7,
-        "built": "1984年12月",
-        "built_year": 1984,
-        "station": "南千住駅 徒歩15分",
-        "walk_min": 15,
-        "floor": "1階／8階建",
-        "is_first_floor": true,
-        "structure": "",
-        "address": "東京都台東区今戸2-36-8",
-        "is_new": false,
-        "is_reduced": false,
-        "is_vacant": false,
-        "nego_rate": 0.08,
-        "nego_rate_pct": 8.0,
-        "est_net_yield": 5.88,
-        "lat": 35.7279,
-        "lng": 139.8024,
-        "geo_source": "claude",
-        "scraped_at": "2026-05-11",
-        "rank": 4,
-        "score": 79,
+        "rank": 2,
+        "score": 84,
         "score_breakdown": {
           "location": 20,
-          "net_yield": 20,
+          "net_yield": 24,
           "tenant_demand": 17,
           "future_value": 12,
-          "capital_eff": 10
+          "capital_eff": 11
         },
         "source_bonus": 0,
-        "tenant_type": "飲食店・旅行関連・土産物店・接骨院",
-        "estimated_rent": "月額約43万円（84.7㎡×2.2万円/坪×3.3換算）",
-        "rent_reference": "台東区坪単価2.2万円/月・上野・浅草圏インバウンド需要",
-        "analysis": "南千住駅徒歩15分・1階路面・84.7㎡・表面7.45%・est_net_yield5.88%。指値8%（6,422万）後取得込み約6,900万は予算上限に近いが可能。上野・浅草エリアのインバウンド観光需要を享受できる台東区今戸は浅草エリアに近接。1984年築旧耐震だが100㎡弱の大型路面区画は飲食・物販テナントに訴求力が高い。南千住駅まで15分は長所ではないが物件価格に織り込み済み。",
-        "negotiation_comment": "6,980万→6,400万の8%指値は相応。旧耐震を理由に10%まで押し込む余地あり。",
+        "tenant_type": "テイクアウト飲食・美容・クリニック・物販",
+        "estimated_rent": "月額約18.5万円（坪1.6万×24.12㎡換算）",
+        "rent_reference": "大田区大森エリア 坪単価1.4〜1.8万円",
+        "analysis": "大森駅徒歩10分・1階路面・表面7.7%・実質6.07%。指値8%（2,650万）で取得諸費用込み総額2,849万。1982年旧耐震が懸念だが小規模取得で自己資金内完結可。路面1階加点+5。24㎡は狭小だが賃料下落リスク低。",
+        "negotiation_comment": "旧耐震を理由に10%指値も視野。2,600万前後まで引き下げ可能性あり。",
         "loan_analysis": {
           "feasibility": "B",
-          "reason": "1984年築旧耐震・駅徒歩15分でB評価。路面1階・台東区立地・実質利回り5.88%が評価ポイント。",
+          "reason": "旧耐震1982年だが大森駅圏・実質6%超。地方銀行・信金での打診推奨。融資なし自己資金完結も選択肢。",
           "recommended_plan": {
-            "self_fund": 2000,
-            "loan": 5000,
-            "monthly_repay": 22.4,
-            "dscr": 1.6
+            "self_fund": 1000,
+            "loan": 1900,
+            "monthly_repay": 8.5,
+            "dscr": 1.81
           }
         },
-        "lat_estimated": 35.7279,
-        "lng_estimated": 139.8024,
+        "lat_estimated": 35.5793,
+        "lng_estimated": 139.7365,
         "pros": [
-          "1階路面84.7㎡の大型区画でテナント選択肢が広い",
-          "台東区の観光・インバウンド需要を享受できるエリア",
-          "est_net_yield5.88%と安定した実質利回り"
+          "1階路面店・実質6.07%で安定収益",
+          "2,880万と低価格で自己資金効率良好",
+          "大森駅商圏で飲食・物販テナント需要安定"
         ],
         "cons": [
-          "南千住駅まで徒歩15分と遠く空室時の賃料交渉余地が狭い",
-          "1984年築旧耐震で融資条件が厳しくなりやすい"
+          "1982年旧耐震で金融機関融資条件が厳しい",
+          "大森駅から徒歩10分はやや遠く空室リスクあり"
         ],
         "over_budget": false
       },
@@ -285,110 +155,110 @@
         "nego_rate": 0.08,
         "nego_rate_pct": 8.0,
         "est_net_yield": 5.65,
-        "lat": 35.5625,
-        "lng": 139.7161,
+        "lat": 35.5628,
+        "lng": 139.7163,
         "geo_source": "claude",
         "scraped_at": "2026-05-11",
-        "rank": 5,
-        "score": 77,
+        "rank": 3,
+        "score": 83,
         "score_breakdown": {
-          "location": 20,
-          "net_yield": 20,
-          "tenant_demand": 17,
+          "location": 22,
+          "net_yield": 22,
+          "tenant_demand": 18,
           "future_value": 11,
-          "capital_eff": 9
+          "capital_eff": 10
         },
         "source_bonus": 0,
-        "tenant_type": "コンビニ・飲食店・美容室・医療クリニック",
-        "estimated_rent": "月額約16万円（31.34㎡×1.6万円/坪×3.3換算）",
-        "rent_reference": "大田区坪単価1.6万円/月・蒲田駅前商業集積",
-        "analysis": "蒲田駅徒歩4分・1階路面・31.34㎡・表面7.17%・est_net_yield5.65%。指値8%（3,386万）後取得込み約3,640万。蒲田は羽田空港アクセスの改善・再開発計画が進行中で将来価値も期待できる。1984年築旧耐震が融資上の課題だが駅4分の1階路面という立地の希少性が高く長期保有向き。小型区画（31㎡）のため単価の高い業種（美容・クリニック）向けテナントを狙うべき。",
-        "negotiation_comment": "旧耐震・築40年超を理由に10〜12%指値も検討できる水準。",
+        "tenant_type": "飲食・物販・コンビニ・サービス業",
+        "estimated_rent": "月額約21.9万円（坪1.6万×31.34㎡換算）",
+        "rent_reference": "大田区蒲田駅前エリア 坪単価1.6〜2.0万円",
+        "analysis": "蒲田駅徒歩4分・1階路面・表面7.17%・実質5.65%。1984年旧耐震だが蒲田は乗降客数多く路面店需要が厚い。指値8%（3,386万）で諸費用込み3,640万。融資2,000万＋自己1,640万で対応可。路面1階加点+5。",
+        "negotiation_comment": "蒲田同駅物件多数競合。8〜10%指値で3,300万台を狙える可能性あり。",
         "loan_analysis": {
           "feasibility": "B",
-          "reason": "1984年築旧耐震だが蒲田駅4分・1階路面・est_net_yield5.65%で立地補完。担保評価要確認。",
+          "reason": "旧耐震1984年だが蒲田駅4分・実質5.65%。信金・ノンバンク活用で融資可能性あり。",
           "recommended_plan": {
-            "self_fund": 2000,
-            "loan": 1700,
-            "monthly_repay": 7.6,
-            "dscr": 1.76
+            "self_fund": 1700,
+            "loan": 2100,
+            "monthly_repay": 9.4,
+            "dscr": 1.94
           }
         },
-        "lat_estimated": 35.5625,
-        "lng_estimated": 139.7161,
+        "lat_estimated": 35.5628,
+        "lng_estimated": 139.7163,
         "pros": [
-          "蒲田駅4分・1階路面の希少な商業立地",
-          "蒲田エリアの再開発・羽田新線整備で将来価値上昇期待",
-          "表面7.17%・実質5.65%と安定収益"
+          "蒲田駅4分・1階路面で空室リスク低",
+          "31㎡は飲食・物販の標準サイズで汎用性高い",
+          "実質5.65%と安定した収益性"
         ],
         "cons": [
-          "1984年築旧耐震で銀行融資の担保評価が低くなりやすい",
-          "31㎡の小型区画はテナント業種に制約あり"
+          "1984年築旧耐震で融資審査に制約",
+          "蒲田エリアは物件供給過多で競合リスク"
         ],
         "over_budget": false
       },
       {
-        "url": "https://www.kenbiya.com/pp6/s/tokyo/bunkyo-ku/re_4451773fg5/",
+        "url": "https://www.kenbiya.com/pp6/s/tokyo/taito-ku/re_4467298db6/",
         "source": "健美家／HOMES",
         "category": "store",
-        "ward": "文京区",
-        "title": "文京区 3,480万円 千駄木駅 徒歩1分（他1件同条件あり）",
-        "price": 3480,
-        "yield_pct": null,
-        "size": 39.81,
-        "built": "1984年3月",
+        "ward": "台東区",
+        "title": "台東区 6,980万円 南千住駅 徒歩15分 7.45%（他1件同条件あり）",
+        "price": 6980,
+        "yield_pct": 7.45,
+        "size": 84.7,
+        "built": "1984年12月",
         "built_year": 1984,
-        "station": "千駄木駅 徒歩1分",
-        "walk_min": 1,
+        "station": "南千住駅 徒歩15分",
+        "walk_min": 15,
         "floor": "1階／8階建",
         "is_first_floor": true,
         "structure": "",
-        "address": "東京都文京区千駄木2丁目34-5",
+        "address": "東京都台東区今戸2-36-8",
         "is_new": false,
         "is_reduced": false,
         "is_vacant": false,
         "nego_rate": 0.08,
         "nego_rate_pct": 8.0,
-        "est_net_yield": null,
-        "lat": 35.7221,
-        "lng": 139.7623,
+        "est_net_yield": 5.88,
+        "lat": 35.7295,
+        "lng": 139.8034,
         "geo_source": "claude",
         "scraped_at": "2026-05-11",
-        "rank": 6,
-        "score": 76,
+        "rank": 4,
+        "score": 82,
         "score_breakdown": {
-          "location": 23,
-          "net_yield": 16,
-          "tenant_demand": 18,
-          "future_value": 12,
-          "capital_eff": 7
+          "location": 19,
+          "net_yield": 23,
+          "tenant_demand": 16,
+          "future_value": 13,
+          "capital_eff": 11
         },
         "source_bonus": 0,
-        "tenant_type": "カフェ・雑貨店・美容室・鍼灸院",
-        "estimated_rent": "月額約30万円（39.81㎡×2.5万円/坪×3.3換算）",
-        "rent_reference": "文京区坪単価2.5万円/月・谷根千エリアの観光需要",
-        "analysis": "千駄木駅徒歩1分・1階路面・39.81㎡・1984年築。est_net_yieldはnullだが、想定賃料（年360万）÷（3,204万×1.075）≒10.4%表面想定・実質約8%。指値8%（3,202万）後取得込み約3,442万。谷根千エリアは観光・カフェ文化の集積地で空室リスクが低く賃料維持力が高い。旧耐震がマイナスだが駅1分路面のポジションは希少。",
-        "negotiation_comment": "谷根千人気エリアで売り手強気。8%指値は可能だが10%は困難な見込み。",
+        "tenant_type": "飲食店・居酒屋・物販・クリニック",
+        "estimated_rent": "月額約46.2万円（坪2.2万×84.7㎡換算）",
+        "rent_reference": "台東区今戸エリア 坪単価2.0〜2.5万円",
+        "analysis": "南千住駅徒歩15分・1階路面・表面7.45%・実質5.88%。1984年旧耐震かつ駅遠15分が最大懸念。ただし84.7㎡の広面積で飲食複合用途に対応可。指値8%（6,422万）で諸費用込み6,903万。自己2000万＋融資4903万で予算内。",
+        "negotiation_comment": "駅徒歩15分を根拠に10〜12%指値で6,200万台への引き下げ交渉を推奨。",
         "loan_analysis": {
           "feasibility": "B",
-          "reason": "1984年築旧耐震だが千駄木駅1分・文京区1階路面という希少立地で評価補完が期待できる。",
+          "reason": "旧耐震1984年・駅遠15分でリスク高め。ただし実質5.88%・1階路面84㎡は評価材料。地銀打診推奨。",
           "recommended_plan": {
             "self_fund": 2000,
-            "loan": 1500,
-            "monthly_repay": 6.7,
-            "dscr": 3.73
+            "loan": 4900,
+            "monthly_repay": 21.9,
+            "dscr": 1.76
           }
         },
-        "lat_estimated": 35.7221,
-        "lng_estimated": 139.7623,
+        "lat_estimated": 35.7295,
+        "lng_estimated": 139.8034,
         "pros": [
-          "千駄木駅徒歩1分・谷根千エリアの高い観光集客力",
-          "文京区1階路面は希少性が高く賃料維持力が強い",
-          "カフェ・雑貨等の高単価テナントが期待できる"
+          "1階路面・84㎡の広面積で複合テナント対応可",
+          "実質5.88%と台東区内で高水準",
+          "上野・浅草エリアの観光需要の波及期待"
         ],
         "cons": [
-          "1984年築旧耐震で融資審査のハードルが高い",
-          "est_net_yieldがnullのため利回りの詳細確認が必要"
+          "南千住駅から徒歩15分は商業立地として厳しい",
+          "1984年旧耐震で融資条件悪化リスク"
         ],
         "over_budget": false
       },
@@ -419,171 +289,41 @@
         "lng": 139.868,
         "geo_source": "claude",
         "scraped_at": "2026-05-11",
-        "rank": 7,
-        "score": 75,
+        "rank": 5,
+        "score": 81,
         "score_breakdown": {
-          "location": 17,
-          "net_yield": 19,
-          "tenant_demand": 14,
-          "future_value": 11,
-          "capital_eff": 10
+          "location": 18,
+          "net_yield": 22,
+          "tenant_demand": 15,
+          "future_value": 13,
+          "capital_eff": 9
         },
         "source_bonus": 4,
-        "tenant_type": "飲食店・クリニック・サービス業・物販",
-        "estimated_rent": "月額約38万円（60㎡想定×1.1万円/坪×3.3換算）",
-        "rent_reference": "江戸川区坪単価1.1万円/月・小岩駅圏の生活需要",
-        "analysis": "江戸川区南小岩・RC造・1989年築・表面7.0%・est_net_yield5.52%。goo不動産掲載のため+4点ボーナス付与。6,600万→指値8%（6,072万）後取得込み約6,527万で予算内。小岩駅圏のRC造1989年築（新耐震・ギリギリ）は融資評価がやや高い。江戸川区南小岩は再開発計画の影響を受ける可能性があり将来価値の変動に注意。サイズ・フロア未記載のため現地確認必須。",
-        "negotiation_comment": "goo不動産掲載で市場露出が健美家より低い。8%指値に売主が応じやすい可能性あり。",
+        "tenant_type": "飲食店・物販・サービス業・クリニック",
+        "estimated_rent": "月額約40万円（表面7.0%逆算）",
+        "rent_reference": "江戸川区南小岩エリア 坪単価1.0〜1.2万円",
+        "analysis": "goo不動産掲載（+4ボーナス）。RC造1989年新耐震・表面7.0%・実質5.52%。南小岩4丁目の1階物件と推定。小岩駅徒歩圏で商業需要あり。指値8%（6,072万）で諸費用込み6,527万。駅距離・階数情報不足が課題で現地確認必須。",
+        "negotiation_comment": "健美家掲載の同住所競合物件と比較材料に。5〜8%指値で6,100万台を狙う。",
         "loan_analysis": {
           "feasibility": "A",
-          "reason": "RC造・1989年築新耐震・est_net_yield5.52%でA基準ほぼ充足。駅徒歩距離未記載のため確認後にA確定。",
+          "reason": "RC造新耐震1989年・実質5.52%。金融機関評価は良好。ただし駅距離不明で担保評価は現地確認後判断。",
           "recommended_plan": {
             "self_fund": 2000,
             "loan": 4600,
             "monthly_repay": 20.6,
-            "dscr": 1.53
+            "dscr": 1.62
           }
         },
         "lat_estimated": 35.7068,
         "lng_estimated": 139.868,
         "pros": [
-          "goo不動産掲載で割安な情報優位性あり（+4点）",
-          "RC造・1989年新耐震適合で融資評価が有利",
-          "est_net_yield5.52%と安定した実質利回り"
+          "goo不動産掲載で健美家比較時の割安感ボーナス",
+          "RC造1989年新耐震で融資適性高",
+          "実質5.52%と江戸川区内最高水準"
         ],
         "cons": [
-          "サイズ・フロア・駅距離がデータ未記載で詳細確認必須",
-          "江戸川区南小岩はエリアポテンシャルが相対的に低い"
-        ],
-        "over_budget": false
-      },
-      {
-        "url": "https://www.kenbiya.com/pp6/s/tokyo/ota-ku/re_4467297cew/",
-        "source": "健美家／HOMES",
-        "category": "store",
-        "ward": "大田区",
-        "title": "大田区 5,980万円 池上駅 徒歩8分 7.28%（他1件同条件あり）",
-        "price": 5980,
-        "yield_pct": 7.28,
-        "size": 79.19,
-        "built": "1986年6月",
-        "built_year": 1986,
-        "station": "池上駅 徒歩8分",
-        "walk_min": 8,
-        "floor": "1階／5階建",
-        "is_first_floor": true,
-        "structure": "",
-        "address": "東京都大田区池上8-5-2",
-        "is_new": false,
-        "is_reduced": false,
-        "is_vacant": false,
-        "nego_rate": 0.08,
-        "nego_rate_pct": 8.0,
-        "est_net_yield": 5.74,
-        "lat": 35.579,
-        "lng": 139.6993,
-        "geo_source": "claude",
-        "scraped_at": "2026-05-11",
-        "rank": 8,
-        "score": 74,
-        "score_breakdown": {
-          "location": 18,
-          "net_yield": 18,
-          "tenant_demand": 16,
-          "future_value": 12,
-          "capital_eff": 10
-        },
-        "source_bonus": 0,
-        "tenant_type": "飲食店・整骨院・学習塾・美容室",
-        "estimated_rent": "月額約38万円（79.19㎡×1.6万円/坪×3.3換算）",
-        "rent_reference": "大田区坪単価1.6万円/月・池上エリアの下町商業需要",
-        "analysis": "池上駅徒歩8分・1階路面・79.19㎡・表面7.28%・est_net_yield5.74%。指値8%（5,502万）後取得込み約5,915万。80㎡弱の1階路面区画は飲食・多目的テナントに適する。1986年築旧耐震が融資上の課題。池上は池上本門寺への参拝客・地域住民需要があり空室リスクは中程度。駅8分は徒歩圏だが商業立地としては弱く賃料レンジが絞られる点に注意。",
-        "negotiation_comment": "旧耐震・池上エリアで8%指値は通りやすい。10〜12%指値も検討値。",
-        "loan_analysis": {
-          "feasibility": "B",
-          "reason": "1986年築旧耐震・駅8分でB評価。1階路面79㎡・est_net_yield5.74%が評価ポイント。",
-          "recommended_plan": {
-            "self_fund": 2000,
-            "loan": 4000,
-            "monthly_repay": 17.9,
-            "dscr": 1.77
-          }
-        },
-        "lat_estimated": 35.579,
-        "lng_estimated": 139.6993,
-        "pros": [
-          "1階路面79㎡の広い区画でテナント需要が多様",
-          "est_net_yield5.74%と高水準の実質利回り",
-          "池上本門寺圏の安定した生活・観光需要"
-        ],
-        "cons": [
-          "1986年築旧耐震で融資評価に制約",
-          "池上駅徒歩8分は商業立地としてやや劣る"
-        ],
-        "over_budget": false
-      },
-      {
-        "url": "https://www.kenbiya.com/pp6/s/tokyo/edogawa-ku/re_43433041at/",
-        "source": "健美家／HOMES",
-        "category": "store",
-        "ward": "江戸川区",
-        "title": "江戸川区 5,490万円 小岩駅 徒歩9分 6.49%",
-        "price": 5490,
-        "yield_pct": 6.49,
-        "size": 134.28,
-        "built": "1985年10月",
-        "built_year": 1985,
-        "station": "小岩駅 徒歩9分",
-        "walk_min": 9,
-        "floor": "1階／11階建",
-        "is_first_floor": true,
-        "structure": "",
-        "address": "東京都江戸川区北小岩1-4-6",
-        "is_new": false,
-        "is_reduced": false,
-        "is_vacant": false,
-        "nego_rate": 0.08,
-        "nego_rate_pct": 8.0,
-        "est_net_yield": 5.12,
-        "lat": 35.7135,
-        "lng": 139.8735,
-        "geo_source": "claude",
-        "scraped_at": "2026-05-11",
-        "rank": 9,
-        "score": 72,
-        "score_breakdown": {
-          "location": 16,
-          "net_yield": 17,
-          "tenant_demand": 15,
-          "future_value": 12,
-          "capital_eff": 12
-        },
-        "source_bonus": 0,
-        "tenant_type": "飲食店・クリニック・サービス業・学習塾",
-        "estimated_rent": "月額約49万円（134.28㎡×1.1万円/坪×3.3換算）",
-        "rent_reference": "江戸川区坪単価1.1万円/月・小岩駅圏の生活商業需要",
-        "analysis": "小岩駅徒歩9分・1階路面・134.28㎡・表面6.49%・est_net_yield5.12%。指値8%（5,051万）後取得込み約5,430万。134㎡の大型1階路面区画は多業種対応可能で空室時の業態転換が容易。1985年築旧耐震が難点。小岩は近年再開発が進行中で将来の地価上昇余地がある。都内最大規模の小岩商業圏に立地しており賃料の維持力は江戸川区内では高い方。",
-        "negotiation_comment": "旧耐震・駅9分を理由に10%指値（4,941万）まで試す価値あり。",
-        "loan_analysis": {
-          "feasibility": "B",
-          "reason": "1985年築旧耐震でB評価。1階路面134㎡・小岩再開発エリア立地で収益安定性を補完。",
-          "recommended_plan": {
-            "self_fund": 2000,
-            "loan": 3500,
-            "monthly_repay": 15.7,
-            "dscr": 2.6
-          }
-        },
-        "lat_estimated": 35.7135,
-        "lng_estimated": 139.8735,
-        "pros": [
-          "134㎡の大型1階路面区画で業態転換が容易",
-          "小岩再開発が進行中で将来の地価上昇に期待",
-          "est_net_yield5.12%でスクリーニング基準充足"
-        ],
-        "cons": [
-          "1985年築旧耐震で融資審査の通過が難しい",
-          "小岩駅9分は商業立地としてはやや遠い"
+          "駅距離・階数・面積情報が欠損で詳細精査要",
+          "南小岩エリアは賃料相場が低く賃料上昇余地限定的"
         ],
         "over_budget": false
       },
@@ -610,175 +350,45 @@
         "nego_rate": 0.08,
         "nego_rate_pct": 8.0,
         "est_net_yield": 5.02,
-        "lat": 35.6891,
-        "lng": 139.8462,
+        "lat": 35.6908,
+        "lng": 139.8425,
         "geo_source": "claude",
         "scraped_at": "2026-05-11",
-        "rank": 10,
-        "score": 68,
+        "rank": 6,
+        "score": 80,
         "score_breakdown": {
-          "location": 15,
-          "net_yield": 16,
-          "tenant_demand": 14,
-          "future_value": 11,
-          "capital_eff": 12
+          "location": 20,
+          "net_yield": 20,
+          "tenant_demand": 17,
+          "future_value": 13,
+          "capital_eff": 10
         },
         "source_bonus": 0,
-        "tenant_type": "飲食店・コンビニ・サービス業・クリニック",
-        "estimated_rent": "月額約18万円（48.62㎡×1.1万円/坪×3.3換算）",
-        "rent_reference": "江戸川区坪単価1.1万円/月・東大島駅前商業需要",
-        "analysis": "東大島駅徒歩1分・1階建・48.62㎡・表面6.37%・est_net_yield5.02%。指値8%（5,502万）後取得込み約5,915万。駅1分の戸建て商業物件は希少だが東大島は乗降客数が少なくテナント需要の母数が限定される。1988年築旧耐震で融資に制約。est_net_yield5.02%はスクリーニング基準ギリギリの水準であり価格交渉余地を最大限活用すべき。1階建てのため増改築・用途変更の自由度が高い。",
-        "negotiation_comment": "東大島エリアの流動性の低さを理由に10%指値（5,382万）を試みるべき。",
+        "tenant_type": "飲食・コンビニ・調剤薬局・物販",
+        "estimated_rent": "月額約31.8万円（坪1.1万×48.62㎡換算）",
+        "rent_reference": "江戸川区小松川エリア 坪単価1.0〜1.3万円",
+        "analysis": "東大島駅徒歩1分・1階平屋路面店・表面6.37%・実質5.02%。1988年築（旧耐震寄り）だが駅直結立地は稀少。平屋建（1階/1階）でテナント自由度高く視認性抜群。指値8%（5,502万）で諸費用込み5,915万。路面1階加点+5。",
+        "negotiation_comment": "同条件他2件あり。まとめ売り交渉も選択肢。単独指値8%で5,500万台を目指す。",
         "loan_analysis": {
           "feasibility": "B",
-          "reason": "1988年築旧耐震・東大島駅1分・1階建でB評価。東大島の賃料水準が低い点がDSCRに影響。",
+          "reason": "1988年築旧耐震だが駅1分路面・実質5%超。RC確認後A格昇格可能性あり。地銀・信金で打診推奨。",
           "recommended_plan": {
             "self_fund": 2000,
             "loan": 4000,
             "monthly_repay": 17.9,
-            "dscr": 1.68
+            "dscr": 1.48
           }
         },
-        "lat_estimated": 35.6891,
-        "lng_estimated": 139.8462,
+        "lat_estimated": 35.6908,
+        "lng_estimated": 139.8425,
         "pros": [
-          "東大島駅1分の好立地で視認性・利便性が高い",
-          "1階建て構造で増改築・用途変更の自由度が高い",
-          "est_net_yield5.02%でスクリーニング基準をクリア"
+          "駅徒歩1分・平屋路面店で視認性・アクセス最強",
+          "平屋建で用途制限少なくテナント誘致自由度高い",
+          "3件のうち最良条件での単独取得が可能"
         ],
         "cons": [
-          "東大島駅の乗降客数が少なくテナント需要の母数に限界",
-          "1988年築旧耐震で融資評価が下がりやすい"
-        ],
-        "over_budget": false
-      },
-      {
-        "url": "https://www.kenbiya.com/pp6/s/tokyo/bunkyo-ku/re_4434728xi5/",
-        "source": "健美家／HOMES",
-        "category": "store",
-        "ward": "文京区",
-        "title": "文京区 5,680万円 江戸川橋駅 徒歩1分",
-        "price": 5680,
-        "yield_pct": null,
-        "size": 56.91,
-        "built": "1980年3月",
-        "built_year": 1980,
-        "station": "江戸川橋駅 徒歩1分",
-        "walk_min": 1,
-        "floor": "1階／9階建",
-        "is_first_floor": true,
-        "structure": "",
-        "address": "東京都文京区関口1丁目",
-        "is_new": false,
-        "is_reduced": false,
-        "is_vacant": false,
-        "nego_rate": 0.08,
-        "nego_rate_pct": 8.0,
-        "est_net_yield": null,
-        "lat": 35.7085,
-        "lng": 139.7368,
-        "geo_source": "claude",
-        "scraped_at": "2026-05-11",
-        "rank": 11,
-        "score": 67,
-        "score_breakdown": {
-          "location": 22,
-          "net_yield": 12,
-          "tenant_demand": 17,
-          "future_value": 10,
-          "capital_eff": 6
-        },
-        "source_bonus": 0,
-        "tenant_type": "カフェ・美容室・クリニック・オフィス",
-        "estimated_rent": "月額約43万円（56.91㎡×2.5万円/坪×3.3換算）",
-        "rent_reference": "文京区坪単価2.5万円/月・江戸川橋駅前商業需要",
-        "analysis": "江戸川橋駅徒歩1分・1階路面・56.91㎡・est_net_yieldはnullのため独自算定。想定賃料約516万/年÷（5,226万×1.075）≒9.2%表面・実質推定約7%。ただし実際の賃料確認が必要。1980年築旧耐震で融資が厳しい。5,680万は予算内だが8%指値後（5,226万）でも文京区の高地価を反映し利回りが圧迫される。江戸川橋駅1分の文京区1階路面は希少性が高い。",
-        "negotiation_comment": "旧耐震・1980年築を理由に10%指値（5,112万）も交渉可能。売り手は強気の可能性あり。",
-        "loan_analysis": {
-          "feasibility": "B",
-          "reason": "1980年築旧耐震・est_net_yield未確認でB評価。文京区江戸川橋1分の稀少立地が評価補完。",
-          "recommended_plan": {
-            "self_fund": 2000,
-            "loan": 3800,
-            "monthly_repay": 17.0,
-            "dscr": 2.52
-          }
-        },
-        "lat_estimated": 35.7085,
-        "lng_estimated": 139.7368,
-        "pros": [
-          "江戸川橋駅徒歩1分・文京区の高需要エリア",
-          "56㎡の1階路面で多様なテナント業種に対応可能",
-          "文京区の地価安定性と賃料維持力が高い"
-        ],
-        "cons": [
-          "1980年築旧耐震で融資条件が制約される",
-          "est_net_yieldがnullで実質利回りの詳細確認が必要"
-        ],
-        "over_budget": false
-      },
-      {
-        "url": "https://www.kenbiya.com/pp6/s/tokyo/ota-ku/re_4399449dtc/",
-        "source": "健美家／HOMES",
-        "category": "store",
-        "ward": "大田区",
-        "title": "大田区 3,500万円 蒲田駅 徒歩3分 6.63%",
-        "price": 3500,
-        "yield_pct": 6.63,
-        "size": 73.26,
-        "built": "1963年6月",
-        "built_year": 1963,
-        "station": "蒲田駅 徒歩3分",
-        "walk_min": 3,
-        "floor": "5階／8階建",
-        "is_first_floor": false,
-        "structure": "",
-        "address": "東京都大田区西蒲田7-48-14",
-        "is_new": false,
-        "is_reduced": false,
-        "is_vacant": false,
-        "nego_rate": 0.08,
-        "nego_rate_pct": 8.0,
-        "est_net_yield": 5.23,
-        "lat": 35.5629,
-        "lng": 139.7163,
-        "geo_source": "claude",
-        "scraped_at": "2026-05-11",
-        "rank": 12,
-        "score": 63,
-        "score_breakdown": {
-          "location": 19,
-          "net_yield": 15,
-          "tenant_demand": 13,
-          "future_value": 10,
-          "capital_eff": 6
-        },
-        "source_bonus": 0,
-        "tenant_type": "飲食店・美容室・学習塾・サービス業",
-        "estimated_rent": "月額約35万円（73.26㎡×1.6万円/坪×3.3換算）",
-        "rent_reference": "大田区坪単価1.6万円/月・蒲田駅至近商業圏",
-        "analysis": "蒲田駅徒歩3分・73.26㎡・表面6.63%・est_net_yield5.23%。5階区画のため路面性なし。指値8%（3,220万）後取得込み約3,462万。1963年築と最も古くRC造かどうかも不明。建物の老朽化リスク・耐震性が最大懸念。蒲田駅3分という好立地と73㎡の広さは評価できるが5階区画での視認性の低さがテナント需要を制限する。価格の安さは老朽化リスクの反映として捉えるべき。",
-        "negotiation_comment": "1963年築・5階非路面で10〜12%指値（3,150万〜3,080万）を強く交渉すべき案件。",
-        "loan_analysis": {
-          "feasibility": "C",
-          "reason": "1963年築・築60年超・旧耐震以前の構造で融資評価が極めて厳しい。現金購入推奨。",
-          "recommended_plan": {
-            "self_fund": 2000,
-            "loan": 1500,
-            "monthly_repay": 6.7,
-            "dscr": 4.33
-          }
-        },
-        "lat_estimated": 35.5629,
-        "lng_estimated": 139.7163,
-        "pros": [
-          "蒲田駅徒歩3分の至近立地で賃貸需要は底堅い",
-          "73㎡の広い区画でテナント選択肢が広い",
-          "est_net_yield5.23%で収益基準をクリア"
-        ],
-        "cons": [
-          "1963年築・築60年超で老朽化・耐震リスクが最も高い",
-          "5階区画で路面性なく視認性・集客力に大きな制約"
+          "1988年旧耐震域で融資審査に制約が生じやすい",
+          "江戸川区東大島は賃料相場が低く利回り維持に注意"
         ],
         "over_budget": false
       },
@@ -805,112 +415,502 @@
         "nego_rate": 0.12,
         "nego_rate_pct": 12.0,
         "est_net_yield": 5.38,
-        "lat": 35.5832,
-        "lng": 139.7102,
+        "lat": 35.5736,
+        "lng": 139.7063,
         "geo_source": "claude",
         "scraped_at": "2026-05-11",
-        "rank": 13,
-        "score": 61,
+        "rank": 7,
+        "score": 78,
         "score_breakdown": {
-          "location": 16,
-          "net_yield": 15,
-          "tenant_demand": 13,
-          "future_value": 9,
-          "capital_eff": 8
+          "location": 20,
+          "net_yield": 20,
+          "tenant_demand": 17,
+          "future_value": 11,
+          "capital_eff": 10
         },
         "source_bonus": 0,
-        "tenant_type": "飲食店・整骨院・美容室・地域密着サービス",
-        "estimated_rent": "月額約62万円（127.68㎡×1.6万円/坪×3.3換算）",
-        "rent_reference": "大田区坪単価1.6万円/月・馬込駅圏の住宅街立地",
-        "analysis": "馬込駅徒歩3分・1階路面・127.68㎡・表面6.52%・est_net_yield5.38%・値下がり済み物件。指値12%（5,878万）後取得込み約6,319万。1976年築旧耐震・50年近い老朽物件。値下がり済みのため指値余地はやや限定的。127㎡の大型路面区画は魅力だが馬込は純住宅エリアで商業テナント需要が限定的。大田区の坪単価1.6万/月での満額賃料実現には時間がかかる可能性あり。",
-        "negotiation_comment": "既に値下がり済みのためさらなる値引きは困難。現値水準が底値に近い可能性。",
+        "tenant_type": "飲食・物販・サービス・コンビニ",
+        "estimated_rent": "月額約62.0万円（坪1.6万×127.68㎡換算）",
+        "rent_reference": "大田区馬込エリア 坪単価1.4〜1.8万円",
+        "analysis": "馬込駅徒歩3分・1階路面・127㎡大型・値下げ済み・指値12%（5,878万）で諸費用込み6,319万。実質5.38%は大型店舗として水準内。1976年旧耐震で融資Cリスクあるが現金購入力あれば優位。路面1階加点+5。",
+        "negotiation_comment": "値下げ済み物件。さらに5〜8%上乗せ指値で5,500万台も視野に入る。",
         "loan_analysis": {
           "feasibility": "C",
-          "reason": "1976年築・旧耐震・築約50年で担保評価が土地値のみに近く融資は現金補完必須。",
+          "reason": "1976年旧耐震・築50年・融資困難な金融機関多数。現金または大幅指値後の投資判断を推奨。",
           "recommended_plan": {
             "self_fund": 2000,
-            "loan": 4500,
-            "monthly_repay": 20.1,
-            "dscr": 1.81
+            "loan": 4400,
+            "monthly_repay": 19.7,
+            "dscr": 1.43
           }
         },
-        "lat_estimated": 35.5832,
-        "lng_estimated": 139.7102,
+        "lat_estimated": 35.5736,
+        "lng_estimated": 139.7063,
         "pros": [
-          "127㎡の大型1階路面区画で複数テナント対応可能",
-          "馬込駅3分の好立地で長期的に安定した集客",
-          "est_net_yield5.38%で収益基準をクリア"
+          "値下げ済みで売主売却意欲強く追加指値余地大",
+          "127㎡大型路面店は稀少性高く代替テナントも幅広い",
+          "馬込駅3分と都営浅草線沿線で都心アクセス良好"
         ],
         "cons": [
-          "1976年築・旧耐震・値下がり済みで老朽化コストが懸念",
-          "馬込は住宅街のため商業テナント需要が限定的"
+          "1976年旧耐震・築50年で融資ほぼ不可",
+          "大型面積ゆえ空室時の損失インパクトが大きい"
         ],
         "over_budget": false
       },
       {
-        "url": "https://house.goo.ne.jp/toushi/detail/4/13111/14300020429/1430/x414300020429.html",
-        "source": "goo不動産",
+        "url": "https://www.kenbiya.com/pp6/s/tokyo/bunkyo-ku/re_4451773fg5/",
+        "source": "健美家／HOMES",
+        "category": "store",
+        "ward": "文京区",
+        "title": "文京区 3,480万円 千駄木駅 徒歩1分（他1件同条件あり）",
+        "price": 3480,
+        "yield_pct": null,
+        "size": 39.81,
+        "built": "1984年3月",
+        "built_year": 1984,
+        "station": "千駄木駅 徒歩1分",
+        "walk_min": 1,
+        "floor": "1階／8階建",
+        "is_first_floor": true,
+        "structure": "",
+        "address": "東京都文京区千駄木2丁目34-5",
+        "is_new": false,
+        "is_reduced": false,
+        "is_vacant": false,
+        "nego_rate": 0.08,
+        "nego_rate_pct": 8.0,
+        "est_net_yield": null,
+        "lat": 35.7224,
+        "lng": 139.7629,
+        "geo_source": "claude",
+        "scraped_at": "2026-05-11",
+        "rank": 8,
+        "score": 77,
+        "score_breakdown": {
+          "location": 23,
+          "net_yield": 18,
+          "tenant_demand": 17,
+          "future_value": 12,
+          "capital_eff": 7
+        },
+        "source_bonus": 0,
+        "tenant_type": "飲食・カフェ・美容・物販・医療",
+        "estimated_rent": "月額約30.2万円（坪2.5万×39.81㎡換算）",
+        "rent_reference": "文京区千駄木エリア 坪単価2.2〜2.8万円",
+        "analysis": "千駄木駅徒歩1分・1階路面・文京区高単価エリア。est_net_yield未計算のため相場逆算。指値8%（3,202万）で諸費用込み3,442万、推定実質約5.6%。1984年旧耐震が懸念だが谷根千エリアの高需要で空室リスク低。路面1階加点+6。",
+        "negotiation_comment": "同条件他1件あり。競合精査し8%指値で3,200万台を目標に設定。",
+        "loan_analysis": {
+          "feasibility": "B",
+          "reason": "旧耐震1984年だが千駄木駅1分・高需要エリア。都内信金・地銀で打診価値あり。",
+          "recommended_plan": {
+            "self_fund": 1500,
+            "loan": 2000,
+            "monthly_repay": 9.0,
+            "dscr": 2.77
+          }
+        },
+        "lat_estimated": 35.7224,
+        "lng_estimated": 139.7629,
+        "pros": [
+          "千駄木駅1分・谷根千の高集客エリアで空室リスク極小",
+          "文京区は賃料単価2.5万/坪と今回リスト最高水準",
+          "小規模取得で自己資金効率が高い"
+        ],
+        "cons": [
+          "1984年旧耐震で融資審査ハードル高",
+          "est_net_yield未算定のため利回り精査が必要"
+        ],
+        "over_budget": false
+      },
+      {
+        "url": "https://www.kenbiya.com/pp6/s/tokyo/bunkyo-ku/re_4434728xi5/",
+        "source": "健美家／HOMES",
+        "category": "store",
+        "ward": "文京区",
+        "title": "文京区 5,680万円 江戸川橋駅 徒歩1分",
+        "price": 5680,
+        "yield_pct": null,
+        "size": 56.91,
+        "built": "1980年3月",
+        "built_year": 1980,
+        "station": "江戸川橋駅 徒歩1分",
+        "walk_min": 1,
+        "floor": "1階／9階建",
+        "is_first_floor": true,
+        "structure": "",
+        "address": "東京都文京区関口1丁目",
+        "is_new": false,
+        "is_reduced": false,
+        "is_vacant": false,
+        "nego_rate": 0.08,
+        "nego_rate_pct": 8.0,
+        "est_net_yield": null,
+        "lat": 35.7128,
+        "lng": 139.731,
+        "geo_source": "claude",
+        "scraped_at": "2026-05-11",
+        "rank": 9,
+        "score": 76,
+        "score_breakdown": {
+          "location": 24,
+          "net_yield": 17,
+          "tenant_demand": 16,
+          "future_value": 13,
+          "capital_eff": 6
+        },
+        "source_bonus": 0,
+        "tenant_type": "飲食・カフェ・物販・金融機関・クリニック",
+        "estimated_rent": "月額約43.2万円（坪2.5万×56.91㎡換算）",
+        "rent_reference": "文京区関口・江戸川橋エリア 坪単価2.2〜2.8万円",
+        "analysis": "江戸川橋駅徒歩1分・1階路面・56.91㎡。est_net_yield未算定のため賃料相場逆算。指値8%（5,226万）で諸費用込み5,618万、推定実質約4.9%とギリギリ水準。1980年旧耐震・予算上限に近い点が懸念。路面1階加点+6。",
+        "negotiation_comment": "1980年旧耐震を根拠に10〜12%指値で4,900万台を要求。実質5%確保が条件。",
+        "loan_analysis": {
+          "feasibility": "B",
+          "reason": "旧耐震1980年・文京区駅1分の立地評価で融資可能性残存。実質利回り確保後に地銀交渉推奨。",
+          "recommended_plan": {
+            "self_fund": 2000,
+            "loan": 3700,
+            "monthly_repay": 16.6,
+            "dscr": 1.72
+          }
+        },
+        "lat_estimated": 35.7128,
+        "lng_estimated": 139.731,
+        "pros": [
+          "江戸川橋駅1分・文京区の希少路面店舗",
+          "56㎡の標準的サイズで汎用テナント対応可",
+          "文京区立地は長期的資産価値の安定性が高い"
+        ],
+        "cons": [
+          "1980年旧耐震・築45年で融資難・修繕リスク高",
+          "指値後でも実質利回り5%割れのリスクあり"
+        ],
+        "over_budget": false
+      },
+      {
+        "url": "https://www.kenbiya.com/pp6/s/tokyo/edogawa-ku/re_43433041at/",
+        "source": "健美家／HOMES",
+        "category": "store",
+        "ward": "江戸川区",
+        "title": "江戸川区 5,490万円 小岩駅 徒歩9分 6.49%",
+        "price": 5490,
+        "yield_pct": 6.49,
+        "size": 134.28,
+        "built": "1985年10月",
+        "built_year": 1985,
+        "station": "小岩駅 徒歩9分",
+        "walk_min": 9,
+        "floor": "1階／11階建",
+        "is_first_floor": true,
+        "structure": "",
+        "address": "東京都江戸川区北小岩1-4-6",
+        "is_new": false,
+        "is_reduced": false,
+        "is_vacant": false,
+        "nego_rate": 0.08,
+        "nego_rate_pct": 8.0,
+        "est_net_yield": 5.12,
+        "lat": 35.7138,
+        "lng": 139.8683,
+        "geo_source": "claude",
+        "scraped_at": "2026-05-11",
+        "rank": 10,
+        "score": 74,
+        "score_breakdown": {
+          "location": 18,
+          "net_yield": 20,
+          "tenant_demand": 16,
+          "future_value": 11,
+          "capital_eff": 9
+        },
+        "source_bonus": 0,
+        "tenant_type": "飲食・物販・クリニック・美容・事務所",
+        "estimated_rent": "月額約44.8万円（表面6.49%逆算）",
+        "rent_reference": "江戸川区北小岩エリア 坪単価1.0〜1.2万円",
+        "analysis": "小岩駅徒歩9分・1階路面・134㎡大型・実質5.12%。1985年旧耐震だが小岩エリアの商業集積は厚い。指値8%（5,051万）で諸費用込み5,430万。大型面積ゆえ1テナント撤退時の損失大きく複数区画化を検討。路面1階加点+5。",
+        "negotiation_comment": "小岩駅から9分・旧耐震で10%指値も検討。4,900万台を目標に設定。",
+        "loan_analysis": {
+          "feasibility": "B",
+          "reason": "1985年旧耐震・駅9分だが1階134㎡路面・実質5%超で信金等打診余地あり。",
+          "recommended_plan": {
+            "self_fund": 2000,
+            "loan": 3500,
+            "monthly_repay": 15.7,
+            "dscr": 1.89
+          }
+        },
+        "lat_estimated": 35.7138,
+        "lng_estimated": 139.8683,
+        "pros": [
+          "134㎡大型路面店は小岩エリアで稀少性高い",
+          "小岩駅商圏の商業集積で長期テナント定着傾向",
+          "実質5.12%と江戸川区では安定水準"
+        ],
+        "cons": [
+          "1985年旧耐震・駅9分で融資・空室両リスク並存",
+          "大型面積の空室は収益への打撃が深刻"
+        ],
+        "over_budget": false
+      },
+      {
+        "url": "https://www.kenbiya.com/pp6/s/tokyo/ota-ku/re_4399449dtc/",
+        "source": "健美家／HOMES",
         "category": "store",
         "ward": "大田区",
-        "title": "大田区 1億2,400万円 7.14%",
-        "price": 12400,
-        "yield_pct": 7.14,
-        "size": null,
-        "built": "2026年4月",
-        "built_year": 2026,
-        "station": null,
-        "walk_min": null,
-        "floor": null,
+        "title": "大田区 3,500万円 蒲田駅 徒歩3分 6.63%",
+        "price": 3500,
+        "yield_pct": 6.63,
+        "size": 73.26,
+        "built": "1963年6月",
+        "built_year": 1963,
+        "station": "蒲田駅 徒歩3分",
+        "walk_min": 3,
+        "floor": "5階／8階建",
         "is_first_floor": false,
-        "structure": "RC造",
-        "address": "東京都大田区山王２丁目",
+        "structure": "",
+        "address": "東京都大田区西蒲田7-48-14",
+        "is_new": false,
+        "is_reduced": false,
+        "is_vacant": false,
+        "nego_rate": 0.08,
+        "nego_rate_pct": 8.0,
+        "est_net_yield": 5.23,
+        "lat": 35.5631,
+        "lng": 139.7161,
+        "geo_source": "claude",
+        "scraped_at": "2026-05-11",
+        "rank": 11,
+        "score": 72,
+        "score_breakdown": {
+          "location": 21,
+          "net_yield": 20,
+          "tenant_demand": 14,
+          "future_value": 10,
+          "capital_eff": 7
+        },
+        "source_bonus": 0,
+        "tenant_type": "事務所・スクール・士業・IT関連",
+        "estimated_rent": "月額約35.6万円（表面6.63%逆算）",
+        "rent_reference": "大田区蒲田駅近エリア 坪単価1.6〜1.8万円",
+        "analysis": "蒲田駅徒歩3分・5階（非路面）・73㎡・実質5.23%。1963年築は今回リスト最古で耐震診断結果が融資の分岐点。ただし蒲田駅至近・73㎡は事務所需要が厚い。指値8%（3,220万）で諸費用込み3,462万。非路面・超築古で現金推奨。",
+        "negotiation_comment": "1963年築を強調し15%指値（2,975万）も一考。現金決済提示で交渉優位に。",
+        "loan_analysis": {
+          "feasibility": "C",
+          "reason": "1963年築・法定耐用年数超過で金融機関融資はほぼ不可。現金購入前提で検討。",
+          "recommended_plan": {
+            "self_fund": 2000,
+            "loan": 1500,
+            "monthly_repay": 6.7,
+            "dscr": 2.22
+          }
+        },
+        "lat_estimated": 35.5631,
+        "lng_estimated": 139.7161,
+        "pros": [
+          "蒲田駅3分・73㎡で事務所・スクール需要が厚い",
+          "実質5.23%と超築古にしては安定水準",
+          "低価格3,220万（指値後）で自己資金内完結"
+        ],
+        "cons": [
+          "1963年築は法定耐用年数超過・融資ほぼ不可",
+          "5階非路面・耐震性不明で大規模修繕リスク大"
+        ],
+        "over_budget": false
+      },
+      {
+        "url": "https://www.kenbiya.com/pp6/s/tokyo/bunkyo-ku/re_44761443yu/",
+        "source": "健美家／HOMES",
+        "category": "store",
+        "ward": "文京区",
+        "title": "文京区 5,280万円 茗荷谷駅 徒歩7分",
+        "price": 5280,
+        "yield_pct": null,
+        "size": 40.51,
+        "built": "2000年2月",
+        "built_year": 2000,
+        "station": "茗荷谷駅 徒歩7分",
+        "walk_min": 7,
+        "floor": "1階／10階建",
+        "is_first_floor": true,
+        "structure": "",
+        "address": "東京都文京区大塚3丁目",
         "is_new": false,
         "is_reduced": false,
         "is_vacant": false,
         "nego_rate": 0.05,
         "nego_rate_pct": 5.0,
-        "est_net_yield": 5.45,
-        "lat": 35.5932,
-        "lng": 139.7256,
+        "est_net_yield": null,
+        "lat": 35.7221,
+        "lng": 139.7267,
+        "geo_source": "claude",
+        "scraped_at": "2026-05-11",
+        "rank": 12,
+        "score": 71,
+        "score_breakdown": {
+          "location": 23,
+          "net_yield": 15,
+          "tenant_demand": 16,
+          "future_value": 12,
+          "capital_eff": 5
+        },
+        "source_bonus": 0,
+        "tenant_type": "飲食・カフェ・クリニック・塾・美容",
+        "estimated_rent": "月額約30.7万円（坪2.5万×40.51㎡換算）",
+        "rent_reference": "文京区大塚エリア 坪単価2.2〜2.8万円",
+        "analysis": "茗荷谷駅徒歩7分・1階路面・2000年築新耐震（文京区リストで唯一）。est_net_yield未算定。指値5%（5,016万）で諸費用込み5,392万、推定実質約3.6%と利回り面は厳しい。ただし新耐震・文京区・路面1階の資産性で長期保有向き。路面1階加点+5。",
+        "negotiation_comment": "指値余地5%のみ。賃料上昇シナリオを前提とした長期投資判断が必要。",
+        "loan_analysis": {
+          "feasibility": "A",
+          "reason": "2000年新耐震・文京区・実質利回りが低い点は減点だが融資適性は最良クラス。利回り向上後に再評価を。",
+          "recommended_plan": {
+            "self_fund": 2000,
+            "loan": 3400,
+            "monthly_repay": 15.2,
+            "dscr": 1.68
+          }
+        },
+        "lat_estimated": 35.7221,
+        "lng_estimated": 139.7267,
+        "pros": [
+          "2000年新耐震・文京区1階路面で資産価値安定",
+          "茗荷谷は高所得者居住エリアで賃料下落リスク低",
+          "金融機関融資適性が今回リスト最高水準"
+        ],
+        "cons": [
+          "推定実質利回り3.6%台と収益性が今回リスト最低水準",
+          "指値余地5%のみで値引き交渉余地が限定的"
+        ],
+        "over_budget": false
+      },
+      {
+        "url": "https://www.kenbiya.com/pp6/s/tokyo/koto-ku/re_4475837llp/",
+        "source": "健美家／HOMES",
+        "category": "store",
+        "ward": "江東区",
+        "title": "江東区 5,280万円 大島駅 徒歩3分",
+        "price": 5280,
+        "yield_pct": 0.0,
+        "size": 34.12,
+        "built": "1992年4月",
+        "built_year": 1992,
+        "station": "大島駅 徒歩3分",
+        "walk_min": 3,
+        "floor": "1階／12階建",
+        "is_first_floor": true,
+        "structure": "",
+        "address": "東京都江東区大島5-47-9",
+        "is_new": false,
+        "is_reduced": false,
+        "is_vacant": true,
+        "nego_rate": 0.08,
+        "nego_rate_pct": 8.0,
+        "est_net_yield": null,
+        "lat": 35.685,
+        "lng": 139.8271,
+        "geo_source": "claude",
+        "scraped_at": "2026-05-11",
+        "rank": 13,
+        "score": 66,
+        "score_breakdown": {
+          "location": 19,
+          "net_yield": 12,
+          "tenant_demand": 14,
+          "future_value": 12,
+          "capital_eff": 9
+        },
+        "source_bonus": 0,
+        "tenant_type": "物販・サービス・クリニック・美容",
+        "estimated_rent": "月額約20.7万円（坪2.0万×34.12㎡換算）",
+        "rent_reference": "江東区大島エリア 坪単価1.8〜2.2万円",
+        "analysis": "大島駅徒歩3分・1階路面・1992年新耐震だが空室中。est_net_yield未算定で利回りは賃料相場逆算。指値8%（4,846万）で諸費用込み5,210万。空室ゆえに指値15%も視野だが想定賃料での実質利回りは約2.5%にとどまり投資妥当性要精査。路面1階加点+5。",
+        "negotiation_comment": "空室物件のため15%指値（4,183万）を強く主張できる。実質5%確保を条件に交渉。",
+        "loan_analysis": {
+          "feasibility": "A",
+          "reason": "1992年新耐震・大島駅3分で融資適性は高い。ただし空室中のため賃料収入証明ができず融資実行時期に注意。",
+          "recommended_plan": {
+            "self_fund": 2000,
+            "loan": 3200,
+            "monthly_repay": 14.3,
+            "dscr": 1.21
+          }
+        },
+        "lat_estimated": 35.685,
+        "lng_estimated": 139.8271,
+        "pros": [
+          "1992年新耐震・大島駅3分で将来資産価値安定",
+          "空室のため自由な賃料設定・リノベが可能",
+          "融資適性は今回リスト上位クラス"
+        ],
+        "cons": [
+          "空室中のため即時収益なし・テナント誘致コスト発生",
+          "想定賃料では実質利回り2.5%台と収益性が低い"
+        ],
+        "over_budget": false
+      },
+      {
+        "url": "https://www.kenbiya.com/pp6/s/tokyo/ota-ku/re_4467297cew/",
+        "source": "健美家／HOMES",
+        "category": "store",
+        "ward": "大田区",
+        "title": "大田区 5,980万円 池上駅 徒歩8分 7.28%（他1件同条件あり）",
+        "price": 5980,
+        "yield_pct": 7.28,
+        "size": 79.19,
+        "built": "1986年6月",
+        "built_year": 1986,
+        "station": "池上駅 徒歩8分",
+        "walk_min": 8,
+        "floor": "1階／5階建",
+        "is_first_floor": true,
+        "structure": "",
+        "address": "東京都大田区池上8-5-2",
+        "is_new": false,
+        "is_reduced": false,
+        "is_vacant": false,
+        "nego_rate": 0.08,
+        "nego_rate_pct": 8.0,
+        "est_net_yield": 5.74,
+        "lat": 35.5591,
+        "lng": 139.7002,
         "geo_source": "claude",
         "scraped_at": "2026-05-11",
         "rank": 14,
-        "score": 58,
+        "score": 65,
         "score_breakdown": {
           "location": 17,
-          "net_yield": 15,
-          "tenant_demand": 12,
-          "future_value": 9,
-          "capital_eff": 1
+          "net_yield": 18,
+          "tenant_demand": 13,
+          "future_value": 10,
+          "capital_eff": 7
         },
-        "source_bonus": 4,
-        "tenant_type": "クリニック・ジム・飲食店・オフィス",
-        "estimated_rent": "月額不明（面積未記載のため坪単価算定不可）",
-        "rent_reference": "大田区坪単価1.6万円/月・山王エリアの高級住宅街",
-        "analysis": "大田区山王・RC造・2026年4月築（新築）・表面7.14%・est_net_yield5.45%。goo不動産掲載のため+4点ボーナス付与。12,400万円は総予算7,000万を大幅超過のため融資フル活用でも5,000万の融資上限を超える。新築RC造で将来の修繕コストが低く利回り安定性は高いが予算オーバーにより今回の投資条件では非対応。将来的な自己資金増強後の候補として記録。",
-        "negotiation_comment": "新築物件のため指値余地は5%が上限。ただし予算外のため現時点では交渉不要。",
+        "source_bonus": 0,
+        "tenant_type": "飲食・物販・サービス・地域密着型",
+        "estimated_rent": "月額約43.6万円（表面7.28%逆算）",
+        "rent_reference": "大田区池上エリア 坪単価1.4〜1.6万円",
+        "analysis": "池上駅徒歩8分・1階路面・79㎡・実質5.74%。1986年旧耐震だが同条件他1件あり。指値8%（5,502万）で諸費用込み5,914万。池上エリアは池上本門寺の参拝客需要はあるが商業集積は限定的。大型79㎡の空室リスクを考慮し慎重に。路面1階加点+5。",
+        "negotiation_comment": "同条件他1件あり。10〜12%指値で5,200万台に引き下げ交渉を推奨。",
         "loan_analysis": {
-          "feasibility": "A",
-          "reason": "新築RC造・表面7.14%・est_net_yield5.45%でA基準を全て充足。しかし総額が予算を大幅超過。",
+          "feasibility": "B",
+          "reason": "旧耐震1986年・池上駅8分でリスクあり。実質5.74%・79㎡の実績賃料で信金交渉余地あり。",
           "recommended_plan": {
             "self_fund": 2000,
-            "loan": 5000,
-            "monthly_repay": 22.4,
-            "dscr": 0.0
+            "loan": 4000,
+            "monthly_repay": 17.9,
+            "dscr": 2.03
           }
         },
-        "lat_estimated": 35.5932,
-        "lng_estimated": 139.7256,
+        "lat_estimated": 35.5591,
+        "lng_estimated": 139.7002,
         "pros": [
-          "2026年新築RC造で修繕コストが低く長期安定収益",
-          "goo不動産掲載で市場露出が少なく競合が少ない（+4点）",
-          "山王エリアの高級住宅街で賃料水準の維持力が高い"
+          "実質5.74%と高利回りかつ1階路面79㎡の稀少性",
+          "池上本門寺参拝客等の安定地域需要",
+          "同条件比較物件の存在が交渉カードになる"
         ],
         "cons": [
-          "総額1億2,400万円で自己資金2,000万＋融資上限5,000万を超過",
-          "面積未記載で坪単価による賃料算定ができない"
+          "池上駅から8分・商業集積が薄く業種選択肢が狭い",
+          "1986年旧耐震で融資審査が厳しい"
         ],
-        "over_budget": true
+        "over_budget": false
       },
       {
         "url": "https://www.kenbiya.com/pp6/s/tokyo/adachi-ku/re_4361957z1s/",
@@ -935,45 +935,45 @@
         "nego_rate": 0.08,
         "nego_rate_pct": 8.0,
         "est_net_yield": null,
-        "lat": 35.7751,
-        "lng": 139.8046,
+        "lat": 35.7654,
+        "lng": 139.8011,
         "geo_source": "claude",
         "scraped_at": "2026-05-11",
         "rank": 15,
-        "score": 52,
+        "score": 55,
         "score_breakdown": {
           "location": 11,
-          "net_yield": 14,
-          "tenant_demand": 10,
-          "future_value": 8,
-          "capital_eff": 9
+          "net_yield": 13,
+          "tenant_demand": 11,
+          "future_value": 10,
+          "capital_eff": 10
         },
         "source_bonus": 0,
-        "tenant_type": "クリーニング・コンビニ・調剤薬局・学習塾",
-        "estimated_rent": "月額約19万円（52.92㎡×1.2万円/坪×3.3換算）",
-        "rent_reference": "足立区坪単価1.2万円/月・梅島駅圏の生活商業需要",
-        "analysis": "梅島駅徒歩15分・1階路面・52.92㎡・1980年築・est_net_yieldはnull。指値8%（2,558万）後取得込み約2,750万。想定賃料19万×12÷（2,750万）≒推定実質利回り5.3%前後。梅島は東武大師線の利用者が多いが駅から15分と遠く商業立地としては最も劣る水準。足立区の低坪単価（1.2万）では高い実質利回り確保が難しく、空室リスクと固都税コストの圧迫が続く。ポートフォリオ補完用として低価格のみが評価ポイント。",
-        "negotiation_comment": "駅15分・旧耐震・足立区を理由に12〜15%指値（2,381万〜2,363万）まで交渉を試みるべき。",
+        "tenant_type": "食料品・日用品・地域サービス・クリニック",
+        "estimated_rent": "月額約19.3万円（坪1.2万×52.92㎡換算）",
+        "rent_reference": "足立区梅島エリア 坪単価1.0〜1.4万円",
+        "analysis": "梅島駅徒歩15分・1階路面・52.92㎡・1980年旧耐震。est_net_yield未算定。指値8%（2,558万）で諸費用込み2,749万、推定実質約4.4%と5%未達の可能性が高い。駅遠・足立区郊外・旧耐震の三重苦で投資優先度は最低位。路面1階加点+3（駅遠でテナント需要低減）。",
+        "negotiation_comment": "駅15分・旧耐震で15%指値（2,363万）を強く要求。実質5%確保が絶対条件。",
         "loan_analysis": {
           "feasibility": "C",
-          "reason": "1980年築旧耐震・駅15分・足立区の低流動性エリアで融資評価が最も困難。現金購入推奨。",
+          "reason": "旧耐震1980年・梅島駅15分・足立区郊外。融資困難で現金投資の費用対効果も低い。見送りを推奨。",
           "recommended_plan": {
-            "self_fund": 2000,
-            "loan": 800,
-            "monthly_repay": 3.6,
-            "dscr": 4.4
+            "self_fund": 1400,
+            "loan": 1400,
+            "monthly_repay": 6.3,
+            "dscr": 1.53
           }
         },
-        "lat_estimated": 35.7751,
-        "lng_estimated": 139.8046,
+        "lat_estimated": 35.7654,
+        "lng_estimated": 139.8011,
         "pros": [
-          "2,780万の低価格帯で自己資金内完結が可能",
-          "1階路面52㎡で生活密着型テナント需要に対応",
-          "取得コストが低く財務リスクが限定的"
+          "低価格帯2,780万で自己資金効率は高い",
+          "1階路面・52㎡は地域密着型テナントに対応可能",
+          "足立区は再開発進行中で超長期的な底値圏"
         ],
         "cons": [
-          "梅島駅徒歩15分は商業立地として最も不利な条件",
-          "足立区の坪単価最低水準（1.2万）で賃料成長余地が乏しい"
+          "梅島駅から15分は商業立地として実質不適格",
+          "旧耐震1980年・推定実質利回り5%未達でスクリーニング基準割れリスク"
         ],
         "over_budget": false
       }
@@ -1074,7 +1074,7 @@
       "store": 4
     },
     "江東区": {
-      "store": 4
+      "store": 5
     },
     "荒川区": {
       "store": 0
@@ -1083,7 +1083,7 @@
       "store": 3
     },
     "文京区": {
-      "store": 4
+      "store": 5
     },
     "大田区": {
       "store": 8
@@ -1103,16 +1103,16 @@
     "ltv_max": 0.8,
     "dscr_min": 1.2
   },
-  "market_summary": "東京都対象8区の店舗・事務所投資市況\n\n今回の調査では健美家／HOMES（28件）およびgoo不動産（6件）を情報源とし、計34件のデータを収集した。エリア別では大田区（8件）と江戸川区（7件）が物件数で突出しており、両区は幹線道路沿いの商業需要や地域密着型テナント需要を背景に流通が活発である。台東区・墨田区・江東区・文京区はいずれも4件と中程度で、観光需要や都心近接性を評価した投資家の関心が継続している。足立区は3件、荒川区は0件と相対的に低水準にとどまった。地価動向については、都心周辺区では上昇圧力が続く一方、東部・北部外縁区では価格上昇が緩やかで利回り確保のしやすい環境が維持されている。投資家にとっては、大田区・江戸川区の利回り水準と商圏規模のバランス、文京区・台東区の安定的な賃貸需要が注目点となっており、荒川区は現状流通が乏しいものの割安感から今後の動向が注視される。",
+  "market_summary": "東京都8区の店舗・事務所投資市況（2024年）\n\n健美家／HOMES・goo不動産を合わせた36件のデータをもとに市況を概観する。大田区（8件）・江戸川区（7件）が流通件数で上位を占め、比較的物件選択の幅が広い。文京区・江東区（各5件）は大学・医療施設・再開発需要を背景に底堅い賃料水準が維持されており、投資家の安定志向に合致する。墨田区・台東区（各4件）は観光・インバウンド需要の恩恵を受け、飲食・物販用途の店舗に引き合いが続く。足立区（3件）は地価上昇余地への期待から実需・投資双方の関心が高まりつつある。一方、荒川区は流通件数ゼロであり、売り手の保有継続意向が強く市場流動性は低い。地価動向としては、再開発が進む江東区湾岸エリアや、北千住を核とする足立区の上昇圧力が顕著である。投資家の注目点は、利回り水準の維持と用途転換余地（住宅・倉庫等）のある物件の取得機会にある。",
   "data_summary": {
     "store": {
-      "total": 34,
-      "in_budget": 25
+      "total": 36,
+      "in_budget": 27
     }
   },
-  "editorial": "今週の注目は墨田区・錦糸町徒歩4分の2,930万円物件（推定実質7.64%）。1位・2位が同一物件の重複掲載とみられるが、それだけ市場での露出が高く注目度は折り紙付き。指値5%（約146万円）の余地もあり、交渉次第で実質8%超も視野に入る。大田区・大森物件は指値8%と交渉幅が大きく、粘り強い折衝が奏功しやすい。1階路面店については情報上明示はないが、錦糸町・大森ともに商業集積エリアで路面店の可能性は高く、現地確認を優先したい。goo不動産からは6件取得できており、健美家未掲載の掘り出し物が含まれる可能性があるため精査を推奨。実質5%超でのスクリーニングで34件中25件が予算内に収まり、選択肢は十分。まず重複排除・現地視察・レントロール確認を即実行されたい。",
+  "editorial": "今週の注目物件は墨田区・錦糸町駅徒歩4分（2,930万円）で、推定実質利回り7.64%は都内店舗物件として突出した水準。指値5%の交渉余地も現実的で、早期打診を推奨する。大田区2件は蒲田・大森エリアの安定需要を背景に実質5〜6%台を確保しており、指値8%を前提とした粘り強い交渉が有効だ。1階路面店の明示情報は限定的だが、錦糸町・蒲田の立地特性上、路面店舗の可能性が高く現地確認は必須。goo不動産由来の6件は情報量が少なく今回の掘り出し物認定には至らなかった。実質5%ラインでの絞り込みにより36件中27件が予算内に収まり、スクリーニング精度は良好。投資家は錦糸町物件を最優先に現地視察・賃借人確認・修繕履歴精査を今週中に実施されたい。",
   "by_source": {
-    "健美家／HOMES": 28,
+    "健美家／HOMES": 30,
     "goo不動産": 6
   },
   "screening": {
