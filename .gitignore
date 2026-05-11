@@ -3,3 +3,9 @@ output/
 __pycache__/
 *.pyc
 .venv/
+.snapshots/
+
+# Tier1で追加: 展開スクリプト・新patchzip・project-knowledge
+apply.sh
+patch-tier1-cool-50.zip
+project-knowledge.zip
