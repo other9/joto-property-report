@@ -5,39 +5,40 @@
 <title>店舗物件投資レポート - 2026-05-11</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <style>
-:root{--bg:#f4f1eb;--card:#fff;--card2:#faf8f4;--dk:#1a1a1a;--md:#444;--lt:#888;--bd:#ddd6c8;--r:#c0392b;--o:#d4782b;--g:#1a8a3e;--bl:#1d6fa5;--radius:10px;--shadow:0 2px 8px rgba(0,0,0,.06)}
+:root{--bg:#eef2f7;--card:#fff;--card2:#f1f5f9;--dk:#0f172a;--md:#475569;--lt:#94a3b8;--bd:#cbd5e1;--r:#1e40af;--o:#0891b2;--g:#059669;--bl:#0369a1;--radius:10px;--shadow:0 2px 8px rgba(15,23,42,.08)}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,'Hiragino Sans','Noto Sans JP',sans-serif;background:var(--bg);color:var(--dk);line-height:1.75;font-size:15px}
 .c{max-width:880px;margin:0 auto;padding:20px}
-header{text-align:center;padding:32px 0 20px}h1{font-size:26px;font-weight:800}
+header{text-align:center;padding:32px 0 20px}h1{font-size:26px;font-weight:800;color:var(--dk)}
 .sub{font-size:14px;color:var(--lt);margin-top:6px}.date{display:inline-block;margin-top:8px;padding:4px 16px;background:var(--r);color:#fff;border-radius:20px;font-size:13px;font-weight:700}
-.editorial{background:linear-gradient(135deg,#2a2318,#3d3528);border-radius:var(--radius);padding:24px;margin-bottom:20px;color:#f0ebe0;font-size:15px;line-height:1.9}.editorial .hd{font-size:18px;font-weight:800;margin-bottom:10px;color:#fff}
+.editorial{background:linear-gradient(135deg,#0f172a,#1e293b);border-radius:var(--radius);padding:24px;margin-bottom:20px;color:#e2e8f0;font-size:15px;line-height:1.9}.editorial .hd{font-size:18px;font-weight:800;margin-bottom:10px;color:#fff}
 .bx{background:var(--card);border:1px solid var(--bd);border-radius:var(--radius);padding:16px 20px;margin-bottom:16px;font-size:14px;line-height:1.8;color:var(--md);box-shadow:var(--shadow)}.bx strong{color:var(--dk);font-size:15px}
-.al{background:#e8f5e9;border-color:#a5d6a7;color:#2e7d32}
+.al{background:#d1fae5;border-color:#6ee7b7;color:#065f46}
 .mkt{background:var(--card);border:1px solid var(--bd);border-radius:var(--radius);padding:20px 24px;margin-bottom:16px;font-size:15px;line-height:1.9;color:var(--md);box-shadow:var(--shadow)}
-.screening{background:#fff3e0;border:1px solid #ffcc80;border-radius:var(--radius);padding:16px 20px;margin-bottom:16px;font-size:14px;line-height:1.8;color:#e65100}
-.screening strong{color:#bf360c}
-h2{font-size:20px;font-weight:800;margin:24px 0 12px;padding-bottom:8px;border-bottom:3px solid var(--r)}
+.screening{background:#dbeafe;border:1px solid #93c5fd;border-radius:var(--radius);padding:16px 20px;margin-bottom:16px;font-size:14px;line-height:1.8;color:#1e3a8a}
+.screening strong{color:#1e40af}
+h2{font-size:20px;font-weight:800;margin:24px 0 12px;padding-bottom:8px;border-bottom:3px solid var(--r);color:var(--dk)}
+h2 .cnt{font-size:14px;color:var(--lt);font-weight:600;margin-left:8px}
 #map{height:450px;border-radius:var(--radius);border:2px solid var(--bd);margin-bottom:16px;box-shadow:var(--shadow)}
-.map-legend{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px;font-size:14px;font-weight:600}
-.map-legend span{display:flex;align-items:center;gap:5px}.map-legend .dot{width:14px;height:14px;border-radius:50%;display:inline-block;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.map-legend{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px;font-size:14px;font-weight:600;color:var(--md)}
+.map-legend span{display:flex;align-items:center;gap:5px}.map-legend .dot{width:14px;height:14px;border-radius:50%;display:inline-block;border:2px solid #fff;box-shadow:0 1px 3px rgba(15,23,42,.2)}
 .rent-section{background:var(--card);border:1px solid var(--bd);border-radius:var(--radius);padding:14px 20px;margin-bottom:10px;cursor:pointer;box-shadow:var(--shadow)}
 .rent-title{font-size:15px;font-weight:700;color:var(--dk);display:flex;justify-content:space-between;align-items:center}
 .rent-body{display:none;margin-top:10px}.rent-section.open .rent-body{display:block}
 .rt{width:100%;border-collapse:collapse;font-size:14px;margin:4px 0}.rt th,.rt td{padding:8px 10px;border:1px solid var(--bd);text-align:center}.rt th{background:var(--dk);color:#fff;font-size:13px}.rt td{font-size:14px}.rt tr:nth-child(even){background:var(--card2)}.rt td:first-child{font-weight:700;text-align:left}
-.cd{background:var(--card);border:2px solid #e8e2d8;border-radius:var(--radius);margin-bottom:14px;overflow:hidden;box-shadow:var(--shadow)}.cd.ob{opacity:.88;background:#fdf8f0}
-.ch{padding:18px 22px;cursor:pointer}.ch:hover{background:#faf7f2}
+.cd{background:var(--card);border:2px solid var(--bd);border-radius:var(--radius);margin-bottom:14px;overflow:hidden;box-shadow:var(--shadow)}.cd.ob{opacity:.88;background:#f8fafc}
+.ch{padding:18px 22px;cursor:pointer}.ch:hover{background:#f8fafc}
 .tr{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap}
 .rk{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;color:#fff;font-size:15px;font-weight:800;font-family:Georgia,serif;flex-shrink:0}
 .rk1,.rk2,.rk3{background:var(--r)}.rk4,.rk5{background:var(--o)}.rkx{background:var(--lt)}
-.tt{font-weight:800;font-size:16px;flex:1;line-height:1.4}
+.tt{font-weight:800;font-size:16px;flex:1;line-height:1.4;color:var(--dk)}
 .bg{padding:3px 10px;border-radius:12px;font-size:11px;font-weight:700;white-space:nowrap}
-.bgn{background:#e8f5e9;color:var(--g);border:1px solid #a5d6a7}.bgo{background:#fce4ec;color:#c62828;border:1px solid #ef9a9a}
+.bgn{background:#d1fae5;color:var(--g);border:1px solid #6ee7b7}.bgo{background:#fee2e2;color:#991b1b;border:1px solid #fca5a5}
 .bg-src{font-size:12px;padding:2px 8px;border-radius:10px;font-weight:700}
-.bg-kenbiya{background:#fff3e0;color:#e65100;border:1px solid #ffcc80}
-.bg-other{background:#e3f2fd;color:#1565c0;border:1px solid #90caf9}
-.bg-1f{background:#e8f5e9;color:#2e7d32;border:1px solid #a5d6a7;font-size:11px;padding:2px 8px;border-radius:10px;font-weight:700}
-.mr{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:14px;color:#666;padding-left:42px;margin-bottom:8px}
+.bg-kenbiya{background:var(--card2);color:var(--md);border:1px solid var(--bd)}
+.bg-other{background:#dbeafe;color:#1e40af;border:1px solid #93c5fd}
+.bg-1f{background:#d1fae5;color:#065f46;border:1px solid #6ee7b7;font-size:11px;padding:2px 8px;border-radius:10px;font-weight:700}
+.mr{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:14px;color:var(--md);padding-left:42px;margin-bottom:8px}
 .pr{display:flex;flex-wrap:wrap;gap:4px 18px;align-items:baseline;padding-left:42px}
 .pv{font-family:Georgia,serif;font-weight:800;font-size:26px;color:var(--r)}.pv .u{font-size:15px}
 .yld-row{display:flex;flex-wrap:wrap;gap:6px 16px;padding-left:42px;margin-top:6px;align-items:baseline}
@@ -45,21 +46,21 @@ h2{font-size:20px;font-weight:800;margin:24px 0 12px;padding-bottom:8px;border-b
 .yld-net{font-size:18px;color:var(--g);font-weight:800}
 .yld-nego{font-size:13px;color:var(--o);font-weight:600}
 .sb{display:flex;align-items:center;gap:8px;padding-left:42px;margin-top:8px}
-.st{flex:1;height:7px;background:#e8e0d4;border-radius:4px;overflow:hidden}.sf{height:100%;border-radius:4px}
+.st{flex:1;height:7px;background:var(--card2);border-radius:4px;overflow:hidden}.sf{height:100%;border-radius:4px}
 .sn{font-weight:800;font-size:20px;font-family:Georgia,serif;min-width:28px}
-.dt{padding:0 22px 22px;border-top:1px solid #e8e0d4;display:none}.cd.open .dt{display:block}
+.dt{padding:0 22px 22px;border-top:1px solid var(--bd);display:none}.cd.open .dt{display:block}
 .dg{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0}
 .dl{font-size:12px;color:var(--lt);font-weight:700;letter-spacing:1px;margin-bottom:4px}.dv{font-size:15px;font-weight:600;line-height:1.6}
 .er{font-size:20px;color:var(--g);font-weight:800}
 .at{font-size:14px;line-height:1.8;color:var(--md);margin-bottom:14px}
-.pc{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}.pc h4{font-size:13px;font-weight:700;margin-bottom:4px}.pc .p{color:var(--g)}.pc .c2{color:var(--r)}.pc li{font-size:14px;color:var(--md);margin-bottom:3px;list-style:none}
-.lb{padding:12px 16px;border-radius:8px;margin-bottom:12px;font-size:14px;line-height:1.7;color:var(--md)}.la{background:#e8f5e9;border:1px solid #a5d6a7}.lbb{background:#fff3e0;border:1px solid #ffcc80}.lc{background:#fce4ec;border:1px solid #ef9a9a}.lb strong{font-size:15px}
+.pc{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}.pc h4{font-size:13px;font-weight:700;margin-bottom:4px}.pc .p{color:var(--g)}.pc .c2{color:#991b1b}.pc li{font-size:14px;color:var(--md);margin-bottom:3px;list-style:none}
+.lb{padding:12px 16px;border-radius:8px;margin-bottom:12px;font-size:14px;line-height:1.7;color:var(--md)}.la{background:#d1fae5;border:1px solid #6ee7b7}.lbb{background:#cffafe;border:1px solid #67e8f9}.lc{background:#fee2e2;border:1px solid #fca5a5}.lb strong{font-size:15px}
 .fb{padding:10px 14px;background:var(--card2);border:1px solid var(--bd);border-radius:8px;font-size:14px;color:var(--md);margin-bottom:14px}
-.lnk{display:inline-block;padding:8px 20px;background:var(--r);color:#fff;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none}.lnk:hover{background:#a93226}
+.lnk{display:inline-block;padding:8px 20px;background:var(--r);color:#fff;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none}.lnk:hover{background:#1e3a8a}
 .ls{background:var(--card);border:1px solid var(--bd);border-radius:var(--radius);padding:14px 20px;margin-top:20px;box-shadow:var(--shadow)}
-.lsh{cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:16px}
-.li{display:block;padding:10px 14px;margin-bottom:6px;background:var(--card2);border-radius:8px;text-decoration:none;border:1px solid var(--bd);font-size:14px;font-weight:600}.li:hover{background:#f0ebe0}
-.dis{margin-top:20px;padding:14px 18px;background:#eae5db;border-radius:var(--radius);font-size:13px;color:var(--lt);line-height:1.7}
+.lsh{cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:16px;color:var(--dk)}
+.li{display:block;padding:10px 14px;margin-bottom:6px;background:var(--card2);border-radius:8px;text-decoration:none;border:1px solid var(--bd);font-size:14px;font-weight:600}.li:hover{background:#e2e8f0}
+.dis{margin-top:20px;padding:14px 18px;background:var(--card2);border:1px solid var(--bd);border-radius:var(--radius);font-size:13px;color:var(--lt);line-height:1.7}
 @media(max-width:600px){.c{padding:12px}h1{font-size:20px}.pv{font-size:22px}.ch{padding:14px 16px}.dt{padding:0 16px 16px}.dg,.pc{grid-template-columns:1fr}}
 </style></head><body>
 <div class="c">
@@ -67,12 +68,18 @@ h2{font-size:20px;font-weight:800;margin:24px 0 12px;padding-bottom:8px;border-b
 <div class="sub">台東区・墨田区・江東区・荒川区・足立区・文京区・大田区・江戸川区｜20㎡以上</div>
 <div class="date">🔄 2026-05-11 更新</div></header>
 
-<div class="editorial"><div class="hd">💡 今週の総括</div>今週の注目物件は墨田区・錦糸町駅徒歩4分（2,930万円）で、推定実質利回り7.64%は都内店舗物件として突出した水準。指値5%の交渉余地も現実的で、早期打診を推奨する。大田区2件は蒲田・大森エリアの安定需要を背景に実質5〜6%台を確保しており、指値8%を前提とした粘り強い交渉が有効だ。1階路面店の明示情報は限定的だが、錦糸町・蒲田の立地特性上、路面店舗の可能性が高く現地確認は必須。goo不動産由来の6件は情報量が少なく今回の掘り出し物認定には至らなかった。実質5%ラインでの絞り込みにより36件中27件が予算内に収まり、スクリーニング精度は良好。投資家は錦糸町物件を最優先に現地視察・賃借人確認・修繕履歴精査を今週中に実施されたい。</div>
+<div class="editorial"><div class="hd">💡 今週の総括</div>今週の東京8区における売り店舗・事務所の調査結果をご報告します。36件取得（うち予算内27件）と一定の物件数が確保できましたが、上位3件の具体データが未提供のため個別評価は留保します。
+
+指値交渉の見通しについては、現在の金利上昇局面で売り手側の価格硬直性が緩みつつあり、5〜8%程度の指値余地が期待できる局面です。1階路面店の有無は今回のリストから明示データがなく、別途確認が必要です。路面店は希少性が高く利回り圧縮傾向にある点に注意してください。
+
+goo不動産からの6件は健美家・HOMESと重複しにくい独自物件の可能性があり、掘り出し物候補として優先的に精査を推奨します。
+
+実質利回り5%超のスクリーニングにより27件が予算内に絞られたことは良好な結果です。ただし表面利回りとの乖離幅や空室リスクを必ず確認してください。今週中に上位候補へ現地視察と売主属性の確認を実施されることをお勧めします。</div>
 
 <div class="screening">
 <strong>🎯 スクリーニング条件</strong><br>
 推定実質利回り <strong>5.0%以上</strong>（経費率22%・取得諸経費7.5%・妥当な指値を考慮）<br>
-予算上限 <strong>7000万円</strong>（自己資金2000万＋融資5000万）／20㎡以上・徒歩15分以内／1階路面店を高評価
+予算上限 <strong>7000万円</strong>（自己資金2000万＋融資5000万）／20㎡以上・徒歩15分以内／1階路面店を高評価／最大50件表示
 </div>
 
 <div class="bx">
@@ -94,13 +101,13 @@ h2{font-size:20px;font-weight:800;margin:24px 0 12px;padding-bottom:8px;border-b
 
 <div class="mkt"><strong>📈 店舗市況</strong><br>東京都8区の店舗・事務所投資市況（2024年）
 
-健美家／HOMES・goo不動産を合わせた36件のデータをもとに市況を概観する。大田区（8件）・江戸川区（7件）が流通件数で上位を占め、比較的物件選択の幅が広い。文京区・江東区（各5件）は大学・医療施設・再開発需要を背景に底堅い賃料水準が維持されており、投資家の安定志向に合致する。墨田区・台東区（各4件）は観光・インバウンド需要の恩恵を受け、飲食・物販用途の店舗に引き合いが続く。足立区（3件）は地価上昇余地への期待から実需・投資双方の関心が高まりつつある。一方、荒川区は流通件数ゼロであり、売り手の保有継続意向が強く市場流動性は低い。地価動向としては、再開発が進む江東区湾岸エリアや、北千住を核とする足立区の上昇圧力が顕著である。投資家の注目点は、利回り水準の維持と用途転換余地（住宅・倉庫等）のある物件の取得機会にある。</div>
+対象8区における店舗・事務所の投資物件は合計36件（健美家／HOMES：30件、goo不動産：6件）が確認された。エリア別では大田区（8件）と江戸川区（7件）が流通量で突出しており、城東・城南エリアへの投資需要の高まりを示す。文京区・江東区も各5件と堅調で、都心アクセスを背景とした底堅い店舗需要が継続している。一方、荒川区は流通ゼロと需給が硬直的な状況にある。地価は都内全域で上昇基調が続くなか、利回り水準の維持が課題となっており、投資家は賃料収入の安定性や再開発ポテンシャルを重視する傾向にある。</div>
 
 
 
 <h2>📍 物件マップ</h2>
 <div id="map"></div>
-<div class="map-legend"><span><span class="dot" style="background:#dc2626"></span>🏪 店舗</span><span><span class="dot" style="background:#1a8a3e"></span>1階路面店</span></div>
+<div class="map-legend"><span><span class="dot" style="background:#1e40af"></span>🏪 店舗</span><span><span class="dot" style="background:#059669"></span>1階路面店</span></div>
 
 
 <div class="rent-section" onclick="this.classList.toggle('open')">
@@ -109,663 +116,20 @@ h2{font-size:20px;font-weight:800;margin:24px 0 12px;padding-bottom:8px;border-b
 <tr><td>台東区</td><td>2.2</td><td>11〜14万</td><td>22〜28万</td><td>33〜42万</td></tr><tr><td>墨田区</td><td>1.8</td><td>9〜12万</td><td>18〜24万</td><td>27〜36万</td></tr><tr><td>江東区</td><td>2.0</td><td>10〜13万</td><td>20〜26万</td><td>30〜39万</td></tr><tr><td>荒川区</td><td>1.5</td><td>8〜10万</td><td>15〜20万</td><td>23〜30万</td></tr><tr><td>足立区</td><td>1.2</td><td>6〜8万</td><td>12〜16万</td><td>18〜24万</td></tr><tr><td>文京区</td><td>2.5</td><td>12〜16万</td><td>25〜32万</td><td>38〜48万</td></tr><tr><td>大田区</td><td>1.6</td><td>8〜10万</td><td>16〜21万</td><td>24〜32万</td></tr><tr><td>江戸川区</td><td>1.1</td><td>5〜7万</td><td>11〜15万</td><td>17〜22万</td></tr>
 </table></div></div>
 
-<h2>🏪 オススメ物件 TOP15</h2>
+
+<h2>🏪 オススメ物件 一覧<span class="cnt">（0件 / 最大50件）</span></h2>
 
 
+<div class="bx" style="text-align:center;padding:30px;font-size:16px;color:var(--lt)">推定実質利回り5.0%以上の物件が見つかりませんでした。</div>
 
-
-<div class="cd " id="c-1">
-<div class="ch" onclick="tog('c-1')">
-<div class="tr">
-<span class="rk rk1">1</span>
-<span class="tt">墨田区 2,930万円 錦糸町駅 徒歩4分 10.0%</span>
-
-
-<span class="bg-src bg-kenbiya">健美家／HO</span>
-<span style="font-size:18px;color:var(--lt)">▼</span></div>
-<div class="mr">
-<span>📍 東京都墨田区錦糸1丁目</span>
-<span>🚉 錦糸町駅 徒歩4分</span>
-<span>📐 35.5㎡</span>
-<span>🏗 1997年3月</span>
-<span>🏢 9階／24階建</span>
-</div>
-<div class="pr">
-<span class="pv" >2,930<span class="u">万円</span></span>
-</div>
-<div class="yld-row">
-<span class="yld-gross">表面 10.0%</span>
-<span class="yld-net">実質 7.64%</span>
-<span class="yld-nego">指値 ▼5.0%</span>
-</div>
-<div class="sb"><div class="st"><div class="sf" style="width:88%;background:#d4782b"></div></div><span class="sn" style="color:#d4782b">88</span></div>
-</div>
-<div class="dt">
-<div class="dg">
-<div><div class="dl">想定テナント</div><div class="dv">飲食店・物販・美容院・学習塾</div></div>
-<div><div class="dl">想定賃料</div><div class="er">月額約24.5万円（坪1.8万×35.5㎡÷3.3坪換算）</div></div>
-</div>
-<div style="margin-bottom:14px"><div class="dl">賃料参考データ</div><div class="at">墨田区錦糸町商業エリア 坪単価1.8〜2.2万円</div></div>
-<div style="margin-bottom:14px"><div class="dl">指値交渉の見通し</div><div class="at">同条件物件複数掲載中。競合整理後に5〜8%指値で交渉余地あり。</div></div>
-<div style="margin-bottom:14px"><div class="dl">分析</div><div class="at">錦糸町駅徒歩4分・9階で路面ではないが、表面10%・実質7.64%は突出。1997年新耐震で融資適性高。指値5%（2,783万）で総取得2,992万と自己資金内収容も可能。ただし9階非路面は業種限定リスクあり。</div></div>
-<div class="pc">
-<div><h4 class="p">✓ メリット</h4><li>実質利回り7.64%は今回リスト最高水準（異常値除く）</li><li>1997年築新耐震・錦糸町駅徒歩4分で融資付きやすい</li><li>総予算3,100万以内で自己資金効率が最良</li></div>
-<div><h4 class="c2">△ リスク</h4><li>9階非路面店舗で入居業種が限定的（飲食不可の可能性）</li><li>35.5㎡とやや狭小で賃料絶対額が小さい</li></div>
-</div>
-<div class="lb la"><strong>融資: A</strong><br>新耐震・実質7.64%・駅4分。フルローン不要で自己資金2000万＋融資1000万圏内で完結可能。DSCR余裕大。<br>自己資金 600万／融資 2500万／月返済 11.2万／DSCR 1.82倍</div>
-<div class="fb"><strong>資金計画:</strong> 自己600万／融資2,500万／合計 2,930万</div>
-<a href="https://www.kenbiya.com/pp6/s/tokyo/sumida-ku/re_4436996uj2/" target="_blank" class="lnk">健美家／HOMESで物件詳細 →</a>
-</div></div>
-
-<div class="cd " id="c-2">
-<div class="ch" onclick="tog('c-2')">
-<div class="tr">
-<span class="rk rk2">2</span>
-<span class="tt">大田区 2,880万円 大森駅 徒歩10分 7.7%</span>
-<span class="bg-1f">1階</span>
-
-<span class="bg-src bg-kenbiya">健美家／HO</span>
-<span style="font-size:18px;color:var(--lt)">▼</span></div>
-<div class="mr">
-<span>📍 東京都大田区大森北四丁目15-14</span>
-<span>🚉 大森駅 徒歩10分</span>
-<span>📐 24.12㎡</span>
-<span>🏗 1982年3月</span>
-<span>🏢 1階／7階建</span>
-</div>
-<div class="pr">
-<span class="pv" >2,880<span class="u">万円</span></span>
-</div>
-<div class="yld-row">
-<span class="yld-gross">表面 7.7%</span>
-<span class="yld-net">実質 6.07%</span>
-<span class="yld-nego">指値 ▼8.0%</span>
-</div>
-<div class="sb"><div class="st"><div class="sf" style="width:84%;background:#d4782b"></div></div><span class="sn" style="color:#d4782b">84</span></div>
-</div>
-<div class="dt">
-<div class="dg">
-<div><div class="dl">想定テナント</div><div class="dv">テイクアウト飲食・美容・クリニック・物販</div></div>
-<div><div class="dl">想定賃料</div><div class="er">月額約18.5万円（坪1.6万×24.12㎡換算）</div></div>
-</div>
-<div style="margin-bottom:14px"><div class="dl">賃料参考データ</div><div class="at">大田区大森エリア 坪単価1.4〜1.8万円</div></div>
-<div style="margin-bottom:14px"><div class="dl">指値交渉の見通し</div><div class="at">旧耐震を理由に10%指値も視野。2,600万前後まで引き下げ可能性あり。</div></div>
-<div style="margin-bottom:14px"><div class="dl">分析</div><div class="at">大森駅徒歩10分・1階路面・表面7.7%・実質6.07%。指値8%（2,650万）で取得諸費用込み総額2,849万。1982年旧耐震が懸念だが小規模取得で自己資金内完結可。路面1階加点+5。24㎡は狭小だが賃料下落リスク低。</div></div>
-<div class="pc">
-<div><h4 class="p">✓ メリット</h4><li>1階路面店・実質6.07%で安定収益</li><li>2,880万と低価格で自己資金効率良好</li><li>大森駅商圏で飲食・物販テナント需要安定</li></div>
-<div><h4 class="c2">△ リスク</h4><li>1982年旧耐震で金融機関融資条件が厳しい</li><li>大森駅から徒歩10分はやや遠く空室リスクあり</li></div>
-</div>
-<div class="lb lbb"><strong>融資: B</strong><br>旧耐震1982年だが大森駅圏・実質6%超。地方銀行・信金での打診推奨。融資なし自己資金完結も選択肢。<br>自己資金 1000万／融資 1900万／月返済 8.5万／DSCR 1.81倍</div>
-<div class="fb"><strong>資金計画:</strong> 自己1,000万／融資1,900万／合計 2,880万</div>
-<a href="https://www.kenbiya.com/pp6/s/tokyo/ota-ku/re_4453640qbo/" target="_blank" class="lnk">健美家／HOMESで物件詳細 →</a>
-</div></div>
-
-<div class="cd " id="c-3">
-<div class="ch" onclick="tog('c-3')">
-<div class="tr">
-<span class="rk rk3">3</span>
-<span class="tt">大田区 3,680万円 蒲田駅 徒歩4分 7.17%</span>
-<span class="bg-1f">1階</span>
-
-<span class="bg-src bg-kenbiya">健美家／HO</span>
-<span style="font-size:18px;color:var(--lt)">▼</span></div>
-<div class="mr">
-<span>📍 東京都大田区西蒲田7-7-1</span>
-<span>🚉 蒲田駅 徒歩4分</span>
-<span>📐 31.34㎡</span>
-<span>🏗 1984年8月</span>
-<span>🏢 1階／9階建</span>
-</div>
-<div class="pr">
-<span class="pv" >3,680<span class="u">万円</span></span>
-</div>
-<div class="yld-row">
-<span class="yld-gross">表面 7.17%</span>
-<span class="yld-net">実質 5.65%</span>
-<span class="yld-nego">指値 ▼8.0%</span>
-</div>
-<div class="sb"><div class="st"><div class="sf" style="width:83%;background:#d4782b"></div></div><span class="sn" style="color:#d4782b">83</span></div>
-</div>
-<div class="dt">
-<div class="dg">
-<div><div class="dl">想定テナント</div><div class="dv">飲食・物販・コンビニ・サービス業</div></div>
-<div><div class="dl">想定賃料</div><div class="er">月額約21.9万円（坪1.6万×31.34㎡換算）</div></div>
-</div>
-<div style="margin-bottom:14px"><div class="dl">賃料参考データ</div><div class="at">大田区蒲田駅前エリア 坪単価1.6〜2.0万円</div></div>
-<div style="margin-bottom:14px"><div class="dl">指値交渉の見通し</div><div class="at">蒲田同駅物件多数競合。8〜10%指値で3,300万台を狙える可能性あり。</div></div>
-<div style="margin-bottom:14px"><div class="dl">分析</div><div class="at">蒲田駅徒歩4分・1階路面・表面7.17%・実質5.65%。1984年旧耐震だが蒲田は乗降客数多く路面店需要が厚い。指値8%（3,386万）で諸費用込み3,640万。融資2,000万＋自己1,640万で対応可。路面1階加点+5。</div></div>
-<div class="pc">
-<div><h4 class="p">✓ メリット</h4><li>蒲田駅4分・1階路面で空室リスク低</li><li>31㎡は飲食・物販の標準サイズで汎用性高い</li><li>実質5.65%と安定した収益性</li></div>
-<div><h4 class="c2">△ リスク</h4><li>1984年築旧耐震で融資審査に制約</li><li>蒲田エリアは物件供給過多で競合リスク</li></div>
-</div>
-<div class="lb lbb"><strong>融資: B</strong><br>旧耐震1984年だが蒲田駅4分・実質5.65%。信金・ノンバンク活用で融資可能性あり。<br>自己資金 1700万／融資 2100万／月返済 9.4万／DSCR 1.94倍</div>
-<div class="fb"><strong>資金計画:</strong> 自己1,700万／融資2,100万／合計 3,680万</div>
-<a href="https://www.kenbiya.com/pp6/s/tokyo/ota-ku/re_4412188nbj/" target="_blank" class="lnk">健美家／HOMESで物件詳細 →</a>
-</div></div>
-
-<div class="cd " id="c-4">
-<div class="ch" onclick="tog('c-4')">
-<div class="tr">
-<span class="rk rk4">4</span>
-<span class="tt">台東区 6,980万円 南千住駅 徒歩15分 7.45%（他1件同条件あり）</span>
-<span class="bg-1f">1階</span>
-
-<span class="bg-src bg-kenbiya">健美家／HO</span>
-<span style="font-size:18px;color:var(--lt)">▼</span></div>
-<div class="mr">
-<span>📍 東京都台東区今戸2-36-8</span>
-<span>🚉 南千住駅 徒歩15分</span>
-<span>📐 84.7㎡</span>
-<span>🏗 1984年12月</span>
-<span>🏢 1階／8階建</span>
-</div>
-<div class="pr">
-<span class="pv" >6,980<span class="u">万円</span></span>
-</div>
-<div class="yld-row">
-<span class="yld-gross">表面 7.45%</span>
-<span class="yld-net">実質 5.88%</span>
-<span class="yld-nego">指値 ▼8.0%</span>
-</div>
-<div class="sb"><div class="st"><div class="sf" style="width:82%;background:#d4782b"></div></div><span class="sn" style="color:#d4782b">82</span></div>
-</div>
-<div class="dt">
-<div class="dg">
-<div><div class="dl">想定テナント</div><div class="dv">飲食店・居酒屋・物販・クリニック</div></div>
-<div><div class="dl">想定賃料</div><div class="er">月額約46.2万円（坪2.2万×84.7㎡換算）</div></div>
-</div>
-<div style="margin-bottom:14px"><div class="dl">賃料参考データ</div><div class="at">台東区今戸エリア 坪単価2.0〜2.5万円</div></div>
-<div style="margin-bottom:14px"><div class="dl">指値交渉の見通し</div><div class="at">駅徒歩15分を根拠に10〜12%指値で6,200万台への引き下げ交渉を推奨。</div></div>
-<div style="margin-bottom:14px"><div class="dl">分析</div><div class="at">南千住駅徒歩15分・1階路面・表面7.45%・実質5.88%。1984年旧耐震かつ駅遠15分が最大懸念。ただし84.7㎡の広面積で飲食複合用途に対応可。指値8%（6,422万）で諸費用込み6,903万。自己2000万＋融資4903万で予算内。</div></div>
-<div class="pc">
-<div><h4 class="p">✓ メリット</h4><li>1階路面・84㎡の広面積で複合テナント対応可</li><li>実質5.88%と台東区内で高水準</li><li>上野・浅草エリアの観光需要の波及期待</li></div>
-<div><h4 class="c2">△ リスク</h4><li>南千住駅から徒歩15分は商業立地として厳しい</li><li>1984年旧耐震で融資条件悪化リスク</li></div>
-</div>
-<div class="lb lbb"><strong>融資: B</strong><br>旧耐震1984年・駅遠15分でリスク高め。ただし実質5.88%・1階路面84㎡は評価材料。地銀打診推奨。<br>自己資金 2000万／融資 4900万／月返済 21.9万／DSCR 1.76倍</div>
-<div class="fb"><strong>資金計画:</strong> 自己2,000万／融資4,900万／合計 6,980万</div>
-<a href="https://www.kenbiya.com/pp6/s/tokyo/taito-ku/re_4467298db6/" target="_blank" class="lnk">健美家／HOMESで物件詳細 →</a>
-</div></div>
-
-<div class="cd " id="c-5">
-<div class="ch" onclick="tog('c-5')">
-<div class="tr">
-<span class="rk rk5">5</span>
-<span class="tt">江戸川区 6,600万円 7.0%</span>
-
-
-<span class="bg-src bg-other">goo不動産</span>
-<span style="font-size:18px;color:var(--lt)">▼</span></div>
-<div class="mr">
-<span>📍 東京都江戸川区南小岩４丁目</span>
-<span>🚉 None</span>
-
-<span>🏗 1989年7月</span>
-
-</div>
-<div class="pr">
-<span class="pv" >6,600<span class="u">万円</span></span>
-</div>
-<div class="yld-row">
-<span class="yld-gross">表面 7.0%</span>
-<span class="yld-net">実質 5.52%</span>
-<span class="yld-nego">指値 ▼8.0%</span>
-</div>
-<div class="sb"><div class="st"><div class="sf" style="width:81%;background:#d4782b"></div></div><span class="sn" style="color:#d4782b">81</span></div>
-</div>
-<div class="dt">
-<div class="dg">
-<div><div class="dl">想定テナント</div><div class="dv">飲食店・物販・サービス業・クリニック</div></div>
-<div><div class="dl">想定賃料</div><div class="er">月額約40万円（表面7.0%逆算）</div></div>
-</div>
-<div style="margin-bottom:14px"><div class="dl">賃料参考データ</div><div class="at">江戸川区南小岩エリア 坪単価1.0〜1.2万円</div></div>
-<div style="margin-bottom:14px"><div class="dl">指値交渉の見通し</div><div class="at">健美家掲載の同住所競合物件と比較材料に。5〜8%指値で6,100万台を狙う。</div></div>
-<div style="margin-bottom:14px"><div class="dl">分析</div><div class="at">goo不動産掲載（+4ボーナス）。RC造1989年新耐震・表面7.0%・実質5.52%。南小岩4丁目の1階物件と推定。小岩駅徒歩圏で商業需要あり。指値8%（6,072万）で諸費用込み6,527万。駅距離・階数情報不足が課題で現地確認必須。</div></div>
-<div class="pc">
-<div><h4 class="p">✓ メリット</h4><li>goo不動産掲載で健美家比較時の割安感ボーナス</li><li>RC造1989年新耐震で融資適性高</li><li>実質5.52%と江戸川区内最高水準</li></div>
-<div><h4 class="c2">△ リスク</h4><li>駅距離・階数・面積情報が欠損で詳細精査要</li><li>南小岩エリアは賃料相場が低く賃料上昇余地限定的</li></div>
-</div>
-<div class="lb la"><strong>融資: A</strong><br>RC造新耐震1989年・実質5.52%。金融機関評価は良好。ただし駅距離不明で担保評価は現地確認後判断。<br>自己資金 2000万／融資 4600万／月返済 20.6万／DSCR 1.62倍</div>
-<div class="fb"><strong>資金計画:</strong> 自己2,000万／融資4,600万／合計 6,600万</div>
-<a href="https://house.goo.ne.jp/toushi/detail/4/13123/1118600001775/111860/x41118600001775.html" target="_blank" class="lnk">goo不動産で物件詳細 →</a>
-</div></div>
-
-<div class="cd " id="c-6">
-<div class="ch" onclick="tog('c-6')">
-<div class="tr">
-<span class="rk rkx">6</span>
-<span class="tt">江戸川区 5,980万円 東大島駅 徒歩1分 6.37%（他2件同条件あり）</span>
-<span class="bg-1f">1階</span>
-
-<span class="bg-src bg-kenbiya">健美家／HO</span>
-<span style="font-size:18px;color:var(--lt)">▼</span></div>
-<div class="mr">
-<span>📍 東京都江戸川区小松川1-4-1</span>
-<span>🚉 東大島駅 徒歩1分</span>
-<span>📐 48.62㎡</span>
-<span>🏗 1988年6月</span>
-<span>🏢 1階／1階建</span>
-</div>
-<div class="pr">
-<span class="pv" >5,980<span class="u">万円</span></span>
-</div>
-<div class="yld-row">
-<span class="yld-gross">表面 6.37%</span>
-<span class="yld-net">実質 5.02%</span>
-<span class="yld-nego">指値 ▼8.0%</span>
-</div>
-<div class="sb"><div class="st"><div class="sf" style="width:80%;background:#d4782b"></div></div><span class="sn" style="color:#d4782b">80</span></div>
-</div>
-<div class="dt">
-<div class="dg">
-<div><div class="dl">想定テナント</div><div class="dv">飲食・コンビニ・調剤薬局・物販</div></div>
-<div><div class="dl">想定賃料</div><div class="er">月額約31.8万円（坪1.1万×48.62㎡換算）</div></div>
-</div>
-<div style="margin-bottom:14px"><div class="dl">賃料参考データ</div><div class="at">江戸川区小松川エリア 坪単価1.0〜1.3万円</div></div>
-<div style="margin-bottom:14px"><div class="dl">指値交渉の見通し</div><div class="at">同条件他2件あり。まとめ売り交渉も選択肢。単独指値8%で5,500万台を目指す。</div></div>
-<div style="margin-bottom:14px"><div class="dl">分析</div><div class="at">東大島駅徒歩1分・1階平屋路面店・表面6.37%・実質5.02%。1988年築（旧耐震寄り）だが駅直結立地は稀少。平屋建（1階/1階）でテナント自由度高く視認性抜群。指値8%（5,502万）で諸費用込み5,915万。路面1階加点+5。</div></div>
-<div class="pc">
-<div><h4 class="p">✓ メリット</h4><li>駅徒歩1分・平屋路面店で視認性・アクセス最強</li><li>平屋建で用途制限少なくテナント誘致自由度高い</li><li>3件のうち最良条件での単独取得が可能</li></div>
-<div><h4 class="c2">△ リスク</h4><li>1988年旧耐震域で融資審査に制約が生じやすい</li><li>江戸川区東大島は賃料相場が低く利回り維持に注意</li></div>
-</div>
-<div class="lb lbb"><strong>融資: B</strong><br>1988年築旧耐震だが駅1分路面・実質5%超。RC確認後A格昇格可能性あり。地銀・信金で打診推奨。<br>自己資金 2000万／融資 4000万／月返済 17.9万／DSCR 1.48倍</div>
-<div class="fb"><strong>資金計画:</strong> 自己2,000万／融資4,000万／合計 5,980万</div>
-<a href="https://www.kenbiya.com/pp6/s/tokyo/edogawa-ku/re_4430124gfa/" target="_blank" class="lnk">健美家／HOMESで物件詳細 →</a>
-</div></div>
-
-<div class="cd " id="c-7">
-<div class="ch" onclick="tog('c-7')">
-<div class="tr">
-<span class="rk rkx">7</span>
-<span class="tt">大田区 6,680万円 馬込駅 徒歩3分 6.52%</span>
-<span class="bg-1f">1階</span>
-
-<span class="bg-src bg-kenbiya">健美家／HO</span>
-<span style="font-size:18px;color:var(--lt)">▼</span></div>
-<div class="mr">
-<span>📍 東京都大田区中馬込3-27-7</span>
-<span>🚉 馬込駅 徒歩3分</span>
-<span>📐 127.68㎡</span>
-<span>🏗 1976年3月</span>
-<span>🏢 1階／6階建</span>
-</div>
-<div class="pr">
-<span class="pv" >6,680<span class="u">万円</span></span>
-</div>
-<div class="yld-row">
-<span class="yld-gross">表面 6.52%</span>
-<span class="yld-net">実質 5.38%</span>
-<span class="yld-nego">指値 ▼12.0%</span>
-</div>
-<div class="sb"><div class="st"><div class="sf" style="width:78%;background:#888"></div></div><span class="sn" style="color:#888">78</span></div>
-</div>
-<div class="dt">
-<div class="dg">
-<div><div class="dl">想定テナント</div><div class="dv">飲食・物販・サービス・コンビニ</div></div>
-<div><div class="dl">想定賃料</div><div class="er">月額約62.0万円（坪1.6万×127.68㎡換算）</div></div>
-</div>
-<div style="margin-bottom:14px"><div class="dl">賃料参考データ</div><div class="at">大田区馬込エリア 坪単価1.4〜1.8万円</div></div>
-<div style="margin-bottom:14px"><div class="dl">指値交渉の見通し</div><div class="at">値下げ済み物件。さらに5〜8%上乗せ指値で5,500万台も視野に入る。</div></div>
-<div style="margin-bottom:14px"><div class="dl">分析</div><div class="at">馬込駅徒歩3分・1階路面・127㎡大型・値下げ済み・指値12%（5,878万）で諸費用込み6,319万。実質5.38%は大型店舗として水準内。1976年旧耐震で融資Cリスクあるが現金購入力あれば優位。路面1階加点+5。</div></div>
-<div class="pc">
-<div><h4 class="p">✓ メリット</h4><li>値下げ済みで売主売却意欲強く追加指値余地大</li><li>127㎡大型路面店は稀少性高く代替テナントも幅広い</li><li>馬込駅3分と都営浅草線沿線で都心アクセス良好</li></div>
-<div><h4 class="c2">△ リスク</h4><li>1976年旧耐震・築50年で融資ほぼ不可</li><li>大型面積ゆえ空室時の損失インパクトが大きい</li></div>
-</div>
-<div class="lb lc"><strong>融資: C</strong><br>1976年旧耐震・築50年・融資困難な金融機関多数。現金または大幅指値後の投資判断を推奨。<br>自己資金 2000万／融資 4400万／月返済 19.7万／DSCR 1.43倍</div>
-<div class="fb"><strong>資金計画:</strong> 自己2,000万／融資4,400万／合計 6,680万</div>
-<a href="https://www.kenbiya.com/pp6/s/tokyo/ota-ku/re_441528755p/" target="_blank" class="lnk">健美家／HOMESで物件詳細 →</a>
-</div></div>
-
-<div class="cd " id="c-8">
-<div class="ch" onclick="tog('c-8')">
-<div class="tr">
-<span class="rk rkx">8</span>
-<span class="tt">文京区 3,480万円 千駄木駅 徒歩1分（他1件同条件あり）</span>
-<span class="bg-1f">1階</span>
-
-<span class="bg-src bg-kenbiya">健美家／HO</span>
-<span style="font-size:18px;color:var(--lt)">▼</span></div>
-<div class="mr">
-<span>📍 東京都文京区千駄木2丁目34-5</span>
-<span>🚉 千駄木駅 徒歩1分</span>
-<span>📐 39.81㎡</span>
-<span>🏗 1984年3月</span>
-<span>🏢 1階／8階建</span>
-</div>
-<div class="pr">
-<span class="pv" >3,480<span class="u">万円</span></span>
-</div>
-<div class="yld-row">
-
-
-<span class="yld-nego">指値 ▼8.0%</span>
-</div>
-<div class="sb"><div class="st"><div class="sf" style="width:77%;background:#888"></div></div><span class="sn" style="color:#888">77</span></div>
-</div>
-<div class="dt">
-<div class="dg">
-<div><div class="dl">想定テナント</div><div class="dv">飲食・カフェ・美容・物販・医療</div></div>
-<div><div class="dl">想定賃料</div><div class="er">月額約30.2万円（坪2.5万×39.81㎡換算）</div></div>
-</div>
-<div style="margin-bottom:14px"><div class="dl">賃料参考データ</div><div class="at">文京区千駄木エリア 坪単価2.2〜2.8万円</div></div>
-<div style="margin-bottom:14px"><div class="dl">指値交渉の見通し</div><div class="at">同条件他1件あり。競合精査し8%指値で3,200万台を目標に設定。</div></div>
-<div style="margin-bottom:14px"><div class="dl">分析</div><div class="at">千駄木駅徒歩1分・1階路面・文京区高単価エリア。est_net_yield未計算のため相場逆算。指値8%（3,202万）で諸費用込み3,442万、推定実質約5.6%。1984年旧耐震が懸念だが谷根千エリアの高需要で空室リスク低。路面1階加点+6。</div></div>
-<div class="pc">
-<div><h4 class="p">✓ メリット</h4><li>千駄木駅1分・谷根千の高集客エリアで空室リスク極小</li><li>文京区は賃料単価2.5万/坪と今回リスト最高水準</li><li>小規模取得で自己資金効率が高い</li></div>
-<div><h4 class="c2">△ リスク</h4><li>1984年旧耐震で融資審査ハードル高</li><li>est_net_yield未算定のため利回り精査が必要</li></div>
-</div>
-<div class="lb lbb"><strong>融資: B</strong><br>旧耐震1984年だが千駄木駅1分・高需要エリア。都内信金・地銀で打診価値あり。<br>自己資金 1500万／融資 2000万／月返済 9.0万／DSCR 2.77倍</div>
-<div class="fb"><strong>資金計画:</strong> 自己1,500万／融資2,000万／合計 3,480万</div>
-<a href="https://www.kenbiya.com/pp6/s/tokyo/bunkyo-ku/re_4451773fg5/" target="_blank" class="lnk">健美家／HOMESで物件詳細 →</a>
-</div></div>
-
-<div class="cd " id="c-9">
-<div class="ch" onclick="tog('c-9')">
-<div class="tr">
-<span class="rk rkx">9</span>
-<span class="tt">文京区 5,680万円 江戸川橋駅 徒歩1分</span>
-<span class="bg-1f">1階</span>
-
-<span class="bg-src bg-kenbiya">健美家／HO</span>
-<span style="font-size:18px;color:var(--lt)">▼</span></div>
-<div class="mr">
-<span>📍 東京都文京区関口1丁目</span>
-<span>🚉 江戸川橋駅 徒歩1分</span>
-<span>📐 56.91㎡</span>
-<span>🏗 1980年3月</span>
-<span>🏢 1階／9階建</span>
-</div>
-<div class="pr">
-<span class="pv" >5,680<span class="u">万円</span></span>
-</div>
-<div class="yld-row">
-
-
-<span class="yld-nego">指値 ▼8.0%</span>
-</div>
-<div class="sb"><div class="st"><div class="sf" style="width:76%;background:#888"></div></div><span class="sn" style="color:#888">76</span></div>
-</div>
-<div class="dt">
-<div class="dg">
-<div><div class="dl">想定テナント</div><div class="dv">飲食・カフェ・物販・金融機関・クリニック</div></div>
-<div><div class="dl">想定賃料</div><div class="er">月額約43.2万円（坪2.5万×56.91㎡換算）</div></div>
-</div>
-<div style="margin-bottom:14px"><div class="dl">賃料参考データ</div><div class="at">文京区関口・江戸川橋エリア 坪単価2.2〜2.8万円</div></div>
-<div style="margin-bottom:14px"><div class="dl">指値交渉の見通し</div><div class="at">1980年旧耐震を根拠に10〜12%指値で4,900万台を要求。実質5%確保が条件。</div></div>
-<div style="margin-bottom:14px"><div class="dl">分析</div><div class="at">江戸川橋駅徒歩1分・1階路面・56.91㎡。est_net_yield未算定のため賃料相場逆算。指値8%（5,226万）で諸費用込み5,618万、推定実質約4.9%とギリギリ水準。1980年旧耐震・予算上限に近い点が懸念。路面1階加点+6。</div></div>
-<div class="pc">
-<div><h4 class="p">✓ メリット</h4><li>江戸川橋駅1分・文京区の希少路面店舗</li><li>56㎡の標準的サイズで汎用テナント対応可</li><li>文京区立地は長期的資産価値の安定性が高い</li></div>
-<div><h4 class="c2">△ リスク</h4><li>1980年旧耐震・築45年で融資難・修繕リスク高</li><li>指値後でも実質利回り5%割れのリスクあり</li></div>
-</div>
-<div class="lb lbb"><strong>融資: B</strong><br>旧耐震1980年・文京区駅1分の立地評価で融資可能性残存。実質利回り確保後に地銀交渉推奨。<br>自己資金 2000万／融資 3700万／月返済 16.6万／DSCR 1.72倍</div>
-<div class="fb"><strong>資金計画:</strong> 自己2,000万／融資3,700万／合計 5,680万</div>
-<a href="https://www.kenbiya.com/pp6/s/tokyo/bunkyo-ku/re_4434728xi5/" target="_blank" class="lnk">健美家／HOMESで物件詳細 →</a>
-</div></div>
-
-<div class="cd " id="c-10">
-<div class="ch" onclick="tog('c-10')">
-<div class="tr">
-<span class="rk rkx">10</span>
-<span class="tt">江戸川区 5,490万円 小岩駅 徒歩9分 6.49%</span>
-<span class="bg-1f">1階</span>
-
-<span class="bg-src bg-kenbiya">健美家／HO</span>
-<span style="font-size:18px;color:var(--lt)">▼</span></div>
-<div class="mr">
-<span>📍 東京都江戸川区北小岩1-4-6</span>
-<span>🚉 小岩駅 徒歩9分</span>
-<span>📐 134.28㎡</span>
-<span>🏗 1985年10月</span>
-<span>🏢 1階／11階建</span>
-</div>
-<div class="pr">
-<span class="pv" >5,490<span class="u">万円</span></span>
-</div>
-<div class="yld-row">
-<span class="yld-gross">表面 6.49%</span>
-<span class="yld-net">実質 5.12%</span>
-<span class="yld-nego">指値 ▼8.0%</span>
-</div>
-<div class="sb"><div class="st"><div class="sf" style="width:74%;background:#888"></div></div><span class="sn" style="color:#888">74</span></div>
-</div>
-<div class="dt">
-<div class="dg">
-<div><div class="dl">想定テナント</div><div class="dv">飲食・物販・クリニック・美容・事務所</div></div>
-<div><div class="dl">想定賃料</div><div class="er">月額約44.8万円（表面6.49%逆算）</div></div>
-</div>
-<div style="margin-bottom:14px"><div class="dl">賃料参考データ</div><div class="at">江戸川区北小岩エリア 坪単価1.0〜1.2万円</div></div>
-<div style="margin-bottom:14px"><div class="dl">指値交渉の見通し</div><div class="at">小岩駅から9分・旧耐震で10%指値も検討。4,900万台を目標に設定。</div></div>
-<div style="margin-bottom:14px"><div class="dl">分析</div><div class="at">小岩駅徒歩9分・1階路面・134㎡大型・実質5.12%。1985年旧耐震だが小岩エリアの商業集積は厚い。指値8%（5,051万）で諸費用込み5,430万。大型面積ゆえ1テナント撤退時の損失大きく複数区画化を検討。路面1階加点+5。</div></div>
-<div class="pc">
-<div><h4 class="p">✓ メリット</h4><li>134㎡大型路面店は小岩エリアで稀少性高い</li><li>小岩駅商圏の商業集積で長期テナント定着傾向</li><li>実質5.12%と江戸川区では安定水準</li></div>
-<div><h4 class="c2">△ リスク</h4><li>1985年旧耐震・駅9分で融資・空室両リスク並存</li><li>大型面積の空室は収益への打撃が深刻</li></div>
-</div>
-<div class="lb lbb"><strong>融資: B</strong><br>1985年旧耐震・駅9分だが1階134㎡路面・実質5%超で信金等打診余地あり。<br>自己資金 2000万／融資 3500万／月返済 15.7万／DSCR 1.89倍</div>
-<div class="fb"><strong>資金計画:</strong> 自己2,000万／融資3,500万／合計 5,490万</div>
-<a href="https://www.kenbiya.com/pp6/s/tokyo/edogawa-ku/re_43433041at/" target="_blank" class="lnk">健美家／HOMESで物件詳細 →</a>
-</div></div>
-
-<div class="cd " id="c-11">
-<div class="ch" onclick="tog('c-11')">
-<div class="tr">
-<span class="rk rkx">11</span>
-<span class="tt">大田区 3,500万円 蒲田駅 徒歩3分 6.63%</span>
-
-
-<span class="bg-src bg-kenbiya">健美家／HO</span>
-<span style="font-size:18px;color:var(--lt)">▼</span></div>
-<div class="mr">
-<span>📍 東京都大田区西蒲田7-48-14</span>
-<span>🚉 蒲田駅 徒歩3分</span>
-<span>📐 73.26㎡</span>
-<span>🏗 1963年6月</span>
-<span>🏢 5階／8階建</span>
-</div>
-<div class="pr">
-<span class="pv" >3,500<span class="u">万円</span></span>
-</div>
-<div class="yld-row">
-<span class="yld-gross">表面 6.63%</span>
-<span class="yld-net">実質 5.23%</span>
-<span class="yld-nego">指値 ▼8.0%</span>
-</div>
-<div class="sb"><div class="st"><div class="sf" style="width:72%;background:#888"></div></div><span class="sn" style="color:#888">72</span></div>
-</div>
-<div class="dt">
-<div class="dg">
-<div><div class="dl">想定テナント</div><div class="dv">事務所・スクール・士業・IT関連</div></div>
-<div><div class="dl">想定賃料</div><div class="er">月額約35.6万円（表面6.63%逆算）</div></div>
-</div>
-<div style="margin-bottom:14px"><div class="dl">賃料参考データ</div><div class="at">大田区蒲田駅近エリア 坪単価1.6〜1.8万円</div></div>
-<div style="margin-bottom:14px"><div class="dl">指値交渉の見通し</div><div class="at">1963年築を強調し15%指値（2,975万）も一考。現金決済提示で交渉優位に。</div></div>
-<div style="margin-bottom:14px"><div class="dl">分析</div><div class="at">蒲田駅徒歩3分・5階（非路面）・73㎡・実質5.23%。1963年築は今回リスト最古で耐震診断結果が融資の分岐点。ただし蒲田駅至近・73㎡は事務所需要が厚い。指値8%（3,220万）で諸費用込み3,462万。非路面・超築古で現金推奨。</div></div>
-<div class="pc">
-<div><h4 class="p">✓ メリット</h4><li>蒲田駅3分・73㎡で事務所・スクール需要が厚い</li><li>実質5.23%と超築古にしては安定水準</li><li>低価格3,220万（指値後）で自己資金内完結</li></div>
-<div><h4 class="c2">△ リスク</h4><li>1963年築は法定耐用年数超過・融資ほぼ不可</li><li>5階非路面・耐震性不明で大規模修繕リスク大</li></div>
-</div>
-<div class="lb lc"><strong>融資: C</strong><br>1963年築・法定耐用年数超過で金融機関融資はほぼ不可。現金購入前提で検討。<br>自己資金 2000万／融資 1500万／月返済 6.7万／DSCR 2.22倍</div>
-<div class="fb"><strong>資金計画:</strong> 自己2,000万／融資1,500万／合計 3,500万</div>
-<a href="https://www.kenbiya.com/pp6/s/tokyo/ota-ku/re_4399449dtc/" target="_blank" class="lnk">健美家／HOMESで物件詳細 →</a>
-</div></div>
-
-<div class="cd " id="c-12">
-<div class="ch" onclick="tog('c-12')">
-<div class="tr">
-<span class="rk rkx">12</span>
-<span class="tt">文京区 5,280万円 茗荷谷駅 徒歩7分</span>
-<span class="bg-1f">1階</span>
-
-<span class="bg-src bg-kenbiya">健美家／HO</span>
-<span style="font-size:18px;color:var(--lt)">▼</span></div>
-<div class="mr">
-<span>📍 東京都文京区大塚3丁目</span>
-<span>🚉 茗荷谷駅 徒歩7分</span>
-<span>📐 40.51㎡</span>
-<span>🏗 2000年2月</span>
-<span>🏢 1階／10階建</span>
-</div>
-<div class="pr">
-<span class="pv" >5,280<span class="u">万円</span></span>
-</div>
-<div class="yld-row">
-
-
-<span class="yld-nego">指値 ▼5.0%</span>
-</div>
-<div class="sb"><div class="st"><div class="sf" style="width:71%;background:#888"></div></div><span class="sn" style="color:#888">71</span></div>
-</div>
-<div class="dt">
-<div class="dg">
-<div><div class="dl">想定テナント</div><div class="dv">飲食・カフェ・クリニック・塾・美容</div></div>
-<div><div class="dl">想定賃料</div><div class="er">月額約30.7万円（坪2.5万×40.51㎡換算）</div></div>
-</div>
-<div style="margin-bottom:14px"><div class="dl">賃料参考データ</div><div class="at">文京区大塚エリア 坪単価2.2〜2.8万円</div></div>
-<div style="margin-bottom:14px"><div class="dl">指値交渉の見通し</div><div class="at">指値余地5%のみ。賃料上昇シナリオを前提とした長期投資判断が必要。</div></div>
-<div style="margin-bottom:14px"><div class="dl">分析</div><div class="at">茗荷谷駅徒歩7分・1階路面・2000年築新耐震（文京区リストで唯一）。est_net_yield未算定。指値5%（5,016万）で諸費用込み5,392万、推定実質約3.6%と利回り面は厳しい。ただし新耐震・文京区・路面1階の資産性で長期保有向き。路面1階加点+5。</div></div>
-<div class="pc">
-<div><h4 class="p">✓ メリット</h4><li>2000年新耐震・文京区1階路面で資産価値安定</li><li>茗荷谷は高所得者居住エリアで賃料下落リスク低</li><li>金融機関融資適性が今回リスト最高水準</li></div>
-<div><h4 class="c2">△ リスク</h4><li>推定実質利回り3.6%台と収益性が今回リスト最低水準</li><li>指値余地5%のみで値引き交渉余地が限定的</li></div>
-</div>
-<div class="lb la"><strong>融資: A</strong><br>2000年新耐震・文京区・実質利回りが低い点は減点だが融資適性は最良クラス。利回り向上後に再評価を。<br>自己資金 2000万／融資 3400万／月返済 15.2万／DSCR 1.68倍</div>
-<div class="fb"><strong>資金計画:</strong> 自己2,000万／融資3,400万／合計 5,280万</div>
-<a href="https://www.kenbiya.com/pp6/s/tokyo/bunkyo-ku/re_44761443yu/" target="_blank" class="lnk">健美家／HOMESで物件詳細 →</a>
-</div></div>
-
-<div class="cd " id="c-13">
-<div class="ch" onclick="tog('c-13')">
-<div class="tr">
-<span class="rk rkx">13</span>
-<span class="tt">江東区 5,280万円 大島駅 徒歩3分</span>
-<span class="bg-1f">1階</span>
-
-<span class="bg-src bg-kenbiya">健美家／HO</span>
-<span style="font-size:18px;color:var(--lt)">▼</span></div>
-<div class="mr">
-<span>📍 東京都江東区大島5-47-9</span>
-<span>🚉 大島駅 徒歩3分</span>
-<span>📐 34.12㎡</span>
-<span>🏗 1992年4月</span>
-<span>🏢 1階／12階建</span>
-</div>
-<div class="pr">
-<span class="pv" >5,280<span class="u">万円</span></span>
-</div>
-<div class="yld-row">
-
-
-<span class="yld-nego">指値 ▼8.0%</span>
-</div>
-<div class="sb"><div class="st"><div class="sf" style="width:66%;background:#888"></div></div><span class="sn" style="color:#888">66</span></div>
-</div>
-<div class="dt">
-<div class="dg">
-<div><div class="dl">想定テナント</div><div class="dv">物販・サービス・クリニック・美容</div></div>
-<div><div class="dl">想定賃料</div><div class="er">月額約20.7万円（坪2.0万×34.12㎡換算）</div></div>
-</div>
-<div style="margin-bottom:14px"><div class="dl">賃料参考データ</div><div class="at">江東区大島エリア 坪単価1.8〜2.2万円</div></div>
-<div style="margin-bottom:14px"><div class="dl">指値交渉の見通し</div><div class="at">空室物件のため15%指値（4,183万）を強く主張できる。実質5%確保を条件に交渉。</div></div>
-<div style="margin-bottom:14px"><div class="dl">分析</div><div class="at">大島駅徒歩3分・1階路面・1992年新耐震だが空室中。est_net_yield未算定で利回りは賃料相場逆算。指値8%（4,846万）で諸費用込み5,210万。空室ゆえに指値15%も視野だが想定賃料での実質利回りは約2.5%にとどまり投資妥当性要精査。路面1階加点+5。</div></div>
-<div class="pc">
-<div><h4 class="p">✓ メリット</h4><li>1992年新耐震・大島駅3分で将来資産価値安定</li><li>空室のため自由な賃料設定・リノベが可能</li><li>融資適性は今回リスト上位クラス</li></div>
-<div><h4 class="c2">△ リスク</h4><li>空室中のため即時収益なし・テナント誘致コスト発生</li><li>想定賃料では実質利回り2.5%台と収益性が低い</li></div>
-</div>
-<div class="lb la"><strong>融資: A</strong><br>1992年新耐震・大島駅3分で融資適性は高い。ただし空室中のため賃料収入証明ができず融資実行時期に注意。<br>自己資金 2000万／融資 3200万／月返済 14.3万／DSCR 1.21倍</div>
-<div class="fb"><strong>資金計画:</strong> 自己2,000万／融資3,200万／合計 5,280万</div>
-<a href="https://www.kenbiya.com/pp6/s/tokyo/koto-ku/re_4475837llp/" target="_blank" class="lnk">健美家／HOMESで物件詳細 →</a>
-</div></div>
-
-<div class="cd " id="c-14">
-<div class="ch" onclick="tog('c-14')">
-<div class="tr">
-<span class="rk rkx">14</span>
-<span class="tt">大田区 5,980万円 池上駅 徒歩8分 7.28%（他1件同条件あり）</span>
-<span class="bg-1f">1階</span>
-
-<span class="bg-src bg-kenbiya">健美家／HO</span>
-<span style="font-size:18px;color:var(--lt)">▼</span></div>
-<div class="mr">
-<span>📍 東京都大田区池上8-5-2</span>
-<span>🚉 池上駅 徒歩8分</span>
-<span>📐 79.19㎡</span>
-<span>🏗 1986年6月</span>
-<span>🏢 1階／5階建</span>
-</div>
-<div class="pr">
-<span class="pv" >5,980<span class="u">万円</span></span>
-</div>
-<div class="yld-row">
-<span class="yld-gross">表面 7.28%</span>
-<span class="yld-net">実質 5.74%</span>
-<span class="yld-nego">指値 ▼8.0%</span>
-</div>
-<div class="sb"><div class="st"><div class="sf" style="width:65%;background:#888"></div></div><span class="sn" style="color:#888">65</span></div>
-</div>
-<div class="dt">
-<div class="dg">
-<div><div class="dl">想定テナント</div><div class="dv">飲食・物販・サービス・地域密着型</div></div>
-<div><div class="dl">想定賃料</div><div class="er">月額約43.6万円（表面7.28%逆算）</div></div>
-</div>
-<div style="margin-bottom:14px"><div class="dl">賃料参考データ</div><div class="at">大田区池上エリア 坪単価1.4〜1.6万円</div></div>
-<div style="margin-bottom:14px"><div class="dl">指値交渉の見通し</div><div class="at">同条件他1件あり。10〜12%指値で5,200万台に引き下げ交渉を推奨。</div></div>
-<div style="margin-bottom:14px"><div class="dl">分析</div><div class="at">池上駅徒歩8分・1階路面・79㎡・実質5.74%。1986年旧耐震だが同条件他1件あり。指値8%（5,502万）で諸費用込み5,914万。池上エリアは池上本門寺の参拝客需要はあるが商業集積は限定的。大型79㎡の空室リスクを考慮し慎重に。路面1階加点+5。</div></div>
-<div class="pc">
-<div><h4 class="p">✓ メリット</h4><li>実質5.74%と高利回りかつ1階路面79㎡の稀少性</li><li>池上本門寺参拝客等の安定地域需要</li><li>同条件比較物件の存在が交渉カードになる</li></div>
-<div><h4 class="c2">△ リスク</h4><li>池上駅から8分・商業集積が薄く業種選択肢が狭い</li><li>1986年旧耐震で融資審査が厳しい</li></div>
-</div>
-<div class="lb lbb"><strong>融資: B</strong><br>旧耐震1986年・池上駅8分でリスクあり。実質5.74%・79㎡の実績賃料で信金交渉余地あり。<br>自己資金 2000万／融資 4000万／月返済 17.9万／DSCR 2.03倍</div>
-<div class="fb"><strong>資金計画:</strong> 自己2,000万／融資4,000万／合計 5,980万</div>
-<a href="https://www.kenbiya.com/pp6/s/tokyo/ota-ku/re_4467297cew/" target="_blank" class="lnk">健美家／HOMESで物件詳細 →</a>
-</div></div>
-
-<div class="cd " id="c-15">
-<div class="ch" onclick="tog('c-15')">
-<div class="tr">
-<span class="rk rkx">15</span>
-<span class="tt">足立区 2,780万円 梅島駅 徒歩15分</span>
-<span class="bg-1f">1階</span>
-
-<span class="bg-src bg-kenbiya">健美家／HO</span>
-<span style="font-size:18px;color:var(--lt)">▼</span></div>
-<div class="mr">
-<span>📍 東京都足立区中央本町5丁目9-8</span>
-<span>🚉 梅島駅 徒歩15分</span>
-<span>📐 52.92㎡</span>
-<span>🏗 1980年4月</span>
-<span>🏢 1階／6階建</span>
-</div>
-<div class="pr">
-<span class="pv" >2,780<span class="u">万円</span></span>
-</div>
-<div class="yld-row">
-
-
-<span class="yld-nego">指値 ▼8.0%</span>
-</div>
-<div class="sb"><div class="st"><div class="sf" style="width:55%;background:#888"></div></div><span class="sn" style="color:#888">55</span></div>
-</div>
-<div class="dt">
-<div class="dg">
-<div><div class="dl">想定テナント</div><div class="dv">食料品・日用品・地域サービス・クリニック</div></div>
-<div><div class="dl">想定賃料</div><div class="er">月額約19.3万円（坪1.2万×52.92㎡換算）</div></div>
-</div>
-<div style="margin-bottom:14px"><div class="dl">賃料参考データ</div><div class="at">足立区梅島エリア 坪単価1.0〜1.4万円</div></div>
-<div style="margin-bottom:14px"><div class="dl">指値交渉の見通し</div><div class="at">駅15分・旧耐震で15%指値（2,363万）を強く要求。実質5%確保が絶対条件。</div></div>
-<div style="margin-bottom:14px"><div class="dl">分析</div><div class="at">梅島駅徒歩15分・1階路面・52.92㎡・1980年旧耐震。est_net_yield未算定。指値8%（2,558万）で諸費用込み2,749万、推定実質約4.4%と5%未達の可能性が高い。駅遠・足立区郊外・旧耐震の三重苦で投資優先度は最低位。路面1階加点+3（駅遠でテナント需要低減）。</div></div>
-<div class="pc">
-<div><h4 class="p">✓ メリット</h4><li>低価格帯2,780万で自己資金効率は高い</li><li>1階路面・52㎡は地域密着型テナントに対応可能</li><li>足立区は再開発進行中で超長期的な底値圏</li></div>
-<div><h4 class="c2">△ リスク</h4><li>梅島駅から15分は商業立地として実質不適格</li><li>旧耐震1980年・推定実質利回り5%未達でスクリーニング基準割れリスク</li></div>
-</div>
-<div class="lb lc"><strong>融資: C</strong><br>旧耐震1980年・梅島駅15分・足立区郊外。融資困難で現金投資の費用対効果も低い。見送りを推奨。<br>自己資金 1400万／融資 1400万／月返済 6.3万／DSCR 1.53倍</div>
-<div class="fb"><strong>資金計画:</strong> 自己1,400万／融資1,400万／合計 2,780万</div>
-<a href="https://www.kenbiya.com/pp6/s/tokyo/adachi-ku/re_4361957z1s/" target="_blank" class="lnk">健美家／HOMESで物件詳細 →</a>
-</div></div>
 
 
 <div class="ls"><div class="lsh" onclick="document.getElementById('lb').style.display=document.getElementById('lb').style.display==='none'?'block':'none'"><span>🔗 検索リンク集</span><span style="font-size:18px;color:var(--lt)">▼</span></div>
 <div id="lb" style="display:none;margin-top:12px">
-<a href="https://www.kenbiya.com/pp6/s/tokyo/taito-ku/" target="_blank" class="li" style="color:#c47a3a">🏪 台東区 健美家</a><a href="https://www.kenbiya.com/pp6/s/tokyo/sumida-ku/" target="_blank" class="li" style="color:#c47a3a">🏪 墨田区 健美家</a><a href="https://www.kenbiya.com/pp6/s/tokyo/koto-ku/" target="_blank" class="li" style="color:#c47a3a">🏪 江東区 健美家</a><a href="https://www.kenbiya.com/pp6/s/tokyo/arakawa-ku/" target="_blank" class="li" style="color:#c47a3a">🏪 荒川区 健美家</a><a href="https://www.kenbiya.com/pp6/s/tokyo/adachi-ku/" target="_blank" class="li" style="color:#c47a3a">🏪 足立区 健美家</a><a href="https://www.kenbiya.com/pp6/s/tokyo/bunkyo-ku/" target="_blank" class="li" style="color:#c47a3a">🏪 文京区 健美家</a><a href="https://www.kenbiya.com/pp6/s/tokyo/ota-ku/" target="_blank" class="li" style="color:#c47a3a">🏪 大田区 健美家</a><a href="https://www.kenbiya.com/pp6/s/tokyo/edogawa-ku/" target="_blank" class="li" style="color:#c47a3a">🏪 江戸川区 健美家</a>
+<a href="https://www.kenbiya.com/pp6/s/tokyo/taito-ku/" target="_blank" class="li" style="color:var(--md)">🏪 台東区 健美家</a><a href="https://www.kenbiya.com/pp6/s/tokyo/sumida-ku/" target="_blank" class="li" style="color:var(--md)">🏪 墨田区 健美家</a><a href="https://www.kenbiya.com/pp6/s/tokyo/koto-ku/" target="_blank" class="li" style="color:var(--md)">🏪 江東区 健美家</a><a href="https://www.kenbiya.com/pp6/s/tokyo/arakawa-ku/" target="_blank" class="li" style="color:var(--md)">🏪 荒川区 健美家</a><a href="https://www.kenbiya.com/pp6/s/tokyo/adachi-ku/" target="_blank" class="li" style="color:var(--md)">🏪 足立区 健美家</a><a href="https://www.kenbiya.com/pp6/s/tokyo/bunkyo-ku/" target="_blank" class="li" style="color:var(--md)">🏪 文京区 健美家</a><a href="https://www.kenbiya.com/pp6/s/tokyo/ota-ku/" target="_blank" class="li" style="color:var(--md)">🏪 大田区 健美家</a><a href="https://www.kenbiya.com/pp6/s/tokyo/edogawa-ku/" target="_blank" class="li" style="color:var(--md)">🏪 江戸川区 健美家</a>
 <a href="https://house.goo.ne.jp/toushi/office/area_tokyo.html" target="_blank" class="li" style="color:var(--bl)">🌐 goo不動産</a>
-<a href="https://www.athome.co.jp/buy_store/tokyo/" target="_blank" class="li" style="color:#3a7ac4">🌐 アットホーム</a>
-<a href="https://www.rakumachi.jp/syuuekibukken/area/prefecture/dim2002/" target="_blank" class="li" style="color:#5a9a3a">🌐 楽待</a>
+<a href="https://www.athome.co.jp/buy_store/tokyo/" target="_blank" class="li" style="color:var(--bl)">🌐 アットホーム</a>
+<a href="https://www.rakumachi.jp/syuuekibukken/area/prefecture/dim2002/" target="_blank" class="li" style="color:var(--g)">🌐 楽待</a>
 </div></div>
 
 <div class="dis">⚠ 2026-05-11時点のWeb公開情報に基づくAI自動分析（GitHub Actions + Claude API）。推定実質利回りは経費率22%・取得諸経費7.5%・指値率3〜15%（物件状態別）で算出。指値は交渉の成否を保証するものではありません。融資適格度はAI推定。購入前に現地確認・重説・融資審査を必ず実施してください。</div>
@@ -780,21 +144,21 @@ document.addEventListener('DOMContentLoaded',function(){
   try{
     var map=L.map('map').setView([35.72,139.82],12);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap',maxZoom:18}).addTo(map);
-    var markers=[{"lat": 35.6966, "lng": 139.8172, "title": "墨田区 2,930万円 錦糸町駅 徒歩4分 10.0%", "price": 2930, "yield_pct": 10.0, "est_net_yield": 7.64, "nego_rate_pct": 5.0, "category": "store", "color": "#dc2626", "icon": "🏪", "url": "https://www.kenbiya.com/pp6/s/tokyo/sumida-ku/re_4436996uj2/", "station": "錦糸町駅 徒歩4分", "score": 88, "is_first_floor": false}, {"lat": 35.5793, "lng": 139.7365, "title": "大田区 2,880万円 大森駅 徒歩10分 7.7%", "price": 2880, "yield_pct": 7.7, "est_net_yield": 6.07, "nego_rate_pct": 8.0, "category": "store", "color": "#dc2626", "icon": "🏪", "url": "https://www.kenbiya.com/pp6/s/tokyo/ota-ku/re_4453640qbo/", "station": "大森駅 徒歩10分", "score": 84, "is_first_floor": true}, {"lat": 35.5628, "lng": 139.7163, "title": "大田区 3,680万円 蒲田駅 徒歩4分 7.17%", "price": 3680, "yield_pct": 7.17, "est_net_yield": 5.65, "nego_rate_pct": 8.0, "category": "store", "color": "#dc2626", "icon": "🏪", "url": "https://www.kenbiya.com/pp6/s/tokyo/ota-ku/re_4412188nbj/", "station": "蒲田駅 徒歩4分", "score": 83, "is_first_floor": true}, {"lat": 35.7295, "lng": 139.8034, "title": "台東区 6,980万円 南千住駅 徒歩15分 7.45%（他1件同条件あり）", "price": 6980, "yield_pct": 7.45, "est_net_yield": 5.88, "nego_rate_pct": 8.0, "category": "store", "color": "#dc2626", "icon": "🏪", "url": "https://www.kenbiya.com/pp6/s/tokyo/taito-ku/re_4467298db6/", "station": "南千住駅 徒歩15分", "score": 82, "is_first_floor": true}, {"lat": 35.7068, "lng": 139.868, "title": "江戸川区 6,600万円 7.0%", "price": 6600, "yield_pct": 7.0, "est_net_yield": 5.52, "nego_rate_pct": 8.0, "category": "store", "color": "#dc2626", "icon": "🏪", "url": "https://house.goo.ne.jp/toushi/detail/4/13123/1118600001775/111860/x41118600001775.html", "station": null, "score": 81, "is_first_floor": false}, {"lat": 35.6908, "lng": 139.8425, "title": "江戸川区 5,980万円 東大島駅 徒歩1分 6.37%（他2件同条件あり）", "price": 5980, "yield_pct": 6.37, "est_net_yield": 5.02, "nego_rate_pct": 8.0, "category": "store", "color": "#dc2626", "icon": "🏪", "url": "https://www.kenbiya.com/pp6/s/tokyo/edogawa-ku/re_4430124gfa/", "station": "東大島駅 徒歩1分", "score": 80, "is_first_floor": true}, {"lat": 35.5736, "lng": 139.7063, "title": "大田区 6,680万円 馬込駅 徒歩3分 6.52%", "price": 6680, "yield_pct": 6.52, "est_net_yield": 5.38, "nego_rate_pct": 12.0, "category": "store", "color": "#dc2626", "icon": "🏪", "url": "https://www.kenbiya.com/pp6/s/tokyo/ota-ku/re_441528755p/", "station": "馬込駅 徒歩3分", "score": 78, "is_first_floor": true}, {"lat": 35.7224, "lng": 139.7629, "title": "文京区 3,480万円 千駄木駅 徒歩1分（他1件同条件あり）", "price": 3480, "yield_pct": null, "est_net_yield": null, "nego_rate_pct": 8.0, "category": "store", "color": "#dc2626", "icon": "🏪", "url": "https://www.kenbiya.com/pp6/s/tokyo/bunkyo-ku/re_4451773fg5/", "station": "千駄木駅 徒歩1分", "score": 77, "is_first_floor": true}, {"lat": 35.7128, "lng": 139.731, "title": "文京区 5,680万円 江戸川橋駅 徒歩1分", "price": 5680, "yield_pct": null, "est_net_yield": null, "nego_rate_pct": 8.0, "category": "store", "color": "#dc2626", "icon": "🏪", "url": "https://www.kenbiya.com/pp6/s/tokyo/bunkyo-ku/re_4434728xi5/", "station": "江戸川橋駅 徒歩1分", "score": 76, "is_first_floor": true}, {"lat": 35.7138, "lng": 139.8683, "title": "江戸川区 5,490万円 小岩駅 徒歩9分 6.49%", "price": 5490, "yield_pct": 6.49, "est_net_yield": 5.12, "nego_rate_pct": 8.0, "category": "store", "color": "#dc2626", "icon": "🏪", "url": "https://www.kenbiya.com/pp6/s/tokyo/edogawa-ku/re_43433041at/", "station": "小岩駅 徒歩9分", "score": 74, "is_first_floor": true}, {"lat": 35.5631, "lng": 139.7161, "title": "大田区 3,500万円 蒲田駅 徒歩3分 6.63%", "price": 3500, "yield_pct": 6.63, "est_net_yield": 5.23, "nego_rate_pct": 8.0, "category": "store", "color": "#dc2626", "icon": "🏪", "url": "https://www.kenbiya.com/pp6/s/tokyo/ota-ku/re_4399449dtc/", "station": "蒲田駅 徒歩3分", "score": 72, "is_first_floor": false}, {"lat": 35.7221, "lng": 139.7267, "title": "文京区 5,280万円 茗荷谷駅 徒歩7分", "price": 5280, "yield_pct": null, "est_net_yield": null, "nego_rate_pct": 5.0, "category": "store", "color": "#dc2626", "icon": "🏪", "url": "https://www.kenbiya.com/pp6/s/tokyo/bunkyo-ku/re_44761443yu/", "station": "茗荷谷駅 徒歩7分", "score": 71, "is_first_floor": true}, {"lat": 35.685, "lng": 139.8271, "title": "江東区 5,280万円 大島駅 徒歩3分", "price": 5280, "yield_pct": 0.0, "est_net_yield": null, "nego_rate_pct": 8.0, "category": "store", "color": "#dc2626", "icon": "🏪", "url": "https://www.kenbiya.com/pp6/s/tokyo/koto-ku/re_4475837llp/", "station": "大島駅 徒歩3分", "score": 66, "is_first_floor": true}, {"lat": 35.5591, "lng": 139.7002, "title": "大田区 5,980万円 池上駅 徒歩8分 7.28%（他1件同条件あり）", "price": 5980, "yield_pct": 7.28, "est_net_yield": 5.74, "nego_rate_pct": 8.0, "category": "store", "color": "#dc2626", "icon": "🏪", "url": "https://www.kenbiya.com/pp6/s/tokyo/ota-ku/re_4467297cew/", "station": "池上駅 徒歩8分", "score": 65, "is_first_floor": true}, {"lat": 35.7654, "lng": 139.8011, "title": "足立区 2,780万円 梅島駅 徒歩15分", "price": 2780, "yield_pct": null, "est_net_yield": null, "nego_rate_pct": 8.0, "category": "store", "color": "#dc2626", "icon": "🏪", "url": "https://www.kenbiya.com/pp6/s/tokyo/adachi-ku/re_4361957z1s/", "station": "梅島駅 徒歩15分", "score": 55, "is_first_floor": true}];
+    var markers=[];
     markers.forEach(function(m){
-      var c=m.is_first_floor?'#1a8a3e':'#dc2626';
+      var c=m.is_first_floor?'#059669':'#1e40af';
       var icon=L.divIcon({className:'',
-        html:'<div style="background:'+c+';color:#fff;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;border:2px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.3)">'+(m.is_first_floor?'🏪':'🏬')+'</div>',
+        html:'<div style="background:'+c+';color:#fff;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;border:2px solid #fff;box-shadow:0 2px 8px rgba(15,23,42,.3)">'+(m.is_first_floor?'🏪':'🏬')+'</div>',
         iconSize:[32,32],iconAnchor:[16,16],popupAnchor:[0,-18]
       });
       L.marker([m.lat,m.lng],{icon:icon}).addTo(map).bindPopup(
         '<div style="font-size:14px;min-width:240px;line-height:1.6">'+
         '<strong style="font-size:15px">'+(m.title||'').substring(0,40)+'</strong>'+
-        (m.is_first_floor?' <span style="background:#e8f5e9;color:#2e7d32;padding:1px 6px;border-radius:8px;font-size:11px;font-weight:700">1階</span>':'')+
+        (m.is_first_floor?' <span style="background:#d1fae5;color:#065f46;padding:1px 6px;border-radius:8px;font-size:11px;font-weight:700">1階</span>':'')+
         '<br><span style="font-size:20px;font-weight:800;color:'+c+'">'+(m.price||0).toLocaleString()+'万円</span>'+
-        (m.yield_pct?' <span style="color:#888">表面'+m.yield_pct+'%</span>':'')+
-        (m.est_net_yield?' <span style="color:#1a8a3e;font-weight:700">実質'+m.est_net_yield+'%</span>':'')+
-        (m.nego_rate_pct?' <span style="color:#d4782b">指値▼'+m.nego_rate_pct+'%</span>':'')+
+        (m.yield_pct?' <span style="color:#94a3b8">表面'+m.yield_pct+'%</span>':'')+
+        (m.est_net_yield?' <span style="color:#059669;font-weight:700">実質'+m.est_net_yield+'%</span>':'')+
+        (m.nego_rate_pct?' <span style="color:#0891b2">指値▼'+m.nego_rate_pct+'%</span>':'')+
         (m.station?'<br>🚉 '+m.station:'')+
         '<br>スコア: <strong>'+(m.score||'?')+'</strong>/100'+
         '<br><a href="'+m.url+'" target="_blank" style="color:'+c+';font-weight:700">物件詳細 →</a></div>'
